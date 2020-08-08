@@ -1,10 +1,10 @@
 <?php 
 $h_s='vcardsapp.herokuapp.com';
 if($_SERVER['HTTP_HOST']==$h_s || $_SERVER['HTTP_HOST']=='www.'.$h_s){
-$db_host = "";// Localhost
-$db_base = "";      // Nombre de la Base de Datos
-$db_user = "";      // Usuario de la Base de Datos
-$db_pass = "";     	// Password de la Base de Datos 
+$db_host = "us-cdbr-east-02.cleardb.com";// Localhost
+$db_base = "heroku_ea9087febfa9f0e";      // Nombre de la Base de Datos
+$db_user = "b34eed1f660661";      // Usuario de la Base de Datos
+$db_pass = "1ef05877";     	// Password de la Base de Datos 
 }else{
 $db_host = "localhost";     // Localhost
 $db_base = "vcardsapp";    // Nombre de la Base de Datos

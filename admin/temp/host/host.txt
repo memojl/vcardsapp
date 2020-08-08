@@ -1,1 +1,11 @@
 heroku.com
+
+mysql://
+b34eed1f660661
+:
+1ef05877
+@
+us-cdbr-east-02.cleardb.com
+/
+heroku_ea9087febfa9f0e
+?reconnect=true
