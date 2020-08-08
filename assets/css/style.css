@@ -1,9 +1,9 @@
-/*style - 2020-08-08 22:15:57*/
+/*style - 2020-08-08 23:44:40*/
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
-@import url(http://localhost/MisSitios/phponix/assets/bootstrap/bootstrap.css);
-@import url(http://localhost/MisSitios/phponix/assets/css/font-awesome-4.7.0/css/font-awesome.css);
-@import url(http://localhost/MisSitios/phponix/temas/default/css/style.css);
+@import url(http://localhost/MisSitios/vcardsapp/assets/bootstrap/bootstrap.css);
+@import url(http://localhost/MisSitios/vcardsapp/assets/css/font-awesome-4.7.0/css/font-awesome.css);
+@import url(http://localhost/MisSitios/vcardsapp/temas/default/css/style.css);
 body{
 margin:0;
 }

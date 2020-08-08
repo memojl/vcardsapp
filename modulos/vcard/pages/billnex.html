@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+      <title>Tarjeta Digital de Contacto - TheBillnex</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="stylesheet" type="text/css" href="<?php echo $page_url.$mod;?>/assets/css/style.css">
+   </head>
+   <body>
+      <section id="main">
+      <div id="head1">
+         <img class="logo" src="<?php echo $page_url.$mod;?>/assets/img/logo_billnex.png">        
+      </div>
+      <div id="conte-float">
+         <div id="body-data">
+            <img class="photo" src="<?php echo $page_url.$mod;?>/assets/fotos/foto.png">
+            <div class="nombre"><?php echo $profile['nombre'];?></div>
+            <div class="cargo"><?php echo $profile['puesto'];?></div>
+            <div class="cell"><a href="tel:<?php echo $profile['cell'];?>"><img class="icon" src="<?php echo $page_url.$mod;?>/assets/img/tel.png"> <?php echo $profile['cell'];?></a></div>
+            <div class="email"><a href="mailto:<?php echo $profile['email'];?>"><img class="icon" src="<?php echo $page_url.$mod;?>/assets/img/sobre.png"> <?php echo $profile['email'];?></a></div>
+            <div class="puesto"><img class="icon" src="<?php echo $page_url.$mod;?>/assets/img/maletin.png"> Language <div class="small-text fleft">English<br>Espa&ntilde;ol</div></div>
+            <div class="email"><a href="<?php echo $profile['web'];?>"><img class="icon" src="<?php echo $page_url.$mod;?>/assets/img/lupa.png"> 
+               <?php $replace1=array('http://','https://');echo $web=str_replace($replace1,"",$profile['web']);?>
+            </a></div>
+            <div class="rss">Social Media<br><br>
+               <a href="<?php echo $profile['lk'];?>"><img class="icon-social" src="<?php echo $page_url.$mod;?>/assets/img/in.png"></a> 
+               <a href="<?php echo $profile['ins'];?>"><img class="icon-social" src="<?php echo $page_url.$mod;?>/assets/img/ins.png"></a>
+            </div>
+            <div class="descargar">
+               <a href="<?php echo $page_url.$mod;?>/vcf_files/<?php echo $profile['perfil'];?>.vcf" dowload>Download vcard</a>
+            </div>
+            <div class="compartir">
+               <a href="https://api.whatsapp.com/send?text=https://thebillnex.com/billnex-vcard/vcard/?profile=<?php echo $pro;?>" data-action="share/whatsapp/share">Share this page</a>
+               <!--a href="#">Share this page</a-->
+            </div>
+         </div>
+      </div>
+      </seccion>
+   </body>
+</html>

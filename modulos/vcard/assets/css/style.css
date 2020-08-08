@@ -1,0 +1,128 @@
+   @font-face {
+      font-family: Ubuntu-B;
+      src: url(fonts/Ubuntu-B.ttf);
+   }
+   @font-face {
+      font-family: Ubuntu-L;
+      src: url(fonts/Ubuntu-L.ttf);
+   }
+   @font-face {
+      font-family: Ubuntu-R;
+      src: url(fonts/Ubuntu-R.ttf);
+   }
+   *{font-family: Ubuntu-L;color:#383A39;}
+   body{margin:0px;}
+   img{border:0;}   
+   #head1{
+      width: 100%;
+      height: 364px;
+      background: #499AEB;
+      text-align: center;
+   }
+   #conte-float{
+      position: absolute;
+      z-index: 10;
+      top:210px;
+      left:0;
+      width: 100%;      
+   }
+   #body-data{
+      margin: auto;
+      width: 570px;
+      height: 830px;
+      background-image: url('../img/fondo.png');
+      background-position: top center;
+      background-repeat: no-repeat;
+      font-size: cover;
+      /*background-attachment: fixed;*/
+      background-color: #FCC021;
+      border-radius: 60px 60px 0px 0px;
+      -moz-border-radius: 60px 60px 0px 0px;
+      -webkit-border-radius: 60px 60px 0px 0px;
+      border: 0px solid #000000;
+      -webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.4);
+      -moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.4);
+      box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.4);
+      padding: 35px 0 0 0;
+      text-align: center;
+   }
+   .small-text{
+      font-size: 12px;
+      font-family: Ubuntu-B;
+   }
+   .fleft{
+      padding-left: 35px;
+   }
+   .icon{
+      float: left;
+      width: 22px;
+      padding: 0 12px 0 0; 
+   }
+   .icon-social{
+      width: 24px;
+      padding: 0 12px 0 0; 
+   }
+   .logo{ 
+      margin: 20px auto; 
+      width: 260px;
+   }
+   .nombre{
+      color:#000;
+      font-size: 26px;
+      font-family: Ubuntu-B;
+      padding: 15px 0px 6px;
+   }
+   .cargo{
+      margin-bottom: 15px;
+   }
+   .cell,.email,.puesto,.web{
+      text-align: left;
+   }
+   .cell, .email, .puesto, .web, .rss, .descargar, .compartir{
+      font-family: Ubuntu-B;
+      margin: auto;
+      width: 52%;
+      padding: 30px 0px;
+   }
+   .rss, .descargar, .compartir{
+      width: 100%;
+   }
+   .cell a, .email a, .web a{
+      font-family: Ubuntu-B;
+      color: #383A39;
+      text-decoration: none;
+   }
+   .descargar a{
+      color: #fff;
+      font-family: Ubuntu-B;
+      text-decoration: none;
+      background: #499AEB;
+      border-radius: 25px;
+      -moz-border-radius: 25px;
+      -webkit-border-radius: 25px;
+      border: 3px solid #499AEB;
+      padding: 15px 88px;
+   }
+   .compartir a{
+      color: #499AEB;
+      font-family: Ubuntu-B;
+      text-decoration: none;
+      background: #fff;
+      border-radius: 25px;
+      -moz-border-radius: 25px;
+      -webkit-border-radius: 25px;
+      border: 3px solid #499AEB;
+      padding: 15px 90px;
+   }
+   .space{
+      width: 100%;
+      height: 40px;
+   }
+@media screen and (max-width: 550px){
+   #body-data, .rss, .descargar, .compartir{
+      width: 100%;
+   }
+   .cell, .email, .puesto, .web{
+      width: 80%;
+   }
+}   
