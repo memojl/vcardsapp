@@ -1,7 +1,7 @@
 # vcardsapp
 Desarrollo de tarjetas virtuales.
 
-### Instalación 🔧
+### Instalación Local 🔧
 
 1. Clonar el repositorio vcardsapp
 
