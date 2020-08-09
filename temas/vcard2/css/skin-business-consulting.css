@@ -1,76 +1,22 @@
-<!DOCTYPE html>
-<!-- saved from url=(0069)https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html -->
-<html data-style-switcher-options="{&#39;changeLogo&#39;: false, &#39;borderRadius&#39;: 0, &#39;colorPrimary&#39;: &#39;#4dbb6d&#39;, &#39;colorSecondary&#39;: &#39;#eef4f2&#39;, &#39;colorTertiary&#39;: &#39;#e2fdea&#39;, &#39;colorQuaternary&#39;: &#39;#101019&#39;}" class="history svg video supports boxshadow csstransforms3d csstransitions backgroundcliptext webkit chrome win js sticky-header-enabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-		<!-- Basic -->
-		
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
-
-		<title>Demo Business Consulting | Porto - Responsive HTML5 Template 7.5.0</title>	
-
-		<meta name="keywords" content="HTML5 Template">
-		<meta name="description" content="Porto - Responsive HTML5 Template">
-		<meta name="author" content="okler.net">
-
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="https://portotheme.com/html/porto/7.5.0/img/favicon.ico" type="image/x-icon">
-		<link rel="apple-touch-icon" href="https://portotheme.com/html/porto/7.5.0/img/apple-touch-icon.png">
-
-		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-
-		<!-- Web Fonts  -->
-		<link href="./Business_files/css" rel="stylesheet" type="text/css">
-
-		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="./Business_files/bootstrap.min.css">		<link rel="stylesheet" href="./Business_files/all.min.css">		<link rel="stylesheet" href="./Business_files/animate.min.css">		<link rel="stylesheet" href="./Business_files/simple-line-icons.min.css">		<link rel="stylesheet" href="./Business_files/owl.carousel.min.css">		<link rel="stylesheet" href="./Business_files/owl.theme.default.min.css">		<link rel="stylesheet" href="./Business_files/magnific-popup.min.css">
-
-		<!-- Theme CSS -->
-		<link rel="stylesheet" href="./Business_files/theme.css">
-		<link rel="stylesheet" href="./Business_files/theme-elements.css">
-		<link rel="stylesheet" href="./Business_files/theme-blog.css">
-		<link rel="stylesheet" href="./Business_files/theme-shop.css">
-
-		<!-- Current Page CSS -->
-		<link rel="stylesheet" href="./Business_files/settings.css">
-		<link rel="stylesheet" href="./Business_files/layers.css">
-		<link rel="stylesheet" href="./Business_files/navigation.css">
-		
-		<!-- Demo CSS -->
-		<link rel="stylesheet" href="./Business_files/demo-business-consulting.css">
-
-		<!-- Skin CSS -->
-		<link rel="stylesheet" href="./Business_files/skin-business-consulting.css">		<script async="" src="./Business_files/analytics.js.descarga"></script><script src="./Business_files/style.switcher.localstorage.js.descarga"></script> 
-
-		<!-- Theme Custom CSS -->
-		<link rel="stylesheet" href="./Business_files/custom.css">
-
-		<!-- Head Libs -->
-		<script src="./Business_files/modernizr.min.js.descarga"></script>
-
-  <link rel="stylesheet" href="./Business_files/style-switcher.css">
-  <link rel="stylesheet" href="./Business_files/style-switcher.css">
-  <link rel="stylesheet/less" href="https://portotheme.com/html/porto/7.5.0/master/less/skin-business-consulting.less">
-  <style type="text/css" id="less:html-porto-7:5:0-master-less-skin-business-consulting">
 a {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 a:hover {
-  color: #eccc25;
+  color: #5fc27c;
 }
 a:focus {
-  color: #eccc25;
+  color: #5fc27c;
 }
 a:active {
-  color: #ccae12;
+  color: #42ad61;
 }
 html .text-color-primary,
 html .text-primary {
-  color: #e3c214 !important;
+  color: #4dbb6d !important;
 }
 html .text-color-hover-primary:hover,
 html .text-hover-primary:hover {
-  color: #e3c214 !important;
+  color: #4dbb6d !important;
 }
 html .text-color-secondary,
 html .text-secondary {
@@ -113,17 +59,19 @@ html .text-hover-light:hover {
   color: #FFF !important;
 }
 .gradient-text-color {
-  color: #e3c214;
-  background: linear-gradient(to bottom right, #e3c214, #eef4f2);
-  background-image: linear-gradient(to right, #e3c214, #eef4f2);
+  color: #4dbb6d;
+  background: -webkit-gradient(linear, left top, right bottom, from(#4dbb6d), to(#eef4f2));
+  background: linear-gradient(to bottom right, #4dbb6d, #eef4f2);
+  background-image: -webkit-gradient(linear, left top, right top, from(#4dbb6d), to(#eef4f2));
+  background-image: linear-gradient(to right, #4dbb6d, #eef4f2);
 }
 html .bg-color-primary,
 html .bg-primary {
-  background-color: #e3c214 !important;
+  background-color: #4dbb6d !important;
 }
 html .bg-color-hover-primary:hover,
 html .bg-hover-primary:hover {
-  background-color: #e3c214 !important;
+  background-color: #4dbb6d !important;
 }
 html .bg-color-secondary,
 html .bg-secondary {
@@ -166,9 +114,23 @@ html .bg-hover-light:hover {
   background-color: #FFF !important;
 }
 /* Color Transition */
+@-webkit-keyframes colorTransition {
+  0% {
+    background-color: #4dbb6d;
+  }
+  33% {
+    background-color: #eef4f2;
+  }
+  66% {
+    background-color: #e2fdea;
+  }
+  100% {
+    background-color: #101019;
+  }
+}
 @keyframes colorTransition {
   0% {
-    background-color: #e3c214;
+    background-color: #4dbb6d;
   }
   33% {
     background-color: #eef4f2;
@@ -181,10 +143,10 @@ html .bg-hover-light:hover {
   }
 }
 html .border-color-primary {
-  border-color: #e3c214 !important;
+  border-color: #4dbb6d !important;
 }
 html .border-color-hover-primary:hover {
-  border-color: #e3c214 !important;
+  border-color: #4dbb6d !important;
 }
 html .border-color-secondary {
   border-color: #eef4f2 !important;
@@ -217,28 +179,34 @@ html .border-color-hover-light:hover {
   border-color: #FFF !important;
 }
 .alternative-font {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .box-shadow-1-primary:before {
-  box-shadow: 0 30px 90px #e3c214 !important;
+  -webkit-box-shadow: 0 30px 90px #4dbb6d !important;
+          box-shadow: 0 30px 90px #4dbb6d !important;
 }
 html .box-shadow-1-secondary:before {
-  box-shadow: 0 30px 90px #eef4f2 !important;
+  -webkit-box-shadow: 0 30px 90px #eef4f2 !important;
+          box-shadow: 0 30px 90px #eef4f2 !important;
 }
 html .box-shadow-1-tertiary:before {
-  box-shadow: 0 30px 90px #e2fdea !important;
+  -webkit-box-shadow: 0 30px 90px #e2fdea !important;
+          box-shadow: 0 30px 90px #e2fdea !important;
 }
 html .box-shadow-1-quaternary:before {
-  box-shadow: 0 30px 90px #101019 !important;
+  -webkit-box-shadow: 0 30px 90px #101019 !important;
+          box-shadow: 0 30px 90px #101019 !important;
 }
 html .box-shadow-1-dark:before {
-  box-shadow: 0 30px 90px #212529 !important;
+  -webkit-box-shadow: 0 30px 90px #212529 !important;
+          box-shadow: 0 30px 90px #212529 !important;
 }
 html .box-shadow-1-light:before {
-  box-shadow: 0 30px 90px #FFF !important;
+  -webkit-box-shadow: 0 30px 90px #FFF !important;
+          box-shadow: 0 30px 90px #FFF !important;
 }
 html .blockquote-primary {
-  border-color: #e3c214 !important;
+  border-color: #4dbb6d !important;
 }
 html .blockquote-secondary {
   border-color: #eef4f2 !important;
@@ -256,19 +224,19 @@ html .blockquote-light {
   border-color: #FFF !important;
 }
 p.drop-caps:first-letter {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 p.drop-caps.drop-caps-style-2:first-letter {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .nav-color-primary nav > ul > li > a {
-  color: #e3c214 !important;
+  color: #4dbb6d !important;
 }
 html .nav-color-primary:not(.header-nav-main-dropdown-arrow) nav > ul > li > a:before {
-  background-color: #e3c214 !important;
+  background-color: #4dbb6d !important;
 }
 html .nav-color-primary:not(.header-nav-main-dropdown-arrow) nav > ul > li ul {
-  border-top-color: #e3c214 !important;
+  border-top-color: #4dbb6d !important;
 }
 html .nav-color-secondary nav > ul > li > a {
   color: #eef4f2 !important;
@@ -317,40 +285,40 @@ html .nav-color-light:not(.header-nav-main-dropdown-arrow) nav > ul > li ul {
 }
 .nav-pills > li.active > a,
 .nav-pills .nav-link.active {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 .nav-pills > li.active > a:hover,
 .nav-pills .nav-link.active:hover,
 .nav-pills > li.active > a:focus,
 .nav-pills .nav-link.active:focus {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 .nav-active-style-1 > li > a:hover,
 .nav-active-style-1 > li > a:focus,
 .nav-active-style-1 > li > a.active {
-  border-bottom-color: #e3c214;
+  border-bottom-color: #4dbb6d;
 }
 html .nav-pills-primary a {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .nav-pills-primary a:hover {
-  color: #eccc25;
+  color: #5fc27c;
 }
 html .nav-pills-primary a:focus {
-  color: #eccc25;
+  color: #5fc27c;
 }
 html .nav-pills-primary a:active {
-  color: #ccae12;
+  color: #42ad61;
 }
 html .nav-pills-primary .nav-link.active,
 html .nav-pills-primary > li.active > a {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .nav-pills-primary .nav-link.active:hover,
 html .nav-pills-primary > li.active > a:hover,
 html .nav-pills-primary .nav-link.active:focus,
 html .nav-pills-primary > li.active > a:focus {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .nav-pills-secondary a {
   color: #eef4f2;
@@ -463,24 +431,24 @@ html .nav-pills-light > li.active > a:focus {
   background-color: #FFF;
 }
 .section-scroll-dots-navigation.scroll-dots-navigation-colored > ul > li > a:before {
-  background: #e3c214;
+  background: #4dbb6d;
 }
 .sort-source-wrapper .nav > li.active > a {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 .sort-source-wrapper .nav > li.active > a:hover,
 .sort-source-wrapper .nav > li.active > a:focus {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 .sort-source.sort-source-style-2 > li.active > a:after {
-  border-top-color: #e3c214;
+  border-top-color: #4dbb6d;
 }
 .sort-source.sort-source-style-3 > li.active > a {
-  border-bottom-color: #e3c214 !important;
-  color: #e3c214 !important;
+  border-bottom-color: #4dbb6d !important;
+  color: #4dbb6d !important;
 }
 html .badge-primary {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .badge-secondary {
   background-color: #eef4f2;
@@ -498,7 +466,7 @@ html .badge-light {
   background-color: #FFF;
 }
 html .overlay-color-primary:not(.no-skin):before {
-  background-color: #e3c214 !important;
+  background-color: #4dbb6d !important;
 }
 html .overlay-color-secondary:not(.no-skin):before {
   background-color: #eef4f2 !important;
@@ -516,71 +484,73 @@ html .overlay-color-light:not(.no-skin):before {
   background-color: #FFF !important;
 }
 .btn-link {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 .btn-link:hover {
-  color: #eccc25;
+  color: #5fc27c;
 }
 .btn-link:active {
-  color: #ccae12;
+  color: #42ad61;
 }
 html .btn-primary {
-  background-color: #e3c214;
-  border-color: #e3c214 #e3c214 #b49a10;
-  color: #777;
+  background-color: #4dbb6d;
+  border-color: #4dbb6d #4dbb6d #3b9a57;
+  color: #FFF;
 }
 html .btn-primary:hover,
 html .btn-primary.hover {
-  background-color: #edcf30;
-  border-color: #eed23c #eed23c #e3c214;
-  color: #777;
+  background-color: #69c684;
+  border-color: #72c98b #72c98b #4dbb6d;
+  color: #FFF;
 }
 html .btn-primary:focus,
 html .btn-primary.focus {
-  box-shadow: 0 0 0 3px rgba(227, 194, 20, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(77, 187, 109, 0.5);
+          box-shadow: 0 0 0 3px rgba(77, 187, 109, 0.5);
 }
 html .btn-primary.disabled,
 html .btn-primary:disabled {
-  background-color: #e3c214;
-  border-color: #e3c214 #e3c214 #b49a10;
+  background-color: #4dbb6d;
+  border-color: #4dbb6d #4dbb6d #3b9a57;
 }
 html .btn-primary:active,
 html .btn-primary.active {
-  background-color: #c0a411 !important;
+  background-color: #3ea35c !important;
   background-image: none !important;
-  border-color: #b49a10 #b49a10 #85720c !important;
+  border-color: #3b9a57 #3b9a57 #2d7542 !important;
 }
 html .btn-primary-scale-2 {
-  background-color: #b49a10;
-  border-color: #b49a10 #b49a10 #85720c;
-  color: #777;
+  background-color: #3b9a57;
+  border-color: #3b9a57 #3b9a57 #2d7542;
+  color: #FFF;
 }
 html .btn-primary-scale-2:hover,
 html .btn-primary-scale-2.hover {
-  background-color: #d7b813;
-  border-color: #e3c214 #e3c214 #b49a10;
-  color: #777;
+  background-color: #45b666;
+  border-color: #4dbb6d #4dbb6d #3b9a57;
+  color: #FFF;
 }
 html .btn-primary-scale-2:focus,
 html .btn-primary-scale-2.focus {
-  box-shadow: 0 0 0 3px rgba(180, 154, 16, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(59, 154, 87, 0.5);
+          box-shadow: 0 0 0 3px rgba(59, 154, 87, 0.5);
 }
 html .btn-primary-scale-2.disabled,
 html .btn-primary-scale-2:disabled {
-  background-color: #b49a10;
-  border-color: #b49a10 #b49a10 #85720c;
+  background-color: #3b9a57;
+  border-color: #3b9a57 #3b9a57 #2d7542;
 }
 html .btn-primary-scale-2:active,
 html .btn-primary-scale-2.active {
-  background-color: #917c0d !important;
+  background-color: #307e47 !important;
   background-image: none !important;
-  border-color: #85720c #85720c #564a08 !important;
+  border-color: #2d7542 #2d7542 #1f502d !important;
 }
 html .show > .btn-primary.dropdown-toggle,
 html .show > .btn-primary-scale-2.dropdown-toggle {
-  background-color: #c0a411 !important;
+  background-color: #3ea35c !important;
   background-image: none !important;
-  border-color: #b49a10 #b49a10 #85720c !important;
+  border-color: #3b9a57 #3b9a57 #2d7542 !important;
 }
 html .btn-secondary {
   background-color: #eef4f2;
@@ -595,7 +565,8 @@ html .btn-secondary.hover {
 }
 html .btn-secondary:focus,
 html .btn-secondary.focus {
-  box-shadow: 0 0 0 3px rgba(238, 244, 242, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(238, 244, 242, 0.5);
+          box-shadow: 0 0 0 3px rgba(238, 244, 242, 0.5);
 }
 html .btn-secondary.disabled,
 html .btn-secondary:disabled {
@@ -621,7 +592,8 @@ html .btn-secondary-scale-2.hover {
 }
 html .btn-secondary-scale-2:focus,
 html .btn-secondary-scale-2.focus {
-  box-shadow: 0 0 0 3px rgba(207, 224, 218, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(207, 224, 218, 0.5);
+          box-shadow: 0 0 0 3px rgba(207, 224, 218, 0.5);
 }
 html .btn-secondary-scale-2.disabled,
 html .btn-secondary-scale-2:disabled {
@@ -653,7 +625,8 @@ html .btn-tertiary.hover {
 }
 html .btn-tertiary:focus,
 html .btn-tertiary.focus {
-  box-shadow: 0 0 0 3px rgba(226, 253, 234, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(226, 253, 234, 0.5);
+          box-shadow: 0 0 0 3px rgba(226, 253, 234, 0.5);
 }
 html .btn-tertiary.disabled,
 html .btn-tertiary:disabled {
@@ -679,7 +652,8 @@ html .btn-tertiary-scale-2.hover {
 }
 html .btn-tertiary-scale-2:focus,
 html .btn-tertiary-scale-2.focus {
-  box-shadow: 0 0 0 3px rgba(178, 250, 199, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(178, 250, 199, 0.5);
+          box-shadow: 0 0 0 3px rgba(178, 250, 199, 0.5);
 }
 html .btn-tertiary-scale-2.disabled,
 html .btn-tertiary-scale-2:disabled {
@@ -711,7 +685,8 @@ html .btn-quaternary.hover {
 }
 html .btn-quaternary:focus,
 html .btn-quaternary.focus {
-  box-shadow: 0 0 0 3px rgba(16, 16, 25, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(16, 16, 25, 0.5);
+          box-shadow: 0 0 0 3px rgba(16, 16, 25, 0.5);
 }
 html .btn-quaternary.disabled,
 html .btn-quaternary:disabled {
@@ -737,7 +712,8 @@ html .btn-quaternary-scale-2.hover {
 }
 html .btn-quaternary-scale-2:focus,
 html .btn-quaternary-scale-2.focus {
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
 }
 html .btn-quaternary-scale-2.disabled,
 html .btn-quaternary-scale-2:disabled {
@@ -769,7 +745,8 @@ html .btn-dark.hover {
 }
 html .btn-dark:focus,
 html .btn-dark.focus {
-  box-shadow: 0 0 0 3px rgba(33, 37, 41, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(33, 37, 41, 0.5);
+          box-shadow: 0 0 0 3px rgba(33, 37, 41, 0.5);
 }
 html .btn-dark.disabled,
 html .btn-dark:disabled {
@@ -795,7 +772,8 @@ html .btn-dark-scale-2.hover {
 }
 html .btn-dark-scale-2:focus,
 html .btn-dark-scale-2.focus {
-  box-shadow: 0 0 0 3px rgba(10, 11, 13, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(10, 11, 13, 0.5);
+          box-shadow: 0 0 0 3px rgba(10, 11, 13, 0.5);
 }
 html .btn-dark-scale-2.disabled,
 html .btn-dark-scale-2:disabled {
@@ -827,7 +805,8 @@ html .btn-light.hover {
 }
 html .btn-light:focus,
 html .btn-light.focus {
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+          box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
 html .btn-light.disabled,
 html .btn-light:disabled {
@@ -853,7 +832,8 @@ html .btn-light-scale-2.hover {
 }
 html .btn-light-scale-2:focus,
 html .btn-light-scale-2.focus {
-  box-shadow: 0 0 0 3px rgba(230, 230, 230, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(230, 230, 230, 0.5);
+          box-shadow: 0 0 0 3px rgba(230, 230, 230, 0.5);
 }
 html .btn-light-scale-2.disabled,
 html .btn-light-scale-2:disabled {
@@ -873,36 +853,37 @@ html .show > .btn-light-scale-2.dropdown-toggle {
   border-color: #e6e6e6 #e6e6e6 #cccccc !important;
 }
 html .btn-outline.btn-primary {
-  color: #e3c214;
+  color: #4dbb6d;
   background-color: transparent;
   background-image: none;
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 html .btn-outline.btn-primary:hover,
 html .btn-outline.btn-primary.hover {
-  color: #777;
-  background-color: #e3c214;
-  border-color: #e3c214;
+  color: #FFF;
+  background-color: #4dbb6d;
+  border-color: #4dbb6d;
 }
 html .btn-outline.btn-primary:focus,
 html .btn-outline.btn-primary.focus {
-  box-shadow: 0 0 0 3px rgba(227, 194, 20, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(77, 187, 109, 0.5);
+          box-shadow: 0 0 0 3px rgba(77, 187, 109, 0.5);
 }
 html .btn-outline.btn-primary.disabled,
 html .btn-outline.btn-primary:disabled {
-  color: #e3c214;
+  color: #4dbb6d;
   background-color: transparent;
 }
 html .btn-outline.btn-primary:active,
 html .btn-outline.btn-primary.active {
-  color: #777 !important;
-  background-color: #e3c214 !important;
-  border-color: #e3c214 !important;
+  color: #FFF !important;
+  background-color: #4dbb6d !important;
+  border-color: #4dbb6d !important;
 }
 html .show > .btn-outline.btn-primary.dropdown-toggle {
-  color: #777 !important;
-  background-color: #e3c214 !important;
-  border-color: #e3c214 !important;
+  color: #FFF !important;
+  background-color: #4dbb6d !important;
+  border-color: #4dbb6d !important;
 }
 html .btn-outline.btn-secondary {
   color: #eef4f2;
@@ -918,7 +899,8 @@ html .btn-outline.btn-secondary.hover {
 }
 html .btn-outline.btn-secondary:focus,
 html .btn-outline.btn-secondary.focus {
-  box-shadow: 0 0 0 3px rgba(238, 244, 242, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(238, 244, 242, 0.5);
+          box-shadow: 0 0 0 3px rgba(238, 244, 242, 0.5);
 }
 html .btn-outline.btn-secondary.disabled,
 html .btn-outline.btn-secondary:disabled {
@@ -950,7 +932,8 @@ html .btn-outline.btn-tertiary.hover {
 }
 html .btn-outline.btn-tertiary:focus,
 html .btn-outline.btn-tertiary.focus {
-  box-shadow: 0 0 0 3px rgba(226, 253, 234, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(226, 253, 234, 0.5);
+          box-shadow: 0 0 0 3px rgba(226, 253, 234, 0.5);
 }
 html .btn-outline.btn-tertiary.disabled,
 html .btn-outline.btn-tertiary:disabled {
@@ -982,7 +965,8 @@ html .btn-outline.btn-quaternary.hover {
 }
 html .btn-outline.btn-quaternary:focus,
 html .btn-outline.btn-quaternary.focus {
-  box-shadow: 0 0 0 3px rgba(16, 16, 25, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(16, 16, 25, 0.5);
+          box-shadow: 0 0 0 3px rgba(16, 16, 25, 0.5);
 }
 html .btn-outline.btn-quaternary.disabled,
 html .btn-outline.btn-quaternary:disabled {
@@ -1014,7 +998,8 @@ html .btn-outline.btn-dark.hover {
 }
 html .btn-outline.btn-dark:focus,
 html .btn-outline.btn-dark.focus {
-  box-shadow: 0 0 0 3px rgba(33, 37, 41, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(33, 37, 41, 0.5);
+          box-shadow: 0 0 0 3px rgba(33, 37, 41, 0.5);
 }
 html .btn-outline.btn-dark.disabled,
 html .btn-outline.btn-dark:disabled {
@@ -1046,7 +1031,8 @@ html .btn-outline.btn-light.hover {
 }
 html .btn-outline.btn-light:focus,
 html .btn-outline.btn-light.focus {
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+          box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
 html .btn-outline.btn-light.disabled,
 html .btn-outline.btn-light:disabled {
@@ -1067,23 +1053,25 @@ html .show > .btn-outline.btn-light.dropdown-toggle {
 html .btn-with-arrow.btn-primary {
   background-color: transparent;
   border-color: transparent;
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .btn-with-arrow.btn-primary:active {
   background-color: transparent !important;
   border-color: transparent !important;
-  color: #e3c214 !important;
+  color: #4dbb6d !important;
 }
 html .btn-with-arrow.btn-primary span {
-  background-color: #e3c214;
-  box-shadow: 2px 3px 18px -3px #e3c214;
+  background-color: #4dbb6d;
+  -webkit-box-shadow: 2px 3px 18px -3px #4dbb6d;
+          box-shadow: 2px 3px 18px -3px #4dbb6d;
 }
 html .btn-with-arrow.btn-primary.btn-outline {
-  border-color: #e3c214 !important;
+  border-color: #4dbb6d !important;
 }
 html .btn-with-arrow.btn-primary.btn-outline:hover span {
-  background-color: #eccc25 !important;
-  box-shadow: none;
+  background-color: #5fc27c !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 html .btn-with-arrow.btn-secondary {
   background-color: transparent;
@@ -1097,14 +1085,16 @@ html .btn-with-arrow.btn-secondary:active {
 }
 html .btn-with-arrow.btn-secondary span {
   background-color: #eef4f2;
-  box-shadow: 2px 3px 18px -3px #eef4f2;
+  -webkit-box-shadow: 2px 3px 18px -3px #eef4f2;
+          box-shadow: 2px 3px 18px -3px #eef4f2;
 }
 html .btn-with-arrow.btn-secondary.btn-outline {
   border-color: #eef4f2 !important;
 }
 html .btn-with-arrow.btn-secondary.btn-outline:hover span {
   background-color: #fdfefe !important;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 html .btn-with-arrow.btn-tertiary {
   background-color: transparent;
@@ -1118,14 +1108,16 @@ html .btn-with-arrow.btn-tertiary:active {
 }
 html .btn-with-arrow.btn-tertiary span {
   background-color: #e2fdea;
-  box-shadow: 2px 3px 18px -3px #e2fdea;
+  -webkit-box-shadow: 2px 3px 18px -3px #e2fdea;
+          box-shadow: 2px 3px 18px -3px #e2fdea;
 }
 html .btn-with-arrow.btn-tertiary.btn-outline {
   border-color: #e2fdea !important;
 }
 html .btn-with-arrow.btn-tertiary.btn-outline:hover span {
   background-color: #fafffb !important;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 html .btn-with-arrow.btn-quaternary {
   background-color: transparent;
@@ -1139,14 +1131,16 @@ html .btn-with-arrow.btn-quaternary:active {
 }
 html .btn-with-arrow.btn-quaternary span {
   background-color: #101019;
-  box-shadow: 2px 3px 18px -3px #101019;
+  -webkit-box-shadow: 2px 3px 18px -3px #101019;
+          box-shadow: 2px 3px 18px -3px #101019;
 }
 html .btn-with-arrow.btn-quaternary.btn-outline {
   border-color: #101019 !important;
 }
 html .btn-with-arrow.btn-quaternary.btn-outline:hover span {
   background-color: #1a1a29 !important;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 html .btn-with-arrow.btn-dark {
   background-color: transparent;
@@ -1160,14 +1154,16 @@ html .btn-with-arrow.btn-dark:active {
 }
 html .btn-with-arrow.btn-dark span {
   background-color: #212529;
-  box-shadow: 2px 3px 18px -3px #212529;
+  -webkit-box-shadow: 2px 3px 18px -3px #212529;
+          box-shadow: 2px 3px 18px -3px #212529;
 }
 html .btn-with-arrow.btn-dark.btn-outline {
   border-color: #212529 !important;
 }
 html .btn-with-arrow.btn-dark.btn-outline:hover span {
   background-color: #2c3237 !important;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 html .btn-with-arrow.btn-light {
   background-color: transparent;
@@ -1181,58 +1177,66 @@ html .btn-with-arrow.btn-light:active {
 }
 html .btn-with-arrow.btn-light span {
   background-color: #FFF;
-  box-shadow: 2px 3px 18px -3px #FFF;
+  -webkit-box-shadow: 2px 3px 18px -3px #FFF;
+          box-shadow: 2px 3px 18px -3px #FFF;
 }
 html .btn-with-arrow.btn-light.btn-outline {
   border-color: #FFF !important;
 }
 html .btn-with-arrow.btn-light.btn-outline:hover span {
   background-color: #ffffff !important;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 .btn-gradient:not(.btn-outline) {
-  background: linear-gradient(135deg, #e3c214 0%, #eef4f2 80%);
-  color: #777;
+  background: linear-gradient(135deg, #4dbb6d 0%, #eef4f2 80%);
+  color: #FFF;
 }
 .btn-gradient:not(.btn-outline):hover,
 .btn-gradient:not(.btn-outline).hover {
-  background: linear-gradient(135deg, #edcf30 0%, #ffffff 80%);
-  color: #777;
+  background: linear-gradient(135deg, #69c684 0%, #ffffff 80%);
+  color: #FFF;
 }
 .btn-gradient:not(.btn-outline):focus,
 .btn-gradient:not(.btn-outline).focus {
-  box-shadow: 0 0 0 3px rgba(227, 194, 20, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(77, 187, 109, 0.5);
+          box-shadow: 0 0 0 3px rgba(77, 187, 109, 0.5);
 }
 .btn-gradient:not(.btn-outline).disabled,
 .btn-gradient:not(.btn-outline):disabled {
-  background: linear-gradient(135deg, #e3c214 0%, #eef4f2 80%);
+  background: linear-gradient(135deg, #4dbb6d 0%, #eef4f2 80%);
 }
 .btn-gradient:not(.btn-outline):active,
 .btn-gradient:not(.btn-outline).active {
-  background: linear-gradient(135deg, #c0a411 0%, #d7e5e0 80%) !important;
-  color: #777 !important;
+  background: linear-gradient(135deg, #3ea35c 0%, #d7e5e0 80%) !important;
+  color: #FFF !important;
 }
 .btn-gradient.btn-outline {
-  border-image: linear-gradient(135deg, #e3c214 0%, #eef4f2 80%);
-  color: #e3c214;
+  -o-border-image: linear-gradient(135deg, #4dbb6d 0%, #eef4f2 80%);
+     border-image: linear-gradient(135deg, #4dbb6d 0%, #eef4f2 80%);
+  color: #4dbb6d;
 }
 .btn-gradient.btn-outline:hover,
 .btn-gradient.btn-outline.hover {
-  border-image: linear-gradient(135deg, #edcf30 0%, #ffffff 80%);
-  color: #edcf30;
+  -o-border-image: linear-gradient(135deg, #69c684 0%, #ffffff 80%);
+     border-image: linear-gradient(135deg, #69c684 0%, #ffffff 80%);
+  color: #69c684;
 }
 .btn-gradient.btn-outline:focus,
 .btn-gradient.btn-outline.focus {
-  box-shadow: 0 0 0 3px rgba(227, 194, 20, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(77, 187, 109, 0.5);
+          box-shadow: 0 0 0 3px rgba(77, 187, 109, 0.5);
 }
 .btn-gradient.btn-outline.disabled,
 .btn-gradient.btn-outline:disabled {
-  border-image: linear-gradient(135deg, #e3c214 0%, #eef4f2 80%);
+  -o-border-image: linear-gradient(135deg, #4dbb6d 0%, #eef4f2 80%);
+     border-image: linear-gradient(135deg, #4dbb6d 0%, #eef4f2 80%);
 }
 .btn-gradient.btn-outline:active,
 .btn-gradient.btn-outline.active {
-  border-image: linear-gradient(135deg, #c0a411 0%, #d7e5e0 80%) !important;
-  color: #c0a411;
+  -o-border-image: linear-gradient(135deg, #3ea35c 0%, #d7e5e0 80%) !important;
+     border-image: linear-gradient(135deg, #3ea35c 0%, #d7e5e0 80%) !important;
+  color: #3ea35c;
 }
 .pagination > li > a,
 .pagination > li > span,
@@ -1240,7 +1244,7 @@ html .btn-with-arrow.btn-light.btn-outline:hover span {
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 .pagination > .active > a,
 .pagination > .active > span,
@@ -1249,8 +1253,8 @@ html .btn-with-arrow.btn-light.btn-outline:hover span {
 .pagination > .active > a:focus,
 .pagination > .active > span:focus,
 .pagination .page-item.active .page-link {
-  background-color: #e3c214 !important;
-  border-color: #e3c214;
+  background-color: #4dbb6d !important;
+  border-color: #4dbb6d;
 }
 body.dark .pagination > li > a,
 body.dark .pagination > li > span,
@@ -1258,7 +1262,7 @@ body.dark .pagination > li > a:hover,
 body.dark .pagination > li > span:hover,
 body.dark .pagination > li > a:focus,
 body.dark .pagination > li > span:focus {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 body.dark .pagination > .active > a,
 body.dark .pagination > .active > span,
@@ -1266,55 +1270,56 @@ body.dark .pagination > .active > a:hover,
 body.dark .pagination > .active > span:hover,
 body.dark .pagination > .active > a:focus,
 body.dark .pagination > .active > span:focus {
-  background-color: #e3c214;
-  border-color: #e3c214;
+  background-color: #4dbb6d;
+  border-color: #4dbb6d;
 }
 .pagination > .active > a,
 body.dark .pagination > .active > a {
-  background-color: #e3c214;
-  border-color: #e3c214 #e3c214 #b49a10;
+  background-color: #4dbb6d;
+  border-color: #4dbb6d #4dbb6d #3b9a57;
   color: #fff;
 }
 .pagination > .active > a:hover,
 body.dark .pagination > .active > a:hover,
 .pagination > .active > a.hover,
 body.dark .pagination > .active > a.hover {
-  background-color: #edcf30;
-  border-color: #eed23c #eed23c #e3c214;
+  background-color: #69c684;
+  border-color: #72c98b #72c98b #4dbb6d;
   color: #fff;
 }
 .pagination > .active > a:focus,
 body.dark .pagination > .active > a:focus,
 .pagination > .active > a.focus,
 body.dark .pagination > .active > a.focus {
-  box-shadow: 0 0 0 3px rgba(227, 194, 20, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(77, 187, 109, 0.5);
+          box-shadow: 0 0 0 3px rgba(77, 187, 109, 0.5);
 }
 .pagination > .active > a.disabled,
 body.dark .pagination > .active > a.disabled,
 .pagination > .active > a:disabled,
 body.dark .pagination > .active > a:disabled {
-  background-color: #e3c214;
-  border-color: #e3c214 #e3c214 #b49a10;
+  background-color: #4dbb6d;
+  border-color: #4dbb6d #4dbb6d #3b9a57;
 }
 .pagination > .active > a:active,
 body.dark .pagination > .active > a:active,
 .pagination > .active > a.active,
 body.dark .pagination > .active > a.active {
-  background-color: #c0a411 !important;
+  background-color: #3ea35c !important;
   background-image: none !important;
-  border-color: #b49a10 #b49a10 #85720c !important;
+  border-color: #3b9a57 #3b9a57 #2d7542 !important;
 }
 .custom-control-input:checked ~ .custom-control-label::before,
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .alert-primary {
-  background-color: #e3c214;
-  border-color: #d5b613;
-  color: #777;
+  background-color: #4dbb6d;
+  border-color: #45b465;
+  color: #FFF;
 }
 html .alert-primary .alert-link {
-  color: #777;
+  color: #FFF;
 }
 html .alert-secondary {
   background-color: #eef4f2;
@@ -1357,7 +1362,7 @@ html .alert-light .alert-link {
   color: #777;
 }
 html .progress-bar-primary {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .progress-bar-secondary {
   background-color: #eef4f2;
@@ -1375,7 +1380,7 @@ html .progress-bar-light {
   background-color: #FFF;
 }
 html .word-rotator.loading-bar-primary .word-rotator-words::after {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .word-rotator.loading-bar-secondary .word-rotator-words::after {
   background-color: #eef4f2;
@@ -1393,19 +1398,19 @@ html .word-rotator.loading-bar-light .word-rotator-words::after {
   background-color: #FFF;
 }
 .process .process-step-circle {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 .process .process-step:hover .process-step-circle {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 .process .process-step:hover .process-step-circle .process-step-circle-content {
-  color: #777 !important;
+  color: #FFF !important;
 }
 .process-connecting-line .connecting-line {
-  background: #e3c214;
+  background: #4dbb6d;
 }
 html .rating-primary .filled-stars {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .rating-secondary .filled-stars {
   color: #eef4f2;
@@ -1423,8 +1428,8 @@ html .rating-light .filled-stars {
   color: #FFF;
 }
 html section.section-primary {
-  background-color: #e3c214 !important;
-  border-color: #ccae12 !important;
+  background-color: #4dbb6d !important;
+  border-color: #42ad61 !important;
 }
 html section.section-primary h1,
 html section.section-primary h2,
@@ -1432,17 +1437,17 @@ html section.section-primary h3,
 html section.section-primary h4,
 html section.section-primary h5,
 html section.section-primary h6 {
-  color: #777;
+  color: #FFF;
 }
 html section.section-primary p {
-  color: #5e5e5e;
+  color: #e6e6e6;
 }
 html section.section-primary-scale-2 {
-  background-color: #b49a10 !important;
-  border-color: #9d860e !important;
+  background-color: #3b9a57 !important;
+  border-color: #34884c !important;
 }
 html section.section-primary-scale-2 .sort-source.sort-source-style-2 > li.active > a:after {
-  border-top-color: #b49a10;
+  border-top-color: #3b9a57;
 }
 html section.section-secondary {
   background-color: #eef4f2 !important;
@@ -1555,10 +1560,11 @@ html section.section-light-scale-2 .sort-source.sort-source-style-2 > li.active 
   border-top-color: #e6e6e6;
 }
 section.section.section-background-half-primary-half-secondary {
-  background: linear-gradient(to right, #e3c214 50%, #eef4f2 50%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #4dbb6d), color-stop(50%, #eef4f2));
+  background: linear-gradient(to right, #4dbb6d 50%, #eef4f2 50%);
 }
 section.section.section-overlay-opacity-gradient:before {
-  background: linear-gradient(135deg, #e3c214 0%, #eef4f2 80%);
+  background: linear-gradient(135deg, #4dbb6d 0%, #eef4f2 80%);
 }
 html .bg-color-light-scale-1 {
   background-color: #f7f7f7 !important;
@@ -1687,28 +1693,28 @@ html .bg-color-dark-scale-border-top-9 {
   border-top-color: #000000 !important;
 }
 section.page-header .page-header-title-border {
-  background-color: #e3c214 !important;
+  background-color: #4dbb6d !important;
 }
 section.page-header.custom-product {
-  background-color: #ccae12;
-  border-top-color: #daba13;
+  background-color: #42ad61;
+  border-top-color: #46b867;
 }
 html .page-header-color.page-header-primary {
-  background-color: #e3c214;
-  border-bottom-color: #e3c214;
-  color: #777;
+  background-color: #4dbb6d;
+  border-bottom-color: #4dbb6d;
+  color: #FFF;
 }
 html .page-header-color.page-header-primary h1 {
-  color: #777;
+  color: #FFF;
 }
 html .page-header-color.page-header-primary h1 span {
-  color: #777;
+  color: #FFF;
 }
 html .page-header-color.page-header-primary a {
-  color: #777;
+  color: #FFF;
 }
 html .page-header-color.page-header-primary .breadcrumb > .active {
-  color: #777;
+  color: #FFF;
 }
 html .page-header-color.page-header-secondary {
   background-color: #eef4f2;
@@ -1796,20 +1802,20 @@ html .page-header-color.page-header-light .breadcrumb > .active {
   color: #777;
 }
 html .toggle-primary .toggle label {
-  color: #e3c214;
-  border-left-color: #e3c214;
-  border-right-color: #e3c214;
+  color: #4dbb6d;
+  border-left-color: #4dbb6d;
+  border-right-color: #4dbb6d;
 }
 html .toggle-primary .toggle.active > label {
-  background-color: #e3c214;
-  border-color: #e3c214;
-  color: #777;
+  background-color: #4dbb6d;
+  border-color: #4dbb6d;
+  color: #FFF;
 }
 html .toggle-primary.toggle-simple .toggle > label:after {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .toggle-primary.toggle-minimal .toggle.active > label {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .toggle-secondary .toggle label {
   color: #eef4f2;
@@ -1897,13 +1903,13 @@ html .toggle-light.toggle-minimal .toggle.active > label {
 .thumbnail .zoom,
 .img-thumbnail .zoom,
 .thumb-info-ribbon {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .thumb-info .thumb-info-action-icon-primary {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .thumb-info .thumb-info-action-icon-primary i {
-  color: #777;
+  color: #FFF;
 }
 html .thumb-info .thumb-info-action-icon-secondary {
   background-color: #eef4f2;
@@ -1936,20 +1942,20 @@ html .thumb-info .thumb-info-action-icon-light i {
   color: #777;
 }
 .thumb-info-ribbon:before {
-  border-right-color: #9d860e;
-  border-left-color: #9d860e;
+  border-right-color: #34884c;
+  border-left-color: #34884c;
 }
 .thumb-info.thumb-info-block-primary .thumb-info-wrapper:before {
-  background: rgba(227, 194, 20, 0.9);
+  background: rgba(77, 187, 109, 0.9);
 }
 .thumb-info-floating-caption-title .thumb-info-floating-caption-type {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 .inverted {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .inverted-primary {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .inverted-secondary {
   background-color: #eef4f2;
@@ -1968,41 +1974,41 @@ html .inverted-light {
 }
 .owl-carousel .owl-dots .owl-dot.active span,
 .owl-carousel .owl-dots .owl-dot:hover span {
-  background-color: #c7aa12;
+  background-color: #41a95f;
 }
 .owl-carousel.show-nav-title .owl-nav button[class*="owl-"],
 .owl-carousel.show-nav-title .owl-nav button[class*="owl-"]:hover,
 .owl-carousel.show-nav-title .owl-nav button[class*="owl-"].hover {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 .owl-carousel .owl-nav button[class*="owl-"] {
-  background-color: #e3c214;
-  border-color: #e3c214 #e3c214 #b49a10;
-  color: #777;
+  background-color: #4dbb6d;
+  border-color: #4dbb6d #4dbb6d #3b9a57;
+  color: #FFF;
 }
 .owl-carousel .owl-nav button[class*="owl-"]:hover,
 .owl-carousel .owl-nav button[class*="owl-"].hover {
-  background-color: #edcf30;
-  border-color: #eed23c #eed23c #e3c214;
+  background-color: #69c684;
+  border-color: #72c98b #72c98b #4dbb6d;
 }
 .owl-carousel .owl-nav button[class*="owl-"]:active,
 .owl-carousel .owl-nav button[class*="owl-"].active {
-  background-color: #c0a411;
+  background-color: #3ea35c;
   background-image: none;
-  border-color: #b49a10 #b49a10 #85720c;
+  border-color: #3b9a57 #3b9a57 #2d7542;
 }
 .owl-carousel.nav-with-transparency:not(.nav-style-1):not(.show-nav-title) .owl-nav button[class*="owl-"] {
-  background-color: rgba(227, 194, 20, 0.4);
+  background-color: rgba(77, 187, 109, 0.4);
 }
 .owl-carousel.nav-style-1 .owl-nav .owl-next,
 .owl-carousel.nav-style-1 .owl-nav .owl-prev {
-  color: #e3c214 !important;
+  color: #4dbb6d !important;
 }
 .owl-carousel.nav-style-2 .owl-nav .owl-next:before,
 .owl-carousel.nav-style-2 .owl-nav .owl-prev:before,
 .owl-carousel.nav-style-2 .owl-nav .owl-next:after,
 .owl-carousel.nav-style-2 .owl-nav .owl-prev:after {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 html body .tabs .nav-tabs .nav-link,
 html.dark body .tabs .nav-tabs .nav-link,
@@ -2010,7 +2016,7 @@ html body .tabs .nav-tabs .nav-link:hover,
 html.dark body .tabs .nav-tabs .nav-link:hover,
 html body .tabs .nav-tabs li.active .nav-link,
 html.dark body .tabs .nav-tabs li.active .nav-link {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html body .tabs .nav-tabs .nav-link:hover,
 html.dark body .tabs .nav-tabs .nav-link:hover,
@@ -2022,7 +2028,7 @@ html body .tabs .nav-tabs.nav-justified .nav-link:hover,
 html.dark body .tabs .nav-tabs.nav-justified .nav-link:hover,
 html body .tabs .nav-tabs.nav-justified .nav-link:focus,
 html.dark body .tabs .nav-tabs.nav-justified .nav-link:focus {
-  border-top-color: #e3c214;
+  border-top-color: #4dbb6d;
 }
 html body .tabs.tabs-bottom .nav-tabs li .nav-link:hover,
 html.dark body .tabs.tabs-bottom .nav-tabs li .nav-link:hover,
@@ -2032,7 +2038,7 @@ html body .tabs.tabs-bottom .nav-tabs li.active .nav-link:hover,
 html.dark body .tabs.tabs-bottom .nav-tabs li.active .nav-link:hover,
 html body .tabs.tabs-bottom .nav-tabs li.active .nav-link:focus,
 html.dark body .tabs.tabs-bottom .nav-tabs li.active .nav-link:focus {
-  border-bottom-color: #e3c214;
+  border-bottom-color: #4dbb6d;
 }
 html body .tabs.tabs-vertical.tabs-left .nav-tabs li .nav-link:hover,
 html.dark body .tabs.tabs-vertical.tabs-left .nav-tabs li .nav-link:hover,
@@ -2042,7 +2048,7 @@ html body .tabs.tabs-vertical.tabs-left .nav-tabs li.active .nav-link:hover,
 html.dark body .tabs.tabs-vertical.tabs-left .nav-tabs li.active .nav-link:hover,
 html body .tabs.tabs-vertical.tabs-left .nav-tabs li.active .nav-link:focus,
 html.dark body .tabs.tabs-vertical.tabs-left .nav-tabs li.active .nav-link:focus {
-  border-left-color: #e3c214;
+  border-left-color: #4dbb6d;
 }
 html body .tabs.tabs-vertical.tabs-right .nav-tabs li .nav-link:hover,
 html.dark body .tabs.tabs-vertical.tabs-right .nav-tabs li .nav-link:hover,
@@ -2052,7 +2058,7 @@ html body .tabs.tabs-vertical.tabs-right .nav-tabs li.active .nav-link:hover,
 html.dark body .tabs.tabs-vertical.tabs-right .nav-tabs li.active .nav-link:hover,
 html body .tabs.tabs-vertical.tabs-right .nav-tabs li.active .nav-link:focus,
 html.dark body .tabs.tabs-vertical.tabs-right .nav-tabs li.active .nav-link:focus {
-  border-right-color: #e3c214;
+  border-right-color: #4dbb6d;
 }
 html body .tabs.tabs-simple .nav-tabs > li.active .nav-link,
 html.dark body .tabs.tabs-simple .nav-tabs > li.active .nav-link,
@@ -2062,8 +2068,8 @@ html body .tabs.tabs-simple .nav-tabs > li .nav-link:hover,
 html.dark body .tabs.tabs-simple .nav-tabs > li .nav-link:hover,
 html body .tabs.tabs-simple .nav-tabs > li.active .nav-link:hover,
 html.dark body .tabs.tabs-simple .nav-tabs > li.active .nav-link:hover {
-  border-top-color: #e3c214;
-  color: #e3c214;
+  border-top-color: #4dbb6d;
+  color: #4dbb6d;
 }
 html body .tabs-primary .nav-tabs li .nav-link,
 html.dark body .tabs-primary .nav-tabs li .nav-link,
@@ -2073,13 +2079,13 @@ html body .tabs-primary .nav-tabs li .nav-link:hover,
 html.dark body .tabs-primary .nav-tabs li .nav-link:hover,
 html body .tabs-primary .nav-tabs.nav-justified li .nav-link:hover,
 html.dark body .tabs-primary .nav-tabs.nav-justified li .nav-link:hover {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html body .tabs-primary .nav-tabs li .nav-link:hover,
 html.dark body .tabs-primary .nav-tabs li .nav-link:hover,
 html body .tabs-primary .nav-tabs.nav-justified li .nav-link:hover,
 html.dark body .tabs-primary .nav-tabs.nav-justified li .nav-link:hover {
-  border-top-color: #e3c214;
+  border-top-color: #4dbb6d;
 }
 html body .tabs-primary .nav-tabs li.active .nav-link,
 html.dark body .tabs-primary .nav-tabs li.active .nav-link,
@@ -2093,8 +2099,8 @@ html body .tabs-primary .nav-tabs li.active .nav-link:focus,
 html.dark body .tabs-primary .nav-tabs li.active .nav-link:focus,
 html body .tabs-primary .nav-tabs.nav-justified li.active .nav-link:focus,
 html.dark body .tabs-primary .nav-tabs.nav-justified li.active .nav-link:focus {
-  border-top-color: #e3c214;
-  color: #e3c214;
+  border-top-color: #4dbb6d;
+  color: #4dbb6d;
 }
 html body .tabs-primary.tabs-bottom .nav-tabs li .nav-link:hover,
 html.dark body .tabs-primary.tabs-bottom .nav-tabs li .nav-link:hover,
@@ -2112,7 +2118,7 @@ html body .tabs-primary.tabs-bottom .nav-tabs li.active .nav-link:focus,
 html.dark body .tabs-primary.tabs-bottom .nav-tabs li.active .nav-link:focus,
 html body .tabs-primary.tabs-bottom .nav-tabs.nav-justified li.active .nav-link:focus,
 html.dark body .tabs-primary.tabs-bottom .nav-tabs.nav-justified li.active .nav-link:focus {
-  border-bottom-color: #e3c214;
+  border-bottom-color: #4dbb6d;
 }
 html body .tabs-primary.tabs-vertical.tabs-left li .nav-link:hover,
 html.dark body .tabs-primary.tabs-vertical.tabs-left li .nav-link:hover,
@@ -2122,7 +2128,7 @@ html body .tabs-primary.tabs-vertical.tabs-left li.active .nav-link:hover,
 html.dark body .tabs-primary.tabs-vertical.tabs-left li.active .nav-link:hover,
 html body .tabs-primary.tabs-vertical.tabs-left li.active .nav-link:focus,
 html.dark body .tabs-primary.tabs-vertical.tabs-left li.active .nav-link:focus {
-  border-left-color: #e3c214;
+  border-left-color: #4dbb6d;
 }
 html body .tabs-primary.tabs-vertical.tabs-right li .nav-link:hover,
 html.dark body .tabs-primary.tabs-vertical.tabs-right li .nav-link:hover,
@@ -2132,7 +2138,7 @@ html body .tabs-primary.tabs-vertical.tabs-right li.active .nav-link:hover,
 html.dark body .tabs-primary.tabs-vertical.tabs-right li.active .nav-link:hover,
 html body .tabs-primary.tabs-vertical.tabs-right li.active .nav-link:focus,
 html.dark body .tabs-primary.tabs-vertical.tabs-right li.active .nav-link:focus {
-  border-right-color: #e3c214;
+  border-right-color: #4dbb6d;
 }
 html body .tabs-secondary .nav-tabs li .nav-link,
 html.dark body .tabs-secondary .nav-tabs li .nav-link,
@@ -2483,7 +2489,7 @@ html[dir="rtl"] .tabs.tabs-vertical.tabs-left .nav-tabs li .nav-link:hover,
 html[dir="rtl"] .tabs.tabs-vertical.tabs-left .nav-tabs li.active .nav-link,
 html[dir="rtl"] .tabs.tabs-vertical.tabs-left .nav-tabs li.active .nav-link:hover,
 html[dir="rtl"] .tabs.tabs-vertical.tabs-left .nav-tabs li.active .nav-link:focus {
-  border-right-color: #e3c214;
+  border-right-color: #4dbb6d;
   border-left-color: transparent;
 }
 html[dir="rtl"] .tabs.tabs-vertical.tabs-right .nav-tabs li .nav-link:hover,
@@ -2491,48 +2497,48 @@ html[dir="rtl"] .tabs.tabs-vertical.tabs-right .nav-tabs li.active .nav-link,
 html[dir="rtl"] .tabs.tabs-vertical.tabs-right .nav-tabs li.active .nav-link:hover,
 html[dir="rtl"] .tabs.tabs-vertical.tabs-right .nav-tabs li.active .nav-link:focus {
   border-right-color: transparent;
-  border-left-color: #e3c214;
+  border-left-color: #4dbb6d;
 }
 .list.list-icons li > [class*="fa-"]:first-child,
 .list.list-icons li a:first-child > [class*="fa-"]:first-child,
 .list.list-icons li > .icons:first-child,
 .list.list-icons li a:first-child > .icons:first-child {
-  color: #e3c214;
-  border-color: #e3c214;
+  color: #4dbb6d;
+  border-color: #4dbb6d;
 }
 .list.list-icons.list-icons-style-3 li > [class*="fa-"]:first-child,
 .list.list-icons.list-icons-style-3 li a:first-child > [class*="fa-"]:first-child,
 .list.list-icons.list-icons-style-3 li > .icons:first-child,
 .list.list-icons.list-icons-style-3 li a:first-child > .icons:first-child {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 .list.list-ordened li:before {
-  color: #e3c214;
-  border-color: #e3c214;
+  color: #4dbb6d;
+  border-color: #4dbb6d;
 }
 .list.list-ordened.list-ordened-style-3 li:before {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .list-primary.list-icons li > [class*="fa-"]:first-child,
 html .list-primary.list-icons li a:first-child > [class*="fa-"]:first-child,
 html .list-primary.list-icons li > .icons:first-child,
 html .list-primary.list-icons li a:first-child > .icons:first-child {
-  color: #e3c214;
-  border-color: #e3c214;
+  color: #4dbb6d;
+  border-color: #4dbb6d;
 }
 html .list-primary.list-icons.list-icons-style-3 li > [class*="fa-"]:first-child,
 html .list-primary.list-icons.list-icons-style-3 li a:first-child > [class*="fa-"]:first-child,
 html .list-primary.list-icons.list-icons-style-3 li > .icons:first-child,
 html .list-primary.list-icons.list-icons-style-3 li a:first-child > .icons:first-child {
-  background-color: #e3c214;
-  color: #777;
+  background-color: #4dbb6d;
+  color: #FFF;
 }
 html .list-primary.list-ordened li:before {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .list-primary.list-ordened.list-ordened-style-3 li:before {
-  background-color: #e3c214;
-  color: #777;
+  background-color: #4dbb6d;
+  color: #FFF;
 }
 html .list-secondary.list-icons li > [class*="fa-"]:first-child,
 html .list-secondary.list-icons li a:first-child > [class*="fa-"]:first-child,
@@ -2640,19 +2646,19 @@ html .list-light.list-ordened.list-ordened-style-3 li:before {
   color: #777;
 }
 .parallax blockquote i.fa-quote-left {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 section.video blockquote i.fa-quote-left {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 .accordion .card-header a {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .accordion.accordion-primary .card-header {
-  background-color: #e3c214 !important;
+  background-color: #4dbb6d !important;
 }
 html .accordion.accordion-primary .card-header a {
-  color: #777;
+  color: #FFF;
 }
 html .accordion.accordion-secondary .card-header {
   background-color: #eef4f2 !important;
@@ -2686,10 +2692,10 @@ html .accordion.accordion-light .card-header a {
 }
 html .divider.divider-primary [class*="fa-"],
 html .divider.divider-primary .icons {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .divider.divider-primary.divider-small hr {
-  background: #e3c214;
+  background: #4dbb6d;
 }
 html .divider.divider-secondary [class*="fa-"],
 html .divider.divider-secondary .icons {
@@ -2728,8 +2734,8 @@ html .divider.divider-light.divider-small hr {
 }
 html .divider.divider-style-2.divider-primary [class*="fa-"],
 html .divider.divider-style-2.divider-primary .icons {
-  background: #e3c214;
-  color: #777;
+  background: #4dbb6d;
+  color: #FFF;
 }
 html .divider.divider-style-2.divider-secondary [class*="fa-"],
 html .divider.divider-style-2.divider-secondary .icons {
@@ -2758,7 +2764,7 @@ html .divider.divider-style-2.divider-light .icons {
 }
 html .divider.divider-style-3.divider-primary [class*="fa-"],
 html .divider.divider-style-3.divider-primary .icons {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 html .divider.divider-style-3.divider-secondary [class*="fa-"],
 html .divider.divider-style-3.divider-secondary .icons {
@@ -2781,19 +2787,19 @@ html .divider.divider-style-3.divider-light .icons {
   border-color: #FFF;
 }
 #header .tip {
-  background: #e3c214;
-  color: #777;
+  background: #4dbb6d;
+  color: #FFF;
 }
 #header .tip:before {
-  border-right-color: #e3c214;
+  border-right-color: #4dbb6d;
   border-left-color: transparent;
 }
 html #header .tip-primary {
-  background: #e3c214 !important;
-  color: #777 !important;
+  background: #4dbb6d !important;
+  color: #FFF !important;
 }
 html #header .tip-primary:before {
-  border-right-color: #e3c214 !important;
+  border-right-color: #4dbb6d !important;
 }
 html #header .tip-secondary {
   background: #eef4f2 !important;
@@ -2831,13 +2837,13 @@ html #header .tip-light:before {
   border-right-color: #FFF !important;
 }
 html[dir="rtl"] #header .tip:before {
-  border-left-color: #e3c214;
+  border-left-color: #4dbb6d;
 }
 html[dir="rtl"] #header .tip.skin:before {
-  border-left-color: #e3c214;
+  border-left-color: #4dbb6d;
 }
 html[dir="rtl"] #header .tip-primary:before {
-  border-left-color: #e3c214 !important;
+  border-left-color: #4dbb6d !important;
   border-right-color: transparent !important;
 }
 html[dir="rtl"] #header .tip-secondary:before {
@@ -2861,144 +2867,144 @@ html[dir="rtl"] #header .tip-light:before {
   border-right-color: transparent !important;
 }
 #header .header-btn-collapse-nav {
-  background: #e3c214;
+  background: #4dbb6d;
 }
 @media (min-width: 992px) {
   #header .header-nav-main nav > ul > li > a {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   #header .header-nav-main nav > ul > li.open > a,
   #header .header-nav-main nav > ul > li:hover > a {
-    background: #e3c214;
+    background: #4dbb6d;
   }
   #header .header-nav-main nav > ul > li.dropdown .dropdown-menu {
-    border-top-color: #e3c214;
+    border-top-color: #4dbb6d;
   }
   #header .header-nav-main nav > ul > li.dropdown.open > a:before,
   #header .header-nav-main nav > ul > li.dropdown:hover > a:before {
-    border-bottom-color: #e3c214;
+    border-bottom-color: #4dbb6d;
   }
   #header .header-nav-main nav > ul > li.dropdown-mega-signin .dropdown-menu {
-    border-top-color: #e3c214;
+    border-top-color: #4dbb6d;
   }
   #header .header-nav-main nav > ul > li.dropdown-mega-signin .dropdown-menu li a {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   #header .header-nav-main nav > ul:not(:hover) > li > a.active {
-    background-color: #e3c214;
-    color: #777;
+    background-color: #4dbb6d;
+    color: #FFF;
   }
   #header .header-nav.header-nav-stripe nav > ul > li:hover > a,
   #header .header-nav.header-nav-stripe nav > ul > li.open > a {
-    background-color: #e3c214;
+    background-color: #4dbb6d;
   }
   #header .header-nav.header-nav-stripe nav > ul:not(:hover) > li > a.active {
-    background-color: #e3c214;
+    background-color: #4dbb6d;
   }
   #header .header-nav.header-nav-stripe nav > ul:hover > li > a.active {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   #header .header-nav.header-nav-links nav > ul li:hover > a {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   #header .header-nav.header-nav-links nav > ul:not(:hover) > li > a.active {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   #header .header-nav.header-nav-links.header-nav-links-vertical-slide nav ul li.dropdown .dropdown-menu::-webkit-scrollbar-thumb {
-    background: #e3c214 !important;
+    background: #4dbb6d !important;
   }
   #header .header-nav.header-nav-line nav > ul li:hover > a {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   #header .header-nav.header-nav-line nav > ul li:hover > a:before {
-    background: #e3c214;
+    background: #4dbb6d;
   }
   #header .header-nav.header-nav-line nav > ul:not(:hover) li > a.active {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   #header .header-nav.header-nav-line nav > ul:not(:hover) li > a.active:before {
-    background: #e3c214;
+    background: #4dbb6d;
   }
   #header .header-nav-main.header-nav-main-slide nav > ul > li.open > span > a,
   #header .header-nav-main.header-nav-main-slide nav > ul > li:hover > span > a {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   #header .header-nav-main.header-nav-main-slide nav > ul:not(:hover) > li > span > a.active {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   html.side-header #header.side-header .header-nav-main nav > ul li.dropdown.open > .dropdown-menu,
   html.side-header #header.side-header .header-nav-main nav > ul li.dropdown:hover > .dropdown-menu {
-    border-left-color: #e3c214;
+    border-left-color: #4dbb6d;
   }
   html.side-header-right #header.side-header .header-nav-main nav > ul li.dropdown.open > .dropdown-menu,
   html.side-header-right #header.side-header .header-nav-main nav > ul li.dropdown:hover > .dropdown-menu {
-    border-right-color: #e3c214;
+    border-right-color: #4dbb6d;
   }
 }
 @media (min-width: 992px) {
   html #header .header-nav .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary .dropdown-menu {
-    background-color: #e3c214;
+    background-color: #4dbb6d;
   }
   html #header .header-nav .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary .dropdown-menu li a {
-    color: #777;
-    border-bottom-color: #d5b613;
+    color: #FFF;
+    border-bottom-color: #45b465;
   }
   html #header .header-nav .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary .dropdown-menu li:hover > a {
-    background: #ebca1b;
+    background: #58bf76;
   }
   html #header .header-nav .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary.open > a:before,
   html #header .header-nav .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary:hover > a:before {
-    border-bottom-color: #e3c214;
-    background: #e3c214;
+    border-bottom-color: #4dbb6d;
+    background: #4dbb6d;
   }
   html #header .header-nav .header-nav-main nav > ul > li.dropdown-full-color.dropdown-mega.dropdown-primary .dropdown-mega-sub-title {
-    color: #777;
-    opacity: 0.70;
+    color: #FFF;
+    opacity: 0.7;
   }
   html #header .header-nav:not(.header-nav-line):not(.header-nav-links) .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary:hover > a {
-    background: #e3c214;
-    color: #777;
+    background: #4dbb6d;
+    color: #FFF;
   }
   html #header .header-nav:not(.header-nav-line):not(.header-nav-links) .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary .dropdown-menu li a {
-    color: #777;
+    color: #FFF;
   }
   html #header .header-nav:not(.header-nav-line):not(.header-nav-links) .header-nav-main nav > ul:not(:hover) > li.dropdown-full-color.dropdown-primary > a.active {
-    background: #e3c214;
-    color: #777;
+    background: #4dbb6d;
+    color: #FFF;
   }
   html #header .header-nav-line .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary a:focus,
   html #header .header-nav-line .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary a:hover {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   html #header .header-nav-line .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary a:focus:before,
   html #header .header-nav-line .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary a:hover:before {
-    background-color: #e3c214;
+    background-color: #4dbb6d;
   }
   html #header .header-nav-line .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary:hover > a {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   html #header .header-nav-line .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary.open > a:before,
   html #header .header-nav-line .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary:hover > a:before {
-    background: #e3c214;
+    background: #4dbb6d;
   }
   html #header .header-nav-line .header-nav-main nav > ul:not(:hover) > li.dropdown-full-color.dropdown-primary > a.active {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   html #header .header-nav-line .header-nav-main nav > ul:not(:hover) > li.dropdown-full-color.dropdown-primary > a.active:before {
-    background-color: #e3c214;
+    background-color: #4dbb6d;
   }
   html #header .header-nav-links .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary a {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   html #header .header-nav-links .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary a:focus,
   html #header .header-nav-links .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary a:hover {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   html #header .header-nav-links .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary:hover > a {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   html #header .header-nav-links .header-nav-main nav > ul:not(:hover) > li.dropdown-full-color.dropdown-primary > a.active {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   html #header .header-nav .header-nav-main nav > ul > li.dropdown-full-color.dropdown-secondary .dropdown-menu {
     background-color: #eef4f2;
@@ -3017,7 +3023,7 @@ html[dir="rtl"] #header .tip-light:before {
   }
   html #header .header-nav .header-nav-main nav > ul > li.dropdown-full-color.dropdown-mega.dropdown-secondary .dropdown-mega-sub-title {
     color: #777;
-    opacity: 0.70;
+    opacity: 0.7;
   }
   html #header .header-nav:not(.header-nav-line):not(.header-nav-links) .header-nav-main nav > ul > li.dropdown-full-color.dropdown-secondary:hover > a {
     background: #eef4f2;
@@ -3081,7 +3087,7 @@ html[dir="rtl"] #header .tip-light:before {
   }
   html #header .header-nav .header-nav-main nav > ul > li.dropdown-full-color.dropdown-mega.dropdown-tertiary .dropdown-mega-sub-title {
     color: #777;
-    opacity: 0.70;
+    opacity: 0.7;
   }
   html #header .header-nav:not(.header-nav-line):not(.header-nav-links) .header-nav-main nav > ul > li.dropdown-full-color.dropdown-tertiary:hover > a {
     background: #e2fdea;
@@ -3145,7 +3151,7 @@ html[dir="rtl"] #header .tip-light:before {
   }
   html #header .header-nav .header-nav-main nav > ul > li.dropdown-full-color.dropdown-mega.dropdown-quaternary .dropdown-mega-sub-title {
     color: #FFF;
-    opacity: 0.70;
+    opacity: 0.7;
   }
   html #header .header-nav:not(.header-nav-line):not(.header-nav-links) .header-nav-main nav > ul > li.dropdown-full-color.dropdown-quaternary:hover > a {
     background: #101019;
@@ -3209,7 +3215,7 @@ html[dir="rtl"] #header .tip-light:before {
   }
   html #header .header-nav .header-nav-main nav > ul > li.dropdown-full-color.dropdown-mega.dropdown-dark .dropdown-mega-sub-title {
     color: #FFF;
-    opacity: 0.70;
+    opacity: 0.7;
   }
   html #header .header-nav:not(.header-nav-line):not(.header-nav-links) .header-nav-main nav > ul > li.dropdown-full-color.dropdown-dark:hover > a {
     background: #212529;
@@ -3273,7 +3279,7 @@ html[dir="rtl"] #header .tip-light:before {
   }
   html #header .header-nav .header-nav-main nav > ul > li.dropdown-full-color.dropdown-mega.dropdown-light .dropdown-mega-sub-title {
     color: #777;
-    opacity: 0.70;
+    opacity: 0.7;
   }
   html #header .header-nav:not(.header-nav-line):not(.header-nav-links) .header-nav-main nav > ul > li.dropdown-full-color.dropdown-light:hover > a {
     background: #FFF;
@@ -3324,54 +3330,54 @@ html[dir="rtl"] #header .tip-light:before {
 @media (min-width: 992px) {
   html #header .header-nav-force-light-text-active-skin-color .header-nav-main nav > ul > li:hover > a,
   html #header .header-nav-force-light-text-active-skin-color .header-nav-main nav > ul > li .wrapper-items-cloned:hover > a {
-    color: #e3c214 !important;
+    color: #4dbb6d !important;
   }
   html #header .header-nav-force-light-text-active-skin-color .header-nav-main nav > ul:not(:hover) > li > a.active,
   html #header .header-nav-force-light-text-active-skin-color .header-nav-main nav > ul:not(:hover) > li .wrapper-items-cloned > a.active {
-    color: #e3c214 !important;
+    color: #4dbb6d !important;
   }
 }
 @media (max-width: 991px) {
   #header .header-nav-main:not(.header-nav-main-mobile-dark) nav > ul > li > a {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   #header .header-nav-main:not(.header-nav-main-mobile-dark) nav > ul > li > a:active {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   #header .header-nav-main:not(.header-nav-main-mobile-dark) nav > ul > li > a.active {
-    background: #e3c214;
+    background: #4dbb6d;
   }
   #header .header-nav-main:not(.header-nav-main-mobile-dark) nav > ul > li > a.active:focus,
   #header .header-nav-main:not(.header-nav-main-mobile-dark) nav > ul > li > a.active:hover {
-    background: #e3c214;
+    background: #4dbb6d;
   }
   #header .header-nav-main.header-nav-main-mobile-dark nav > ul > li > a.active {
-    background: #e3c214;
+    background: #4dbb6d;
   }
   #header .header-nav-main.header-nav-main-mobile-dark nav > ul > li > a.active:focus,
   #header .header-nav-main.header-nav-main-mobile-dark nav > ul > li > a.active:hover {
-    background: #e3c214;
+    background: #4dbb6d;
   }
   html.side-header-hamburguer-sidebar #header.side-header .header-nav.header-nav-links .header-nav-main.header-nav-main-mobile-dark nav > ul > li > a.active {
-    color: #e3c214 !important;
+    color: #4dbb6d !important;
   }
   html.side-header-hamburguer-sidebar #header.side-header .header-nav.header-nav-links nav::-webkit-scrollbar-thumb {
-    background-color: #e3c214;
+    background-color: #4dbb6d;
   }
   html.side-header-hamburguer-sidebar #header.side-header .header-nav.header-nav-links nav > ul > li > a.active {
-    color: #e3c214 !important;
+    color: #4dbb6d !important;
   }
   html.side-header-hamburguer-sidebar #header.side-header .header-nav.header-nav-links nav > ul > li:hover > a {
-    color: #e3c214 !important;
+    color: #4dbb6d !important;
   }
 }
 @media (max-width: 991px) {
   html #header .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary > a {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   html #header .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary > a.active {
-    background: #e3c214 !important;
-    color: #777 !important;
+    background: #4dbb6d !important;
+    color: #FFF !important;
   }
   html #header .header-nav-main nav > ul > li.dropdown-full-color.dropdown-secondary > a {
     color: #eef4f2;
@@ -3396,25 +3402,25 @@ html[dir="rtl"] #header .tip-light:before {
   }
 }
 html #header .header-top.header-top-primary {
-  background: #e3c214;
-  border-top-color: #ccae12;
+  background: #4dbb6d;
+  border-top-color: #42ad61;
 }
 html #header .header-top.header-top-primary .header-nav-top ul > li.open > a {
-  background: #eccc25;
+  background: #5fc27c;
 }
 html #header .header-top.header-top-primary .header-nav-top ul > li > a:hover,
 html #header .header-top.header-top-primary .header-nav-top ul > li.open > a:hover,
 html #header .header-top.header-top-primary .header-nav-top ul > li > a:focus,
 html #header .header-top.header-top-primary .header-nav-top ul > li.open > a:focus {
-  background: #eccc25;
+  background: #5fc27c;
 }
 html #header .header-top.header-top-primary .dropdown-menu {
-  background: #eccc25;
-  border-color: #eccc25;
+  background: #5fc27c;
+  border-color: #5fc27c;
 }
 html #header .header-top.header-top-primary .dropdown-menu a:hover,
 html #header .header-top.header-top-primary .dropdown-menu a:focus {
-  background: #eed23c !important;
+  background: #72c98b !important;
 }
 html #header .header-top.header-top-secondary {
   background: #eef4f2;
@@ -3523,8 +3529,8 @@ html #header .header-top.header-top-light .dropdown-menu a:focus {
 }
 @media (min-width: 992px) {
   html #header .header-nav-bar-primary {
-    background: #e3c214 !important;
-    color: #777 !important;
+    background: #4dbb6d !important;
+    color: #FFF !important;
   }
   html #header .header-nav-bar-secondary {
     background: #eef4f2 !important;
@@ -3550,33 +3556,33 @@ html #header .header-top.header-top-light .dropdown-menu a:focus {
 @media (min-width: 992px) {
   #header .header-nav-main.header-nav-main-light nav > ul > li.open > a,
   #header .header-nav-main.header-nav-main-light nav > ul > li:hover > a {
-    color: #e3c214;
+    color: #4dbb6d;
   }
   #header .header-nav-main.header-nav-main-light nav > ul > li > a.active {
-    color: #e3c214;
+    color: #4dbb6d;
   }
 }
 #header .header-nav-features .header-nav-features-search-reveal-big-search .form-control {
   border-bottom-color: #0088cc;
 }
 .testimonial blockquote {
-  background: #eccc25;
+  background: #5fc27c;
 }
 .testimonial .testimonial-arrow-down {
-  border-top-color: #eccc25;
+  border-top-color: #5fc27c;
 }
 html .testimonial-primary blockquote {
-  background: #eccc25;
+  background: #5fc27c;
 }
 html .testimonial-primary .testimonial-arrow-down {
-  border-top-color: #eccc25;
+  border-top-color: #5fc27c;
 }
 html .testimonial-primary.testimonial-style-7 {
-  background: #eccc25;
+  background: #5fc27c;
 }
 html .testimonial-quotes-primary blockquote:before,
 html .testimonial-quotes-primary blockquote:after {
-  color: #e3c214 !important;
+  color: #4dbb6d !important;
 }
 html .testimonial-secondary blockquote {
   background: #fdfefe;
@@ -3589,7 +3595,7 @@ html .testimonial-secondary.testimonial-style-7 {
 }
 html .testimonial-quotes-secondary blockquote:before,
 html .testimonial-quotes-secondary blockquote:after {
-  color: #e3c214 !important;
+  color: #4dbb6d !important;
 }
 html .testimonial-tertiary blockquote {
   background: #fafffb;
@@ -3602,7 +3608,7 @@ html .testimonial-tertiary.testimonial-style-7 {
 }
 html .testimonial-quotes-tertiary blockquote:before,
 html .testimonial-quotes-tertiary blockquote:after {
-  color: #e3c214 !important;
+  color: #4dbb6d !important;
 }
 html .testimonial-quaternary blockquote {
   background: #1a1a29;
@@ -3615,7 +3621,7 @@ html .testimonial-quaternary.testimonial-style-7 {
 }
 html .testimonial-quotes-quaternary blockquote:before,
 html .testimonial-quotes-quaternary blockquote:after {
-  color: #e3c214 !important;
+  color: #4dbb6d !important;
 }
 html .testimonial-dark blockquote {
   background: #2c3237;
@@ -3628,7 +3634,7 @@ html .testimonial-dark.testimonial-style-7 {
 }
 html .testimonial-quotes-dark blockquote:before,
 html .testimonial-quotes-dark blockquote:after {
-  color: #e3c214 !important;
+  color: #4dbb6d !important;
 }
 html .testimonial-light blockquote {
   background: #ffffff;
@@ -3641,16 +3647,16 @@ html .testimonial-light.testimonial-style-7 {
 }
 html .testimonial-quotes-light blockquote:before,
 html .testimonial-quotes-light blockquote:after {
-  color: #e3c214 !important;
+  color: #4dbb6d !important;
 }
 .circular-bar.only-icon [class*="fa-"],
 .circular-bar.only-icon .icons {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .counters .counter-primary [class*="fa-"],
 html .counters .counter-primary .icons,
 html .counters .counter-primary strong {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .counters .counter-secondary [class*="fa-"],
 html .counters .counter-secondary .icons,
@@ -3678,7 +3684,7 @@ html .counters .counter-light strong {
   color: #FFF;
 }
 html .countdown.countdown-primary > span > span {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .countdown.countdown-secondary > span > span {
   color: #eef4f2;
@@ -3696,13 +3702,13 @@ html .countdown.countdown-light > span > span {
   color: #FFF;
 }
 html .image-hotspot-primary strong {
-  color: #777 !important;
+  color: #FFF !important;
 }
 html .image-hotspot-primary .circle {
-  background: #e3c214 !important;
+  background: #4dbb6d !important;
 }
 html .image-hotspot-primary .ring {
-  border-color: rgba(227, 194, 20, 0.9);
+  border-color: rgba(77, 187, 109, 0.9);
 }
 html .image-hotspot-secondary strong {
   color: #777 !important;
@@ -3750,19 +3756,19 @@ html .image-hotspot-light .ring {
   border-color: rgba(255, 255, 255, 0.9);
 }
 .icon-featured {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .featured-box-primary .icon-featured {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .featured-box-primary h4 {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .featured-box-primary .box-content {
-  border-top-color: #e3c214;
+  border-top-color: #4dbb6d;
 }
 html .featured-box-primary .box-content-border-bottom {
-  border-bottom-color: #e3c214;
+  border-bottom-color: #4dbb6d;
 }
 html .featured-box-secondary .icon-featured {
   background-color: #eef4f2;
@@ -3825,8 +3831,8 @@ html .featured-box-light .box-content-border-bottom {
   border-bottom-color: #FFF;
 }
 html .featured-boxes-style-3 .featured-box.featured-box-primary .icon-featured {
-  border-color: #e3c214;
-  color: #e3c214;
+  border-color: #4dbb6d;
+  color: #4dbb6d;
 }
 html .featured-boxes-style-3 .featured-box.featured-box-secondary .icon-featured {
   border-color: #eef4f2;
@@ -3849,8 +3855,8 @@ html .featured-boxes-style-3 .featured-box.featured-box-light .icon-featured {
   color: #FFF;
 }
 html .featured-boxes-style-4 .featured-box.featured-box-primary .icon-featured {
-  border-color: #e3c214;
-  color: #e3c214;
+  border-color: #4dbb6d;
+  color: #4dbb6d;
 }
 html .featured-boxes-style-4 .featured-box.featured-box-secondary .icon-featured {
   border-color: #eef4f2;
@@ -3873,7 +3879,7 @@ html .featured-boxes-style-4 .featured-box.featured-box-light .icon-featured {
   color: #FFF;
 }
 html .featured-boxes-style-5 .featured-box.featured-box-primary .icon-featured {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .featured-boxes-style-5 .featured-box.featured-box-secondary .icon-featured {
   color: #eef4f2;
@@ -3891,7 +3897,7 @@ html .featured-boxes-style-5 .featured-box.featured-box-light .icon-featured {
   color: #FFF;
 }
 html .featured-boxes-style-6 .featured-box.featured-box-primary .icon-featured {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .featured-boxes-style-6 .featured-box.featured-box-secondary .icon-featured {
   color: #eef4f2;
@@ -3909,7 +3915,7 @@ html .featured-boxes-style-6 .featured-box.featured-box-light .icon-featured {
   color: #FFF;
 }
 html .featured-boxes-style-8 .featured-box.featured-box-primary .icon-featured {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .featured-boxes-style-8 .featured-box.featured-box-secondary .icon-featured {
   color: #eef4f2;
@@ -3927,9 +3933,9 @@ html .featured-boxes-style-8 .featured-box.featured-box-light .icon-featured {
   color: #FFF;
 }
 .featured-boxes-modern-style-primary .featured-box {
-  background: #e3c214;
-  background: linear-gradient(135deg, #e3c214 0%, #101019 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3c214', endColorstr='#101019', GradientType=1);
+  background: #4dbb6d;
+  background: linear-gradient(135deg, #4dbb6d 0%, #101019 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4dbb6d', endColorstr='#101019', GradientType=1);
 }
 .featured-boxes-modern-style-secondary .featured-box {
   background: #eef4f2;
@@ -3942,64 +3948,76 @@ html .featured-boxes-style-8 .featured-box.featured-box-light .icon-featured {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2fdea', endColorstr='#101019', GradientType=1);
 }
 html .featured-box-effect-2.featured-box-primary .icon-featured:after {
-  box-shadow: 0 0 0 3px #e3c214;
+  -webkit-box-shadow: 0 0 0 3px #4dbb6d;
+          box-shadow: 0 0 0 3px #4dbb6d;
 }
 html .featured-box-effect-2.featured-box-secondary .icon-featured:after {
-  box-shadow: 0 0 0 3px #eef4f2;
+  -webkit-box-shadow: 0 0 0 3px #eef4f2;
+          box-shadow: 0 0 0 3px #eef4f2;
 }
 html .featured-box-effect-2.featured-box-tertiary .icon-featured:after {
-  box-shadow: 0 0 0 3px #e2fdea;
+  -webkit-box-shadow: 0 0 0 3px #e2fdea;
+          box-shadow: 0 0 0 3px #e2fdea;
 }
 html .featured-box-effect-2.featured-box-quaternary .icon-featured:after {
-  box-shadow: 0 0 0 3px #101019;
+  -webkit-box-shadow: 0 0 0 3px #101019;
+          box-shadow: 0 0 0 3px #101019;
 }
 html .featured-box-effect-2.featured-box-dark .icon-featured:after {
-  box-shadow: 0 0 0 3px #212529;
+  -webkit-box-shadow: 0 0 0 3px #212529;
+          box-shadow: 0 0 0 3px #212529;
 }
 html .featured-box-effect-2.featured-box-light .icon-featured:after {
-  box-shadow: 0 0 0 3px #FFF;
+  -webkit-box-shadow: 0 0 0 3px #FFF;
+          box-shadow: 0 0 0 3px #FFF;
 }
 html .featured-box-effect-3.featured-box-primary .icon-featured:after {
-  box-shadow: 0 0 0 10px #e3c214;
+  -webkit-box-shadow: 0 0 0 10px #4dbb6d;
+          box-shadow: 0 0 0 10px #4dbb6d;
 }
 html .featured-box-effect-3.featured-box-primary:hover .icon-featured {
-  background: #e3c214 !important;
+  background: #4dbb6d !important;
 }
 html .featured-box-effect-3.featured-box-secondary .icon-featured:after {
-  box-shadow: 0 0 0 10px #eef4f2;
+  -webkit-box-shadow: 0 0 0 10px #eef4f2;
+          box-shadow: 0 0 0 10px #eef4f2;
 }
 html .featured-box-effect-3.featured-box-secondary:hover .icon-featured {
   background: #eef4f2 !important;
 }
 html .featured-box-effect-3.featured-box-tertiary .icon-featured:after {
-  box-shadow: 0 0 0 10px #e2fdea;
+  -webkit-box-shadow: 0 0 0 10px #e2fdea;
+          box-shadow: 0 0 0 10px #e2fdea;
 }
 html .featured-box-effect-3.featured-box-tertiary:hover .icon-featured {
   background: #e2fdea !important;
 }
 html .featured-box-effect-3.featured-box-quaternary .icon-featured:after {
-  box-shadow: 0 0 0 10px #101019;
+  -webkit-box-shadow: 0 0 0 10px #101019;
+          box-shadow: 0 0 0 10px #101019;
 }
 html .featured-box-effect-3.featured-box-quaternary:hover .icon-featured {
   background: #101019 !important;
 }
 html .featured-box-effect-3.featured-box-dark .icon-featured:after {
-  box-shadow: 0 0 0 10px #212529;
+  -webkit-box-shadow: 0 0 0 10px #212529;
+          box-shadow: 0 0 0 10px #212529;
 }
 html .featured-box-effect-3.featured-box-dark:hover .icon-featured {
   background: #212529 !important;
 }
 html .featured-box-effect-3.featured-box-light .icon-featured:after {
-  box-shadow: 0 0 0 10px #FFF;
+  -webkit-box-shadow: 0 0 0 10px #FFF;
+          box-shadow: 0 0 0 10px #FFF;
 }
 html .featured-box-effect-3.featured-box-light:hover .icon-featured {
   background: #FFF !important;
 }
 .feature-box .feature-box-icon {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .feature-box-primary .feature-box-icon {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .feature-box-secondary .feature-box-icon {
   background-color: #eef4f2;
@@ -4018,11 +4036,11 @@ html .feature-box-light .feature-box-icon {
 }
 .feature-box.feature-box-style-2 .feature-box-icon [class*="fa-"],
 .feature-box.feature-box-style-2 .feature-box-icon .icons {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .feature-box-primary.feature-box-style-2 .feature-box-icon [class*="fa-"],
 html .feature-box-primary.feature-box-style-2 .feature-box-icon .icons {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .feature-box-secondary.feature-box-style-2 .feature-box-icon [class*="fa-"],
 html .feature-box-secondary.feature-box-style-2 .feature-box-icon .icons {
@@ -4045,18 +4063,18 @@ html .feature-box-light.feature-box-style-2 .feature-box-icon .icons {
   color: #FFF;
 }
 .feature-box.feature-box-style-3 .feature-box-icon {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 .feature-box.feature-box-style-3 .feature-box-icon [class*="fa-"],
 .feature-box.feature-box-style-3 .feature-box-icon .icons {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .feature-box-primary.feature-box-style-3 .feature-box-icon {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 html .feature-box-primary.feature-box-style-3 .feature-box-icon [class*="fa-"],
 html .feature-box-primary.feature-box-style-3 .feature-box-icon .icons {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .feature-box-secondary.feature-box-style-3 .feature-box-icon {
   border-color: #eef4f2;
@@ -4095,11 +4113,11 @@ html .feature-box-light.feature-box-style-3 .feature-box-icon .icons {
 }
 .feature-box.feature-box-style-4 .feature-box-icon [class*="fa-"],
 .feature-box.feature-box-style-4 .feature-box-icon .icons {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .feature-box-primary.feature-box-style-4 .feature-box-icon [class*="fa-"],
 html .feature-box-primary.feature-box-style-4 .feature-box-icon .icons {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .feature-box-secondary.feature-box-style-4 .feature-box-icon [class*="fa-"],
 html .feature-box-secondary.feature-box-style-4 .feature-box-icon .icons {
@@ -4123,11 +4141,11 @@ html .feature-box-light.feature-box-style-4 .feature-box-icon .icons {
 }
 .feature-box.feature-box-style-5 .feature-box-icon [class*="fa-"],
 .feature-box.feature-box-style-5 .feature-box-icon .icons {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .feature-box-primary.feature-box-style-5 .feature-box-icon [class*="fa-"],
 html .feature-box-primary.feature-box-style-5 .feature-box-icon .icons {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .feature-box-secondary.feature-box-style-5 .feature-box-icon [class*="fa-"],
 html .feature-box-secondary.feature-box-style-5 .feature-box-icon .icons {
@@ -4151,7 +4169,7 @@ html .feature-box-light.feature-box-style-5 .feature-box-icon .icons {
 }
 html .feature-box-primary.feature-box-style-6 .feature-box-icon [class*="fa-"],
 html .feature-box-primary.feature-box-style-6 .feature-box-icon .icons {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .feature-box-secondary.feature-box-style-6 .feature-box-icon [class*="fa-"],
 html .feature-box-secondary.feature-box-style-6 .feature-box-icon .icons {
@@ -4174,26 +4192,26 @@ html .feature-box-light.feature-box-style-6 .feature-box-icon .icons {
   color: #FFF;
 }
 html .featured-boxes-full-scale > .featured-box-full-primary:nth-child(1) {
-  background-color: #b49a10;
+  background-color: #3b9a57;
 }
 html .featured-boxes-full-scale > .featured-box-full-primary:nth-child(2) {
-  background-color: #ccae12;
+  background-color: #42ad61;
 }
 html .featured-boxes-full-scale > .featured-box-full-primary:nth-child(3) {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html .featured-boxes-full-scale > .featured-box-full-primary:nth-child(4) {
-  background-color: #eccc25;
+  background-color: #5fc27c;
 }
 html .featured-boxes-full-scale > .featured-box-full-primary:nth-child(5) {
-  background-color: #eed23c;
+  background-color: #72c98b;
 }
 html .featured-boxes-full-scale > .featured-box-full-primary:nth-child(6) {
-  background-color: #f0d754;
+  background-color: #84d09a;
 }
 html .featured-boxes-full .featured-box-full-primary {
-  background-color: #e3c214;
-  color: #777;
+  background-color: #4dbb6d;
+  color: #FFF;
 }
 html .featured-boxes-full .featured-box-full-secondary {
   background-color: #eef4f2;
@@ -4216,32 +4234,32 @@ html .featured-boxes-full .featured-box-full-light {
   color: #777;
 }
 .pricing-table .most-popular {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 .pricing-table .most-popular h3 {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 .pricing-table.princig-table-flat .plan h3 {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 .pricing-table.princig-table-flat .plan h3 span {
-  background: #e3c214;
+  background: #4dbb6d;
 }
 html .call-to-action.featured.featured-primary {
-  border-top-color: #e3c214;
+  border-top-color: #4dbb6d;
 }
 html .call-to-action.call-to-action-primary {
-  background: #e3c214;
+  background: #4dbb6d;
 }
 html .call-to-action.with-full-borders-primary {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 html .call-to-action.call-to-action-primary {
-  background: #e3c214;
+  background: #4dbb6d;
 }
 html .call-to-action.call-to-action-primary h3,
 html .call-to-action.call-to-action-primary p {
-  color: #777;
+  color: #FFF;
 }
 html .call-to-action.featured.featured-secondary {
   border-top-color: #eef4f2;
@@ -4325,28 +4343,29 @@ html .call-to-action.call-to-action-light p {
 }
 section.timeline .timeline-box.left:before,
 section.timeline .timeline-box.right:before {
-  background: #e3c214;
-  box-shadow: 0 0 0 3px #FFF, 0 0 0 6px #e3c214;
+  background: #4dbb6d;
+  -webkit-box-shadow: 0 0 0 3px #FFF, 0 0 0 6px #4dbb6d;
+          box-shadow: 0 0 0 3px #FFF, 0 0 0 6px #4dbb6d;
 }
 ul.history li .featured-box .box-content {
-  border-top-color: #e3c214;
+  border-top-color: #4dbb6d;
 }
 .recent-posts .date .month,
 article.post .post-date .month {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 .recent-posts .date .day,
 article.post .post-date .day {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 .slider .tp-bannertimer {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 .home-concept strong {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html .home-intro-primary {
-  background: #e3c214;
+  background: #4dbb6d;
 }
 html .home-intro-secondary {
   background: #eef4f2;
@@ -4364,17 +4383,17 @@ html .home-intro-light {
   background: #FFF;
 }
 html .slide-overlay-primary .slotholder:after {
-  background-color: #e3c214 !important;
+  background-color: #4dbb6d !important;
 }
 html .slider-container .tp-caption-overlay-primary {
-  background: #e3c214;
+  background: #4dbb6d;
 }
 html .slider-container .tp-caption-overlay-opacity-primary {
-  background: rgba(227, 194, 20, 0.4);
+  background: rgba(77, 187, 109, 0.4);
 }
 html .tp-bullets.bullets-color-primary .tp-bullet:hover,
 html .tp-bullets.bullets-color-primary .tp-bullet.selected {
-  background: #e3c214;
+  background: #4dbb6d;
 }
 html .slide-overlay-secondary .slotholder:after {
   background-color: #eef4f2 !important;
@@ -4443,84 +4462,86 @@ html .tp-bullets.bullets-color-light .tp-bullet.selected {
 }
 html .slide-overlay.slide-overlay-gradient .slotholder:after {
   background-color: #e2fdea !important;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e2fdea), to(#101019)) !important;
   background-image: linear-gradient(to right, #e2fdea 0%, #101019 100%) !important;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2fdea', endColorstr='#101019', GradientType=1);
 }
 .cd-product-viewer-handle .handle {
-  background: #e3c214;
+  background: #4dbb6d;
 }
 .tparrows.tparrows-carousel.tp-leftarrow,
 .tparrows.tparrows-carousel.tp-rightarrow {
-  background-color: #e3c214;
-  border-color: #e3c214 #e3c214 #b49a10;
+  background-color: #4dbb6d;
+  border-color: #4dbb6d #4dbb6d #3b9a57;
   color: #fff;
 }
 .tparrows.tparrows-carousel.tp-leftarrow:hover,
 .tparrows.tparrows-carousel.tp-rightarrow:hover,
 .tparrows.tparrows-carousel.tp-leftarrow.hover,
 .tparrows.tparrows-carousel.tp-rightarrow.hover {
-  background-color: #edcf30;
-  border-color: #eed23c #eed23c #e3c214;
+  background-color: #69c684;
+  border-color: #72c98b #72c98b #4dbb6d;
   color: #fff;
 }
 .tparrows.tparrows-carousel.tp-leftarrow:focus,
 .tparrows.tparrows-carousel.tp-rightarrow:focus,
 .tparrows.tparrows-carousel.tp-leftarrow.focus,
 .tparrows.tparrows-carousel.tp-rightarrow.focus {
-  box-shadow: 0 0 0 3px rgba(227, 194, 20, 0.5);
+  -webkit-box-shadow: 0 0 0 3px rgba(77, 187, 109, 0.5);
+          box-shadow: 0 0 0 3px rgba(77, 187, 109, 0.5);
 }
 .tparrows.tparrows-carousel.tp-leftarrow.disabled,
 .tparrows.tparrows-carousel.tp-rightarrow.disabled,
 .tparrows.tparrows-carousel.tp-leftarrow:disabled,
 .tparrows.tparrows-carousel.tp-rightarrow:disabled {
-  background-color: #e3c214;
-  border-color: #e3c214 #e3c214 #b49a10;
+  background-color: #4dbb6d;
+  border-color: #4dbb6d #4dbb6d #3b9a57;
 }
 .tparrows.tparrows-carousel.tp-leftarrow:active,
 .tparrows.tparrows-carousel.tp-rightarrow:active,
 .tparrows.tparrows-carousel.tp-leftarrow.active,
 .tparrows.tparrows-carousel.tp-rightarrow.active {
-  background-color: #c0a411 !important;
+  background-color: #3ea35c !important;
   background-image: none !important;
-  border-color: #b49a10 #b49a10 #85720c !important;
+  border-color: #3b9a57 #3b9a57 #2d7542 !important;
 }
 .tparrows.arrows-primary:before {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 .shop .products .product .onsale {
-  background-color: #e3c214;
-  border-bottom-color: #bea211;
+  background-color: #4dbb6d;
+  border-bottom-color: #3ea25b;
 }
 .shop .cart-totals tr.total .amount {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 #footer .footer-ribbon {
-  background: #e3c214;
+  background: #4dbb6d;
 }
 #footer .footer-ribbon:before {
-  border-right-color: #9d860e;
-  border-left-color: #9d860e;
+  border-right-color: #34884c;
+  border-left-color: #34884c;
 }
 #footer .footer-nav.footer-nav-bottom-line nav > ul:not(:hover) > li > a.active {
-  color: #e3c214 !important;
+  color: #4dbb6d !important;
 }
 #footer .footer-nav.footer-nav-bottom-line nav > ul:not(:hover) > li > a.active:before {
-  background: #e3c214 !important;
+  background: #4dbb6d !important;
 }
 #footer .footer-nav.footer-nav-bottom-line nav > ul:hover > li:hover > a {
-  color: #e3c214 !important;
+  color: #4dbb6d !important;
 }
 #footer .footer-nav.footer-nav-bottom-line nav > ul:hover > li:hover > a:before {
-  background: #e3c214 !important;
+  background: #4dbb6d !important;
 }
 .scrollable.colored-slider .scrollable-slider {
-  background: #e3c214;
+  background: #4dbb6d;
 }
 .sample-icon-list .sample-icon a:hover {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 html.boxed .body {
-  border-top-color: #e3c214;
+  border-top-color: #4dbb6d;
 }
 .rounded,
 .img-thumbnail,
@@ -4740,7 +4761,7 @@ ul.comments .comment-block,
   }
 }
 .dropdown-menu > li > a i {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 html #header.header-semi-transparent .header-body:before,
 html #header.header-semi-transparent-light .header-body:before {
@@ -4748,24 +4769,25 @@ html #header.header-semi-transparent-light .header-body:before {
 }
 @media (min-width: 992px) {
   #header .header-nav-main.header-nav-main-square nav > ul > li.active > a {
-    color: #e3c214 !important;
+    color: #4dbb6d !important;
   }
   #header .header-nav-main.header-nav-main-square nav > ul > li.active > a.dropdown-toggle::after {
-    border-color: #e3c214 transparent transparent !important;
+    border-color: #4dbb6d transparent transparent !important;
   }
   #header .header-nav-main.header-nav-main-square nav > ul > li:hover > a {
-    color: #e3c214 !important;
+    color: #4dbb6d !important;
   }
   #header .header-nav-main.header-nav-main-square nav > ul > li:hover > a.dropdown-toggle::after {
-    border-color: #e3c214 transparent transparent !important;
+    border-color: #4dbb6d transparent transparent !important;
   }
 }
 .btn-primary.active:not([disabled]):not(.disabled),
 .btn-primary:active:not([disabled]):not(.disabled),
 .show > .btn-primary.dropdown-toggle {
-  background-color: #e3c214;
-  border-color: #e3c214;
-  box-shadow: 0 0 0 0.2rem rgba(227, 194, 20, 0.5);
+  background-color: #4dbb6d;
+  border-color: #4dbb6d;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(77, 187, 109, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(77, 187, 109, 0.5);
 }
 .tp-leftarrow.custom-arrows-style-1,
 .tp-rightarrow.custom-arrows-style-1 {
@@ -4776,7 +4798,7 @@ html #header.header-semi-transparent-light .header-body:before {
   background: #101019;
 }
 .custom-call-to-action {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 @media (max-width: 991px) {
   .custom-position-1 {
@@ -4784,1187 +4806,40 @@ html #header.header-semi-transparent-light .header-body:before {
   }
 }
 .custom-accordion-style-1 .card .card-title > a.accordion-toggle:not(.collapsed) {
-  color: #e3c214;
+  color: #4dbb6d;
 }
 .custom-accordion-style-1 .card .card-title > a.accordion-toggle:not(.collapsed):before {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 .custom-accordion-style-1 .card .card-title > a.accordion-toggle:not(.collapsed) .custom-accordion-plus:after {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 .custom-accordion-style-1 .card .card-title > a .custom-accordion-plus:after {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 .thumb-info.custom-thumb-info-style-1:hover .thumb-info-caption {
-  background-color: #e3c214 !important;
+  background-color: #4dbb6d !important;
 }
 .owl-carousel.custom-dots-style-1 button.owl-dot.active span,
 .owl-carousel.custom-dots-style-1 button.owl-dot:hover span {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 .owl-carousel.custom-dots-style-1 button.owl-dot.active span:before,
 .owl-carousel.custom-dots-style-1 button.owl-dot:hover span:before {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 .team-item .team-infos .share:hover i.fa-share-alt {
-  background-color: #e3c214;
+  background-color: #4dbb6d;
 }
 .owl-carousel.custom-arrows-style-2 .owl-nav button.owl-prev:before,
 .owl-carousel.custom-xs-arrows-style-2 .owl-nav button.owl-prev:before,
 .owl-carousel.custom-arrows-style-2 .owl-nav button.owl-next:before,
 .owl-carousel.custom-xs-arrows-style-2 .owl-nav button.owl-next:before {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
 .owl-carousel.custom-arrows-style-2 .owl-nav button.owl-prev:after,
 .owl-carousel.custom-xs-arrows-style-2 .owl-nav button.owl-prev:after,
 .owl-carousel.custom-arrows-style-2 .owl-nav button.owl-next:after,
 .owl-carousel.custom-xs-arrows-style-2 .owl-nav button.owl-next:after {
-  border-color: #e3c214;
+  border-color: #4dbb6d;
 }
-</style><link rel="stylesheet" href="./Business_files/bootstrap-colorpicker.css"></head>
-	<body>
-
-		<div class="body">
-			<header id="header" class="header-transparent header-transparent-dark-bottom-border header-effect-shrink" data-plugin-options="{&#39;stickyEnabled&#39;: true, &#39;stickyEffect&#39;: &#39;shrink&#39;, &#39;stickyEnableOnBoxed&#39;: true, &#39;stickyEnableOnMobile&#39;: true, &#39;stickyChangeLogo&#39;: true, &#39;stickyStartAt&#39;: 30, &#39;stickyHeaderContainerHeight&#39;: 70}" style="height: 101px;">
-				<div class="header-body border-top-0 bg-dark box-shadow-none" style="top: 0px; position: fixed;">
-					<div class="header-container container" style="height: 100px; min-height: 0px;">
-						<div class="header-row">
-							<div class="header-column">
-								<div class="header-row">
-									<div class="header-logo" style="width: 82px; height: 40px;">
-										<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html">
-											<img alt="Porto" width="82" height="40" src="./Business_files/logo-default-slim-dark.png" style="top: 0px; width: 82px; height: 40px;">
-										</a>
-									</div>
-								</div>
-							</div>
-							<div class="header-column justify-content-end">
-								<div class="header-row">
-									<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1">
-										<div class="header-nav-main header-nav-main-mobile-dark header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
-											<nav class="collapse">
-												<ul class="nav nav-pills" id="mainNav">
-													<li>
-														<a class="nav-link active" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html">
-															Home
-														</a>
-													</li>
-													<li>
-														<a class="nav-link" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-about-us.html">
-															About Us
-														</a>
-													</li>
-													<li class="dropdown dropdown-primary">
-														<a class="dropdown-toggle nav-link" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise.html">
-															Expertise
-														<i class="fas fa-chevron-down"></i></a>
-														<ul class="dropdown-menu">
-															<li>
-																<a class="dropdown-item" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise-detail.html">
-																	Corporate Finance
-																</a>
-															</li>
-															<li>
-																<a class="dropdown-item" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise-detail.html">
-																	Corporate Restructuring
-																</a>
-															</li>
-															<li>
-																<a class="dropdown-item" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise-detail.html">
-																	Economic Consulting
-																</a>
-															</li>
-															<li>
-																<a class="dropdown-item" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise-detail.html">
-																	Litigation Consulting
-																</a>
-															</li>
-															<li>
-																<a class="dropdown-item" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise-detail.html">
-																	Strategic Consulting
-																</a>
-															</li>
-															<li>
-																<a class="dropdown-item" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise-detail.html">
-																	Tech Consulting
-																</a>
-															</li>
-														</ul>
-													</li>
-													<li>
-														<a class="nav-link" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-cases.html">
-															Cases
-														</a>
-													</li>
-													<li>
-														<a class="nav-link" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-tertimonials.html">
-															Testimonials
-														</a>
-													</li>
-													<li>
-														<a class="nav-link" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-team.html">
-															Team
-														</a>
-													</li>
-													<li>
-														<a class="nav-link" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-blog.html">
-															Blog
-														</a>
-													</li>
-													<li>
-														<a class="nav-link" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-contact-us.html">
-															Contact Us
-														</a>
-													</li>
-												</ul>
-											</nav>
-										</div>
-										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
-											<i class="fas fa-bars"></i>
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</header>
-
-			<div role="main" class="main">
-				
-				<div class="slider-container rev_slider_wrapper tp-mouseover" style="height: 807px; max-height: none; overflow: visible;">
-					<div id="revolutionSlider" class="slider rev_slider manual revslider-initialised tp-simpleresponsive rev_redraw_on_blurfocus" data-version="5.4.8" style="max-height: none; margin-top: 0px; margin-bottom: 0px; height: 807px;" data-slideactive="rs-377472">
-						<ul class="tp-revslider-mainul" style="visibility: visible; display: block; overflow: hidden; width: 1349px; height: 100%; max-height: none; left: 0px;">
-							<li data-transition="fade" class="tp-revslider-slidesli" style="perspective: 6000px; width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0; background-color: rgba(255, 255, 255, 0);">
-								<div class="slotholder" style="position: absolute; top: 0px; left: 0px; z-index: 0; width: 100%; height: 100%; backface-visibility: hidden; transform: translate3d(0px, 0px, 0px); visibility: inherit; opacity: 1;"><!--Runtime Modification - Img tag is Still Available for SEO Goals in Source - <img src="img/demos/business-consulting/slides/slide-1.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1" class="rev-slidebg defaultimg">--><div class="tp-bgimg defaultimg " data-bgcolor="undefined" style="background-repeat: no-repeat; background-image: url(&quot;img/demos/business-consulting/slides/slide-1.jpg&quot;); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;" src="img/demos/business-consulting/slides/slide-1.jpg"></div></div>
-
-								<div class="tp-parallax-wrap" style="position: absolute; display: block; visibility: hidden; left: 120px; top: 248px; z-index: 1;"><div class="tp-loop-wrap" style="position:absolute;display:block;;"><div class="tp-mask-wrap" style="position: absolute; display: block; overflow: visible;"><h1 class="tp-caption custom-secondary-font font-weight-bold text-color-light" data-x="[&#39;left&#39;,&#39;left&#39;,&#39;left&#39;,&#39;left&#39;]" data-hoffset="[&#39;30&#39;,&#39;30&#39;,&#39;30&#39;,&#39;30&#39;]" data-y="center" data-voffset="[&#39;-80&#39;,&#39;-80&#39;,&#39;-80&#39;,&#39;-40&#39;]" data-start="800" data-transform_in="y:[-300%];opacity:0;s:500;" style="font-size: 32px; visibility: inherit; transition: none 0s ease 0s; text-align: inherit; line-height: 44px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: -2px; font-weight: 700; white-space: nowrap; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 0.0001; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -138, 0, 1); transform-origin: 50% 50% 0px;" id="layer-823786997">Solutions for</h1></div></div></div>
-
-								<div class="tp-parallax-wrap" style="position: absolute; display: block; visibility: hidden; left: 120px; top: 296px; z-index: 1;"><div class="tp-loop-wrap" style="position:absolute;display:block;;"><div class="tp-mask-wrap" style="position: absolute; display: block; overflow: visible;"><div class="tp-caption custom-secondary-font font-weight-bold text-color-light" data-x="[&#39;left&#39;,&#39;left&#39;,&#39;left&#39;,&#39;left&#39;]" data-hoffset="[&#39;30&#39;,&#39;30&#39;,&#39;30&#39;,&#39;30&#39;]" data-y="center" data-voffset="[&#39;-42&#39;,&#39;-42&#39;,&#39;-42&#39;,&#39;2&#39;]" data-start="800" data-transform_in="y:[-300%];opacity:0;s:500;" style="font-size: 42px; visibility: inherit; transition: none 0s ease 0s; text-align: inherit; line-height: 24px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-weight: 700; white-space: nowrap; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 0.0001; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -78, 0, 1); transform-origin: 50% 50% 0px;" id="layer-673820867">Pro Business Plan</div></div></div></div>
-
-								<div class="tp-parallax-wrap" style="position: absolute; display: block; visibility: hidden; left: 120px; top: 389px; z-index: 1;"><div class="tp-loop-wrap" style="position:absolute;display:block;;"><div class="tp-mask-wrap" style="position: absolute; display: block; overflow: visible;"><a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#about-us" class="btn btn-primary tp-caption text-uppercase text-color-light custom-border-radius" data-hash="" data-hash-offset="85" data-x="[&#39;left&#39;,&#39;left&#39;,&#39;left&#39;,&#39;left&#39;]" data-hoffset="[&#39;30&#39;,&#39;30&#39;,&#39;30&#39;,&#39;30&#39;]" data-y="center" data-voffset="[&#39;60&#39;,&#39;60&#39;,&#39;60&#39;,&#39;100&#39;]" data-start="1500" style="font-size: 12px; padding: 11px 30px; visibility: inherit; transition: none 0s ease 0s; text-align: inherit; line-height: 18px; border-width: 1px; margin: 0px; letter-spacing: 0px; font-weight: 400; white-space: nowrap; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 0.0001; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -132, 0, 1); transform-origin: 50% 50% 0px;" data-transform_in="y:[-300%];opacity:0;s:500;" id="layer-778964844">Get Started</a></div></div></div>
-							</li>
-							<li data-transition="fade" class="tp-revslider-slidesli active-revslide" style="perspective: 6000px; width: 100%; height: 100%; overflow: hidden; z-index: 20; visibility: inherit; opacity: 1; background-color: rgba(255, 255, 255, 0);">
-								<div class="slotholder" style="position: absolute; top: 0px; left: 0px; z-index: 0; width: 100%; height: 100%; backface-visibility: hidden; transform: translate3d(0px, 0px, 0px); visibility: inherit; opacity: 1;"><!--Runtime Modification - Img tag is Still Available for SEO Goals in Source - <img src="img/demos/business-consulting/slides/slide-2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1" class="rev-slidebg defaultimg">--><div class="tp-bgimg defaultimg " data-bgcolor="undefined" style="background-repeat: no-repeat; background-image: url(&quot;img/demos/business-consulting/slides/slide-2.jpg&quot;); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;" src="img/demos/business-consulting/slides/slide-2.jpg"></div></div>
-
-								<div class="tp-parallax-wrap" style="position: absolute; display: block; visibility: visible; left: 120px; top: 248px; z-index: 1;"><div class="tp-loop-wrap" style="position:absolute;display:block;;"><div class="tp-mask-wrap" style="position: absolute; display: block; overflow: visible;"><h1 class="tp-caption custom-secondary-font font-weight-bold text-color-light" data-x="[&#39;left&#39;,&#39;left&#39;,&#39;left&#39;,&#39;left&#39;]" data-hoffset="[&#39;30&#39;,&#39;30&#39;,&#39;30&#39;,&#39;30&#39;]" data-y="center" data-voffset="[&#39;-80&#39;,&#39;-80&#39;,&#39;-80&#39;,&#39;-40&#39;]" data-start="800" data-transform_in="y:[-300%];opacity:0;s:500;" style="font-size: 32px; visibility: inherit; transition: none 0s ease 0s; text-align: inherit; line-height: 44px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: -2px; font-weight: 700; white-space: nowrap; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform-origin: 50% 50% 0px;" id="layer-301684278">Get your</h1></div></div></div>
-
-								<div class="tp-parallax-wrap" style="position: absolute; display: block; visibility: visible; left: 120px; top: 296px; z-index: 1;"><div class="tp-loop-wrap" style="position:absolute;display:block;;"><div class="tp-mask-wrap" style="position: absolute; display: block; overflow: visible;"><div class="tp-caption custom-secondary-font font-weight-bold text-color-light" data-x="[&#39;left&#39;,&#39;left&#39;,&#39;left&#39;,&#39;left&#39;]" data-hoffset="[&#39;30&#39;,&#39;30&#39;,&#39;30&#39;,&#39;30&#39;]" data-y="center" data-voffset="[&#39;-42&#39;,&#39;-42&#39;,&#39;-42&#39;,&#39;2&#39;]" data-start="800" data-transform_in="y:[-300%];opacity:0;s:500;" style="font-size: 42px; visibility: inherit; transition: none 0s ease 0s; text-align: inherit; line-height: 24px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-weight: 700; white-space: nowrap; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform-origin: 50% 50% 0px;" id="layer-616945396">Free Consultation</div></div></div></div>
-
-								<div class="tp-parallax-wrap" style="position: absolute; display: block; visibility: visible; left: 120px; top: 389px; z-index: 1;"><div class="tp-loop-wrap" style="position:absolute;display:block;;"><div class="tp-mask-wrap" style="position: absolute; display: block; overflow: visible;"><a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#about-us" class="btn btn-primary tp-caption text-uppercase text-color-light custom-border-radius" data-hash="" data-hash-offset="85" data-x="[&#39;left&#39;,&#39;left&#39;,&#39;left&#39;,&#39;left&#39;]" data-hoffset="[&#39;30&#39;,&#39;30&#39;,&#39;30&#39;,&#39;30&#39;]" data-y="center" data-voffset="[&#39;60&#39;,&#39;60&#39;,&#39;60&#39;,&#39;100&#39;]" data-start="1500" style="font-size: 12px; padding: 11px 30px; visibility: inherit; transition: none 0s ease 0s; text-align: inherit; line-height: 18px; border-width: 1px; margin: 0px; letter-spacing: 0px; font-weight: 400; white-space: nowrap; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform-origin: 50% 50% 0px;" data-transform_in="y:[-300%];opacity:0;s:500;" id="layer-566448003">Get Started</a></div></div></div>
-							</li>
-						</ul>
-					<div class="tp-loader off" style="display: none;"><div class="dot1"></div><div class="dot2"></div><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div><div class="tp-bannertimer" style="visibility: hidden; width: 85%; transform: translate3d(0px, 0px, 0px);"></div><div class="tp-leftarrow tparrows custom-arrows-style-1" style="top: 50%; transform: matrix(1, 0, 0, 1, 0, -60); left: 0px; visibility: inherit; opacity: 1;"></div><div class="tp-rightarrow tparrows custom-arrows-style-1" style="top: 50%; transform: matrix(-1, 0, 0, -1, -45, -60); left: 100%; visibility: inherit; opacity: 1;"></div></div>
-				</div>
-
-				<section class="looking-for custom-position-1 custom-md-border-top">
-					<div class="container">
-						<div class="row align-items-center">
-							<div class="col-md-6 col-lg-7">
-								<div class="looking-for-box">
-									<h2>- <span class="text-1 custom-secondary-font">Are you looking for a</span><br>
-									Business Plan Consultant?</h2>
-									<p>Schedule your company strategy right session now</p>
-								</div>
-							</div>
-							<div class="col-md-3 d-flex justify-content-md-end mb-4 mb-md-0">
-								<a class="text-decoration-none" href="tel:+00112304567" target="_blank" title="Call Us Now">
-									<span class="custom-call-to-action">
-										<span class="action-title text-color-primary">Call Us Now</span>
-										<span class="action-info text-color-light">+001 1230 4567</span>
-									</span>
-								</a>
-							</div>
-							<div class="col-md-3 col-lg-2">
-								<a class="text-decoration-none" href="mail:mail@example.com" target="_blank" title="Email Us Now">
-									<span class="custom-call-to-action">
-										<span class="action-title text-color-primary">Email Us Now</span>
-										<span class="action-info text-color-light">mail@example.com</span>
-									</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="about-us custom-section-padding" id="about-us">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-6 col-lg-6">
-								<h2 class="font-weight-bold text-color-dark">- About Us</h2>
-								<p class="pl-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper risus luctus. Nunc et feugiat arcu, in placerat risus. Phasellus condimentum sapien vitae.</p>
-								<div class="pl-4">
-									<div class="row">
-										<div class="col-lg-6">
-											<ul class="list list-icons list-icons-style-3 list-tertiary">
-												<li><i class="fas fa-chevron-right"></i> Certified Professionals</li>
-												<li><i class="fas fa-chevron-right"></i> Former Chief Executives</li>
-												<li><i class="fas fa-chevron-right"></i> Real Estate Professionals</li>
-											</ul>	
-										</div>
-										<div class="col-lg-6">
-											<ul class="list list-icons list-icons-style-3 list-tertiary">
-												<li><i class="fas fa-chevron-right"></i> Nobel Laureate Economists</li>
-												<li><i class="fas fa-chevron-right"></i> Former Political Leaders</li>
-												<li><i class="fas fa-chevron-right"></i> Chartered Financial Analysts</li>
-											</ul>
-										</div>
-									</div>
-									<a class="btn btn-outline custom-border-width btn-primary mt-3 mb-2 custom-border-radius font-weight-semibold text-uppercase" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-about-us.html">Read More</a>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-6">
-								<div class="content-grid custom-content-grid mt-5 mb-4">
-									<div class="row content-grid-row">
-										<div class="content-grid-item col-lg-6 bg-color-light p-4">
-											<div class="counters">
-												<div class="counter custom-sm-counter-style">
-													<img class="counter-icon" src="./Business_files/icon-1.png" alt="">
-													<strong class="text-color-primary custom-primary-font" data-to="15" data-append="+">15+</strong>
-													<label>Years in Business</label>
-												</div>
-											</div>	
-										</div>
-										<div class="content-grid-item col-lg-6 p-4">
-											<div class="counters">
-												<div class="counter margin-style-2 custom-sm-counter-style">
-													<img class="counter-icon" src="./Business_files/icon-2.png" alt="">
-													<strong class="text-color-primary custom-primary-font" data-to="2000" data-append="+">2000+</strong>
-													<label>Successfull Cases</label>
-												</div>
-											</div>	
-										</div>
-									</div>
-									<div class="row content-grid-row">
-										<div class="content-grid-item col-lg-6 p-4">
-											<div class="counters">
-												<div class="counter custom-sm-counter-style">
-													<img class="counter-icon" src="./Business_files/icon-3.png" alt="">
-													<strong class="text-color-primary custom-primary-font" data-to="240" data-append="+">240+</strong>
-													<label>Satisfied Clients</label>
-												</div>
-											</div>	
-										</div>
-										<div class="content-grid-item col-lg-6 bg-color-light p-4">
-											<div class="counters">
-												<div class="counter margin-style-2 custom-sm-counter-style">
-													<img class="counter-icon" src="./Business_files/icon-4.png" alt="">
-													<strong class="text-color-primary custom-primary-font" data-to="130" data-append="+">130+</strong>
-													<label>Pro Consultants</label>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="section-secondary custom-section-padding">
-					<div class="container">
-						<div class="row mb-4">
-							<div class="col">
-								<h2 class="font-weight-bold text-color-dark mb-3">- Expertises</h2>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-4">
-								<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise-detail.html" class="text-decoration-none appear-animation animated appear-animation-visible" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
-									<div class="feature-box custom-feature-box feature-box-style-2">
-										<div class="feature-box-icon">
-											<img src="./Business_files/expertise-1.jpg" alt="">
-										</div>
-										<div class="feature-box-info ml-3">
-											<h4 class="font-weight-normal text-5">Corporate Finance</h4>
-											<p class="text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna.</p>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="col-lg-4">
-								<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise-detail.html" class="text-decoration-none appear-animation animated appear-animation-visible" data-appear-animation="fadeInUp" data-appear-animation-delay="100">
-									<div class="feature-box custom-feature-box feature-box-style-2">
-										<div class="feature-box-icon">
-											<img src="./Business_files/expertise-2.jpg" alt="">
-										</div>
-										<div class="feature-box-info ml-3">
-											<h4 class="font-weight-normal text-5">Corp Restructuring</h4>
-											<p class="text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna.</p>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="col-lg-4">
-								<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise-detail.html" class="text-decoration-none appear-animation animated appear-animation-visible" data-appear-animation="fadeInUp" data-appear-animation-delay="200">
-									<div class="feature-box custom-feature-box feature-box-style-2">
-										<div class="feature-box-icon">
-											<img src="./Business_files/expertise-3.jpg" alt="">
-										</div>
-										<div class="feature-box-info ml-3">
-											<h4 class="font-weight-normal text-5">Economic Consulting</h4>
-											<p class="text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna.</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-4">
-								<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise-detail.html" class="text-decoration-none appear-animation animated appear-animation-visible" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-									<div class="feature-box custom-feature-box feature-box-style-2">
-										<div class="feature-box-icon">
-											<img src="./Business_files/expertise-4.jpg" alt="">
-										</div>
-										<div class="feature-box-info ml-3">
-											<h4 class="font-weight-normal text-5">Litigation Consulting</h4>
-											<p class="text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna.</p>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="col-lg-4">
-								<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise-detail.html" class="text-decoration-none appear-animation animated appear-animation-visible" data-appear-animation="fadeInUp" data-appear-animation-delay="400">
-									<div class="feature-box custom-feature-box feature-box-style-2">
-										<div class="feature-box-icon">
-											<img src="./Business_files/expertise-5.jpg" alt="">
-										</div>
-										<div class="feature-box-info ml-3">
-											<h4 class="font-weight-normal text-5">Strategic Consulting</h4>
-											<p class="text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consectetur diam id urna.</p>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="col-lg-4">
-								<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise-detail.html" class="text-decoration-none appear-animation animated appear-animation-visible" data-appear-animation="fadeInUp" data-appear-animation-delay="500">
-									<div class="feature-box custom-feature-box feature-box-style-2">
-										<div class="feature-box-icon">
-											<img src="./Business_files/expertise-6.jpg" alt="">
-										</div>
-										<div class="feature-box-info ml-3">
-											<h4 class="font-weight-normal text-5">Tech Consulting</h4>
-											<p class="text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consectetur diam id urna.</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12 text-center">
-								<a class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase mb-3" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-expertise.html" title="View All">View All</a>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="custom-section-padding">
-					<div class="container">
-						<div class="row mb-3">
-							<div class="col-lg-6">
-								<h2 class="font-weight-bold text-color-dark">- Our Strategy</h2>
-								<div class="owl-carousel owl-theme nav-bottom rounded-nav numbered-dots pl-1 pr-1 owl-loaded owl-drag owl-carousel-init" data-plugin-options="{&#39;items&#39;: 1, &#39;loop&#39;: false, &#39;dots&#39;: true, &#39;nav&#39;: false}" style="height: auto;">
-									
-									
-									
-								<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1596px;"><div class="owl-item active" style="width: 532px;"><div>
-										<div class="custom-step-item">
-											<span class="step text-uppercase">
-												Step
-												<span class="step-number text-color-primary">
-													01
-												</span>
-											</span>
-											<div class="step-content">
-												<h4 class="mb-3">The first meeting<br> <strong>Understanding the Problem</strong></h4>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper risus luctus. Nunc et feugiat arcu, in placerat risus. Phasellus condimentum sapien vitae odio.</p>
-											</div>
-										</div>
-									</div></div><div class="owl-item" style="width: 532px;"><div>
-										<div class="custom-step-item">
-											<span class="step text-uppercase">
-												Step
-												<span class="step-number text-color-primary">
-													02
-												</span>
-											</span>
-											<div class="step-content">
-												<h4 class="mb-3">The second meeting<br> <strong>Business Plan Consultant</strong></h4>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper risus luctus. Nunc et feugiat arcu, in placerat risus. Phasellus condimentum sapien vitae odio.</p>
-											</div>
-										</div>
-									</div></div><div class="owl-item" style="width: 532px;"><div>
-										<div class="custom-step-item">
-											<span class="step text-uppercase">
-												Step
-												<span class="step-number text-color-primary">
-													03
-												</span>
-											</span>
-											<div class="step-content">
-												<h4 class="mb-3">The final meeting<br> <strong>Problem Solved</strong></h4>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper risus luctus. Nunc et feugiat arcu, in placerat risus. Phasellus condimentum sapien vitae odio.</p>
-											</div>
-										</div>
-									</div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"></button><button type="button" role="presentation" class="owl-next"></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
-							</div>
-							<div class="col-lg-6">
-								<h2 class="font-weight-bold text-color-dark">- Frequently asked questions</h2>
-								<div class="accordion without-bg custom-accordion-style-1" id="accordion7">
-									<div class="card card-default">
-										<div class="card-header">
-											<h4 class="card-title m-0">
-												<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion7" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#collapse7One" aria-expanded="true">
-													Praesent sit amet quam a lorem commodo tincidunt.
-													<span class="custom-accordion-plus"></span>
-												</a>
-											</h4>
-										</div>
-										<div id="collapse7One" class="collapse show" aria-expanded="true">
-											<div class="card-body">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper risus luctus.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card card-default">
-										<div class="card-header">
-											<h4 class="card-title m-0">
-												<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion7" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#collapse7Two" aria-expanded="false">
-													Integer ac elit id est euismod pellentesque.
-													<span class="custom-accordion-plus"></span>
-												</a>
-											</h4>
-										</div>
-										<div id="collapse7Two" class="collapse" aria-expanded="false" style="height: 0px;">
-											<div class="card-body">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper risus luctus.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card card-default">
-										<div class="card-header">
-											<h4 class="card-title m-0">
-												<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion7" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#collapse7Three" aria-expanded="false">
-													Cras interdum neque sit amet justo maximus, ut sollicitudin eros.
-													<span class="custom-accordion-plus"></span>
-												</a>
-											</h4>
-										</div>
-										<div id="collapse7Three" class="collapse" aria-expanded="false" style="height: 0px;">
-											<div class="card-body">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper risus luctus.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card card-default">
-										<div class="card-header">
-											<h4 class="card-title m-0">
-												<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion7" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#collapse7Four" aria-expanded="false">
-													Pellentesque in ex molestie, convallis nulla ut, ornare erat.
-													<span class="custom-accordion-plus"></span>
-												</a>
-											</h4>
-										</div>
-										<div id="collapse7Four" class="collapse" aria-expanded="false" style="height: 0px;">
-											<div class="card-body">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper risus luctus.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="section-secondary custom-section-padding-2">
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<h2 class="font-weight-bold text-color-dark mb-3">- Our Cases</h2>
-							</div>
-						</div>
-					</div>
-					<div class="owl-carousel show-nav-title custom-both-sides-shadow custom-dots-position-2 custom-dots-style-1 custom-xs-arrows-style-2 mb-0 owl-theme owl-loaded owl-drag owl-carousel-init" data-plugin-options="{&#39;items&#39;: 6, &#39;loop&#39;: false, &#39;dots&#39;: true, &#39;nav&#39;: false}" style="height: auto;">
-						
-						
-						
-						
-						
-						
-						
-						
-						
-					<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2024px;"><div class="owl-item active" style="width: 224.833px;"><div>
-							<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="./Business_files/case-1.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4">Corporate Finance</span>
-											<span class="custom-thumb-info-desc font-weight-light">Okler</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div></div><div class="owl-item active" style="width: 224.833px;"><div>
-							<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="./Business_files/case-2.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4">Corporate Restructuring</span>
-											<span class="custom-thumb-info-desc font-weight-light">Envato</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div></div><div class="owl-item active" style="width: 224.833px;"><div>
-							<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="./Business_files/case-3.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4">Economic Consultanting</span>
-											<span class="custom-thumb-info-desc font-weight-light">Porto</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div></div><div class="owl-item active" style="width: 224.833px;"><div>
-							<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="./Business_files/case-4.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4">Tech Consulting</span>
-											<span class="custom-thumb-info-desc font-weight-light">GetCustom</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div></div><div class="owl-item active" style="width: 224.833px;"><div>
-							<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="./Business_files/case-5.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4">Strategic</span>
-											<span class="custom-thumb-info-desc font-weight-light">Jet Orange</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div></div><div class="owl-item active" style="width: 224.833px;"><div>
-							<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="./Business_files/case-1.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4">Litigation</span>
-											<span class="custom-thumb-info-desc font-weight-light">Paradoxx</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div></div><div class="owl-item active" style="width: 224.833px;"><div>
-							<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="./Business_files/case-2.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4">Consulting</span>
-											<span class="custom-thumb-info-desc font-weight-light">iMessenger</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div></div><div class="owl-item" style="width: 224.833px;"><div>
-							<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="./Business_files/case-3.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4">Brand Consulting</span>
-											<span class="custom-thumb-info-desc font-weight-light">Theme Forest</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div></div><div class="owl-item" style="width: 224.833px;"><div>
-							<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="./Business_files/case-4.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4">Corporate Consulting</span>
-											<span class="custom-thumb-info-desc font-weight-light">Tucson</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"></button><button type="button" role="presentation" class="owl-next"></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
-				</section>
-
-				<section class="custom-section-padding">
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<h2 class="font-weight-bold text-color-dark">- Testimonials</h2>
-							</div>
-						</div>
-						<div class="row">						
-							<div class="col">
-								<div class="owl-carousel show-nav-title custom-dots-style-1 custom-dots-position custom-xs-arrows-style-2 mb-0 owl-theme owl-loaded owl-drag owl-carousel-init" data-plugin-options="{&#39;items&#39;: 1, &#39;autoHeight&#39;: true, &#39;loop&#39;: false, &#39;nav&#39;: false, &#39;dots&#39;: true}" style="height: auto;">
-									
-									
-								<div class="owl-stage-outer owl-height" style="height: 216px;"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2220px;"><div class="owl-item active" style="width: 1110px;"><div class="row">
-										<div class="col-8 col-sm-4 col-lg-2 text-center pt-5">
-											<img src="./Business_files/testimonial-author-2.jpg" alt="" class="img-fluid custom-rounded-image">
-										</div>
-										<div class="col-12 col-sm-12 col-lg-10">
-											<div class="testimonial custom-testimonial-style-1 testimonial-with-quotes mb-0">
-												<blockquote class="pb-2">
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce ante tellus, convallis non consectetur sed, pharetra nec ex. Aliquam et tortor nisi. Duis mollis diam nec elit volutpat suscipit.</p>
-												</blockquote>
-												<div class="testimonial-author float-left">
-													<p><strong>John Smith</strong><span class="text-color-primary">CEO &amp; Founder - Okler</span></p>
-												</div>
-											</div>
-										</div>
-									</div></div><div class="owl-item" style="width: 1110px;"><div class="row">
-										<div class="col-8 col-sm-4 col-lg-2 text-center pt-5">
-											<img src="./Business_files/testimonial-author-3.jpg" alt="" class="img-fluid custom-rounded-image">
-										</div>
-										<div class="col-12 col-sm-12 col-lg-10">
-											<div class="testimonial custom-testimonial-style-1 testimonial-with-quotes mb-0">
-												<blockquote class="pb-2">
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce ante tellus, convallis non consectetur sed, pharetra nec ex. Aliquam et tortor nisi. Duis mollis diam nec elit volutpat suscipit.</p>
-												</blockquote>
-												<div class="testimonial-author float-left">
-													<p><strong>John Smith</strong><span class="text-color-primary">CEO &amp; Founder - Okler</span></p>
-												</div>
-											</div>
-										</div>
-									</div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"></button><button type="button" role="presentation" class="owl-next"></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="section-secondary custom-section-padding">
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<h2 class="font-weight-bold text-color-dark">- Our Team</h2>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col">
-								<div class="owl-carousel show-nav-title custom-dots-style-1 custom-dots-position custom-xs-arrows-style-2 mb-0 owl-theme owl-loaded owl-drag owl-carousel-init" data-plugin-options="{&#39;items&#39;: 4, &#39;margin&#39;: 20, &#39;autoHeight&#39;: true, &#39;loop&#39;: false, &#39;nav&#39;: false, &#39;dots&#39;: true}" style="height: auto;">
-									
-									
-									
-									
-									
-								<div class="owl-stage-outer owl-height" style="height: 367.5px;"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1413px;"><div class="owl-item active" style="width: 262.5px; margin-right: 20px;"><div>
-										<div class="team-item p-0">
-											<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-team-detail.html" class="text-decoration-none">
-												<span class="image-wrapper">
-													<img src="./Business_files/team-1.jpg" alt="" class="img-fluid">
-												</span>
-											</a>
-											<div class="team-infos">
-												<div class="share">
-													<i class="fas fa-share-alt"></i>
-													<div class="share-icons bg-color-light">
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Instagram"><i class="fab fa-instagram"></i></a>
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Linkedin"><i class="fab fa-linkedin-in"></i></a>
-													</div>
-												</div>
-												<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-team-detail.html" class="text-decoration-none">
-													<span class="team-member-name text-color-dark font-weight-semibold text-4">John Doe</span>
-													<span class="team-member-desc font-weight-light">CEO</span>
-												</a>
-											</div>
-										</div>
-									</div></div><div class="owl-item active" style="width: 262.5px; margin-right: 20px;"><div>
-										<div class="team-item p-0">
-											<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-team-detail.html" class="text-decoration-none">
-												<span class="image-wrapper">
-													<img src="./Business_files/team-2.jpg" alt="" class="img-fluid">
-												</span>
-											</a>
-											<div class="team-infos">
-												<div class="share">
-													<i class="fas fa-share-alt"></i>
-													<div class="share-icons bg-color-light">
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Instagram"><i class="fab fa-instagram"></i></a>
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Linkedin"><i class="fab fa-linkedin-in"></i></a>
-													</div>
-												</div>
-												<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-team-detail.html" class="text-decoration-none">
-													<span class="team-member-name text-color-dark font-weight-semibold text-4">Joyce Doe</span>
-													<span class="team-member-desc font-weight-light">Finance Expert</span>
-												</a>
-											</div>
-										</div>
-									</div></div><div class="owl-item active" style="width: 262.5px; margin-right: 20px;"><div>
-										<div class="team-item p-0">
-											<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-team-detail.html" class="text-decoration-none">
-												<span class="image-wrapper">
-													<img src="./Business_files/team-3.jpg" alt="" class="img-fluid">
-												</span>
-											</a>
-											<div class="team-infos">
-												<div class="share">
-													<i class="fas fa-share-alt"></i>
-													<div class="share-icons bg-color-light">
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Instagram"><i class="fab fa-instagram"></i></a>
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Linkedin"><i class="fab fa-linkedin-in"></i></a>
-													</div>
-												</div>
-												<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-team-detail.html" class="text-decoration-none">
-													<span class="team-member-name text-color-dark font-weight-semibold text-4">Donald Doe</span>
-													<span class="team-member-desc font-weight-light">Manufacturing</span>
-												</a>
-											</div>
-										</div>
-									</div></div><div class="owl-item active" style="width: 262.5px; margin-right: 20px;"><div>
-										<div class="team-item p-0">
-											<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-team-detail.html" class="text-decoration-none">
-												<span class="image-wrapper">
-													<img src="./Business_files/team-4.jpg" alt="" class="img-fluid">
-												</span>
-											</a>
-											<div class="team-infos">
-												<div class="share">
-													<i class="fas fa-share-alt"></i>
-													<div class="share-icons bg-color-light">
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Instagram"><i class="fab fa-instagram"></i></a>
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Linkedin"><i class="fab fa-linkedin-in"></i></a>
-													</div>
-												</div>
-												<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-team-detail.html" class="text-decoration-none">
-													<span class="team-member-name text-color-dark font-weight-semibold text-4">Jerry Doe</span>
-													<span class="team-member-desc font-weight-light">Project Manager</span>
-												</a>
-											</div>
-										</div>
-									</div></div><div class="owl-item" style="width: 262.5px; margin-right: 20px;"><div>
-										<div class="team-item p-0">
-											<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-team-detail.html" class="text-decoration-none">
-												<span class="image-wrapper">
-													<img src="./Business_files/team-5.jpg" alt="" class="img-fluid">
-												</span>
-											</a>
-											<div class="team-infos">
-												<div class="share">
-													<i class="fas fa-share-alt"></i>
-													<div class="share-icons bg-color-light">
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Instagram"><i class="fab fa-instagram"></i></a>
-														<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="text-decoration-none" title="Share on Linkedin"><i class="fab fa-linkedin-in"></i></a>
-													</div>
-												</div>
-												<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-team-detail.html" class="text-decoration-none">
-													<span class="team-member-name text-color-dark font-weight-semibold text-4">Tom Doe</span>
-													<span class="team-member-desc font-weight-light">Business Development</span>
-												</a>
-											</div>
-										</div>
-									</div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"></button><button type="button" role="presentation" class="owl-next"></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
-							</div>
-						</div>
-						<div class="row text-center mt-5">
-							<div class="col">
-								<a class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-team.html">View All</a>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="looking-for section-primary">
-					<div class="container">
-						<div class="row align-items-center">
-							<div class="col-md-6 col-lg-7">
-								<div class="looking-for-box">
-									<h2>- <span class="text-1 custom-secondary-font">Are you looking for a</span><br>
-									Business plan Consultant?</h2>
-									<p class="mb-4 mb-md-0">Schedule your company strategy right session now</p>
-								</div>
-							</div>
-							<div class="col-md-3 d-flex justify-content-md-end mb-4 mb-md-0">
-								<a class="text-decoration-none" href="tel:+00112304567" target="_blank" title="Call Us Now">
-									<span class="custom-call-to-action white-border text-color-light">
-										<span class="action-title">Call Us Now</span>
-										<span class="action-info">+001 1230 4567</span>
-									</span>
-								</a>
-							</div>
-							<div class="col-md-3 col-lg-2">
-								<a class="text-decoration-none" href="mail:mail@example.com" target="_blank" title="Email Us Now">
-									<span class="custom-call-to-action white-border text-color-light">
-										<span class="action-title">Email Us Now</span>
-										<span class="action-info">mail@example.com</span>
-									</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="custom-section-padding">
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<h2 class="font-weight-bold text-color-dark">- Our Blog</h2>
-							</div>
-						</div>
-						<div class="row">
-							<article class="blog-post col">
-								<div class="row">
-									<div class="col-sm-8 col-lg-5">
-										<div class="blog-post-image-wrapper">
-											<img src="./Business_files/blog-1.jpg" alt="" class="img-fluid mb-4">
-											<span class="blog-post-date bg-color-primary text-color-light font-weight-bold">
-												20
-												<span class="month-year font-weight-light">
-													Oct-16
-												</span>
-											</span>
-										</div>
-									</div>
-									<div class="col-sm-12 col-lg-7">
-										<h2> Global Opportunities</h2>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper risus luctus. Nunc et feugiat arcu, in placerat risus. Phasellus condimentum sapien vi.</p>
-										<hr class="solid">
-										<div class="post-infos d-flex">
-											<span class="info posted-by">
-												Posted by:
-												<span class="post-author font-weight-semibold text-color-dark">
-													John Doe
-												</span>
-											</span>
-											<span class="info comments ml-5">
-												Comments:
-												<span class="comments-number text-color-primary font-weight-semibold">
-													15
-												</span>
-											</span>
-											<span class="info like ml-5">
-												Like:
-												<span class="like-number font-weight-semibold custom-color-red">
-													38
-												</span>
-											</span>
-										</div>
-										<a class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase mt-4" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting-blog-detail.html" title="Read More">Read More</a>
-									</div>
-								</div>
-							</article>
-						</div>
-					</div>
-				</section>
-
-
-				<section class="section section-text-light section-background m-0" style="background: url(&#39;img/demos/business-consulting/contact/contact-background.jpg&#39;); background-size: cover;">
-					<div class="container">
-						<div class="row justify-content-md-center">
-							<div class="col-lg-6 mb-5 mb-lg-0">
-								<h2 class="font-weight-bold">- Contact Us</h2>
-								<p class="custom-opacity-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper.</p>
-								<div class="row">
-									<div class="col-md-6 custom-sm-margin-top">
-										<h4 class="mb-1">Call Us</h4>
-										<a href="tel:+1234567890" class="text-decoration-none" target="_blank" title="Call Us">
-											<span class="custom-call-to-action-2 text-color-light text-2 custom-opacity-font">
-												Phone
-												<span class="info text-5">
-													123-456-7890
-												</span>
-											</span>
-										</a>
-									</div>
-									<div class="col-md-6 custom-sm-margin-top">
-										<h4 class="mb-1">Our Location</h4>
-										<p class="custom-opacity-font">Porto Business Consulting 123 Porto Blvd, Suite 100 New York, NY</p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6 custom-sm-margin-top">
-										<h4 class="mb-1">Mail Us</h4>
-										<a href="mail:mail@example.com" class="text-decoration-none" target="_blank" title="Mail Us">
-											<span class="custom-call-to-action-2 text-color-light text-2 custom-opacity-font">
-												Email
-												<span class="info text-5">
-													mail@example.com
-												</span>
-											</span>
-										</a>
-									</div>
-									<div class="col-md-6 custom-sm-margin-top">
-										<h4 class="mb-1">Social Media</h4>
-										<ul class="social-icons social-icons-clean custom-social-icons-style-1 mt-2 custom-opacity-font">
-											<li class="social-icons-facebook">
-												<a href="http://www.facebook.com/" target="_blank" title="Facebook">
-													<i class="fab fa-facebook-f"></i>
-												</a>
-											</li>
-											<li class="social-icons-twitter">
-												<a href="http://www.twitter.com/" target="_blank" title="Twitter">
-													<i class="fab fa-twitter"></i>
-												</a>
-											</li>
-											<li class="social-icons-instagram">
-												<a href="http://www.instagram.com/" target="_blank" title="Instagram">
-													<i class="fab fa-instagram"></i>
-												</a>
-											</li>
-											<li class="social-icons-linkedin">
-												<a href="http://www.linkedin.com/" target="_blank" title="Linkedin">
-													<i class="fab fa-linkedin-in"></i>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 custom-sm-margin-top">
-								<h2 class="font-weight-bold">- Write Us</h2>
-								<form id="contactForm" class="contact-form custom-contact-form-style-1" action="https://portotheme.com/html/porto/7.5.0/php/contact-form.php" method="POST" novalidate="novalidate">
-									<div class="contact-form-success alert alert-success d-none mt-4" id="contactSuccess">
-										<strong>Success!</strong> Your message has been sent to us.
-									</div>
-
-									<div class="contact-form-error alert alert-danger d-none mt-4" id="contactError">
-										<strong>Error!</strong> There was an error sending your message.
-										<span class="mail-error-message text-1 d-block" id="mailErrorMessage"></span>
-									</div>
-
-									<input type="hidden" name="subject" value="Contact Message Received">
-									<div class="form-row">
-										<div class="form-group col">
-											<div class="custom-input-box">
-												<i class="icon-user icons text-color-primary"></i>
-												<input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" placeholder="Name*" required="">
-											</div>
-										</div>
-									</div>
-									<div class="form-row">
-										<div class="form-group col">
-											<div class="custom-input-box">
-												<i class="icon-envelope icons text-color-primary"></i>
-												<input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" placeholder="Email*" required="">
-											</div>
-										</div>
-									</div>
-									<div class="form-row">
-										<div class="form-group col">
-											<div class="custom-input-box">
-												<i class="icon-bubble icons text-color-primary"></i>
-												<textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" id="message" placeholder="Message*" required=""></textarea>
-											</div>
-										</div>
-									</div>
-									<div class="form-row">
-										<div class="form-group col">
-											<input type="submit" value="Submit Now" class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase" data-loading-text="Loading...">
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div> 
-
-			<footer id="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12 text-center pb-4">
-							<p>2018 © Porto <span class="text-color-light">Business Consulting</span> - Copyright All Rights Reserved</p>
-						</div>
-					</div>
-				</div>
-			</footer>
-
-		</div>
-
-		<!-- Vendor -->
-		<script src="./Business_files/jquery.min.js.descarga"></script>		<script src="./Business_files/jquery.appear.min.js.descarga"></script>		<script src="./Business_files/jquery.easing.min.js.descarga"></script>		<script src="./Business_files/jquery.cookie.min.js.descarga"></script>		<script src="./Business_files/style.switcher.js.descarga" id="styleSwitcherScript" data-base-path="" data-skin-src="master/less/skin-business-consulting.less"></script>		<script src="./Business_files/popper.min.js.descarga"></script>		<script src="./Business_files/bootstrap.min.js.descarga"></script>		<script src="./Business_files/common.min.js.descarga"></script>		<script src="./Business_files/jquery.validate.min.js.descarga"></script>		<script src="./Business_files/jquery.easypiechart.min.js.descarga"></script>		<script src="./Business_files/jquery.gmap.min.js.descarga"></script>		<script src="./Business_files/jquery.lazyload.min.js.descarga"></script>		<script src="./Business_files/jquery.isotope.min.js.descarga"></script>		<script src="./Business_files/owl.carousel.min.js.descarga"></script>		<script src="./Business_files/jquery.magnific-popup.min.js.descarga"></script>		<script src="./Business_files/jquery.vide.min.js.descarga"></script>		<script src="./Business_files/vivus.min.js.descarga"></script>
-		
-		<!-- Theme Base, Components and Settings -->
-		<script src="./Business_files/theme.js.descarga"></script>
-		
-		<!-- Current Page Vendor and Views -->
-		<script src="./Business_files/jquery.themepunch.tools.min.js.descarga"></script>		<script src="./Business_files/jquery.themepunch.revolution.min.js.descarga"></script>
-
-		<!-- Current Page Vendor and Views -->
-		<script src="./Business_files/view.contact.js.descarga"></script>
-		
-		<!-- Demo -->
-		<script src="./Business_files/demo-business-consulting.js.descarga"></script>
-		
-		<!-- Theme Custom -->
-		<script src="./Business_files/custom.js.descarga"></script>
-		
-		<!-- Theme Initialization Files -->
-		<script src="./Business_files/theme.init.js.descarga"></script><a class="scroll-to-top hidden-mobile" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#"><i class="fas fa-chevron-up"></i></a>
-
-
-
-
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		
-			ga('create', 'UA-42715764-5', 'auto');
-			ga('send', 'pageview');
-		</script>
-		<script src="./Business_files/analytics.js(1).descarga"></script>
-		<a href="https://portotheme.com/html/porto/7.5.0/index.html" class="go-to-demos"><i class="fas fa-arrow-left"></i> More Demos</a>
-
-	
-
-<!-- Style Switcher - Start -->
-<div id="styleSwitcher" class="style-switcher d-none d-sm-block">
-
-	<a id="styleSwitcherOpen" class="style-switcher-open" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#"><i class="fas fa-cogs"></i></a>
-
-	<div class="style-switcher-wrap">
-
-		<h4>Style Switcher</h4>
-
-		<h5>Primary Color</h5>
-		<div class="input-group input-group-2 color-primary colorpicker-element">
-			<input type="text" value="#0088cc" class="form-control">
-			<span class="input-group-append"><span class="input-group-text input-group-addon"><i style="background-color: rgb(227, 194, 20);"></i></span></span>
-		</div>
-
-		<h5>Secondary Color</h5>
-		<div class="input-group input-group-2 color-secondary colorpicker-element">
-			<input type="text" value="#e36159" class="form-control">
-			<span class="input-group-append"><span class="input-group-text input-group-addon"><i style="background-color: rgb(238, 244, 242);"></i></span></span>
-		</div>
-
-		<h5>Tertiary Color</h5>
-		<div class="input-group input-group-2 color-tertiary colorpicker-element">
-			<input type="text" value="#2BAAB1" class="form-control">
-			<span class="input-group-append"><span class="input-group-text input-group-addon"><i style="background-color: rgb(226, 253, 234);"></i></span></span>
-		</div>
-
-		<h5>Quaternary Color</h5>
-		<div class="input-group input-group-2 color-quaternary colorpicker-element">
-			<input type="text" value="#383f48" class="form-control">
-			<span class="input-group-append"><span class="input-group-text input-group-addon"><i style="background-color: rgb(16, 16, 25);"></i></span></span>
-		</div>
-
-		<h5>Borders Style</h5>
-		<div class="options-links borders">
-			<a class="" data-border-radius="4px" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#">Rounded</a>
-			<a data-border-radius="0" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="active">Square</a>
-		</div>
-
-		<h5>Layout Style</h5>
-		<div class="options-links layout">
-			<a class="active" data-layout-type="wide" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#">Wide</a>
-			<a data-layout-type="boxed" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#">Boxed</a>
-		</div>
-
-		<h5>Website Type</h5>
-		<div class="options-links website-type">
-			<a data-website-type="normal" href="https://portotheme.com/html/porto/7.5.0/index.html" class="active">Normal</a>
-			<a data-website-type="one-page" href="https://portotheme.com/html/porto/7.5.0/index-one-page.html">One Page</a>
-		</div>
-
-		<h5>Background Color</h5>
-		<div class="options-links background-color">
-			<a class="active" data-background-color="light" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#">Light</a>
-			<a data-background-color="dark" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#">Dark</a>
-		</div>
-
-		<div class="patterns" style="display: none;">
-			<h5>Background Patterns</h5>
-			<ul class="options" data-type="patterns">
-				<li><a class="pattern" style="background-image: url(img/patterns/gray_jean.png);" data-pattern="gray_jean" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Gray_jean"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/linedpaper.png);" data-pattern="linedpaper" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Linedpaper"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/az_subtle.png);" data-pattern="az_subtle" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Az_subtle"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/blizzard.png);" data-pattern="blizzard" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Blizzard"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/denim.png);" data-pattern="denim" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Denim"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/fancy_deboss.png);" data-pattern="fancy_deboss" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Fancy_deboss"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/honey_im_subtle.png);" data-pattern="honey_im_subtle" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Honey_im_subtle"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/linen.png);" data-pattern="linen" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Linen"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/pw_maze_white.png);" data-pattern="pw_maze_white" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Pw_maze_white"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/skin_side_up.png);" data-pattern="skin_side_up" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Skin_side_up"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/stitched_wool.png);" data-pattern="stitched_wool" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Stitched_wool"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/straws.png);" data-pattern="straws" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Straws"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/subtle_grunge.png);" data-pattern="subtle_grunge" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Subtle_grunge"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/textured_stripes.png);" data-pattern="textured_stripes" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Textured_stripes"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/wild_oliva.png);" data-pattern="wild_oliva" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Wild_oliva"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/worn_dots.png);" data-pattern="worn_dots" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Worn_dots"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/bright_squares.png);" data-pattern="bright_squares" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Bright_squares"></a></li>
-				<li><a class="pattern" style="background-image: url(img/patterns/random_grey_variations.png);" data-pattern="random_grey_variations" href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" title="Random_grey_variations"></a></li>
-			</ul>
-
-		</div>
-
-		<div class="style-switcher-buttons options-links">
-			<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#" class="reset">Reset</a>
-			<a href="https://portotheme.com/html/porto/7.5.0/demo-business-consulting.html#getCSSModal" class="get-css"><i class="fas fa-file-alt"></i> Get Skin CSS</a>
-		</div>
-
-	</div>
-
-</div>
-
-<div class="modal fade" id="getCSSModal">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h4 class="modal-title" id="cssModalLabel">Skin CSS</h4>
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			</div>
-			<div class="modal-body">
-				<div class="alert alert-info fade in" id="addBoxedClassInfo">
-					Please add the <strong>"boxed"</strong> class to the &lt;html&gt; element.
-				</div>
-				<textarea id="getCSSTextarea" class="get-css" readonly=""></textarea>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- Style Switcher - End --><div class="colorpicker dropdown-menu colorpicker-with-alpha colorpicker-right colorpicker-hidden" style="top: 4373px; left: 70px;"><div class="colorpicker-saturation" style="background-color: rgb(255, 214, 0);"><i style="top: 11px; left: 91px;"><b></b></i></div><div class="colorpicker-hue"><i style="top: 86px; left: 0px;"></i></div><div class="colorpicker-alpha" style="background-color: rgb(227, 194, 20);"><i style="top: 0px;"></i></div><div class="colorpicker-color" style="background-color: rgb(227, 194, 20);"><div style="background-color: rgb(227, 194, 20);"></div></div><div class="colorpicker-selectors"></div></div><div class="colorpicker dropdown-menu colorpicker-hidden colorpicker-with-alpha colorpicker-right"><div class="colorpicker-saturation" style="background-color: rgb(0, 255, 170);"><i style="top: 4.31373px; left: 2.45902px;"><b></b></i></div><div class="colorpicker-hue"><i style="top: 55.5556px;"></i></div><div class="colorpicker-alpha" style="background-color: rgb(238, 244, 242);"><i style="top: 0px;"></i></div><div class="colorpicker-color" style="background-color: rgb(238, 244, 242);"><div style="background-color: rgb(238, 244, 242);"></div></div><div class="colorpicker-selectors"></div></div><div class="colorpicker dropdown-menu colorpicker-hidden colorpicker-with-alpha colorpicker-right"><div class="colorpicker-saturation" style="background-color: rgb(0, 255, 76);"><i style="top: 0.784314px; left: 10.6719px;"><b></b></i></div><div class="colorpicker-hue"><i style="top: 61.7284px;"></i></div><div class="colorpicker-alpha" style="background-color: rgb(226, 253, 234);"><i style="top: 0px;"></i></div><div class="colorpicker-color" style="background-color: rgb(226, 253, 234);"><div style="background-color: rgb(226, 253, 234);"></div></div><div class="colorpicker-selectors"></div></div><div class="colorpicker dropdown-menu colorpicker-hidden colorpicker-with-alpha colorpicker-right"><div class="colorpicker-saturation" style="background-color: rgb(0, 0, 255);"><i style="top: 90.1961px; left: 36px;"><b></b></i></div><div class="colorpicker-hue"><i style="top: 33.3333px;"></i></div><div class="colorpicker-alpha" style="background-color: rgb(16, 16, 25);"><i style="top: 0px;"></i></div><div class="colorpicker-color" style="background-color: rgb(16, 16, 25);"><div style="background-color: rgb(16, 16, 25);"></div></div><div class="colorpicker-selectors"></div></div></body></html>

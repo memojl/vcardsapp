@@ -1,20 +1,13 @@
 <?php
-$nombre_fichero='../../admin/conexion.php';
-if(file_exists($nombre_fichero)){
-   include '../../admin/conexion.php';
-   $api_url=$page_url;
-}else{
-   include 'admin/conexion.php';
-   $api_url=($_SERVER['HTTP_HOST']=='localhost')?$page_url:'http://billnex.webcindario.com/';
-}
-
+include '../../admin/conexion.php';
 include 'admin/functions.php';
-
-$pro=(isset($_GET['profile']))?$_GET['profile']:'';
-profile_vcard($api_url,'vcard',$pro,$profile);
+$api_url=$page_url;
+$pro=(isset($_GET['profile']))?$_GET['profile']:$_REQUEST['profile'];
+echo '<br>'.$pro;
+profile_vcard($api_url,'vcard','dmiranda',$profile);
 //$empresa=$profile['empresa'];
-$empresa='Billnex';
-//$empresa='Capital';
+//$empresa='Billnex';
+$empresa='Capital';
 switch(true){
    case($empresa=='Billnex' && $profile!=''):
       include 'pages/billnex.html';
