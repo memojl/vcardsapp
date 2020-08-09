@@ -15,6 +15,6 @@ Desarrollo de tarjetas virtuales.
 
 6. Si no hay algun error entra al gestor o administrador de la pagina: http://localhost/MisSitios/vcardsapp/admin
 
-7. Por default el usuario es: admin y la contaseña es 123456 o admin79.
+7. Por default el usuario es: admin y la contraseña es 123456 o admin79.
 
 
