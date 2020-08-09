@@ -3,7 +3,7 @@ Desarrollo de tarjetas virtuales.
 
 ### Instalación Local 🔧
 
-1. Clonar el repositorio vcardsapp
+1. Clonar o descargar zip del repositorio vcardsapp
 
 2. Importar la base de datos desde: vcardsapp\admin\temp\sql\vcardsapp.sql
 
