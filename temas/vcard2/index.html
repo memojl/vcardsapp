@@ -67,8 +67,8 @@
 							<div class="header-column">
 								<div class="header-row">
 									<div class="header-logo">
-										<a href="<?php echo $page_url.$path_tema;?>demo-business-consulting.html">
-											<img alt="Porto" width="82" height="40" src="<?php echo $page_url.$path_tema;?>img/logo-default-slim-dark.png">
+										<a href="<?php echo $page_url;?>">
+											<img alt="Porto" width="90" src="<?php echo $page_url.$path_tema.'images/'.$logo;?>">
 										</a>
 									</div>
 								</div>
@@ -79,6 +79,8 @@
 										<div class="header-nav-main header-nav-main-mobile-dark header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
 											<nav class="collapse">
 												<ul class="nav nav-pills" id="mainNav">
+													<?php menu_web();?>
+													<!--
 													<li>
 														<a class="nav-link active" href="<?php echo $page_url.$path_tema;?>demo-business-consulting.html">
 															Home
@@ -90,7 +92,9 @@
 														</a>
 													</li>
 													<li class="dropdown dropdown-primary">
+
 														<a class="dropdown-toggle nav-link" href="<?php echo $page_url.$path_tema;?>demo-business-consulting-expertise.html">
+														
 															Expertise
 														</a>
 														<ul class="dropdown-menu">
@@ -151,6 +155,7 @@
 															Contact Us
 														</a>
 													</li>
+													-->
 												</ul>
 											</nav>
 										</div>
@@ -1104,7 +1109,7 @@
         <script src="<?php echo $page_url.$path_tema;?>js/jquery.appear.min.js"></script>		
         <script src="<?php echo $page_url.$path_tema;?>js/jquery.easing.min.js"></script>		
         <script src="<?php echo $page_url.$path_tema;?>js/jquery.cookie.min.js"></script>		
-        <script src="<?php echo $page_url.$path_tema;?>js/style.switcher.js" id="styleSwitcherScript" data-base-path="" data-skin-src="<?php echo $page_url.$path_tema;?>less/skin-business-consulting.less"></script>		
+        <!--script src="<?php echo $page_url.$path_tema;?>js/style.switcher.js" id="styleSwitcherScript" data-base-path="" data-skin-src="<?php echo $page_url.$path_tema;?>less/skin-business-consulting.less"></script-->		
         <script src="<?php echo $page_url.$path_tema;?>js/popper.min.js"></script>		
         <script src="<?php echo $page_url.$path_tema;?>js/bootstrap.min.js"></script>		
         <script src="<?php echo $page_url.$path_tema;?>js/common.min.js"></script>		

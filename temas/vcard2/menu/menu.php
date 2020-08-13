@@ -108,7 +108,7 @@ if($_SESSION['level']!=-1){echo '<!-- menu.json -->'."\n\r";}else{echo '<!-- men
 		
 		if($visible==1 && $sub_menu==NULL){
 			$link_css1=($mod==$rowm['modulo'])?' active':'';
-			$k=0;$link_css2='';
+			$k=0;$link_css2='';$link_css3='';
 			foreach ($Data as $row){
 				$ID_menu1=$row['ID'];
 				$nom_menu1=$row['menu'];
@@ -116,12 +116,14 @@ if($_SESSION['level']!=-1){echo '<!-- menu.json -->'."\n\r";}else{echo '<!-- men
 				$sub_menu1=$row['subm'];
 				$visible1=$row['visible'];
 				if($visible1!=0 && $sub_menu1!='' && $sub_menu1==$ID_menu){$k++;
-					$link_css2=' menu-item-has-children has-sub';
+					$link_css2='dropdown dropdown-primary';
+					$link_css3='dropdown-toggle ';
 					if($_SESSION['level']!=-1){echo '<!-- k:'.$k.' -->'."\n\r";}else{echo '<!--1 k:'.$k.' ID:'.$sub_menu1.' ID_menu:'.$ID_menu1.' CSS:'.$link_css2.' -->'."\n\r";}
 				}				
 			}			
 			link_url($link_url,$url_m,$mod_menu,$ext_menu);
-			echo ' / <!--'.$i.'-'.$mod_menu.'--><a href="'.$link_url.'" title="'.$link_url.'">'.$nom_menu.'</a>';
+			echo '<!--'.$i.'-'.$mod_menu.'-->
+			<li class="'.$link_css2.'"><a class="'.$link_css3.$link_css1.' nav-link" href="'.$link_url.'">'.$nom_menu.'</a>';
 			$n=0;$j=0;
 			foreach ($Data as $rowm){if($rowm['visible']==1 && $rowm['subm']==$ID_menu){$n++;}}
 			echo '<!--'.$n.'-->';
@@ -133,9 +135,9 @@ if($_SESSION['level']!=-1){echo '<!-- menu.json -->'."\n\r";}else{echo '<!-- men
 				$sub_menu2=$rowm['subm'];
 				$visible2=$rowm['visible'];
 				if($visible2==1 && $sub_menu2==$ID_menu){$j++;
-					if($j==1){echo "\n\r".'<ul class="sub-menu">'."\n\r";}
+					if($j==1){echo "\n\r".'<ul class="dropdown-menu">'."\n\r";}
 					link_url($link_url2,$url_m2,$mod_menu2,$ext_menu2);
-					echo '<li><!--j:'.$j.'--><a href="'.$link_url2.'">'.$nom_menu2.'</a></li>'."\n\r";
+					echo '<li><!--j:'.$j.'--><a class="dropdown-item" href="'.$link_url2.'">'.$nom_menu2.'</a></li>'."\n\r";
 					if($n==$j){echo '</ul>'."\n\r";}
 				}
 			}
