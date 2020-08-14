@@ -1,10 +1,6 @@
 <?php
 if (isset($mod) && $mod != '') {
-    open_page();
-?>
-Registro 
-<?php
-    close_page();
+include_once 'panel/pages/registro.html';
 }else{
     include '../../admin/conexion.php';
     open_page_form();
