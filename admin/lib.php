@@ -309,6 +309,7 @@ global $page_url,$path_jsonDB,$path_jsonWS;
 		$data=query_data($tabla,$url_api);//print_r($data);
 		//CAMPOS
 		$i=0;
+		$campos.='<th style="display:'.$display.';">Acciones</th>'."\n";
 		foreach($data as $key){$i++;
 			if($i==1){
 				foreach($key as $datos=>$value){
@@ -316,16 +317,15 @@ global $page_url,$path_jsonDB,$path_jsonWS;
 				}  
 			}  
 		}
-		$campos.='<th style="display:'.$display.';">Acciones</th>'."\n";
 		echo '<tr>'.$campos.'</tr>'."\n";
 		//DATOS
 		foreach($data as $key => $value){
 			$row=$data[$key];
 			echo '<tr id="'.$key.'">'."\n";   
+			echo '<td style="display:'.$display.';"><button class="btn btn-secondary btn-edit"><i class="fa fa-edit"></i></button> | <button class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>';			
 			foreach($row as $datos=>$value){//echo '<td>'.$row[$datos].'</td>'."\n";
-				echo '<td>'.str_limit($value,28,'...').'</td>'."\n";
+				echo '<td>'.$value.'</td>'."\n";
 			}
-			echo '<td style="display:'.$display.';"><button class="btn btn-secondary btn-edit"><i class="fa fa-edit"></i></button> | <button class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>';
 			echo '</tr>'."\n";
 		}
 }

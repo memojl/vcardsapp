@@ -6,7 +6,7 @@ user_login($ID_login,$username,$email_login,$nivel_login,$last_login,$tema_login
 //log_visitas($username);
 if(!empty($username) && ($nivel_mod==-1 || $dashboard_mod==1) && $_GET['mod']!='usuarios' || ($_GET['ext']=='admin/index' || $_GET['ext']=='miembros/index' || $_GET['ext']=='perfil_sesion')){
 	include ($path_dashboard.'index.php');
-}else if($mod=='usuarios' && $ext=='registro'){bodymodulos();}
+}else if(($mod=='usuarios' && $ext=='registro' || $ext=='panel') || ($mod=='vcard')){bodymodulos();}
 else{
 	include ('index.html');
 }
