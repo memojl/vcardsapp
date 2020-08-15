@@ -239,47 +239,31 @@ if(!file_exists($path_JSON)){$path_JSON=$page_url.'bloques/ws/t/'.$nomt.'/';}
 		if($visible==1 && $tema_slider==$tema){
 			$indicador.='
 			<li data-target="#myCarousel" data-slide-to="'.$i.'" class="'.$act.'"></li>';
-
-			$tit1_1=($tit1!='')?'<h3>'.$tit1.'</h3>':'';
-			$tit2_1=($tit2!='')?'<p>'.$tit2.'</p>':'';
-			$btn_1=($btn!='')?'<div class="a-btn"><a class="btn-cer" href="'.$url_s.'">'.$btn.'</a></div>':'';
+			$ima_cover='<img src="'.$page_url.$path_tema.'img/'.$cover.'" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1" class="rev-slidebg">';
+			$tit1_1=($tit1!='')?'<h1 class="tp-caption custom-secondary-font font-weight-bold text-color-light" data-x="[\'left\',\'left\',\'left\',\'left\']" data-hoffset="[30,30,30,30]" data-y="center" data-voffset="[-80,-80,-80,-40]" data-start="800" data-transform_in="y:[-300%];opacity:0;s:500;" style="font-size: 32px;">'.$tit1.'</h1>':'';
+			$tit2_1=($tit2!='')?'<div class="tp-caption custom-secondary-font font-weight-bold text-color-light" data-x="[\'left\',\'left\',\'left\',\'left\']" data-hoffset="[30,30,30,30]" data-y="center" data-voffset="[-42,-42,-42,2]" data-start="800" data-transform_in="y:[-300%];opacity:0;s:500;" style="font-size: 42px;">'.$tit2.'</div>':'';
+			$btn_1=($btn!='')?'<a href="'.$url_s.'" class="btn btn-primary tp-caption text-uppercase text-color-light custom-border-radius" data-hash data-hash-offset="85" data-x="[\'left\',\'left\',\'left\',\'left\']" data-hoffset="[30,30,30,30]" data-y="center" data-voffset="[60,60,60,100]" data-start="1500" style="font-size: 12px; padding: 15px 6px;" data-transform_in="y:[-300%]; opacity:0; s:500;">'.$btn.'</a>':'';
 
 			$diapositivas.='
-			<div class="item item'.$id.$act.'" style="background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(./modulos/Home/media/slide/'.$cover.') no-repeat;
-			background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(./modulos/Home/media/slide/'.$cover.') no-repeat;
-			background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(./modulos/Home/media/slide/'.$cover.') no-repeat; 
-			background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(./modulos/Home/media/slide/'.$cover.') no-repeat;
-			background-size:cover;"> 
-				<div class="container">
-					<div class="carousel-caption">
-					'.$tit1_1.$tit2_1.$btn_1.'
-					</div>
-				</div>
-			</div>
+			<li data-transition="fade">
+				'.$ima_cover.'
+				'.$tit1_1.'
+				'.$tit2_1.'
+				'.$btn_1.'
+			</li>
 			';
 		}//if
 	}//foreach
 		echo '
 		<!-- banner -->
 		'.$op_f.'
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-        		'.$indicador.'
-			</ol>
-			<div class="carousel-inner" role="listbox">
-        		'.$diapositivas.'
-			</div>
-			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-			<!-- The Modal -->
-    	</div> 
+	<div class="slider-container rev_slider_wrapper" style="height: 100%;">
+		<div id="revolutionSlider" class="slider rev_slider manual" data-version="5.4.8">
+			<ul>
+			'.$diapositivas.'
+			</ul>
+		</div>
+	</div>
 		<!-- //banner -->
 		';	
  }

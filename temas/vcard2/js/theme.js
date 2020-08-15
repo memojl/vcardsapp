@@ -4665,7 +4665,7 @@ window.theme.fn = {
 
 					var target = $(this).attr('href'),
 						offset = ($(this).is("[data-hash-offset]") ? $(this).data('hash-offset') : 0);
-
+/*
 					if($(target).get(0)) {
 						$(this).on('click', function(e) {
 							e.preventDefault();
@@ -4688,7 +4688,7 @@ window.theme.fn = {
 							return;
 						});
 					}
-
+*/
 				});
 
 				// Floating
