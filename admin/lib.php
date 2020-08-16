@@ -309,7 +309,6 @@ global $page_url,$path_jsonDB,$path_jsonWS;
 		$data=query_data($tabla,$url_api);//print_r($data);
 		//CAMPOS
 		$i=0;
-		$campos.='<th style="display:'.$display.';">Acciones</th>'."\n";
 		foreach($data as $key){$i++;
 			if($i==1){
 				foreach($key as $datos=>$value){
@@ -317,15 +316,16 @@ global $page_url,$path_jsonDB,$path_jsonWS;
 				}  
 			}  
 		}
+		$campos.='<th style="display:'.$display.';">Acciones</th>'."\n";
 		echo '<tr>'.$campos.'</tr>'."\n";
 		//DATOS
 		foreach($data as $key => $value){
 			$row=$data[$key];
 			echo '<tr id="'.$key.'">'."\n";   
-			echo '<td style="display:'.$display.';"><button class="btn btn-secondary btn-edit"><i class="fa fa-edit"></i></button> | <button class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>';			
 			foreach($row as $datos=>$value){//echo '<td>'.$row[$datos].'</td>'."\n";
-				echo '<td>'.$value.'</td>'."\n";
+				echo '<td>'.str_limit($value,28,'...').'</td>'."\n";
 			}
+			echo '<td style="display:'.$display.';"><button class="btn btn-secondary btn-edit"><i class="fa fa-edit"></i></button> | <button class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>';
 			echo '</tr>'."\n";
 		}
 }
@@ -1753,8 +1753,8 @@ $path_wpa='bloques/WPA/';
 }
 
 function icon(){
-	global $page_url,$path_tema;
-		echo '<meta name="phponix" content="Add to Home">
+	global $page_url,$path_tema,$page_name;
+		echo '<meta name="'.$page_name.'" content="Add to Home">
 		'.crear_manifest().'
 		<link  rel = "apple-touch-icon"  tallas = "57x57"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-57x57.png" > 
 		<link  rel = "apple-touch-icon"  tallas = "60x60"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-60x60.png" > 
@@ -1781,5 +1781,12 @@ function icon(){
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 		';
+	}
+
+	function str_limit($value,$limit=100,$end){
+		if (mb_strwidth($value, 'UTF-8') <= $limit) {
+				return $value;
+		}
+		return rtrim(mb_strimwidth($value, 0, $limit, '', 'UTF-8')).$end;
 	}
 ?>

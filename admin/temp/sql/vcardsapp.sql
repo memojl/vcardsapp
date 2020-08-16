@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-08-2020 a las 01:01:46
+-- Tiempo de generación: 16-08-2020 a las 16:14:24
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 7.3.12
 
@@ -215,7 +215,7 @@ CREATE TABLE `vcard_config` (
 --
 
 INSERT INTO `vcard_config` (`ID`, `logo`, `page_name`, `title`, `dominio`, `path_root`, `page_url`, `keyword`, `description`, `metas`, `g_analytics`, `tel`, `phone`, `wapp`, `webMail`, `contactMail`, `mode`, `chartset`, `dboard`, `dboard2`, `direc`, `CoR`, `CoE`, `BCC`, `CoP`, `fb`, `tw`, `gp`, `lk`, `yt`, `ins`, `wv`, `licencia`, `version`) VALUES
-(1, 'logo.min.png', 'PHP ONIX', 'PHP Onix - El mejor CMS para crear y administrar tu sitio web. Gestor de contenido web.', 'http://localhost/', '/MisSitios/vcardsapp', 'http://localhost/MisSitios/vcardsapp/', 'cms,contenido,web,landingpage,p&aacute;gina web', 'PHP Onix es un CMS gestor de contenidos para tu web.', '<!--Responsive Meta-->\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">\r\n<!-- META-TAGS generadas por http://metatags.miarroba.es -->\r\n<META NAME=\"DC.Language\" SCHEME=\"RFC1766\" CONTENT=\"Spanish\">\r\n<META NAME=\"AUTHOR\" CONTENT=\"Guillermo Jimenez\">\r\n<META NAME=\"REPLY-TO\" CONTENT=\"multiportal@outlook.com\">\r\n<LINK REV=\"made\" href=\"mailto:multiportal@outlook.com\">\r\n', '<!--Google Analytics-->', '(01)4426002842', '', '4426002842', 'multiportal@outlook.com', 'multiportal@outlook.com', 'page', 'iso-8859-1', 'dashboard', 'AdminLTE', 'Centro, Santiago de Querétaro, México', 'multiportal@outlook.com', 'phponix@webcindario.com', '', 'memojl08@gmail.com', 'https://facebook.com/', 'https://twitter.com/', '', '', '', '', '', 'cms-px31q2hponix31q2x.admx31q2in458x31q2x.202x31q24.05.x31q212.01x31q2.2.6.x31q26x31q2', '01.2.8.0');
+(1, 'logo_vcard.min.png', 'VCARDS-APP', 'VCARDS -  Tarjetas de Contacto Digital', 'http://localhost/', '/MisSitios/vcardsapp', 'http://localhost/MisSitios/vcardsapp/', 'cms,contenido,web,landingpage,p&aacute;gina web', 'PHP Onix es un CMS gestor de contenidos para tu web.', '<!--Responsive Meta-->\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">\r\n<!-- META-TAGS generadas por http://metatags.miarroba.es -->\r\n<META NAME=\"DC.Language\" SCHEME=\"RFC1766\" CONTENT=\"Spanish\">\r\n<META NAME=\"AUTHOR\" CONTENT=\"Guillermo Jimenez\">\r\n<META NAME=\"REPLY-TO\" CONTENT=\"multiportal@outlook.com\">\r\n<LINK REV=\"made\" href=\"mailto:multiportal@outlook.com\">\r\n', '<!--Google Analytics-->', '(01)4426002842', '', '4426002842', 'multiportal@outlook.com', 'multiportal@outlook.com', 'page', 'iso-8859-1', 'usuarios', 'AdminLTE', 'Centro, Santiago de Querétaro, México', 'multiportal@outlook.com', 'phponix@webcindario.com', '', 'memojl08@gmail.com', 'https://facebook.com/', 'https://twitter.com/', '', '', '', '', '', 'cms-px31q2hponix31q2x.admx31q2in458x31q2x.202x31q24.05.x31q212.01x31q2.2.6.x31q26x31q2', '01.2.8.0');
 
 -- --------------------------------------------------------
 
@@ -987,9 +987,9 @@ CREATE TABLE `vcard_menu_web` (
 --
 
 INSERT INTO `vcard_menu_web` (`ID`, `menu`, `url`, `modulo`, `ext`, `ord`, `subm`, `ima_top`, `tit_sec`, `des_sec`, `visible`) VALUES
-(1, 'Inicio', 'index.php', 'Home', '', '1', '', 'gris.png', '', '', 0),
+(1, 'Inicio', 'index.php', 'Home', '', '1', '', 'gris.png', '', '', 1),
 (2, 'Nosotros', '#', 'nosotros', '', '2', '', 'gris.png', '', '', 0),
-(3, 'Portafolio', 'portafolio/', 'portafolio', '', '3', '', '', '', '', 0),
+(3, 'Portafolio', 'portafolio/', 'portafolio', '', '3', '', 'gris.png', '', '', 0),
 (4, 'Blog', 'blog/', 'blog', '', '4', '', 'gris.png', '', '', 0),
 (5, 'Contacto', 'contacto/', 'contacto', '', '5', '', '', '', '', 1);
 
@@ -1060,7 +1060,7 @@ INSERT INTO `vcard_modulos` (`ID`, `nombre`, `modulo`, `description`, `dashboard
 (17, 'Chat', 'chat', 'Administración del modulo chat.', 0, 1, 0, 0, 1, 'false', 'fa-commenting', 'index.php?mod=chat'),
 (18, 'Directorio', 'directorio', 'Administrador del modulo de Directorio.', 0, 1, 0, 0, 0, 'false', 'fa-globe', 'index.php?mod=directorio'),
 (19, 'descargas', 'descargas', 'Administrador del modulo descargas', 0, 1, 0, 0, 0, 'false', 'fa-download', 'index.php?mod=descargas'),
-(20, 'Vcard', 'vcard', 'Administraci?n de tarjetas virtuales', 0, 1, 0, 1, 1, 'false', 'fa-folder-open', 'index.php?mod=vcard');
+(20, 'Vcard', 'vcard', 'Administraci&oacute;n de tarjetas virtuales', 0, 1, 0, 1, 1, 'false', 'fa-folder-open', 'index.php?mod=vcard');
 
 -- --------------------------------------------------------
 
@@ -1208,6 +1208,7 @@ CREATE TABLE `vcard_pages` (
   `titulo` varchar(100) NOT NULL,
   `contenido` text NOT NULL,
   `modulo` varchar(50) NOT NULL,
+  `tema` varchar(50) NOT NULL,
   `ext` varchar(50) NOT NULL,
   `url` varchar(250) NOT NULL,
   `fmod` varchar(20) NOT NULL,
@@ -1220,8 +1221,9 @@ CREATE TABLE `vcard_pages` (
 -- Volcado de datos para la tabla `vcard_pages`
 --
 
-INSERT INTO `vcard_pages` (`ID`, `titulo`, `contenido`, `modulo`, `ext`, `url`, `fmod`, `alta`, `visible`, `activo`) VALUES
-(1, 'Nosotros 1', '<p style=\"text-align: center;\"><span style=\"font-size: 16px;\"><strong><br /></strong></span></p>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 16px;\"><strong>Nosotros</strong></span></p>', 'nosotros', '', '', '', '', 0, 1);
+INSERT INTO `vcard_pages` (`ID`, `titulo`, `contenido`, `modulo`, `tema`, `ext`, `url`, `fmod`, `alta`, `visible`, `activo`) VALUES
+(1, 'Nosotros 1', '<p style=\"text-align: center;\"><span style=\"font-size: 16px;\"><strong><br /></strong></span></p>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 16px;\"><strong>Nosotros</strong></span></p>', 'nosotros', '', '', '', '', '', 0, 1),
+(2, 'Sin contenido', '', 'Home', 'vcard2', '', '', '', '', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1664,10 +1666,10 @@ CREATE TABLE `vcard_signup` (
 --
 
 INSERT INTO `vcard_signup` (`ID`, `username`, `password`, `email`, `level`, `lastlogin`, `tema`, `nombre`, `apaterno`, `amaterno`, `foto`, `cover`, `tel`, `ext`, `fnac`, `fb`, `tw`, `puesto`, `ndepa`, `depa`, `empresa`, `adress`, `direccion`, `mpio`, `edo`, `pais`, `genero`, `exp`, `likes`, `filtro`, `zona`, `alta`, `actualizacion`, `page`, `nivel_oper`, `rol`, `codigo`, `intentos`, `activo`) VALUES
-(1, 'admin', 'c64f923f7f476f0b78716079452e7bdec4b2c016', 'multiportal@outlook.com', '-1', '2020-08-08 17:22:26', 'default', 'Guillermo', 'Jimenez', 'Lopez', 'sinfoto.png', '', '4421944950', 1, '0000-00-00', '', '', 'Programador', 0, '', 'Multiportal', '', '', '', '', '', 'M', '', 0, '', '', '', 'admin2019xadmin79', '', 0, 0, '944950', '0', 1),
+(1, 'admin', 'c64f923f7f476f0b78716079452e7bdec4b2c016', 'multiportal@outlook.com', '-1', '2020-08-15 20:03:16', 'default', 'Guillermo', 'Jimenez', 'Lopez', 'sinfoto.png', '', '4421944950', 1, '0000-00-00', '', '', 'Programador', 0, '', 'Multiportal', '', '', '', '', '', 'M', '', 0, '', '', '', 'admin2019xadmin79', '', 0, 0, '944950', '0', 1),
 (2, 'demo', '71cc541bd1ccb6670de3f8d40f425ffb7315fe7f', 'demo@gmail.com', '-1', '0000-00-00 00:00:00', 'default', 'Demo', 'Apaterno', 'Amaterno', 'sinfoto.png', 'sincover.jpg', '4421234567', 0, '0000-00-00', '', '', 'Director', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'demo2019xdemo2017', '', 0, 0, '234567', '0', 1),
 (3, 'usuario', '3c6e6ac5382f4e804e824c0d785b275252ddacb0', 'multiportal@outlook.com', '1', '0000-00-00 00:00:00', 'default', 'Usuario', 'Apaterno', 'Amaterno', 'sinfoto.png', '', '4421234567', 0, '0000-00-00', '', '', 'Usuario', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'usuario2019xuser79x', '', 0, 0, '234567', '0', 1),
-(4, 'ventas', '1d415500d481e0c1c238189c22ea057da663c1e7', 'ventas@gmail.com', '2', '0000-00-00 00:00:00', 'default', 'Ventas', 'Apaterno', 'Amaterno', 'sinfoto.png', 'sincover.jpg', '4421234567', 0, '0000-00-00', '', '', 'Gerente', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'ventas2019xventas', '', 0, 0, '234567', '0', 1);
+(4, 'ventas', '1d415500d481e0c1c238189c22ea057da663c1e7', 'ventas@gmail.com', '2', '2020-08-13 15:16:21', 'default', 'Ventas', 'Apaterno', 'Amaterno', 'sinfoto.png', 'sincover.jpg', '4421234567', 0, '0000-00-00', '', '', 'Gerente', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'ventas2019xventas', '', 0, 0, '234567', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -1691,7 +1693,9 @@ CREATE TABLE `vcard_slider` (
 --
 
 INSERT INTO `vcard_slider` (`ID`, `ima`, `tit1`, `tit2`, `btn_nom`, `url`, `tema_slider`, `visible`) VALUES
-(1, 'home.jpg', 'Slider1', '', 'Boton', '', 'default', 0);
+(1, 'home.jpg', 'Slider1', '', 'Boton', '', 'default', 0),
+(2, 'slide-1.jpg', 'La soluci&oacute;n', 'para llegar a m&aacute;s clientes', 'Registrate', 'http://localhost/MisSitios/vcardsapp/usuarios/registro/', 'vcard2', 1),
+(3, 'slide-2.jpg', 'Mantente en', 'contacto con tus clientes', 'Registrate', 'https://vcardsapp.herokuapp.com/usuarios/registro/', 'vcard2', 1);
 
 -- --------------------------------------------------------
 
@@ -1733,7 +1737,8 @@ CREATE TABLE `vcard_temas` (
 
 INSERT INTO `vcard_temas` (`ID`, `tema`, `subtema`, `selec`, `nivel`) VALUES
 (1, 'default', '', 0, '0'),
-(5, 'vcard', '', 1, '0');
+(5, 'vcard', '', 0, '0'),
+(6, 'vcard2', '', 1, '0');
 
 -- --------------------------------------------------------
 
@@ -1800,7 +1805,8 @@ INSERT INTO `vcard_vcard` (`ID`, `profile`, `logo`, `nombre`, `descripcion`, `pu
 (2, 'jparra', 'foto.png', 'Juan Parra', '', 'Manager', 'Billnex', '', '', '+1(754)210-0433', 'juan.parra@thebillnex.com', 'https://www.thebillnex.com', 'https://facebook.com/', 'https://twitter.com/', '#', 'https://www.instagram.com/billnex', '', '', '2020-03-10 16:45:04', 1, 1, 1),
 (3, 'dmiranda', 'foto_capital.png', 'Daniel Miranda Mejia', '', 'Manager', 'Capital', '', '', '442 104 6067', 'dmiranda@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '', '', '2020-03-02 22:20:58', 0, 0, 1),
 (4, 'pbetancourt', 'foto_capital.png', 'Ponciano Betancourt', '', 'Manager', 'Capital', '', '', '442 347 0504', 'pbetancourt@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '', '', '2020-02-19 21:39:04', 0, 0, 1),
-(5, 'asuzan', 'foto_capital.png', 'Arturo Suz&aacute;n', '', 'Manager', 'Capital', '', '', '446 102 2535', 'a.suzan@capaitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '', '', '2020-02-19 21:39:26', 0, 0, 1);
+(5, 'asuzan', 'foto_capital.png', 'Arturo Suz&aacute;n', '', 'Manager', 'Capital', '', '', '446 102 2535', 'a.suzan@capaitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '', '', '2020-02-19 21:39:26', 0, 0, 1),
+(6, 'memojl', 'foto.png', 'Guillermo Jimenez Lopez', '', 'Programador', 'Multiportal', '', '', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', '', '', '', '', '', '', '2020-08-15 19:50:39', 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -2357,7 +2363,7 @@ ALTER TABLE `vcard_opciones`
 -- AUTO_INCREMENT de la tabla `vcard_pages`
 --
 ALTER TABLE `vcard_pages`
-  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_portafolio`
@@ -2441,7 +2447,7 @@ ALTER TABLE `vcard_signup`
 -- AUTO_INCREMENT de la tabla `vcard_slider`
 --
 ALTER TABLE `vcard_slider`
-  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_tareas`
@@ -2453,7 +2459,7 @@ ALTER TABLE `vcard_tareas`
 -- AUTO_INCREMENT de la tabla `vcard_temas`
 --
 ALTER TABLE `vcard_temas`
-  MODIFY `ID` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_testimonios`
@@ -2465,7 +2471,7 @@ ALTER TABLE `vcard_testimonios`
 -- AUTO_INCREMENT de la tabla `vcard_vcard`
 --
 ALTER TABLE `vcard_vcard`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_visitas`

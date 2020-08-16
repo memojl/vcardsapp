@@ -1,7 +1,7 @@
 {
-	"name": "PHP ONIX",
-	"short_name": "PHP ONIX",
-	"description": "PHP Onix - El mejor CMS para crear y administrar tu sitio web. Gestor de contenido web.",
+	"name": "VCARDS-APP",
+	"short_name": "VCARDS-APP",
+	"description": "VCARDS -  Tarjetas de Contacto Digital",
 	"scope": ".",
 	"start_url": "http://localhost/MisSitios/vcardsapp/",
 	"display": "standalone",

@@ -2,24 +2,21 @@
 <!DOCTYPE html>
 <html data-style-switcher-options="{'changeLogo': false, 'borderRadius': 0, 'colorPrimary': '#4dbb6d', 'colorSecondary': '#eef4f2', 'colorTertiary': '#e2fdea', 'colorQuaternary': '#101019'}">
 	<head>
-
 		<!-- Basic -->
-		<meta charset="utf-8">
+		<?php echo $meta_chartset;?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 
-		<title><?php title();?></title>	
-
-		<meta name="keywords" content="HTML5 Template" />
-		<meta name="description" content="Porto - Responsive HTML5 Template">
-		<meta name="author" content="okler.net">
-
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-
+		<title><?php title();?></title>
+<?php echo $metas;?>
+<META NAME="DESCRIPTION" CONTENT="<?php echo $description;?>">
+<META NAME="KEYWORDS" CONTENT="<?php echo $keywords;?>">
+<!-- LINK-ICON -->
+<link rel="shortcut icon" type="image/x-icon" href="<?php echo $page_url;?>favicon.ico">
+<link rel="icon" type="image/x-icon" href="<?php echo $page_url;?>favicon.ico">
+<?php 
+sql_opciones('api_icon',$valor);
+if($valor==1){icon();}
+?>
 		<!-- Web Fonts  -->
 		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700%7CSintony:400,700" rel="stylesheet" type="text/css">
 
@@ -57,7 +54,13 @@
 		<script src="<?php echo $page_url.$path_tema;?>js/modernizr.min.js"></script>
 
 		<link rel="stylesheet" href="<?php echo $page_url.$path_tema;?>css/style.css">
-		<?php login($login_se,$username,$ID_login);?>
+<!--GOOGLE ANALITYCS-->
+<?php 
+sql_opciones('google_analytics',$valor);
+if($valor==1){echo $google_analytics;}
+?>
+<!--FIN GOOGLE ANALITYCS-->
+<?php login($login_se,$username,$ID_login);?>
 	</head>
 	<body>
 
@@ -320,6 +323,6 @@
 
 
 <!--a href="<?php echo $page_url.$path_tema;?>index.html" class="go-to-demos"><i class="fas fa-arrow-left"></i> More Demos</a-->
-
+<?php API_WPA();?>
 	</body>
 </html>
