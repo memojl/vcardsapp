@@ -3,10 +3,24 @@ if(isset($_SESSION["username"])){
    	if($_SESSION["level"]==-1 || $_SESSION["level"]==1){
    		include 'functions.php';
    		editor_tiny_mce();
+         $tabla='vcard';
+         $cond_opc=($opc!='')?'&opc='.$opc:'';
+         if($username=='admin'){
+            $vistas=($action!='' && $action=='listado')?'<i class="fa fa-list"></i> | <a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'"><i class="fa fa-th-large"></i></a>':'<a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'&action=listado"><i class="fa fa-list"></i></a> | <i class="fa fa-th-large"></i>';
+         }
+         //$vistas=($action!='' && $action=='listado')?'<i class="fa fa-list"></i> | <a id="load(1);" href="#"><i class="fa fa-th-large"></i></a>':'<a id="listado" href="#"><i class="fa fa-list"></i></a> | <i class="fa fa-th-large"></i>';
 ?>
+<script>
+function add_empresa(val){
+	if(val==1){document.getElementById('sel_empresa').innerHTML='<input type="text" class="form-control" id="empresa" name="empresa" value=""><div><a href="javascript:add_empresa(0);">Cancelar</a></div>';
+	}else{document.getElementById('sel_empresa').innerHTML='<?php select_empresa($tabla,$empresa);?><div style="float:right;"><a href="javascript:add_empresa(1);"><i class="fa fa-plus"></i> Agregar Empresa</a></div>';}
+}
+</script>
+
 <style>
+#sel_empresa{display: flex;}
 @media only screen and (min-width: 992px){
-	.modal-lg{width: 90% !important;}
+	.modal-lg{width: 85% !important;}
 }
 </style>
 <!-- Content Header (Page header) -->
@@ -68,9 +82,9 @@ if(isset($_SESSION["username"])){
          ?>
    </div>
    <!-- /.row-->
+   <?php modal_vcard();//crear_ajax_servicios();?>
 </section>
 <!-- /.content -->
-<?php modal_vcard();//crear_ajax_servicios();?>
 <?php 		
 	}else{echo '<div id="cont-user">No tiene permiso para ver esta secci&oacute;n.</div>';}
    }else{header("Location: ".$page_url."index.php");}
