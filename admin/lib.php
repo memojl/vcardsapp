@@ -5,7 +5,7 @@ Author URI: http://www.multiportal.com.mx
 SISTEMA PHPONIX
 Version Actual: 2.8.0
 F.Creación: 26/03/2015
-F.Modficación: 07/08/2020
+F.Modficación: 16/08/2020
 Descripción: Aplicación web multiproposito.
 /**********************************************************
 v.2.8.0 - TOKEN  
@@ -1715,8 +1715,6 @@ $contenido='{
 	]
   }  
 ';	
-$path_wpa='';
-
 	crear_archivo('bloques/WPA/','manifest.json',$contenido,$path_file);	
 	if(file_exists('./'.$path_file)){
 		echo '<link rel="manifest" href="'.$page_url.'bloques/WPA/manifest.json">';
@@ -1725,26 +1723,72 @@ $path_wpa='';
 
 function crear_sw($path_wpa){
 global $page_url,$path_root,$path_tema,$pag_name;
-$path_sw='sw.js';
-	if(file_exists('./'.$path_sw)){
-		echo '<script src="'.$page_url.$path_sw.'" type="text/javascript"></script>';
+$contenido='//Service Worker sw.js / index.php
+self.addEventListener(\'install\', function(event) {
+  console.log(\'[Service Worker] Instalando Service Worker (sw.js)...\', event);
+  event.waitUntil(
+	caches.open(\'static\').then(function(cache) {
+	  cache.addAll([\''.$path_root.'/\', \''.$path_root.'/index.php\', \''.$path_root.'/bloques/WPA/manifest.json\',\''.$path_root.'/bloques/WPA/appCon.js\']);
+	})
+  );
+});
+
+self.addEventListener(\'activate\', function(event) {
+  console.log(\'[Service Worker] Activando Service Worker (sw.js)...\', event);
+});
+
+self.addEventListener(\'fetch\', function(event) {//console.log(event.request.url);
+  event.respondWith(
+	  caches.match(event.request).then(function(response) {
+		if (response) {
+		  return response;
+		} else {
+		  return fetch(event.request).then(function(res) {
+			return caches.open(\'dynamic\').then(function(cache) {
+			  //cache.put(event.request.url, res.clone()).then(()=>{cache.delete(\''.$path_root.'/admin/\');});
+			  cache.put(event.request.url, res.clone()).then(()=>{cache.delete(event.request.url);});
+			  return res;
+			});
+		  });
+		}
+	  })
+  ); 
+});  
+
+';
+//$path_sw='sw.js';
+crear_archivo($path_wpa,'sw.js',$contenido,$path_file);
+	if(file_exists('./'.$path_file)){
+		echo '<script src="'.$page_url.$path_file.'" type="text/javascript"></script>';
 	}
 }
 
 function crear_appCon($path_wpa){
 global $page_url,$path_root,$path_tema,$pag_name;
-$path_appCon=$path_wpa.'appCon.js';
-	if(file_exists('./'.$path_appCon)){
-		echo '<script src="'.$page_url.$path_appCon.'" type="text/javascript"></script>';
+$contenido='//appCon.js index.php
+if (\'serviceWorker\' in navigator) {
+	navigator.serviceWorker.register(\''.$path_root.'/sw.js\').then(function(registration) {
+		console.log(
+		  \'Service Worker registro correcto con scope: \',
+		  registration.scope
+		);
+	  }).catch(function(err) {
+		console.log(\'Service Worker registro fallo: \', err);
+	  });
+  }  ';
+//$path_appCon=$path_wpa.'appCon.js';
+crear_archivo($path_wpa,'appCon.js',$contenido,$path_file);
+	if(file_exists('./'.$path_file)){
+		echo '<script src="'.$page_url.$path_file.'" type="text/javascript"></script>';
 	}
 }
 
 function API_WPA(){
 global $page_url,$path_root,$path_tema,$page_name;
-$path_wpa='bloques/WPA/';
 	sql_opciones('api_WPA',$valor);
 	if($valor==1){
 		crear_sw($path_wpa);
+		$path_wpa='bloques/WPA/';
 		crear_appCon($path_wpa);
 	}else{
 		unlink('sw.js');
@@ -1789,4 +1833,9 @@ function icon(){
 		}
 		return rtrim(mb_strimwidth($value, 0, $limit, '', 'UTF-8')).$end;
 	}
+
+function cadena_replace(&$replace1,&$replace2){
+	$replace1=array(' ','.',',','(',')','/','"','á','é','í','ó','ú','&aacute;','&eacute;','&iacute;','&oacute;','&uacute;','Á','É','Í','Ó','Ú','&Aacute;','&Eacute;','&Iacute;','&Oacute;','&Uacute;','ñ','Ñ','&ntilde;','&Ntilde;','&','amp;');
+	$replace2=array('-','-','-','-','-','-','-','a','e','i','o','u','a','e','i','o','u','A','E','I','O','U','A','E','I','O','U','n','N','n','N','','');
+}
 ?>

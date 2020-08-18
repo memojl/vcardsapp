@@ -12,7 +12,7 @@ $slide=$valor;
 								<div class="looking-for-box">
 									<h2>- <span class="text-1 custom-secondary-font">Tarjeta de contacto digital</span><br>
 									Consulta Plan Business</h2>
-									<p>Una estategia digital del futuro hoy <b>Vcards</b></p>
+									<p>Una estrategia digital del futuro hoy <b>Vcards</b></p>
 								</div>
 							</div>
 							<div class="col-md-3 d-flex justify-content-md-end mb-4 mb-md-0">

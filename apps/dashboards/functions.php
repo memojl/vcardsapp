@@ -478,7 +478,8 @@ echo '
 		<div class="col-md-5 col-xs-10">
 			<div class="btn-group pull-right">
 				<!--a href="#" class="btn btn-default" data-toggle="modal" data-target="#Producto"><i class="fa fa-plus"></i> Nuevo</a-->
-				<a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'&form=1&action=add" class="btn btn-default"><i class="fa fa-plus"></i> Nuevo</a>
+        <!--a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'&form=1&action=add" class="btn btn-default"><i class="fa fa-plus"></i> Nuevo</a-->
+        <button type="button" class="btn btn-default btn-add" data-toggle="modal" data-target="#addVcard"><i class="fa fa-plus"></i> Nuevo</button>
 				<!--button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Mostrar <span class="fa fa-caret-down"></span>
 				</button>
