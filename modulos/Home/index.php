@@ -16,7 +16,7 @@ $slide=$valor;
 								</div>
 							</div>
 							<div class="col-md-3 d-flex justify-content-md-end mb-4 mb-md-0">
-								<a class="text-decoration-none" href="tel:<?php echo $contactMail;?>" target="_blank" title="Llamanos">
+								<a class="text-decoration-none" href="tel:<?php echo $tel1;?>" target="_blank" title="Llamanos">
 									<span class="custom-call-to-action">
 										<span class="action-title text-color-primary">Llamanos</span>
 										<span class="action-info text-color-light"><?php echo $tel1;?></span>
@@ -24,7 +24,7 @@ $slide=$valor;
 								</a>
 							</div>
 							<div class="col-md-3 col-lg-2">
-								<a class="text-decoration-none" href="mail:<?php echo $contactMail;?>" target="_blank" title="Email">
+								<a class="text-decoration-none" href="mailto:<?php echo $contactMail;?>" target="_blank" title="Email">
 									<span class="custom-call-to-action">
 										<span class="action-title text-color-primary">Email</span>
 										<span class="action-info text-color-light"><?php echo $contactMail;?></span>
