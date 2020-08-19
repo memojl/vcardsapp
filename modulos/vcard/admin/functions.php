@@ -1,35 +1,100 @@
 <?php 
-
-function select_empresa($tabla,$empresa){
-global $mysqli,$DBprefix,$url,$page_url,$mod,$ext,$opc,$path_tema,$tema_previo;
-//file_json($tabla,$path_JSON);//$tabla='vcard';
-$path_JSON='modulos/vcard/asstes/json/'.$tabla.'.json';
-if(!file_exists($path_JSON)){$path_JSON=$page_url.'bloques/ws/t/?t='.$tabla;}
- if($path_JSON){$i=0;//echo '<!-- '.$tabla.'.json URL:('.$path_JSON.')-->'."\n\r";
-	$objData=file_get_contents($path_JSON);
-	$Data=json_decode($objData,true);
-	usort($Data, function($a, $b){return strnatcmp($a['ord'], $b['ord']);});//Orden del menu
-	$empresa1='';
-	//$sel='<select class="form-control" id="empresa" name="empresa" style="width:60%;float:left;">';
-	foreach ($Data as $rowm){$i++;
-		if($empresa1!=$rowm['empresa']){
-			$sel=($rowm['empresa']==$empresa)?' selected':'';
-			$sel1.='<option value="'.$rowm['empresa'].'"'.$sel.'>'.$rowm['empresa'].'</option>';
-		}
-		$empresa1=$rowm['empresa'];
-	}
-	$select.='<select class="form-control" id="empresa" name="empresa" style="float:left;">'.$sel1.'</select>';
-    return $select;
- }
-}
-
-
 function file_ima($cover){
 global $page_url,$mod;
    $file='<input type="hidden" class="form-control" id="cover" name="cover" value="'.$cover.'">
    <img src="'.$page_url.'modulos/'.$mod.'/fotos/'.$cover.'" style="width:200px;" title="'.$cover.'">
    <a href="javascript:up(1);">Cambiar Foto</a><div id="upload"></div>';
    return $file;
+}
+
+function select_empresa($tabla,$url_api,$empresa){
+global $page_url,$path_jsonDB,$path_jsonWS;
+   $data=query_data($tabla,$url_api);//print_r($data);
+   $empresa1='';
+   $option='<option>Seleccione Empresa</option>';
+	foreach ($data as $rowm){$i++;
+		if($empresa1!=$rowm['empresa']){$sel=($rowm['empresa']==$empresa)?' selected':'';
+			$option.='<option value="'.$rowm['empresa'].'"'.$sel.'>'.$rowm['empresa'].'</option>';
+      }
+      $empresa1=$rowm['empresa'];
+	}
+   $select='<select class="form-control" id="empresa" name="empresa" style="float:left;">'.$option.'</select>';
+   return $select;
+}
+
+function query_all_tabla_vcard($th,$tabla,$url_api,$display){
+global $page_url,$path_jsonDB,$path_jsonWS;
+	$data=query_data($tabla,$url_api);//print_r($data);
+	//CAMPOS
+   $i=0;$campos='<th style="display:'.$display.';">Acciones</th>'."\n";
+      if($th!=''){
+         for($j=0;$j<count($th);$j++){
+            $campos.='<th>'.$th[$j].'</th>'."\n";
+         }
+      }else{
+         foreach($data as $key){$i++;
+            if($i==1){
+               foreach($key as $datos=>$value){
+                  $campos.='<th>'.$datos.'</th>'."\n";
+               }  
+            }  
+         }   
+      }
+	echo '<tr>'.$campos.'</tr>'."\n";
+   //DATOS
+	foreach($data as $key => $value){
+      $row=$data[$key];if($th!=''){$key+=1;}
+      echo '<tr id="'.$key.'">'."\n";
+      echo '<td style="display:'.$display.';"><button class="btn btn-primary btn-edit"><i class="fa fa-edit"></i></button> | <button class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>';   
+      if($th!=''){
+         for($j=0;$j<count($th);$j++){$datos=$th[$j];
+            echo '<td>'.$row[$datos].'</td>'."\n";
+         }
+      }else{
+         foreach($row as $datos=>$value){//echo '<td>'.$row[$datos].'</td>'."\n";
+            echo '<td>'.$value.'</td>'."\n";
+			}
+      }
+      echo '</tr>'."\n";
+   }
+}
+
+function crear_ajax_vcard(){
+global $mysqli,$DBprefix,$page_url,$path_tema,$mod,$ext,$opc,$action,$URL;
+   $cond_opc=($opc!='')?'&opc='.$opc:'';
+      
+   //ajax_crud($campos,$salidadebusaqueda,1=tinyMCE);
+   $campos='
+            logo: $("#cover").val(),
+            profile: $("#profile").val(),
+            nombre: $("#nombre").val(),
+            puesto: $("#puesto").val(),
+            empresa: $("#empresa").val(),
+            cell: $("#cell").val(),
+            email: $("#email").val(),
+            web: $("#web").val(),
+            lk: $("#lk").val(),
+            ins: $("#ins").val(),
+            visible: $("#visible").val(),
+            id: $("#id").val()';
+   $template='
+      <div class="col-md-3 col-xs-12">
+         <div class="box box-primary">
+            <div class="box-header with-border">
+                   <h3 class="box-title">C&oacute;digo: <b>${task.profile}</b></h3>
+               <span class="controles">${sel}
+                  <a href="'.$page_url.'index.php?mod='.$mod.'&ext=admin/index'.$cond_opc.'&form=1&action=edit&id=${task.ID}" title="Editar"><i class="fa fa-edit"></i></a> | <a href="#" taskid="${task.ID}" class="task-delete" title="Borrar"><i class="fa fa-trash"></i></a>
+               </span>
+            </div>
+            <div class="box-body">
+               <div class="ima-size">
+                  <img src="'.$page_url.'modulos/'.$mod.'/assets/fotos/${task.logo}" class="ima-size img-responsive">
+               </div>
+               <div id="title"><strong>${task.nombre}</strong></div>	
+            </div><!-- /.box-body -->
+         </div>
+      </div>';
+   ajax_crud($campos,$template,1);
 }
 
 function modal_vcard(){
@@ -115,7 +180,7 @@ $seleccion1=($visible=='1')?'selected':'';
                            <div id="sel_empresa">
                               <div class="input-group">
                                  <span class="input-group-addon"><i class="fa fa-industry"></i></span>
-                                 '.select_empresa($tabla=$mod,$empresa).'
+                                 '.select_empresa($tabla=$mod,$url_api,$empresa).'
                               </div>
                               <div style="padding: 5px 12px"><a href="javascript:add_empresa(1);"><i class="fa fa-plus"></i> Empresa</a></div>
                            </div>

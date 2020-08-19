@@ -13,7 +13,7 @@ if(isset($_SESSION["username"])){
 <script>
 function add_empresa(val){
 	if(val==1){document.getElementById('sel_empresa').innerHTML='<input type="text" class="form-control" id="empresa" name="empresa" value=""><div><a href="javascript:add_empresa(0);">Cancelar</a></div>';
-	}else{document.getElementById('sel_empresa').innerHTML='<?php select_empresa($tabla,$empresa);?><div style="float:right;"><a href="javascript:add_empresa(1);"><i class="fa fa-plus"></i> Agregar Empresa</a></div>';}
+	}else{document.getElementById('sel_empresa').innerHTML='<div class="input-group"><span class="input-group-addon"><i class="fa fa-industry"></i></span><?php echo select_empresa($tabla=$mod,$url_api,$empresa);?></div><div style="padding: 5px 12px"><a href="javascript:add_empresa(1);"><i class="fa fa-plus"></i> Empresa</a></div>';}
 }
 </script>
 
@@ -70,8 +70,8 @@ function add_empresa(val){
          <!-- /.row -->		          		  
          <div class="col-md-12 col-xs-12">
 			<?php 
-			   //crear_ws_vcard('modulos/vcard/assets/json/',$tabla);
-			   crear_ws($tabla=$mod);
+            crear_ws($tabla=$mod);//crear_ws_vcard('modulos/vcard/assets/json/',$tabla);
+            crear_ajax_vcard();
 			?>
          </div>
       </section>
@@ -82,7 +82,7 @@ function add_empresa(val){
          ?>
    </div>
    <!-- /.row-->
-   <?php modal_vcard();//crear_ajax_servicios();?>
+   <?php modal_vcard();?>
 </section>
 <!-- /.content -->
 <?php 		

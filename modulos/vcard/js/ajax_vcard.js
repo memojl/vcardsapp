@@ -81,18 +81,18 @@ $(document).ready(function(){
 		tinyMCE.triggerSave();
 		const postData={
 			
-			logo: $("#cover").val(),
-			profile: $("#profile").val(),
-			nombre: $("#nombre").val(),
-			puesto: $("#puesto").val(),
-			empresa: $("#empresa").val(),
-			cell: $("#cell").val(),
-			email: $("#email").val(),
-			web: $("#web").val(),
-			lk: $("#lk").val(),
-			ins: $("#ins").val(),
-			visible: $("#visible").val(),
-      		id: $("#id").val()
+            logo: $("#cover").val(),
+            profile: $("#profile").val(),
+            nombre: $("#nombre").val(),
+            puesto: $("#puesto").val(),
+            empresa: $("#empresa").val(),
+            cell: $("#cell").val(),
+            email: $("#email").val(),
+            web: $("#web").val(),
+            lk: $("#lk").val(),
+            ins: $("#ins").val(),
+            visible: $("#visible").val(),
+            id: $("#id").val()
 		};
 		const url = edit === false ? 'modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=add' : 'modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=edit';		
 		console.log(postData, url);
@@ -175,22 +175,22 @@ $(document).ready(function(){
 				visible=`${task.visible}`;
 				sel=(visible==0)?'<span style="color:#e00;"><i class="fa fa-close" title="Desactivado"></i></span>':'<span style="color:#0f0;"><i class="fa fa-check" title="Activo"></i></span>';	
         		template += `
-	<div class="col-md-3 col-xs-12">
-		<div class="box box-primary">
-			<div class="box-header with-border">
-       			<h3 class="box-title">C&oacute;digo: <b>${task.profile}</b></h3>
-				<span class="controles">${sel}
-					<a href="http://localhost/MisSitios/vcardsapp/index.php?mod=vcard&ext=admin/index&form=1&action=edit&id=${task.ID}" title="Editar"><i class="fa fa-edit"></i></a> | <a href="#" taskid="${task.ID}" class="task-delete" title="Borrar"><i class="fa fa-trash"></i></a>
-				</span>
-			</div>
-			<div class="box-body">
-				<div class="ima-size">
-					<img src="http://localhost/MisSitios/vcardsapp/modulos/vcard/assets/fotos/${task.logo}" class="ima-size img-responsive">
-				</div>
-				<div id="title"><strong>${task.nombre}</strong></div>	
-			</div><!-- /.box-body -->
-		</div>
-	</div>`
+      <div class="col-md-3 col-xs-12">
+         <div class="box box-primary">
+            <div class="box-header with-border">
+                   <h3 class="box-title">C&oacute;digo: <b>${task.profile}</b></h3>
+               <span class="controles">${sel}
+                  <a href="http://localhost/MisSitios/vcardsapp/index.php?mod=vcard&ext=admin/index&form=1&action=edit&id=${task.ID}" title="Editar"><i class="fa fa-edit"></i></a> | <a href="#" taskid="${task.ID}" class="task-delete" title="Borrar"><i class="fa fa-trash"></i></a>
+               </span>
+            </div>
+            <div class="box-body">
+               <div class="ima-size">
+                  <img src="http://localhost/MisSitios/vcardsapp/modulos/vcard/assets/fotos/${task.logo}" class="ima-size img-responsive">
+               </div>
+               <div id="title"><strong>${task.nombre}</strong></div>	
+            </div><!-- /.box-body -->
+         </div>
+      </div>`
 				});
 				$(".outer_div").html(template+"</div>");
 			}

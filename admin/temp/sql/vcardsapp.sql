@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-08-2020 a las 16:14:24
+-- Tiempo de generación: 19-08-2020 a las 04:58:56
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 7.3.12
 
@@ -1155,7 +1155,7 @@ CREATE TABLE `vcard_opciones` (
 
 INSERT INTO `vcard_opciones` (`ID`, `nom`, `descripcion`, `valor`) VALUES
 (1, 'google_analytics', '', '1'),
-(2, 'form_registro', '', '0'),
+(2, 'form_registro', '', '1'),
 (3, 'geo_loc_visitas', '', '0'),
 (4, 'slide_active', '', '1'),
 (5, 'API_facebook', '', '0'),
@@ -1666,7 +1666,7 @@ CREATE TABLE `vcard_signup` (
 --
 
 INSERT INTO `vcard_signup` (`ID`, `username`, `password`, `email`, `level`, `lastlogin`, `tema`, `nombre`, `apaterno`, `amaterno`, `foto`, `cover`, `tel`, `ext`, `fnac`, `fb`, `tw`, `puesto`, `ndepa`, `depa`, `empresa`, `adress`, `direccion`, `mpio`, `edo`, `pais`, `genero`, `exp`, `likes`, `filtro`, `zona`, `alta`, `actualizacion`, `page`, `nivel_oper`, `rol`, `codigo`, `intentos`, `activo`) VALUES
-(1, 'admin', 'c64f923f7f476f0b78716079452e7bdec4b2c016', 'multiportal@outlook.com', '-1', '2020-08-15 20:03:16', 'default', 'Guillermo', 'Jimenez', 'Lopez', 'sinfoto.png', '', '4421944950', 1, '0000-00-00', '', '', 'Programador', 0, '', 'Multiportal', '', '', '', '', '', 'M', '', 0, '', '', '', 'admin2019xadmin79', '', 0, 0, '944950', '0', 1),
+(1, 'admin', 'c64f923f7f476f0b78716079452e7bdec4b2c016', 'multiportal@outlook.com', '-1', '2020-08-18 20:29:30', 'default', 'Guillermo', 'Jimenez', 'Lopez', 'sinfoto.png', '', '4421944950', 1, '0000-00-00', '', '', 'Programador', 0, '', 'Multiportal', '', '', '', '', '', 'M', '', 0, '', '', '', 'admin2019xadmin79', '', 0, 0, '944950', '0', 1),
 (2, 'demo', '71cc541bd1ccb6670de3f8d40f425ffb7315fe7f', 'demo@gmail.com', '-1', '0000-00-00 00:00:00', 'default', 'Demo', 'Apaterno', 'Amaterno', 'sinfoto.png', 'sincover.jpg', '4421234567', 0, '0000-00-00', '', '', 'Director', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'demo2019xdemo2017', '', 0, 0, '234567', '0', 1),
 (3, 'usuario', '3c6e6ac5382f4e804e824c0d785b275252ddacb0', 'multiportal@outlook.com', '1', '0000-00-00 00:00:00', 'default', 'Usuario', 'Apaterno', 'Amaterno', 'sinfoto.png', '', '4421234567', 0, '0000-00-00', '', '', 'Usuario', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'usuario2019xuser79x', '', 0, 0, '234567', '0', 1),
 (4, 'ventas', '1d415500d481e0c1c238189c22ea057da663c1e7', 'ventas@gmail.com', '2', '2020-08-13 15:16:21', 'default', 'Ventas', 'Apaterno', 'Amaterno', 'sinfoto.png', 'sincover.jpg', '4421234567', 0, '0000-00-00', '', '', 'Gerente', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'ventas2019xventas', '', 0, 0, '234567', '0', 1);
@@ -1695,7 +1695,7 @@ CREATE TABLE `vcard_slider` (
 INSERT INTO `vcard_slider` (`ID`, `ima`, `tit1`, `tit2`, `btn_nom`, `url`, `tema_slider`, `visible`) VALUES
 (1, 'home.jpg', 'Slider1', '', 'Boton', '', 'default', 0),
 (2, 'slide-1.jpg', 'La soluci&oacute;n', 'para llegar a m&aacute;s clientes', 'Registrate', 'http://localhost/MisSitios/vcardsapp/usuarios/registro/', 'vcard2', 1),
-(3, 'slide-2.jpg', 'Mantente en', 'contacto con tus clientes', 'Registrate', 'https://vcardsapp.herokuapp.com/usuarios/registro/', 'vcard2', 1);
+(3, 'slide-2.jpg', 'Mantente en', 'contacto con tus clientes', 'Registrate', 'http://localhost/MisSitios/vcardsapp/usuarios/registro/', 'vcard2', 1);
 
 -- --------------------------------------------------------
 
@@ -1773,6 +1773,7 @@ INSERT INTO `vcard_testimonios` (`ID`, `cover`, `pro`, `comentario`, `visible`) 
 
 CREATE TABLE `vcard_vcard` (
   `ID` int(11) UNSIGNED NOT NULL,
+  `cover` varchar(100) NOT NULL,
   `profile` varchar(100) NOT NULL,
   `logo` varchar(100) NOT NULL,
   `nombre` varchar(150) NOT NULL,
@@ -1788,9 +1789,9 @@ CREATE TABLE `vcard_vcard` (
   `tw` varchar(150) NOT NULL,
   `lk` varchar(150) NOT NULL,
   `ins` varchar(150) NOT NULL,
-  `bg_color` varchar(50) NOT NULL,
-  `font_fam` varchar(50) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `f_create` varchar(50) NOT NULL,
+  `f_update` varchar(50) NOT NULL,
   `vcard` tinyint(1) NOT NULL,
   `activo` tinyint(1) NOT NULL,
   `visible` tinyint(1) NOT NULL
@@ -1800,13 +1801,13 @@ CREATE TABLE `vcard_vcard` (
 -- Volcado de datos para la tabla `vcard_vcard`
 --
 
-INSERT INTO `vcard_vcard` (`ID`, `profile`, `logo`, `nombre`, `descripcion`, `puesto`, `empresa`, `tel`, `tel_ofi`, `cell`, `email`, `web`, `fb`, `tw`, `lk`, `ins`, `bg_color`, `font_fam`, `date_created`, `vcard`, `activo`, `visible`) VALUES
-(1, 'rforesta', 'foto.png', 'Rodrigo Foresta', '', 'Manager', 'Billnex', '', '', '+54 9 3534 19 6770', 'rodrigo.foresta@thebillnex.com', 'https://www.thebillnex.com', 'https://facebook.com/', 'https://twitter.com/', '#', 'https://www.instagram.com/billnex', '', '', '2020-02-19 21:37:48', 1, 1, 1),
-(2, 'jparra', 'foto.png', 'Juan Parra', '', 'Manager', 'Billnex', '', '', '+1(754)210-0433', 'juan.parra@thebillnex.com', 'https://www.thebillnex.com', 'https://facebook.com/', 'https://twitter.com/', '#', 'https://www.instagram.com/billnex', '', '', '2020-03-10 16:45:04', 1, 1, 1),
-(3, 'dmiranda', 'foto_capital.png', 'Daniel Miranda Mejia', '', 'Manager', 'Capital', '', '', '442 104 6067', 'dmiranda@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '', '', '2020-03-02 22:20:58', 0, 0, 1),
-(4, 'pbetancourt', 'foto_capital.png', 'Ponciano Betancourt', '', 'Manager', 'Capital', '', '', '442 347 0504', 'pbetancourt@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '', '', '2020-02-19 21:39:04', 0, 0, 1),
-(5, 'asuzan', 'foto_capital.png', 'Arturo Suz&aacute;n', '', 'Manager', 'Capital', '', '', '446 102 2535', 'a.suzan@capaitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '', '', '2020-02-19 21:39:26', 0, 0, 1),
-(6, 'memojl', 'foto.png', 'Guillermo Jimenez Lopez', '', 'Programador', 'Multiportal', '', '', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', '', '', '', '', '', '', '2020-08-15 19:50:39', 0, 0, 1);
+INSERT INTO `vcard_vcard` (`ID`, `cover`, `profile`, `logo`, `nombre`, `descripcion`, `puesto`, `empresa`, `tel`, `tel_ofi`, `cell`, `email`, `web`, `fb`, `tw`, `lk`, `ins`, `date_created`, `f_create`, `f_update`, `vcard`, `activo`, `visible`) VALUES
+(1, '', 'rforesta', 'foto.png', 'Rodrigo Foresta', '', 'Manager', 'Billnex', '', '', '+54 9 3534 19 6770', 'rodrigo.foresta@thebillnex.com', 'https://www.thebillnex.com', 'https://facebook.com/', 'https://twitter.com/', '#', 'https://www.instagram.com/billnex', '2020-02-19 21:37:48', '', '', 1, 1, 1),
+(2, '', 'jparra', 'foto.png', 'Juan Parra', '', 'Manager', 'Billnex', '', '', '+1(754)210-0433', 'juan.parra@thebillnex.com', 'https://www.thebillnex.com', 'https://facebook.com/', 'https://twitter.com/', '#', 'https://www.instagram.com/billnex', '2020-03-10 16:45:04', '', '', 1, 1, 1),
+(3, '', 'dmiranda', 'foto_capital.png', 'Daniel Miranda Mejia', '', 'Manager', 'Capital', '', '', '442 104 6067', 'dmiranda@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '2020-03-02 22:20:58', '', '', 0, 0, 1),
+(4, '', 'pbetancourt', 'foto_capital.png', 'Ponciano Betancourt', '', 'Manager', 'Capital', '', '', '442 347 0504', 'pbetancourt@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '2020-02-19 21:39:04', '', '', 0, 0, 1),
+(5, '', 'asuzan', 'foto_capital.png', 'Arturo Suz&aacute;n', '', 'Manager', 'Capital', '', '', '446 102 2535', 'a.suzan@capaitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '2020-02-19 21:39:26', '', '', 0, 0, 1),
+(6, '', 'memojl', 'foto.png', 'Guillermo Jimenez Lopez', '', 'Programador', 'Multiportal', '', '', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', '', '', '', '', '2020-08-15 19:50:39', '', '', 0, 0, 1);
 
 -- --------------------------------------------------------
 

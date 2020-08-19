@@ -101,7 +101,6 @@ if(!file_exists($path_JSON)){$path_JSON=$page_url.'bloques/ws/t/?t='.$tabla;}
 		$empresa1=$rowm['empresa'];
 	}
 	echo '</select>';
-
  }
 }
 
