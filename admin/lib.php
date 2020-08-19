@@ -1557,7 +1557,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		'.$tiny.'
 		const postData={
-			'.$campos.'
+			'.$campos[1].'
 		};
 		const url = edit === false ? \'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=add\' : \'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=edit\';		
 		console.log(postData, url);
@@ -1585,6 +1585,26 @@ $(document).ready(function(){
       		edit = true;
         });		
 	});*/
+
+	//Form_Editar
+  	$(document).on(\'click\',\'.btn-edit\',function(){	
+		var tr=$(this).parents("tr");//console.log(tr);
+    	const Id = tr.attr("id");    
+		console.log(Id);		
+
+		'.$campos[2].'
+		
+		'.$campos[3].'
+		
+		$(\'#ima\').attr(\'src\',\'./modulos/vcard/fotos/\'+cover);
+		edit = true;
+	});
+	
+	$(\'.btn-add\').click(function(){
+		$(\'#ima\').attr(\'src\',\'./modulos/vcard/fotos/nodisponible1.jpg\');
+		$("#form1").trigger(\'reset\');
+		edit = false;   
+	});
 
 	//BORRAR
 	$(document).on(\'click\',\'.task-delete\',function(){

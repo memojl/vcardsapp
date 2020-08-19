@@ -2,7 +2,7 @@
 function file_ima($cover){
 global $page_url,$mod;
    $file='<input type="hidden" class="form-control" id="cover" name="cover" value="'.$cover.'">
-   <img src="'.$page_url.'modulos/'.$mod.'/fotos/'.$cover.'" style="width:200px;" title="'.$cover.'">
+   <img id="ima" src="'.$page_url.'modulos/'.$mod.'/fotos/'.$cover.'" style="width:200px;" title="'.$cover.'">
    <a href="javascript:up(1);">Cambiar Foto</a><div id="upload"></div>';
    return $file;
 }
@@ -45,7 +45,7 @@ global $page_url,$path_jsonDB,$path_jsonWS;
 	foreach($data as $key => $value){
       $row=$data[$key];if($th!=''){$key+=1;}
       echo '<tr id="'.$key.'">'."\n";
-      echo '<td style="display:'.$display.';"><button class="btn btn-primary btn-edit"><i class="fa fa-edit"></i></button> | <button class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>';   
+      echo '<td style="display:'.$display.';"><button class="btn btn-primary btn-edit" data-toggle="modal" data-target="#addVcard"><i class="fa fa-edit"></i></button> | <button class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>';   
       if($th!=''){
          for($j=0;$j<count($th);$j++){$datos=$th[$j];
             echo '<td>'.$row[$datos].'</td>'."\n";
@@ -62,21 +62,32 @@ global $page_url,$path_jsonDB,$path_jsonWS;
 function crear_ajax_vcard(){
 global $mysqli,$DBprefix,$page_url,$path_tema,$mod,$ext,$opc,$action,$URL;
    $cond_opc=($opc!='')?'&opc='.$opc:'';
-      
-   //ajax_crud($campos,$salidadebusaqueda,1=tinyMCE);
-   $campos='
-            logo: $("#cover").val(),
-            profile: $("#profile").val(),
-            nombre: $("#nombre").val(),
-            puesto: $("#puesto").val(),
-            empresa: $("#empresa").val(),
-            cell: $("#cell").val(),
-            email: $("#email").val(),
-            web: $("#web").val(),
-            lk: $("#lk").val(),
-            ins: $("#ins").val(),
-            visible: $("#visible").val(),
-            id: $("#id").val()';
+   $th=array(
+      'ID',
+      'cover',
+      'profile',
+      'nombre',
+      'puesto',
+      'email',
+      'cell',
+      'tel_ofi',
+      'empresa',
+      'web',
+      'fb',
+      'lk',
+      'ins',
+      'visible'
+    );
+   
+   $k=0;
+   for($j=0;$j<count($th);$j++){$k++;
+      $campos.=$th[$j].': $("#'.$th[$j].'").val(),'."\n";
+      $campos1.=$th[$j].' = tr.find("td:eq('.$k.')").html();'."\n";
+      $campos2.='$(\'#'.$th[$j].'\').val('.$th[$j].');'."\n";
+   }
+
+   $campos=array(1=>$campos,$campos1,$campos2);
+
    $template='
       <div class="col-md-3 col-xs-12">
          <div class="box box-primary">
@@ -88,13 +99,13 @@ global $mysqli,$DBprefix,$page_url,$path_tema,$mod,$ext,$opc,$action,$URL;
             </div>
             <div class="box-body">
                <div class="ima-size">
-                  <img src="'.$page_url.'modulos/'.$mod.'/assets/fotos/${task.logo}" class="ima-size img-responsive">
+                  <img src="'.$page_url.'modulos/'.$mod.'/fotos/${task.cover}" class="ima-size img-responsive">
                </div>
                <div id="title"><strong>${task.nombre}</strong></div>	
             </div><!-- /.box-body -->
          </div>
       </div>';
-   ajax_crud($campos,$template,1);
+   ajax_crud($campos,$template,1);//ajax_crud($campos,$salidadebusaqueda,1=tinyMCE);
 }
 
 function modal_vcard(){
@@ -129,6 +140,9 @@ $seleccion1=($visible=='1')?'selected':'';
                            <label for="des">Descripci&oacute;n</label>
                            <textarea class="form-control" id="des" name="des"></textarea>
                         </div-->
+                        <div class="form-group">
+                           <input type="text" class="form-control" id="ID" name="ID" value="">
+                        </div>
                      </div>
                      <div class="col-md-4">
                         <div class="form-group">

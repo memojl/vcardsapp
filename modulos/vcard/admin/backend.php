@@ -34,25 +34,40 @@ switch(true){
       }
     echo $file;
   break;
+  case($action=='buscar'):
+    $q=$_POST['q'];
+    if(!empty($q)){
+        $query="SELECT ID,profile,logo,nombre,visible FROM ".$DBprefix.$tabla." WHERE nombre LIKE '%{$q}%'";
+    }else{$query="SELECT * FROM ".$DBprefix.$tabla."";}
+    ws_query($query,1,0);
+  break;
   case($action=='delete'):
-    echo '<div>'.$mod.'</div>';
-    echo '<div class="alert alert-info">'.$action.'</div>';
+    if(isset($_POST['id'])){ $id=$_POST['id'];
+      $sql=mysqli_query($mysqli,"DELETE FROM ".$DBprefix.$tabla." WHERE ID='{$id}';") or print mysqli_error($mysqli);
+      //echo 'La tarea ha sido borrada '.$id;  
+    }
   break;
   case($action=='listado'):
     $th=array(
       'ID',
-      'logo',
+      'cover',
       'profile',
       'nombre',
       'puesto',
+      'email',
+      'cell',
+      'tel_ofi',
       'empresa',
+      'web',
+      'fb',
+      'lk',
+      'ins',
       'visible'
     );
       echo '<div class="box-body">                        
       <div class="table-responsive">
         <table class="table table-hover table-striped ">
-          <tbody>
-            <tr>';
+          <tbody>';
             query_all_tabla_vcard($th,$tabla,$url_api,'');
       echo '
           </tbody>
@@ -63,18 +78,24 @@ switch(true){
   default:
   $th=array(
     'ID',
-    'logo',
+    'cover',
     'profile',
     'nombre',
     'puesto',
+    'email',
+    'cell',
+    'tel_ofi',
     'empresa',
+    'web',
+    'fb',
+    'lk',
+    'ins',
     'visible'
   );
     echo '<div class="box-body">                        
     <div class="table-responsive">
       <table class="table table-hover table-striped ">
-        <tbody>
-          <tr>';
+        <tbody>';
           query_all_tabla_vcard($th,$tabla,$url_api,'');
     echo '
         </tbody>

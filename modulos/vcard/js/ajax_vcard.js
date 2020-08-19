@@ -80,19 +80,21 @@ $(document).ready(function(){
 		e.preventDefault();
 		tinyMCE.triggerSave();
 		const postData={
-			
-            logo: $("#cover").val(),
-            profile: $("#profile").val(),
-            nombre: $("#nombre").val(),
-            puesto: $("#puesto").val(),
-            empresa: $("#empresa").val(),
-            cell: $("#cell").val(),
-            email: $("#email").val(),
-            web: $("#web").val(),
-            lk: $("#lk").val(),
-            ins: $("#ins").val(),
-            visible: $("#visible").val(),
-            id: $("#id").val()
+			ID: $("#ID").val(),
+cover: $("#cover").val(),
+profile: $("#profile").val(),
+nombre: $("#nombre").val(),
+puesto: $("#puesto").val(),
+email: $("#email").val(),
+cell: $("#cell").val(),
+tel_ofi: $("#tel_ofi").val(),
+empresa: $("#empresa").val(),
+web: $("#web").val(),
+fb: $("#fb").val(),
+lk: $("#lk").val(),
+ins: $("#ins").val(),
+visible: $("#visible").val(),
+
 		};
 		const url = edit === false ? 'modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=add' : 'modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=edit';		
 		console.log(postData, url);
@@ -120,6 +122,54 @@ $(document).ready(function(){
       		edit = true;
         });		
 	});*/
+
+	//Form_Editar
+  	$(document).on('click','.btn-edit',function(){	
+		var tr=$(this).parents("tr");//console.log(tr);
+    	const Id = tr.attr("id");    
+		console.log(Id);		
+
+		ID = tr.find("td:eq(1)").html();
+cover = tr.find("td:eq(2)").html();
+profile = tr.find("td:eq(3)").html();
+nombre = tr.find("td:eq(4)").html();
+puesto = tr.find("td:eq(5)").html();
+email = tr.find("td:eq(6)").html();
+cell = tr.find("td:eq(7)").html();
+tel_ofi = tr.find("td:eq(8)").html();
+empresa = tr.find("td:eq(9)").html();
+web = tr.find("td:eq(10)").html();
+fb = tr.find("td:eq(11)").html();
+lk = tr.find("td:eq(12)").html();
+ins = tr.find("td:eq(13)").html();
+visible = tr.find("td:eq(14)").html();
+
+		
+		$('#ID').val(ID);
+$('#cover').val(cover);
+$('#profile').val(profile);
+$('#nombre').val(nombre);
+$('#puesto').val(puesto);
+$('#email').val(email);
+$('#cell').val(cell);
+$('#tel_ofi').val(tel_ofi);
+$('#empresa').val(empresa);
+$('#web').val(web);
+$('#fb').val(fb);
+$('#lk').val(lk);
+$('#ins').val(ins);
+$('#visible').val(visible);
+
+		
+		$('#ima').attr('src','./modulos/vcard/fotos/'+cover);
+		edit = true;
+	});
+	
+	$('.btn-add').click(function(){
+		$('#ima').attr('src','./modulos/vcard/fotos/nodisponible1.jpg');
+		$("#form1").trigger('reset');
+		edit = false;   
+	});
 
 	//BORRAR
 	$(document).on('click','.task-delete',function(){
@@ -185,7 +235,7 @@ $(document).ready(function(){
             </div>
             <div class="box-body">
                <div class="ima-size">
-                  <img src="http://localhost/MisSitios/vcardsapp/modulos/vcard/assets/fotos/${task.logo}" class="ima-size img-responsive">
+                  <img src="http://localhost/MisSitios/vcardsapp/modulos/vcard/fotos/${task.cover}" class="ima-size img-responsive">
                </div>
                <div id="title"><strong>${task.nombre}</strong></div>	
             </div><!-- /.box-body -->
