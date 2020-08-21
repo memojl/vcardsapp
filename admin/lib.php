@@ -1565,8 +1565,9 @@ $(document).ready(function(){
 			console.log("Se ha actualizado el registro.");			
 			$("#aviso").html(response).fadeIn("slow");
 			$("#aviso").fadeOut(6000);
-			//$("form1").trigger(\'reset\');	
-			//listar();
+			$("#form1").trigger(\'reset\');
+			$("#addVcard").modal(\'hide\');	
+			load(1);
 			//edit = false;
 		});
 	});
@@ -1596,13 +1597,14 @@ $(document).ready(function(){
 		
 		'.$campos[3].'
 		
-		$(\'#ima\').attr(\'src\',\'./modulos/vcard/fotos/\'+cover);
+		$("#ima").attr(\'src\',\'./modulos/vcard/fotos/\'+cover);
+		
+
 		edit = true;
 	});
 	
 	$(\'.btn-add\').click(function(){
 		$(\'#ima\').attr(\'src\',\'./modulos/vcard/fotos/nodisponible1.jpg\');
-		$("#form1").trigger(\'reset\');
 		edit = false;   
 	});
 
@@ -1617,6 +1619,28 @@ $(document).ready(function(){
         });
 	  }
 	});
+
+	$(document).on(\'click\', \'.btn-delete\', function(){
+		Swal.fire({
+		  title: "Esta seguro de eliminar el producto?",
+		  text: "Esta operacion no se puede revertir!",
+		  icon: \'warning\',
+		  showCancelButton: true,
+		  confirmButtonColor: \'#d33\',
+		  cancelButtonColor: \'#3085d6\',
+		  confirmButtonText: \'Borrar\'
+		}).then((result) => {
+		  if (result.value) {
+			  let id = $(this).closest(\'tr\').attr(\'id\'); //capturamos el atributo ID de la fila  
+			  //eliminamos el producto de firebase      
+			  $.post(\'modulos/'.$mod.'/admin/backend.php?action=delete\', {id}, (response) => {
+				console.log(response);
+				load(1);
+			  });	 
+			  Swal.fire(\'Eliminado!\', \'El producto ha sido eliminado.\',\'success\')
+		  }
+		})        
+	  });
 
 	//SUBIR COVER
 	$(document).on(\'click\',\'#Aceptar\',function(e){		

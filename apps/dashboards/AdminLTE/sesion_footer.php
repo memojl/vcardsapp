@@ -336,6 +336,8 @@ include	'./modulos/estadisticas/chartjs.php';
     });
   });
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.14.4/dist/sweetalert2.all.min.js"></script>
 <?php 
 sql_opciones('VUE2',$valor);
 if($valor==1){

@@ -1,4 +1,12 @@
 <?php 
+function html_iso_servicios(&$nombre){
+global $chartset;
+ if($chartset=='iso-8859-1'){
+ 	$nombre=htmlentities($nombre);
+	//$nombre=($_SERVER['HTTP_HOST']=='localhost')?htmlentities($nombre):htmlentities($nombre, ENT_COMPAT,'ISO-8859-1', true);
+ }
+}
+
 function file_ima($cover){
 global $page_url,$mod;
    $file='<input type="hidden" class="form-control" id="cover" name="cover" value="'.$cover.'">
@@ -22,8 +30,9 @@ global $page_url,$path_jsonDB,$path_jsonWS;
    return $select;
 }
 
-function query_all_tabla_vcard($th,$tabla,$url_api,$display){
+function query_all_tabla_vcard($index,$th,$tabla,$url_api,$crud){
 global $page_url,$path_jsonDB,$path_jsonWS;
+   $display=($crud!=0)?'':'none';
 	$data=query_data($tabla,$url_api);//print_r($data);
 	//CAMPOS
    $i=0;$campos='<th style="display:'.$display.';">Acciones</th>'."\n";
@@ -43,7 +52,7 @@ global $page_url,$path_jsonDB,$path_jsonWS;
 	echo '<tr>'.$campos.'</tr>'."\n";
    //DATOS
 	foreach($data as $key => $value){
-      $row=$data[$key];if($th!=''){$key+=1;}
+      $row=$data[$key];if($index!=''){$key=$row['ID'];}
       echo '<tr id="'.$key.'">'."\n";
       echo '<td style="display:'.$display.';"><button class="btn btn-primary btn-edit" data-toggle="modal" data-target="#addVcard"><i class="fa fa-edit"></i></button> | <button class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>';   
       if($th!=''){
@@ -120,16 +129,16 @@ $seleccion1=($visible=='1')?'selected':'';
 <div class="modal fade" id="addVcard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
+      <form id="form1">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title" id="gridSystemModalLabel">Registro Vcard</h4>
         </div>
         <div class="modal-body">
             <div class="row">
-
              <!--div class="col-md-12"-->
                <!-- form start -->
-               <form id="form1" name="form1" role="form" method="POST" enctype="multipart/form-data">
+               
                   <div class="box-body">
                      <div class="col-md-4">
                         <div class="form-group">   
@@ -251,15 +260,16 @@ $seleccion1=($visible=='1')?'selected':'';
                      <!--input id="Guardar" name="Guardar" type="submit" class="btn btn-primary" value="Guardar"--> 
                      <!--a class="btn btn-default" href="\'$refer;\'">Cancelar</a-->
                   </div>
-               </form>
+               
              <!--/div--><!-- /.col-->            
 
             </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary guardar">Guardar</button>
         </div>
+      </form>
     </div>
   </div>
 </div>

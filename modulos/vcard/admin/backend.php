@@ -44,9 +44,53 @@ switch(true){
   case($action=='delete'):
     if(isset($_POST['id'])){ $id=$_POST['id'];
       $sql=mysqli_query($mysqli,"DELETE FROM ".$DBprefix.$tabla." WHERE ID='{$id}';") or print mysqli_error($mysqli);
-      //echo 'La tarea ha sido borrada '.$id;  
+      echo 'La tarea ha sido borrada '.$id;  
     }
   break;
+  case($action=='edit' || $action=='add'):
+    $id=$_POST['ID'];
+    $cover=$_POST['cover'];
+$logo=$_POST['logo'];
+$profile=$_POST['profile'];
+$nombre=$_POST['nombre'];
+//$des=$_POST['descripcion'];
+$puesto=$_POST['puesto'];
+$empresa=$_POST['empresa'];
+$cell=$_POST['cell'];
+$email=$_POST['email'];
+$web=$_POST['web'];
+$lk=$_POST['lk'];
+$ins=$_POST['ins'];
+$visible=$_POST['visible'];
+$c=0;
+html_iso_servicios($nombre);
+	if($nombre=='' || $visible==''){
+		$error = "  *El campo esta vacio.\\n\\r"; $c++; 
+	}
+	if($nombre=='' && $visible==''){
+		$error = "  *Los campos estan vacios.\\n\\r"; $c++; 
+	}
+	if($c > 0){
+		$aviso='
+			<div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                <h4><i class="icon fa fa-ban"></i> Error!</h4>'.$error.'
+			</div>
+			';
+	}else{
+		if($action=='edit'){$edi='editado';
+			$save=mysqli_query($mysqli,"UPDATE ".$DBprefix.$tabla." SET profile='{$profile}', logo='{$logo}', nombre='{$nombre}', puesto='{$puesto}', empresa='{$empresa}', cell='{$cell}', email='{$email}', web='{$web}', lk='{$lk}', ins='{$ins}', visible='{$visible}' WHERE ID='{$id}';") or print mysqli_error($mysqli);
+		}else{$edi='agregado';
+			$save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix.$tabla." (profile,logo,nombre,puesto,empresa,cell,email,web,lk,ins,visible) VALUES ('{$profile}','{$logo}','{$nombre}','{$puesto}','{$empresa}','{$cell}','{$email}','{$web}','{$lk}','{$ins}','{$visible}')") or print mysqli_error($mysqli);
+		}	
+		$URL=$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc;	
+		recargar(5,$URL,$target);
+	}
+	validar_aviso($save,'La Vcard se ha '.$edi.' correctamente','No se puedo guardar intentelo nuevamente',$aviso);
+
+	echo $aviso;
+
+	break;
   case($action=='listado'):
     $th=array(
       'ID',
@@ -55,20 +99,14 @@ switch(true){
       'nombre',
       'puesto',
       'email',
-      'cell',
-      'tel_ofi',
       'empresa',
-      'web',
-      'fb',
-      'lk',
-      'ins',
       'visible'
     );
       echo '<div class="box-body">                        
       <div class="table-responsive">
         <table class="table table-hover table-striped ">
           <tbody>';
-            query_all_tabla_vcard($th,$tabla,$url_api,'');
+            query_all_tabla_vcard($index='ID',$th,$tabla,$url_api,$crud=1);
       echo '
           </tbody>
         </table>
@@ -96,7 +134,7 @@ switch(true){
     <div class="table-responsive">
       <table class="table table-hover table-striped ">
         <tbody>';
-          query_all_tabla_vcard($th,$tabla,$url_api,'');
+          query_all_tabla_vcard($index='ID',$th,$tabla,$url_api,$crud=1);
     echo '
         </tbody>
       </table>
