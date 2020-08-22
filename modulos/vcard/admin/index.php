@@ -71,7 +71,7 @@ function add_empresa(val){
          <div class="col-md-12 col-xs-12">
 			<?php 
             crear_ws($tabla=$mod);//crear_ws_vcard('modulos/vcard/assets/json/',$tabla);
-            crear_ajax_vcard();
+            //crear_ajax_vcard();
 			?>
          </div>
       </section>

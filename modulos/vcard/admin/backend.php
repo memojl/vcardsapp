@@ -37,7 +37,7 @@ switch(true){
   case($action=='buscar'):
     $q=$_POST['q'];
     if(!empty($q)){
-        $query="SELECT ID,profile,logo,nombre,visible FROM ".$DBprefix.$tabla." WHERE nombre LIKE '%{$q}%'";
+        $query="SELECT ID,profile,cover,logo,nombre,visible FROM ".$DBprefix.$tabla." WHERE nombre LIKE '%{$q}%'";
     }else{$query="SELECT * FROM ".$DBprefix.$tabla."";}
     ws_query($query,1,0);
   break;
@@ -79,9 +79,9 @@ html_iso_servicios($nombre);
 			';
 	}else{
 		if($action=='edit'){$edi='editado';
-			$save=mysqli_query($mysqli,"UPDATE ".$DBprefix.$tabla." SET profile='{$profile}', logo='{$logo}', nombre='{$nombre}', puesto='{$puesto}', empresa='{$empresa}', cell='{$cell}', email='{$email}', web='{$web}', lk='{$lk}', ins='{$ins}', visible='{$visible}' WHERE ID='{$id}';") or print mysqli_error($mysqli);
+			$save=mysqli_query($mysqli,"UPDATE ".$DBprefix.$tabla." SET cover='{$cover}', profile='{$profile}', logo='{$logo}', nombre='{$nombre}', puesto='{$puesto}', empresa='{$empresa}', cell='{$cell}', email='{$email}', web='{$web}', lk='{$lk}', ins='{$ins}', visible='{$visible}' WHERE ID='{$id}';") or print mysqli_error($mysqli);
 		}else{$edi='agregado';
-			$save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix.$tabla." (profile,logo,nombre,puesto,empresa,cell,email,web,lk,ins,visible) VALUES ('{$profile}','{$logo}','{$nombre}','{$puesto}','{$empresa}','{$cell}','{$email}','{$web}','{$lk}','{$ins}','{$visible}')") or print mysqli_error($mysqli);
+			$save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix.$tabla." (cover,profile,logo,nombre,puesto,empresa,cell,email,web,lk,ins,visible) VALUES ('{$cover}','{$profile}','{$logo}','{$nombre}','{$puesto}','{$empresa}','{$cell}','{$email}','{$web}','{$lk}','{$ins}','{$visible}')") or print mysqli_error($mysqli);
 		}	
 		$URL=$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc;	
 		recargar(5,$URL,$target);
