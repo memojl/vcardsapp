@@ -57,7 +57,7 @@ function add_empresa(val){
             <div class="col-md-12 col-xs-12">
                <div class="box box-primary">
                   <div class="box-header with-border">
-                     <h3 class="box-title">Listado de Tarjetas Digitales</h3>
+                     <h3 class="box-title">Listado de Tarjetas Digitales (<?php echo $username;?>)</h3>
                      <span style="float:right;"><?php echo $vistas;?></span>
                   </div>
                   <!-- /.box-header -->
@@ -72,7 +72,7 @@ function add_empresa(val){
          <div class="col-md-12 col-xs-12">
 			<?php 
             crear_ws($tabla=$mod);//crear_ws_vcard('modulos/vcard/assets/json/',$tabla);
-            //crear_ajax_vcard();
+            crear_ajax_vcard();
 			?>
          </div>
       </section>

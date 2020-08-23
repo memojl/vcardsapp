@@ -99,6 +99,205 @@ global $page_url,$path_jsonDB,$path_jsonWS;
    }
 }
 
+
+function ajax_crud_vcard($campos,$template,$js){
+global $page_url,$URL,$mod,$ext,$opc,$form,$action,$ctrl;
+$cond_action=($action!='')?'&action='.$action:'';
+if($js==1){
+$edit_form='$.post(\'modulos/'.$mod.'/admin/backend.php?action=form_id\', {id}, (response) => {
+      let tasks=JSON.parse(response);
+      let task=tasks[0];
+      //console.log(response);console.log(task);
+      '.$campos[4].'
+      const cover = task.cover;
+      $("#ima").attr(\'src\', \'./modulos/'.$mod.'/fotos/\' + cover);      		
+   });';
+}else{
+$edit_form='   
+      '.$campos[2].'
+   
+      '.$campos[3].'
+      $("#ima").attr(\'src\', \'./modulos/'.$mod.'/fotos/\' + cover);';
+}
+
+$contenido='
+// JavaScript Document
+$(document).ready(function () {
+	// Global Settings
+	//console.log(\'jQuery esta funcionando\');
+	let edit = false;
+	load(1);
+ 
+	//BOTONES
+	/*Boton Agregar*/
+	$(\'.btn-add\').click(function () {
+		$("#ima").attr(\'src\', \'./modulos/'.$mod.'/fotos/nodisponible1.jpg\');
+		$("#form1").trigger(\'reset\');
+		edit = false;
+	});
+
+	function load(page) {
+	   var parametros = {
+		  "mode": "ajax",
+		  "page": page
+	   };
+	   $("#loader").fadeIn(\'slow\');
+	   $.ajax({
+		  url: \'modulos/'.$mod.'/admin/backend.php?mod='.$mod.$cond_action.'\',
+		  data: parametros,
+		  beforeSend: function (objeto) {
+			 $("#loader").html("<img src=\'apps/dashboards/loader.gif\'>");
+		  },
+		  success: function (data) {
+			 $(".outer_div").html(data);
+			 $("#loader").html("");
+		  }
+	   });
+	}
+ 
+	function listado(page) {
+	   var parametros = {
+		  "mode": "ajax",
+		  "page": page
+	   };
+	   $("#loader").fadeIn(\'slow\');
+	   $.ajax({
+		  url: \'modulos/'.$mod.'/admin/backend.php?mod=vcard&action=listado\',
+		  data: parametros,
+		  beforeSend: function (objeto) {
+			 $("#loader").html("<img src=\'apps/dashboards/loader.gif\'>");
+		  },
+		  success: function (data) {
+			 $(".outer_div").html(data);
+			 $("#loader").html("");
+		  }
+	   });
+	}
+ 
+	//AGREGAR/EDITAR
+	$("#form1").submit(function (e) {
+	   e.preventDefault();
+	   tinyMCE.triggerSave();
+	   const postData = {
+         '.$campos[1].'
+	   };
+	   const url = edit === false ? \'modulos/'.$mod.'/admin/backend.php?mod=vcard&ext=admin/index&action=add\' : \'modulos/'.$mod.'/admin/backend.php?mod=vcard&ext=admin/index&action=edit\';
+	   console.log(postData, url);
+	   $.post(url, postData, function (response) {
+		  console.log("Se ha actualizado el registro.");
+		  $("#form1").trigger(\'reset\');
+		  $("#addVcard").modal(\'hide\');
+		  $("#aviso").html(response).delay(1000).slideToggle("slow").delay(3000).slideToggle("slow");
+		  load(1);
+		  //edit = false;
+	   });
+	});
+ 
+	//editar_form
+	$(document).on(\'click\',\'.btn-edit\',function(){	
+		//const element = $(this)[0].parentElement.parentElement;const id = $(element).attr(\'id\');
+		//let tr = $(this).parents("tr");const Id = tr.attr("id");console.log(Id);
+		const id = $(this).closest(\'tr\').attr(\'id\'); //capturamos el atributo ID de la fila
+		console.log(id);
+      '.$edit_form.'
+	   edit = true;
+	});
+  
+	//BORRAR
+	$(document).on(\'click\', \'.btn-delete\', function () {
+	   Swal.fire({
+		  title: "Esta seguro de eliminar el producto?",
+		  text: "Esta operacion no se puede revertir!",
+		  icon: \'warning\',
+		  showCancelButton: true,
+		  confirmButtonColor: \'#d33\',
+		  cancelButtonColor: \'#3085d6\',
+		  confirmButtonText: \'Borrar\'
+	   }).then((result) => {
+		  if (result.value) {
+			 let id = $(this).closest(\'tr\').attr(\'id\'); //capturamos el atributo ID de la fila  
+			 //eliminamos el producto de firebase      
+			 $.post(\'modulos/'.$mod.'/admin/backend.php?action=delete\', {id}, (response) => {
+				console.log(response);
+				load(1);
+			 });
+			 Swal.fire(\'Eliminado!\', \'El producto ha sido eliminado.\', \'success\')
+		  }
+	   })
+	});
+ 
+	//BUSCAR
+	$("#q").keyup(function (e) {
+	   if ($("#q").val()) {
+		  let q = $("#q").val();
+		  $.ajax({
+			 url: \'modulos/'.$mod.'/admin/backend.php?action=buscar\',
+			 type: \'POST\',
+			 data: {q},
+			 success: function (response) {
+				let tasks = JSON.parse(response);
+				console.log(response);
+				let template = \'<div class="box-body">\';
+				let sel = "";
+				tasks.forEach(task => {
+				   visible = `${task.visible}`;
+				   sel = (visible == 0) ? \'<span style="color:#e00;"><i class="fa fa-close" title="Desactivado"></i></span>\' : \'<span style="color:#0f0;"><i class="fa fa-check" title="Activo"></i></span>\';
+				   template += `
+	   <div class="col-md-3 col-xs-12">
+		  <div class="box box-primary">
+			 <div class="box-header with-border">
+					<h3 class="box-title">C&oacute;digo: <b>${task.profile}</b></h3>
+				<span class="controles">${sel}
+				   <!--a href="http://localhost/MisSitios/vcardsapp/index.php?mod=vcard&ext=admin/index&form=1&action=edit&id=${task.ID}" title="Editar"><i class="fa fa-edit"></i></a> | <a href="#" taskid="${task.ID}" class="task-delete" title="Borrar"><i class="fa fa-trash"></i></a-->
+				   <span class="btn-edit" data-toggle="modal" data-target="#addVcard" title="Editar"><i class="fa fa-edit"></i></span> | <span class="btn-delete" title="Borrar"><i class="fa fa-trash"></i></span>
+				</span>
+			 </div>
+			 <div class="box-body">
+				<div class="ima-size">
+				   <img src="http://localhost/MisSitios/vcardsapp/modulos/'.$mod.'/fotos/${task.cover}" class="ima-size img-responsive">
+				</div>
+				<div id="title"><strong>${task.nombre}</strong></div>	
+			 </div><!-- /.box-body -->
+		  </div>
+	   </div>`
+				});
+				$(".outer_div").html(template + "</div>");
+			 }
+		  });
+	   }
+	});
+  
+	//SUBIR COVER
+	$(document).on(\'click\', \'#Aceptar\', function (e) {
+	   e.preventDefault();
+	   var frmData = new FormData;
+	   frmData.append("userfile", $("input[name=userfile]")[0].files[0]);
+	   //console.log(\'Se cargo Imagen\');		
+	   $.ajax({
+		  url: \'modulos/'.$mod.'/admin/backend.php?mod=vcard&action=subir_cover\',
+		  type: \'POST\',
+		  data: frmData,
+		  processData: false,
+		  contentType: false,
+		  cache: false,
+		  beforeSend: function (data) {
+			 $("#imagen").html("Subiendo Imagen");
+		  },
+		  success: function (data) {
+			 //$("#form1").trigger("reset");
+			 $("#imagen").html(data);
+			 $(".alert-dismissible").delay(3000).fadeOut("slow");
+			 console.log("Subido Correctamente");
+		  }
+	   });
+	   //return false;
+	});
+
+});//document
+';
+crear_archivo('modulos/'.$mod.'/js/','ajax_'.$mod.'.js',$contenido,$path_file);
+}
+
 function crear_ajax_vcard(){
 global $mysqli,$DBprefix,$page_url,$path_tema,$mod,$ext,$opc,$action,$URL;
    $cond_opc=($opc!='')?'&opc='.$opc:'';
@@ -110,12 +309,16 @@ global $mysqli,$DBprefix,$page_url,$path_tema,$mod,$ext,$opc,$action,$URL;
       'puesto',
       'email',
       'cell',
+      'tel',
       'tel_ofi',
       'empresa',
       'web',
       'fb',
       'lk',
       'ins',
+      'f_create',
+      'f_update',
+      'vcard',
       'visible'
     );
    
@@ -124,9 +327,10 @@ global $mysqli,$DBprefix,$page_url,$path_tema,$mod,$ext,$opc,$action,$URL;
       $campos.=$th[$j].': $("#'.$th[$j].'").val(),'."\n";
       $campos1.=$th[$j].' = tr.find("td:eq('.$k.')").html();'."\n";
       $campos2.='$(\'#'.$th[$j].'\').val('.$th[$j].');'."\n";
+      $campos3.='$(\'#'.$th[$j].'\').val(task.'.$th[$j].');'."\n";
    }
 
-   $campos=array(1=>$campos,$campos1,$campos2);
+   $campos=array(1=>$campos,$campos1,$campos2,$campos3);
 
    $template='
       <div class="col-md-3 col-xs-12">
@@ -145,7 +349,7 @@ global $mysqli,$DBprefix,$page_url,$path_tema,$mod,$ext,$opc,$action,$URL;
             </div><!-- /.box-body -->
          </div>
       </div>';
-   ajax_crud($campos,$template,1);//ajax_crud($campos,$salidadebusaqueda,1=tinyMCE);
+   ajax_crud_vcard($campos,$template,1);//ajax_crud($campos,$salidadebusaqueda,1=tinyMCE);
 }
 
 function modal_vcard(){

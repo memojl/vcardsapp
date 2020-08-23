@@ -1,3 +1,4 @@
+
 // JavaScript Document
 $(document).ready(function () {
 	// Global Settings
@@ -8,7 +9,7 @@ $(document).ready(function () {
 	//BOTONES
 	/*Boton Agregar*/
 	$('.btn-add').click(function () {
-		$('#ima').attr('src', './modulos/vcard/fotos/nodisponible1.jpg');
+		$("#ima").attr('src', './modulos/vcard/fotos/nodisponible1.jpg');
 		$("#form1").trigger('reset');
 		edit = false;
 	});
@@ -56,26 +57,25 @@ $(document).ready(function () {
 	   e.preventDefault();
 	   tinyMCE.triggerSave();
 	   const postData = {
-		  ID: $("#ID").val(),
-		  cover: $("#cover").val(),
-		  profile: $("#profile").val(),
-		  nombre: $("#nombre").val(),
-		  puesto: $("#puesto").val(),
-		  email: $("#email").val(),
-		  tel: $("#tel").val(),
-		  tel_ofi: $("#tel_ofi").val(),
-		  cell: $("#cell").val(),
-		  empresa: $("#empresa").val(),
-		  web: $("#web").val(),
-		  fb: $("#fb").val(),
-		  tw: $("#tw").val(),
-		  lk: $("#lk").val(),
-		  ins: $("#ins").val(),
-		  f_create: $("#f_create").val(),
-		  f_update: $("#f_update").val(),
-		  vcard: $("#vcard").val(),
-		  user: $("#user").val(),
-		  visible: $("#visible").val(), 
+         ID: $("#ID").val(),
+cover: $("#cover").val(),
+profile: $("#profile").val(),
+nombre: $("#nombre").val(),
+puesto: $("#puesto").val(),
+email: $("#email").val(),
+cell: $("#cell").val(),
+tel: $("#tel").val(),
+tel_ofi: $("#tel_ofi").val(),
+empresa: $("#empresa").val(),
+web: $("#web").val(),
+fb: $("#fb").val(),
+lk: $("#lk").val(),
+ins: $("#ins").val(),
+f_create: $("#f_create").val(),
+f_update: $("#f_update").val(),
+vcard: $("#vcard").val(),
+visible: $("#visible").val(),
+
 	   };
 	   const url = edit === false ? 'modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=add' : 'modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=edit';
 	   console.log(postData, url);
@@ -83,7 +83,7 @@ $(document).ready(function () {
 		  console.log("Se ha actualizado el registro.");
 		  $("#form1").trigger('reset');
 		  $("#addVcard").modal('hide');
-		  $("#aviso").html(response).delay(1000).slideToggle("slow").delay(35000).slideToggle("slow");
+		  $("#aviso").html(response).delay(1000).slideToggle("slow").delay(3000).slideToggle("slow");
 		  load(1);
 		  //edit = false;
 	   });
@@ -95,29 +95,32 @@ $(document).ready(function () {
 		//let tr = $(this).parents("tr");const Id = tr.attr("id");console.log(Id);
 		const id = $(this).closest('tr').attr('id'); //capturamos el atributo ID de la fila
 		console.log(id);
-      	$.post('modulos/vcard/admin/backend.php?action=form_id', {id}, (response) => {
-			let tasks=JSON.parse(response);
-			let task=tasks[0];
-			console.log(response);
-			console.log(task);
-			$('#ID').val(task.ID);
-	   	  	$('#cover').val(task.cover);
-	   	  	$('#profile').val(task.profile);
-	   	  	$('#nombre').val(task.nombre);
-	      	$('#puesto').val(task.puesto);
-	      	$('#email').val(task.email);
-	   	  	$('#cell').val(task.cell);
-	   	  	$('#tel_ofi').val(task.tel_ofi);
-	      	$('#empresa').val(task.empresa);
-	      	$('#web').val(task.web);
-	      	$('#fb').val(task.fb);
-	      	$('#lk').val(task.lk);
-	      	$('#ins').val(task.ins);
-		  	$('#visible').val(task.visible);
+      $.post('modulos/vcard/admin/backend.php?action=form_id', {id}, (response) => {
+      let tasks=JSON.parse(response);
+      let task=tasks[0];
+      //console.log(response);console.log(task);
+      $('#ID').val(task.ID);
+$('#cover').val(task.cover);
+$('#profile').val(task.profile);
+$('#nombre').val(task.nombre);
+$('#puesto').val(task.puesto);
+$('#email').val(task.email);
+$('#cell').val(task.cell);
+$('#tel').val(task.tel);
+$('#tel_ofi').val(task.tel_ofi);
+$('#empresa').val(task.empresa);
+$('#web').val(task.web);
+$('#fb').val(task.fb);
+$('#lk').val(task.lk);
+$('#ins').val(task.ins);
+$('#f_create').val(task.f_create);
+$('#f_update').val(task.f_update);
+$('#vcard').val(task.vcard);
+$('#visible').val(task.visible);
 
-			const cover = task.cover;
-			$("#ima").attr('src', './modulos/vcard/fotos/' + cover);      		
-        });		
+      const cover = task.cover;
+      $("#ima").attr('src', './modulos/vcard/fotos/' + cover);      		
+   });
 	   edit = true;
 	});
   
