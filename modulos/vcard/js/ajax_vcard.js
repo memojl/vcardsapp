@@ -1,5 +1,4 @@
 // JavaScript Document
-
 $(document).ready(function () {
 	// Global Settings
 	//console.log('jQuery esta funcionando');
@@ -7,11 +6,13 @@ $(document).ready(function () {
 	load(1);
  
 	//BOTONES
+	/*Boton Agregar*/
 	$('.btn-add').click(function () {
 		$('#ima').attr('src', './modulos/vcard/fotos/nodisponible1.jpg');
+		$("#form1").trigger('reset');
 		edit = false;
 	});
-	
+
 	function load(page) {
 	   var parametros = {
 		  "mode": "ajax",
@@ -61,66 +62,62 @@ $(document).ready(function () {
 		  nombre: $("#nombre").val(),
 		  puesto: $("#puesto").val(),
 		  email: $("#email").val(),
-		  cell: $("#cell").val(),
+		  tel: $("#tel").val(),
 		  tel_ofi: $("#tel_ofi").val(),
+		  cell: $("#cell").val(),
 		  empresa: $("#empresa").val(),
 		  web: $("#web").val(),
 		  fb: $("#fb").val(),
+		  tw: $("#tw").val(),
 		  lk: $("#lk").val(),
 		  ins: $("#ins").val(),
-		  visible: $("#visible").val(),
- 
+		  f_create: $("#f_create").val(),
+		  f_update: $("#f_update").val(),
+		  vcard: $("#vcard").val(),
+		  user: $("#user").val(),
+		  visible: $("#visible").val(), 
 	   };
 	   const url = edit === false ? 'modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=add' : 'modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=edit';
 	   console.log(postData, url);
 	   $.post(url, postData, function (response) {
 		  console.log("Se ha actualizado el registro.");
-		  $("#aviso").html(response).fadeIn("slow");
-		  $("#aviso").fadeOut(6000);
 		  $("#form1").trigger('reset');
 		  $("#addVcard").modal('hide');
+		  $("#aviso").html(response).delay(1000).slideToggle("slow").delay(35000).slideToggle("slow");
 		  load(1);
 		  //edit = false;
 	   });
 	});
  
-	//Form_Editar
-	$(document).on('click', '.btn-edit', function () {
-	   var tr = $(this).parents("tr"); //console.log(tr);
-	   const Id = tr.attr("id");
-	   console.log(Id);
- 
-	   ID = tr.find("td:eq(1)").html();
-	   cover = tr.find("td:eq(2)").html();
-	   profile = tr.find("td:eq(3)").html();
-	   nombre = tr.find("td:eq(4)").html();
-	   puesto = tr.find("td:eq(5)").html();
-	   email = tr.find("td:eq(6)").html();
-	   cell = tr.find("td:eq(7)").html();
-	   tel_ofi = tr.find("td:eq(8)").html();
-	   empresa = tr.find("td:eq(9)").html();
-	   web = tr.find("td:eq(10)").html();
-	   fb = tr.find("td:eq(11)").html();
-	   lk = tr.find("td:eq(12)").html();
-	   ins = tr.find("td:eq(13)").html();
-	   visible = tr.find("td:eq(14)").html();
-  
-	   $('#ID').val(ID);
-	   $('#cover').val(cover);
-	   $('#profile').val(profile);
-	   $('#nombre').val(nombre);
-	   $('#puesto').val(puesto);
-	   $('#email').val(email);
-	   $('#cell').val(cell);
-	   $('#tel_ofi').val(tel_ofi);
-	   $('#empresa').val(empresa);
-	   $('#web').val(web);
-	   $('#fb').val(fb);
-	   $('#lk').val(lk);
-	   $('#ins').val(ins);
-	   $('#visible').val(visible);
- 
-	   $("#ima").attr('src', './modulos/vcard/fotos/' + cover);
+	//editar_form
+	$(document).on('click','.btn-edit',function(){	
+		//const element = $(this)[0].parentElement.parentElement;const id = $(element).attr('id');
+		//let tr = $(this).parents("tr");const Id = tr.attr("id");console.log(Id);
+		const id = $(this).closest('tr').attr('id'); //capturamos el atributo ID de la fila
+		console.log(id);
+      	$.post('modulos/vcard/admin/backend.php?action=form_id', {id}, (response) => {
+			let tasks=JSON.parse(response);
+			let task=tasks[0];
+			console.log(response);
+			console.log(task);
+			$('#ID').val(task.ID);
+	   	  	$('#cover').val(task.cover);
+	   	  	$('#profile').val(task.profile);
+	   	  	$('#nombre').val(task.nombre);
+	      	$('#puesto').val(task.puesto);
+	      	$('#email').val(task.email);
+	   	  	$('#cell').val(task.cell);
+	   	  	$('#tel_ofi').val(task.tel_ofi);
+	      	$('#empresa').val(task.empresa);
+	      	$('#web').val(task.web);
+	      	$('#fb').val(task.fb);
+	      	$('#lk').val(task.lk);
+	      	$('#ins').val(task.ins);
+		  	$('#visible').val(task.visible);
+
+			const cover = task.cover;
+			$("#ima").attr('src', './modulos/vcard/fotos/' + cover);      		
+        });		
 	   edit = true;
 	});
   
@@ -138,9 +135,7 @@ $(document).ready(function () {
 		  if (result.value) {
 			 let id = $(this).closest('tr').attr('id'); //capturamos el atributo ID de la fila  
 			 //eliminamos el producto de firebase      
-			 $.post('modulos/vcard/admin/backend.php?action=delete', {
-				id
-			 }, (response) => {
+			 $.post('modulos/vcard/admin/backend.php?action=delete', {id}, (response) => {
 				console.log(response);
 				load(1);
 			 });
@@ -209,6 +204,7 @@ $(document).ready(function () {
 		  success: function (data) {
 			 //$("#form1").trigger("reset");
 			 $("#imagen").html(data);
+			 $(".alert-dismissible").delay(3000).fadeOut("slow");
 			 console.log("Subido Correctamente");
 		  }
 	   });

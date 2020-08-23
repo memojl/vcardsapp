@@ -2,13 +2,13 @@
 if(isset($_SESSION["username"])){
    	if($_SESSION["level"]==-1 || $_SESSION["level"]==1){
    		include 'functions.php';
-   		editor_tiny_mce();
+         editor_tiny_mce();
+         fecha_php_vcard();
          $tabla='vcard';
          $cond_opc=($opc!='')?'&opc='.$opc:'';
          if($username=='admin'){
             $vistas=($action!='' && $action=='listado')?'<i class="fa fa-list"></i> | <a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'"><i class="fa fa-th-large"></i></a>':'<a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'&action=listado"><i class="fa fa-list"></i></a> | <i class="fa fa-th-large"></i>';
          }
-         //$vistas=($action!='' && $action=='listado')?'<i class="fa fa-list"></i> | <a id="load(1);" href="#"><i class="fa fa-th-large"></i></a>':'<a id="listado" href="#"><i class="fa fa-list"></i></a> | <i class="fa fa-th-large"></i>';
 ?>
 <script>
 function add_empresa(val){
@@ -43,6 +43,7 @@ function add_empresa(val){
          ?>
       <!-- Main content -->
       <!--header-->
+      <div id="aviso"><?php echo $aviso;?></div>
       <section class="content">
          <div class="row">
             <?php head_producto();?>

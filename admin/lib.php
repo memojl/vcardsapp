@@ -329,6 +329,19 @@ global $page_url,$path_jsonDB,$path_jsonWS;
 			echo '</tr>'."\n";
 		}
 }
+
+//[GET-SHOW] Buscar y Mostrar un registro 
+function query_row($tabla,$url_api,$campo,$id){
+    $data=query_data($tabla,$url_api);
+    //DATOS
+    foreach($data as $key => $value){
+        $b_id=$data[$key][$campo];
+        if($b_id==$id){//$index=$key;
+            $row=$data[$key];
+        }
+    }
+    return $row;
+}
 /*---------------------------------------------------------------------------------------------------------------------*/
 //--FUNCIONES--//////////////////////////////////////////////////////////////////////////////
 /*---------------------------------------------------------------------------------------------------------------------*/

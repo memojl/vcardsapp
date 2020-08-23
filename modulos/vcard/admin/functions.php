@@ -10,9 +10,39 @@ global $chartset;
 function file_ima($cover){
 global $page_url,$mod;
    $file='<input type="hidden" class="form-control" id="cover" name="cover" value="'.$cover.'">
-   <img id="ima" src="'.$page_url.'modulos/'.$mod.'/fotos/'.$cover.'" style="width:200px;" title="'.$cover.'">
+   <img id="ima" src="'.$page_url.'modulos/'.$mod.'/fotos/'.$cover.'" style="width:150px;" title="'.$cover.'">
    <a href="javascript:up(1);">Cambiar Foto</a><div id="upload"></div>';
    return $file;
+}
+
+function fecha_php_vcard(){
+global $fecha;
+echo '
+<script language="JavaScript">
+//Configuracion de la funcion: [hora.js].
+function fecha(){
+var dt = new Date();
+var d  = dt.getDate();
+var day = (d < 10) ? \'0\' + d : d;
+var m = dt.getMonth() + 1;
+var month = (m < 10) ? \'0\' + m : m;
+var yy = dt.getYear();
+var year = (yy < 1000) ? yy + 1900 : yy;
+var fecha = year+"-"+month+"-"+day;
+
+var hora = dt.getHours();
+var minuto = dt.getMinutes();
+var segundo = dt.getSeconds();
+var valtime = ((hora<10)? "0" : "")+hora;
+valtime += ((minuto<10)? ":0" : ":")+minuto;
+valtime += ((segundo<10)? ":0" : ":")+segundo;
+tiempo = setTimeout(\'fecha()\',1000);
+//document.getElementById("fecha").innerHTML = "'.$fecha.' " + valtime;
+document.getElementById("f_create").value = fecha +" "+ valtime;
+document.getElementById("f_update").value = fecha +" "+ valtime;
+}
+window.onload = fecha;
+</script>';
 }
 
 function select_empresa($tabla,$url_api,$empresa){
@@ -23,7 +53,7 @@ global $page_url,$path_jsonDB,$path_jsonWS;
 	foreach ($data as $rowm){$i++;
 		if($empresa1!=$rowm['empresa']){$sel=($rowm['empresa']==$empresa)?' selected':'';
 			$option.='<option value="'.$rowm['empresa'].'"'.$sel.'>'.$rowm['empresa'].'</option>';
-      }
+      }else{$option.='';}
       $empresa1=$rowm['empresa'];
 	}
    $select='<select class="form-control" id="empresa" name="empresa" style="float:left;">'.$option.'</select>';
@@ -33,7 +63,8 @@ global $page_url,$path_jsonDB,$path_jsonWS;
 function query_all_tabla_vcard($index,$th,$tabla,$url_api,$crud){
 global $page_url,$path_jsonDB,$path_jsonWS;
    $display=($crud!=0)?'':'none';
-	$data=query_data($tabla,$url_api);//print_r($data);
+   $data=query_data($tabla,$url_api);//print_r($data);
+   usort($data, function($a, $b){global $index;return strnatcmp($a[$index], $b[$index]);});//Orden por ID
 	//CAMPOS
    $i=0;$campos='<th style="display:'.$display.';">Acciones</th>'."\n";
       if($th!=''){
@@ -118,7 +149,7 @@ global $mysqli,$DBprefix,$page_url,$path_tema,$mod,$ext,$opc,$action,$URL;
 }
 
 function modal_vcard(){
-global $mod;
+global $username,$mod;
 
 if($cover==''){$cover='nodisponible1.jpg';}
 $file=file_ima($cover);
@@ -150,7 +181,19 @@ $seleccion1=($visible=='1')?'selected':'';
                            <textarea class="form-control" id="des" name="des"></textarea>
                         </div-->
                         <div class="form-group">
-                           <input type="text" class="form-control" id="ID" name="ID" value="">
+                           <input type="text" class="form-control" id="ID" name="ID" value="" placeholder="ID">
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="form-control" id="f_create" name="f_create" value="" placeholder="Creado">
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="form-control" id="f_update" name="f_update" value="" placeholder="Actualizado">
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="form-control" id="vcard" name="vcard" value="1" placeholder="vcard">
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="form-control" id="user" name="user" value="'.$_SESSION["username"].'" placeholder="usuario">
                         </div>
                      </div>
                      <div class="col-md-4">

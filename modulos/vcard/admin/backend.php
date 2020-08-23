@@ -41,29 +41,43 @@ switch(true){
     }else{$query="SELECT * FROM ".$DBprefix.$tabla."";}
     ws_query($query,1,0);
   break;
+  case($action=='form_id'):
+    if(isset($_POST['id'])){ $id=$_POST['id'];
+      $query="SELECT * FROM ".$DBprefix.$tabla." WHERE ID='{$id}';";
+      ws_query($query,1,0);
+    }
+  break;
   case($action=='delete'):
     if(isset($_POST['id'])){ $id=$_POST['id'];
       $sql=mysqli_query($mysqli,"DELETE FROM ".$DBprefix.$tabla." WHERE ID='{$id}';") or print mysqli_error($mysqli);
-      echo 'La tarea ha sido borrada '.$id;  
+      echo 'El registro '.$id.' ha sido eliminado';  
     }
   break;
   case($action=='edit' || $action=='add'):
     $id=$_POST['ID'];
     $cover=$_POST['cover'];
-$logo=$_POST['logo'];
-$profile=$_POST['profile'];
-$nombre=$_POST['nombre'];
-//$des=$_POST['descripcion'];
-$puesto=$_POST['puesto'];
-$empresa=$_POST['empresa'];
-$cell=$_POST['cell'];
-$email=$_POST['email'];
-$web=$_POST['web'];
-$lk=$_POST['lk'];
-$ins=$_POST['ins'];
-$visible=$_POST['visible'];
-$c=0;
-html_iso_servicios($nombre);
+    $logo=$_POST['logo'];
+    $profile=$_POST['profile'];
+    $nombre=$_POST['nombre'];
+    $des=$_POST['des'];
+    $puesto=$_POST['puesto'];
+    $empresa=$_POST['empresa'];
+    $tel=$_POST['tel'];
+    $tel_ofi=$_POST['tel_ofi'];
+    $cell=$_POST['cell'];
+    $email=$_POST['email'];
+    $web=$_POST['web'];
+    $fb=$_POST['fb'];
+    $tw=$_POST['tw'];
+    $lk=$_POST['lk'];
+    $ins=$_POST['ins'];
+    $f_create=$_POST['f_create'];
+    $f_update=$_POST['f_update'];
+    $vcard=$_POST['vcard'];
+    $user=$_POST['user'];
+    $visible=$_POST['visible'];
+    $c=0;
+  html_iso_servicios($nombre);
 	if($nombre=='' || $visible==''){
 		$error = "  *El campo esta vacio.\\n\\r"; $c++; 
 	}
@@ -73,23 +87,21 @@ html_iso_servicios($nombre);
 	if($c > 0){
 		$aviso='
 			<div class="alert alert-danger alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                <h4><i class="icon fa fa-ban"></i> Error!</h4>'.$error.'
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        <h4><i class="icon fa fa-ban"></i> Error!</h4>'.$error.'
 			</div>
 			';
 	}else{
 		if($action=='edit'){$edi='editado';
-			$save=mysqli_query($mysqli,"UPDATE ".$DBprefix.$tabla." SET cover='{$cover}', profile='{$profile}', logo='{$logo}', nombre='{$nombre}', puesto='{$puesto}', empresa='{$empresa}', cell='{$cell}', email='{$email}', web='{$web}', lk='{$lk}', ins='{$ins}', visible='{$visible}' WHERE ID='{$id}';") or print mysqli_error($mysqli);
+			$save=mysqli_query($mysqli,"UPDATE ".$DBprefix.$tabla." SET cover='{$cover}', profile='{$profile}', logo='{$logo}', nombre='{$nombre}', descripcion='{$des}', puesto='{$puesto}', empresa='{$empresa}', tel='{$tel}', tel_ofi='{$tel_ofi}', cell='{$cell}', email='{$email}', web='{$web}', fb='{$fb}', tw='{$tw}', lk='{$lk}', ins='{$ins}', f_update='{$f_update}', vcard='{$vcard}', user='{$user}', visible='{$visible}' WHERE ID='{$id}';") or print mysqli_error($mysqli);
 		}else{$edi='agregado';
-			$save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix.$tabla." (cover,profile,logo,nombre,puesto,empresa,cell,email,web,lk,ins,visible) VALUES ('{$cover}','{$profile}','{$logo}','{$nombre}','{$puesto}','{$empresa}','{$cell}','{$email}','{$web}','{$lk}','{$ins}','{$visible}')") or print mysqli_error($mysqli);
+			$save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix.$tabla." (cover,profile,logo,nombre,descripcion,puesto,empresa,tel,tel_ofi,cell,email,web,fb,tw,lk,ins,f_create,f_update,vcard,user,visible) VALUES ('{$cover}','{$profile}','{$logo}','{$nombre}','{$des}','{$puesto}','{$empresa}','{$tel}','{$tel_ofi}','{$cell}','{$email}','{$web}','{$fb}','{$tw}','{$lk}','{$ins}','{$f_create}','{$f_update}','{$vcard}','{$user}','{$visible}')") or print mysqli_error($mysqli);
 		}	
 		$URL=$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc;	
-		recargar(5,$URL,$target);
+		//recargar(5,$URL,$target);
 	}
 	validar_aviso($save,'La Vcard se ha '.$edi.' correctamente','No se puedo guardar intentelo nuevamente',$aviso);
-
 	echo $aviso;
-
 	break;
   case($action=='listado'):
     $th=array(
