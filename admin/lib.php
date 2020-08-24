@@ -329,19 +329,6 @@ global $page_url,$path_jsonDB,$path_jsonWS;
 			echo '</tr>'."\n";
 		}
 }
-
-//[GET-SHOW] Buscar y Mostrar un registro 
-function query_row($tabla,$url_api,$campo,$id){
-    $data=query_data($tabla,$url_api);
-    //DATOS
-    foreach($data as $key => $value){
-        $b_id=$data[$key][$campo];
-        if($b_id==$id){//$index=$key;
-            $row=$data[$key];
-        }
-    }
-    return $row;
-}
 /*---------------------------------------------------------------------------------------------------------------------*/
 //--FUNCIONES--//////////////////////////////////////////////////////////////////////////////
 /*---------------------------------------------------------------------------------------------------------------------*/
@@ -1570,7 +1557,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		'.$tiny.'
 		const postData={
-			'.$campos[1].'
+			'.$campos.'
 		};
 		const url = edit === false ? \'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=add\' : \'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=edit\';		
 		console.log(postData, url);
@@ -1578,9 +1565,8 @@ $(document).ready(function(){
 			console.log("Se ha actualizado el registro.");			
 			$("#aviso").html(response).fadeIn("slow");
 			$("#aviso").fadeOut(6000);
-			$("#form1").trigger(\'reset\');
-			$("#addVcard").modal(\'hide\');	
-			load(1);
+			//$("form1").trigger(\'reset\');	
+			//listar();
 			//edit = false;
 		});
 	});
@@ -1600,27 +1586,6 @@ $(document).ready(function(){
         });		
 	});*/
 
-	//Form_Editar
-  	$(document).on(\'click\',\'.btn-edit\',function(){	
-		var tr=$(this).parents("tr");//console.log(tr);
-    	const Id = tr.attr("id");    
-		console.log(Id);		
-
-		'.$campos[2].'
-		
-		'.$campos[3].'
-		
-		$("#ima").attr(\'src\',\'./modulos/vcard/fotos/\'+cover);
-		
-
-		edit = true;
-	});
-	
-	$(\'.btn-add\').click(function(){
-		$(\'#ima\').attr(\'src\',\'./modulos/vcard/fotos/nodisponible1.jpg\');
-		edit = false;   
-	});
-
 	//BORRAR
 	$(document).on(\'click\',\'.task-delete\',function(){
 	  const element = $(this)[0];
@@ -1632,28 +1597,6 @@ $(document).ready(function(){
         });
 	  }
 	});
-
-	$(document).on(\'click\', \'.btn-delete\', function(){
-		Swal.fire({
-		  title: "Esta seguro de eliminar el producto?",
-		  text: "Esta operacion no se puede revertir!",
-		  icon: \'warning\',
-		  showCancelButton: true,
-		  confirmButtonColor: \'#d33\',
-		  cancelButtonColor: \'#3085d6\',
-		  confirmButtonText: \'Borrar\'
-		}).then((result) => {
-		  if (result.value) {
-			  let id = $(this).closest(\'tr\').attr(\'id\'); //capturamos el atributo ID de la fila  
-			  //eliminamos el producto de firebase      
-			  $.post(\'modulos/'.$mod.'/admin/backend.php?action=delete\', {id}, (response) => {
-				console.log(response);
-				load(1);
-			  });	 
-			  Swal.fire(\'Eliminado!\', \'El producto ha sido eliminado.\',\'success\')
-		  }
-		})        
-	  });
 
 	//SUBIR COVER
 	$(document).on(\'click\',\'#Aceptar\',function(e){		

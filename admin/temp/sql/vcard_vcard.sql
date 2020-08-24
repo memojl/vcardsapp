@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-08-2020 a las 17:26:26
+-- Tiempo de generación: 24-08-2020 a las 03:02:57
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 7.3.12
 
@@ -61,10 +61,10 @@ INSERT INTO `vcard_vcard` (`ID`, `cover`, `profile`, `logo`, `nombre`, `descripc
 (2, 'foto.png', 'jparra', '', 'Juan Parra', '', 'Manager', 'Billnex', '', '', '+1(754)210-0433', 'juan.parra@thebillnex.com', 'https://www.thebillnex.com', 'https://facebook.com/', 'https://twitter.com/', '#', 'https://www.instagram.com/billnex', '22/08/2020 17:04', '22/08/2020 17:04', 1, 'admin', 1),
 (3, 'foto_capital.png', 'dmiranda', '', 'Daniel Miranda Mejia', '', 'Manager', 'Capital', '', '', '442 104 6067', 'dmiranda@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '22/08/2020 21:28', '22/08/2020 21:28', 1, 'admin', 1),
 (4, 'foto_capital.png', 'pbetancourt', '', 'Ponciano Betancourt', '', 'Manager', 'Capital', '', '', '442 347 0504', 'pbetancourt@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '22/08/2020 21:39', '22/08/2020 21:39', 1, 'admin', 1),
-(8, 'foto.png', 'memo1', '', 'Guillermo Jimenez Lopez', '', 'Programador', 'Multiportal', '', '4421234567', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', 'https://www.linkedin.com/company/13990038/admin/', 'https://www.instagram.com/', '2020-08-23 09:49:33', '2020-08-23 09:59:16', 1, 'admin', 1),
+(8, 'foto.png', 'memo1', '', 'Guillermo Jimenez Lopez', '', 'Programador', 'Multiportal', '', '4421234567', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', 'https://www.linkedin.com/company/13990038/admin/', 'https://www.instagram.com/', '2020-08-23 09:49:33', '2020-08-23 19:31:06', 1, 'admin', 1),
 (6, 'foto_capital.png', 'memojl', '', 'Memo Jimenez', '', 'Programador', 'Multiportal', '', '4421234567', '4426002842', 'memotablet08@gmail.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', 'https://www.linkedin.com/company/13990038/admin/', 'https://www.instagram.com/', '2020-08-22 23:21:25', '2020-08-22 23:21:25', 1, 'admin', 1),
-(7, 'foto_capital.png', 'asusan', '', 'Arturo Suz&amp;aacute;n', '', 'Manager', 'Multiportal', '', '4421234567', '442 104 6067', 'sb-comprador@gmail.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', 'https://www.linkedin.com/company/13990038/admin/', 'https://www.instagram.com/', '2020-08-22 23:31:27', '2020-08-23 10:15:44', 1, '', 1),
-(9, 'nodisponible.jpg', 'memojl', '', 'Guillermo Jimenez Lopez', '', 'Manager', 'Multiportal', '', '', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', '', '', '2020-08-23 10:16:39', '2020-08-23 10:16:39', 1, '', 0);
+(7, 'foto_capital.png', 'asusan', '', 'Arturo Suz&amp;amp;aacute;n', '', 'Manager', 'Multiportal', '', '4421234567', '442 104 6067', 'sb-comprador@gmail.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', 'https://www.linkedin.com/company/13990038/admin/', 'https://www.instagram.com/', '2020-08-22 23:31:27', '2020-08-23 19:33:45', 1, 'demo', 1),
+(9, 'nodisponible.jpg', 'memojl', '', 'Guillermo Jimenez Lopez', '', 'Manager', 'Multiportal', '', '', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', '', '', '2020-08-23 10:16:39', '2020-08-23 19:32:23', 1, 'demo', 0);
 
 --
 -- Índices para tablas volcadas
