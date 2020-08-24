@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-08-2020 a las 04:58:56
+-- Tiempo de generación: 23-08-2020 a las 17:26:47
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 7.3.12
 
@@ -1666,8 +1666,8 @@ CREATE TABLE `vcard_signup` (
 --
 
 INSERT INTO `vcard_signup` (`ID`, `username`, `password`, `email`, `level`, `lastlogin`, `tema`, `nombre`, `apaterno`, `amaterno`, `foto`, `cover`, `tel`, `ext`, `fnac`, `fb`, `tw`, `puesto`, `ndepa`, `depa`, `empresa`, `adress`, `direccion`, `mpio`, `edo`, `pais`, `genero`, `exp`, `likes`, `filtro`, `zona`, `alta`, `actualizacion`, `page`, `nivel_oper`, `rol`, `codigo`, `intentos`, `activo`) VALUES
-(1, 'admin', 'c64f923f7f476f0b78716079452e7bdec4b2c016', 'multiportal@outlook.com', '-1', '2020-08-18 20:29:30', 'default', 'Guillermo', 'Jimenez', 'Lopez', 'sinfoto.png', '', '4421944950', 1, '0000-00-00', '', '', 'Programador', 0, '', 'Multiportal', '', '', '', '', '', 'M', '', 0, '', '', '', 'admin2019xadmin79', '', 0, 0, '944950', '0', 1),
-(2, 'demo', '71cc541bd1ccb6670de3f8d40f425ffb7315fe7f', 'demo@gmail.com', '-1', '0000-00-00 00:00:00', 'default', 'Demo', 'Apaterno', 'Amaterno', 'sinfoto.png', 'sincover.jpg', '4421234567', 0, '0000-00-00', '', '', 'Director', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'demo2019xdemo2017', '', 0, 0, '234567', '0', 1),
+(1, 'admin', 'c64f923f7f476f0b78716079452e7bdec4b2c016', 'multiportal@outlook.com', '-1', '2020-08-23 10:01:16', 'default', 'Guillermo', 'Jimenez', 'Lopez', 'sinfoto.png', '', '4421944950', 1, '0000-00-00', '', '', 'Programador', 0, '', 'Multiportal', '', '', '', '', '', 'M', '', 0, '', '', '', 'admin2019xadmin79', '', 0, 0, '944950', '0', 1),
+(2, 'demo', '71cc541bd1ccb6670de3f8d40f425ffb7315fe7f', 'demo@gmail.com', '-1', '2020-08-23 10:17:42', 'default', 'Demo', 'Apaterno', 'Amaterno', 'sinfoto.png', 'sincover.jpg', '4421234567', 0, '0000-00-00', '', '', 'Director', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'demo2019xdemo2017', '', 0, 0, '234567', '0', 1),
 (3, 'usuario', '3c6e6ac5382f4e804e824c0d785b275252ddacb0', 'multiportal@outlook.com', '1', '0000-00-00 00:00:00', 'default', 'Usuario', 'Apaterno', 'Amaterno', 'sinfoto.png', '', '4421234567', 0, '0000-00-00', '', '', 'Usuario', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'usuario2019xuser79x', '', 0, 0, '234567', '0', 1),
 (4, 'ventas', '1d415500d481e0c1c238189c22ea057da663c1e7', 'ventas@gmail.com', '2', '2020-08-13 15:16:21', 'default', 'Ventas', 'Apaterno', 'Amaterno', 'sinfoto.png', 'sincover.jpg', '4421234567', 0, '0000-00-00', '', '', 'Gerente', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'ventas2019xventas', '', 0, 0, '234567', '0', 1);
 
@@ -1789,11 +1789,10 @@ CREATE TABLE `vcard_vcard` (
   `tw` varchar(150) NOT NULL,
   `lk` varchar(150) NOT NULL,
   `ins` varchar(150) NOT NULL,
-  `date_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `f_create` varchar(50) NOT NULL,
-  `f_update` varchar(50) NOT NULL,
+  `f_create` varchar(20) NOT NULL,
+  `f_update` varchar(20) NOT NULL,
   `vcard` tinyint(1) NOT NULL,
-  `activo` tinyint(1) NOT NULL,
+  `user` varchar(50) NOT NULL,
   `visible` tinyint(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -1801,13 +1800,15 @@ CREATE TABLE `vcard_vcard` (
 -- Volcado de datos para la tabla `vcard_vcard`
 --
 
-INSERT INTO `vcard_vcard` (`ID`, `cover`, `profile`, `logo`, `nombre`, `descripcion`, `puesto`, `empresa`, `tel`, `tel_ofi`, `cell`, `email`, `web`, `fb`, `tw`, `lk`, `ins`, `date_created`, `f_create`, `f_update`, `vcard`, `activo`, `visible`) VALUES
-(1, '', 'rforesta', 'foto.png', 'Rodrigo Foresta', '', 'Manager', 'Billnex', '', '', '+54 9 3534 19 6770', 'rodrigo.foresta@thebillnex.com', 'https://www.thebillnex.com', 'https://facebook.com/', 'https://twitter.com/', '#', 'https://www.instagram.com/billnex', '2020-02-19 21:37:48', '', '', 1, 1, 1),
-(2, '', 'jparra', 'foto.png', 'Juan Parra', '', 'Manager', 'Billnex', '', '', '+1(754)210-0433', 'juan.parra@thebillnex.com', 'https://www.thebillnex.com', 'https://facebook.com/', 'https://twitter.com/', '#', 'https://www.instagram.com/billnex', '2020-03-10 16:45:04', '', '', 1, 1, 1),
-(3, '', 'dmiranda', 'foto_capital.png', 'Daniel Miranda Mejia', '', 'Manager', 'Capital', '', '', '442 104 6067', 'dmiranda@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '2020-03-02 22:20:58', '', '', 0, 0, 1),
-(4, '', 'pbetancourt', 'foto_capital.png', 'Ponciano Betancourt', '', 'Manager', 'Capital', '', '', '442 347 0504', 'pbetancourt@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '2020-02-19 21:39:04', '', '', 0, 0, 1),
-(5, '', 'asuzan', 'foto_capital.png', 'Arturo Suz&aacute;n', '', 'Manager', 'Capital', '', '', '446 102 2535', 'a.suzan@capaitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '2020-02-19 21:39:26', '', '', 0, 0, 1),
-(6, '', 'memojl', 'foto.png', 'Guillermo Jimenez Lopez', '', 'Programador', 'Multiportal', '', '', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', '', '', '', '', '2020-08-15 19:50:39', '', '', 0, 0, 1);
+INSERT INTO `vcard_vcard` (`ID`, `cover`, `profile`, `logo`, `nombre`, `descripcion`, `puesto`, `empresa`, `tel`, `tel_ofi`, `cell`, `email`, `web`, `fb`, `tw`, `lk`, `ins`, `f_create`, `f_update`, `vcard`, `user`, `visible`) VALUES
+(1, 'foto.png', 'rforesta', '', 'Rodrigo Foresta', '', 'Manager', 'Billnex', '', '', '+54 9 3534 19 6770', 'rodrigo.foresta@thebillnex.com', 'https://www.thebillnex.com', 'https://facebook.com/', 'https://twitter.com/', '#', 'https://www.instagram.com/billnex', '19/08/2020 10:38', '19/08/2020 10:38', 1, 'admin', 1),
+(2, 'foto.png', 'jparra', '', 'Juan Parra', '', 'Manager', 'Billnex', '', '', '+1(754)210-0433', 'juan.parra@thebillnex.com', 'https://www.thebillnex.com', 'https://facebook.com/', 'https://twitter.com/', '#', 'https://www.instagram.com/billnex', '22/08/2020 17:04', '22/08/2020 17:04', 1, 'admin', 1),
+(3, 'foto_capital.png', 'dmiranda', '', 'Daniel Miranda Mejia', '', 'Manager', 'Capital', '', '', '442 104 6067', 'dmiranda@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '22/08/2020 21:28', '22/08/2020 21:28', 1, 'admin', 1),
+(4, 'foto_capital.png', 'pbetancourt', '', 'Ponciano Betancourt', '', 'Manager', 'Capital', '', '', '442 347 0504', 'pbetancourt@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '22/08/2020 21:39', '22/08/2020 21:39', 1, 'admin', 1),
+(8, 'foto.png', 'memo1', '', 'Guillermo Jimenez Lopez', '', 'Programador', 'Multiportal', '', '4421234567', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', 'https://www.linkedin.com/company/13990038/admin/', 'https://www.instagram.com/', '2020-08-23 09:49:33', '2020-08-23 09:59:16', 1, 'admin', 1),
+(6, 'foto_capital.png', 'memojl', '', 'Memo Jimenez', '', 'Programador', 'Multiportal', '', '4421234567', '4426002842', 'memotablet08@gmail.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', 'https://www.linkedin.com/company/13990038/admin/', 'https://www.instagram.com/', '2020-08-22 23:21:25', '2020-08-22 23:21:25', 1, 'admin', 1),
+(7, 'foto_capital.png', 'asusan', '', 'Arturo Suz&amp;aacute;n', '', 'Manager', 'Multiportal', '', '4421234567', '442 104 6067', 'sb-comprador@gmail.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', 'https://www.linkedin.com/company/13990038/admin/', 'https://www.instagram.com/', '2020-08-22 23:31:27', '2020-08-23 10:15:44', 1, '', 1),
+(9, 'nodisponible.jpg', 'memojl', '', 'Guillermo Jimenez Lopez', '', 'Manager', 'Multiportal', '', '', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', '', '', '2020-08-23 10:16:39', '2020-08-23 10:16:39', 1, '', 0);
 
 -- --------------------------------------------------------
 
@@ -2472,7 +2473,7 @@ ALTER TABLE `vcard_testimonios`
 -- AUTO_INCREMENT de la tabla `vcard_vcard`
 --
 ALTER TABLE `vcard_vcard`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_visitas`

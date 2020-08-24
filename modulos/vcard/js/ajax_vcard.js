@@ -74,6 +74,7 @@ ins: $("#ins").val(),
 f_create: $("#f_create").val(),
 f_update: $("#f_update").val(),
 vcard: $("#vcard").val(),
+user: $("#user").val(),
 visible: $("#visible").val(),
 
 	   };

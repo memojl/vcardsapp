@@ -319,15 +319,18 @@ global $mysqli,$DBprefix,$page_url,$path_tema,$mod,$ext,$opc,$action,$URL;
       'f_create',
       'f_update',
       'vcard',
+      'user',
       'visible'
     );
    
    $k=0;
    for($j=0;$j<count($th);$j++){$k++;
       $campos.=$th[$j].': $("#'.$th[$j].'").val(),'."\n";
-      $campos1.=$th[$j].' = tr.find("td:eq('.$k.')").html();'."\n";
-      $campos2.='$(\'#'.$th[$j].'\').val('.$th[$j].');'."\n";
-      $campos3.='$(\'#'.$th[$j].'\').val(task.'.$th[$j].');'."\n";
+      if($th[$j]!='user'){
+         $campos1.=$th[$j].' = tr.find("td:eq('.$k.')").html();'."\n";
+         $campos2.='$(\'#'.$th[$j].'\').val('.$th[$j].');'."\n";   
+         $campos3.='$(\'#'.$th[$j].'\').val(task.'.$th[$j].');'."\n";
+      }
    }
 
    $campos=array(1=>$campos,$campos1,$campos2,$campos3);

@@ -97,10 +97,8 @@ switch(true){
 		}else{$edi='agregado';
 			$save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix.$tabla." (cover,profile,logo,nombre,descripcion,puesto,empresa,tel,tel_ofi,cell,email,web,fb,tw,lk,ins,f_create,f_update,vcard,user,visible) VALUES ('{$cover}','{$profile}','{$logo}','{$nombre}','{$des}','{$puesto}','{$empresa}','{$tel}','{$tel_ofi}','{$cell}','{$email}','{$web}','{$fb}','{$tw}','{$lk}','{$ins}','{$f_create}','{$f_update}','{$vcard}','{$user}','{$visible}')") or print mysqli_error($mysqli);
 		}	
-		$URL=$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc;	
-		//recargar(5,$URL,$target);
 	}
-	validar_aviso($save,'La Vcard se ha '.$edi.' correctamente','No se puedo guardar intentelo nuevamente',$aviso);
+	validar_aviso($save,'La Vcard se ha '.$edi.' correctamente.','No se puedo guardar intentelo nuevamente.',$aviso);
 	echo $aviso;
 	break;
   case($action=='listado'):
