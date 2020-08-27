@@ -520,7 +520,7 @@ $_POST['refer']=$URL;
 if($refer==''){$refer=$_POST['refer'];}
 //$username=$_SESSION['id'];
 $ext=(isset($_GET['ext']))?$_GET['ext']:'';
-mysqli_query($mysqli,"INSERT INTO ".$DBprefix."visitas (info_nave,navegador,version,os,pais,user,IPv4,ip,page,refer,vhref,modulo,ext,idp,fecha) VALUES ('".$_SERVER['HTTP_USER_AGENT']."','".$info["browser"]."','".$info["version"]."','".$info["os"]."','{$country}','{$username}','{$IPv4}','{$ip}','{$URL}','{$refer}','{$vhref}','{$mod}','{$ext}','{$idp}','{$date}')") or print mysqli_error($mysqli);
+mysqli_query($mysqli,"INSERT INTO ".$DBprefix."visitas (info_nave,navegador,version,os,pais,user,IPv4,ip,page,refer,vhref,modulo,ext,idp,salida_pag,fecha) VALUES ('".$_SERVER['HTTP_USER_AGENT']."','".$info["browser"]."','".$info["version"]."','".$info["os"]."','{$country}','{$username}','{$IPv4}','{$ip}','{$URL}','{$refer}','{$vhref}','{$mod}','{$ext}','{$idp}','{$date}','{$date}')") or print mysqli_error($mysqli);
 }
 //log_visitas($username);
 
