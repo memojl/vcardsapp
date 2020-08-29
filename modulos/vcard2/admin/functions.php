@@ -489,15 +489,6 @@ $seleccion1=($visible=='1')?'selected':'';
                   </div>
                   <!-- /.box-body -->
                   <div class="box-footer">
-                     <!--input type="hidden" class="form-control" id="user" name="user" value="\'$username;\'"-->
-                     <?php if($action==\'edit\'){\'
-                     <input type="hidden" class="form-control" id="id" name="id" value="\'$id;\'">
-                     <!--input type="hidden" class="form-control" id="fmod" name="fmod" value="\'$date;\'"-->				
-                     <?php }else{\'
-                     <!--input type="hidden" class="form-control" id="alta" name="alta" value="\'$date;\'"-->                
-                     <?php }\'
-                     <!--input id="Guardar" name="Guardar" type="submit" class="btn btn-primary" value="Guardar"--> 
-                     <!--a class="btn btn-default" href="\'$refer;\'">Cancelar</a-->
                   </div>
                
              <!--/div--><!-- /.col-->            

@@ -88,5 +88,5 @@ function add_empresa(val){
 <!-- /.content -->
 <?php 		
 	}else{echo '<div id="cont-user">No tiene permiso para ver esta secci&oacute;n.</div>';}
-   }else{header("Location: ".$page_url."index.php");}
+}else{header("Location: ".$page_url."index.php");}
 ?>

@@ -1,5 +1,18 @@
 
 // JavaScript Document
+
+$(document).ready(function(){
+	// Global Settings
+	//console.log('jQuery esta funcionando');
+	let edit = false;
+	load(1);	
+ 	//listar();
+	//$("#task-result").hide();
+
+	/*$(document).on("click","#listado",function(){
+		listado(1);
+	});*/
+
 	function load(page){
 		var parametros = {"mode":"ajax","page":page};
 		$("#loader").fadeIn('slow');
@@ -15,18 +28,6 @@
 			}
 		});
 	}
-
-$(document).ready(function(){
-	// Global Settings
-	//console.log('jQuery esta funcionando');
-	let edit = false;
-	load(1);	
- 	//listar();
-	//$("#task-result").hide();
-
-	/*$(document).on("click","#listado",function(){
-		listado(1);
-	});*/
 
 	function listado(page){
 		var parametros = {"mode":"ajax","page":page};
@@ -80,19 +81,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		tinyMCE.triggerSave();
 		const postData={
-			
-			logo: $("#cover").val(),
-			profile: $("#profile").val(),
-			nombre: $("#nombre").val(),
-			puesto: $("#puesto").val(),
-			empresa: $("#empresa").val(),
-			cell: $("#cell").val(),
-			email: $("#email").val(),
-			web: $("#web").val(),
-			lk: $("#lk").val(),
-			ins: $("#ins").val(),
-			visible: $("#visible").val(),
-      		id: $("#id").val()
+			Array
 		};
 		const url = edit === false ? 'modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=add' : 'modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=edit';		
 		console.log(postData, url);
@@ -122,15 +111,28 @@ $(document).ready(function(){
 	});*/
 
 	//BORRAR
-	$(document).on('click','.task-delete',function(){
-	  const element = $(this)[0];
-      const id = $(element).attr('taskId');
-      if(confirm("Esta seguro de eliminar este Servicio"+id+"?")) {
-      	$.post('modulos/vcard/admin/backend.php?action=delete', {id}, (response) => {
-			console.log(response);
-          	load(1);
-        });
-	  }
+	$(document).on('click', '.btn-delete', function () {
+      const element = $(this)[0].parentElement.parentElement;const id = $(element).attr('id');
+      //console.log(id);
+	   Swal.fire({
+		  title: "Esta seguro de eliminar el producto ("+id+")?",
+		  text: "Esta operacion no se puede revertir!",
+		  icon: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: '#d33',
+		  cancelButtonColor: '#3085d6',
+		  confirmButtonText: 'Borrar'
+	   }).then((result) => {
+		  if (result.value) {
+			 //let id = $(this).closest('tr').attr('id'); //capturamos el atributo ID de la fila  
+			 //eliminamos el producto de firebase      
+			 $.post('modulos/vcard/admin/backend.php?action=delete', {id}, (response) => {
+				console.log(response);
+				load(1);
+			 });
+			 Swal.fire('Eliminado!', 'El producto ha sido eliminado.', 'success')
+		  }
+	   })
 	});
 
 	//SUBIR COVER
@@ -174,23 +176,23 @@ $(document).ready(function(){
 				tasks.forEach(task=>{
 				visible=`${task.visible}`;
 				sel=(visible==0)?'<span style="color:#e00;"><i class="fa fa-close" title="Desactivado"></i></span>':'<span style="color:#0f0;"><i class="fa fa-check" title="Activo"></i></span>';	
-        		template += `
-	<div class="col-md-3 col-xs-12">
-		<div class="box box-primary">
-			<div class="box-header with-border">
-       			<h3 class="box-title">C&oacute;digo: <b>${task.profile}</b></h3>
-				<span class="controles">${sel}
-					<a href="http://localhost/MisSitios/vcardsapp/index.php?mod=vcard&ext=admin/index&form=1&action=edit&id=${task.ID}" title="Editar"><i class="fa fa-edit"></i></a> | <a href="#" taskid="${task.ID}" class="task-delete" title="Borrar"><i class="fa fa-trash"></i></a>
-				</span>
-			</div>
-			<div class="box-body">
-				<div class="ima-size">
-					<img src="http://localhost/MisSitios/vcardsapp/modulos/vcard/assets/fotos/${task.logo}" class="ima-size img-responsive">
+				template += `
+				<div class="col-md-3 col-xs-12">
+				<div class="box box-primary">
+					<div class="box-header with-border" id="${task.ID}">
+						<h3 class="box-title">C&oacute;digo: <b>${task.profile}</b></h3>
+						<span class="controles">${sel}
+							<a href="http://localhost/MisSitios/vcardsapp/index.php?mod=vcard&ext=admin/index&form=1&action=edit&id=${task.ID}" title="Editar"><i class="fa fa-edit"></i></a> | <span class="btn-delete" title="Borrar"><i class="fa fa-trash"></i></span>
+						</span>
+					</div>
+					<div class="box-body">
+						<div class="ima-size">
+							<img src="http://localhost/MisSitios/vcardsapp/modulos/vcard/assets/fotos/${task.logo}" class="ima-size img-responsive">
+						</div>
+						<div id="title"><strong>${task.nombre}</strong></div>	
+					</div><!-- /.box-body -->
 				</div>
-				<div id="title"><strong>${task.nombre}</strong></div>	
-			</div><!-- /.box-body -->
-		</div>
-	</div>`
+			</div>`
 				});
 				$(".outer_div").html(template+"</div>");
 			}

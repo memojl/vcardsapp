@@ -73,7 +73,7 @@ html_iso_servicios($nombre);
 			$save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix.$tabla." (cover,profile,logo,nombre,descripcion,puesto,empresa,tel,tel_ofi,cell,email,web,fb,tw,lk,ins,f_create,f_update,vcard,user,visible) VALUES ('{$cover}','{$profile}','{$logo}','{$nombre}','{$des}','{$puesto}','{$empresa}','{$tel}','{$tel_ofi}','{$cell}','{$email}','{$web}','{$fb}','{$tw}','{$lk}','{$ins}','{$f_create}','{$f_update}','{$vcard}','{$user}','{$visible}')") or print mysqli_error($mysqli);
 		}	
 		$URL=$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc;	
-		recargar(5,$URL,$target);
+		//recargar(5,$URL,$target);
 	}
 	validar_aviso($save,'La Vcard se ha '.$edi.' correctamente','No se puedo guardar intentelo nuevamente',$aviso);
 
@@ -165,7 +165,7 @@ $activo=($visible==1)?'<span class="label label-success">Activo</span>':'<span c
 
 $imagen=($cover!='')?'<td class="text-center"><img src="'.$page_url.'modulos/'.$mod.'/assets/fotos/'.$cover.'" alt="Product Image" class="img-rounded" width="60"></td>':'';
 $listado.='
-	<tr>
+	<tr id="'.$id.'">
 		<td class="text-center">'.$id.'</td>		
 		<td class="text-center">'.$profile.'</td>
 		<td class="text-center">'.$nombre.'</td>
@@ -174,7 +174,7 @@ $listado.='
 		<td class="text-center">'.$activo.'</td>
 		<td>
 			<a href="'.$page_url.'index.php?mod='.$mod.'&ext=admin/index'.$cond_opc.'&form=1&action=edit&id='.$id.'" alt="Editar"><i class="fa fa-edit"></i></a> | 
-			<a href="#" taskid="'.$id.'" class="task-delete" alt="Borrar"><i class="fa fa-trash"></i></a>
+			<span class="btn-delete" alt="Borrar"><i class="fa fa-trash"></i></span>
 
 			<!--div class="btn-group pull-right">
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Acciones <span class="fa fa-caret-down"></span></button>
@@ -189,10 +189,10 @@ $listado.='
 $listado.='
 	<div class="col-md-3 col-xs-12">
 		<div class="box box-primary">
-			<div class="box-header with-border">
+			<div class="box-header with-border" id="'.$id.'">
        			<h3 class="box-title">C&oacute;digo: <b>'.$profile.'</b></h3>
 				<span class="controles">'.$seleccion.'
-					<a href="'.$page_url.'index.php?mod='.$mod.'&ext=admin/index'.$cond_opc.'&form=1&action=edit&id='.$id.'" title="Editar"><i class="fa fa-edit"></i></a> | <a href="#" taskid="'.$id.'" class="task-delete" title="Borrar"><i class="fa fa-trash"></i></a>
+					<a href="'.$page_url.'index.php?mod='.$mod.'&ext=admin/index'.$cond_opc.'&form=1&action=edit&id='.$id.'" title="Editar"><i class="fa fa-edit"></i></a> | <span class="btn-delete" title="Borrar"><i class="fa fa-trash"></i></span>
 				</span>
 			</div>
 			<div class="box-body">
