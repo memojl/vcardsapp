@@ -4,7 +4,7 @@
 		var parametros = {"mode":"ajax","page":page};
 		$("#loader").fadeIn('slow');
 		$.ajax({
-			url:'modulos/vcard/admin/backend.php?mod=vcard&action=edit',
+			url:'modulos/vcard/admin/backend.php?mod=vcard',
 			data: parametros,
 			beforeSend: function(objeto){
 				$("#loader").html("<img src='apps/dashboards/loader.gif'>");
@@ -19,7 +19,7 @@
 $(document).ready(function(){
 	// Global Settings
 	//console.log('jQuery esta funcionando');
-	let edit = true;
+	let edit = false;
 	load(1);	
  	//listar();
 	//$("#task-result").hide();

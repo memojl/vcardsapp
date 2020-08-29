@@ -46,7 +46,7 @@ function add_empresa(val){
       <div id="aviso"><?php echo $aviso;?></div>
       <section class="content">
          <div class="row">
-            <?php head_producto();?>
+            <?php head_producto(1);?>
          </div>
          <!--/row-->
       </section>
