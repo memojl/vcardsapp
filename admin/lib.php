@@ -231,27 +231,23 @@ if($num_block!=0){
 //--FUNCIONES DE CONSULTAS BASICAS--//////////////////////////////////////////////////////////////////////////////
 /*---------------------------------------------------------------------------------------------------------------------*/
 function conecta(){
- $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DB); //conexión ala base de datos por medio de misqli poo
- if($mysqli->connect_errno > 0){ //si retorna algun error
+$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DB); //conexión ala base de datos por medio de misqli poo
+  if($mysqli->connect_errno > 0){ //si retorna algun error
  	return("Imposible conectarse con la base de datos [" . $mysqli->connect_error . "]"); //se muestra el error
- }else{ //si no retorna el error
+  }else{ //si no retorna el error
  	$mysqli->query("SET NAMES 'utf8'"); //codifica las consultas a utf-8
  	return $mysqli; //retorna la conexión a la base de datos mysql
- }
+  }
 }
 
 function conexion(){
-$mysqli = @mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
-	if($mysqli){
-		if(@mysql_select_db(DB_DB,$mysqli)) return $mysqli;
-		else{
-		 die('Error: no se pudo seleccionar la base de datos.');
-		 exit();
-		}
-	}else{
-		die('Error: no se pudo conectar al servidor.');
-		exit();
-	}
+$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DB); //conexión ala base de datos por medio de misqli poo
+    if($mysqli->connect_errno > 0){ //si retorna algun error
+        return("Imposible conectarse con la base de datos [" . $mysqli->connect_error . "]"); //se muestra el error
+    }else{ //si no retorna el error
+        $mysqli->query("SET NAMES 'utf8'"); //codifica las consultas a utf-8
+        return $mysqli; //retorna la conexión a la base de datos mysql
+    }
 }
 
 function todo($tabla){
@@ -281,7 +277,6 @@ function borrar($tabla=NULL,$condiciones=NULL){
 	return mysql_affected_rows();
 }
 
-
 function consulta_tabla_ID($tabla,$ID,&$row){
 global $mysqli,$DBprefix;
 	$query="SELECT * FROM ".$DBprefix.$tabla." WHERE ".$ID.";";
@@ -294,41 +289,32 @@ global $mysqli,$DBprefix;
 /**NUEVAS FUNCIONALIDADES */
 function query_data($tabla,$url_api){
 global $page_url,$path_jsonDB,$path_jsonWS;
-	$path_JSON=$path_jsonDB.$tabla.'.json';
-	if(!file_exists($path_JSON)){$path_JSON=$page_url.$path_jsonWS.$tabla;}
-	$path_JSON=($url_api)?$url_api:$path_JSON;//echo $path_JSON;
-	$objData=file_get_contents($path_JSON);//*Tarda consulta
-	$Data=json_decode($objData,true);
-	//usort($Data, function($a, $b){return strnatcmp($a['ord'], $b['ord']);});//Orden del menu
-	return $Data;
+    $path_JSON=$path_jsonDB.$tabla.'.json';
+    if(!file_exists($path_JSON)){$path_JSON=$page_url.$path_jsonWS.$tabla;}
+    $path_JSON=($url_api)?$url_api:$path_JSON;//echo $path_JSON;
+    $objData=file_get_contents($path_JSON);//*Tarda consulta
+    $Data=json_decode($objData,true);//usort($Data, function($a, $b){return strnatcmp($a['ord'], $b['ord']);});//Orden del menu
+    return $Data;
 }
 
-function query_all_tabla($tabla,$url_api,$display){
-global $page_url,$path_jsonDB,$path_jsonWS;//echo $table;
-		$data=query_data($tabla,$url_api);//print_r($data);
-		//CAMPOS
-		$i=0;
-		foreach($data as $key){$i++;
-			if($i==1){
-				foreach($key as $datos=>$value){
-					$campos.='<th>'.$datos.'</th>'."\n";
-				}  
-			}  
-		}
-		$campos.='<th style="display:'.$display.';">Acciones</th>'."\n";
-		echo '<tr>'.$campos.'</tr>'."\n";
-		//DATOS
-		foreach($data as $key => $value){
-			$row=$data[$key];
-			echo '<tr id="'.$key.'">'."\n";   
-			foreach($row as $datos=>$value){//echo '<td>'.$row[$datos].'</td>'."\n";
-				echo '<td>'.$value.'</td>'."\n";
-			}
-			echo '<td style="display:'.$display.';"><button class="btn btn-secondary btn-edit"><i class="fa fa-edit"></i></button> | <button class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>';
-			echo '</tr>'."\n";
-		}
+//Buscar un valor en especifico
+function query_opc($tabla,$c_res,$c_bus,$val){
+    $data=query_data($tabla,$url_api);
+    foreach($data as $key => $value){
+        $selec=$data[$key][$c_bus];
+        if($selec==$val){$dato=$data[$key][$c_res];}
+    }
+    return $dato;    
 }
 
+function sql_opc($tabla,$campo,$opcion,$val){
+global $mysqli,$DBprefix;//$mysqli=conexion();
+    $sql=mysqli_query($mysqli,"SELECT * FROM ".$DBprefix.$tabla." WHERE {$opcion}='{$val}';") or print mysqli_error($mysqli); 
+    if($row=mysqli_fetch_array($sql)){$dato=$row[$campo];}
+    return $dato;
+}
+
+//[GET-SHOW] Buscar ID/CAMPO y Mostrar un registro  
 function query_row($tabla,$campo,$id){
     $data=query_data($tabla,$url_api);
     //DATOS
@@ -340,6 +326,85 @@ function query_row($tabla,$campo,$id){
     }
     return $row;
 }
+
+function sql_row($tabla,$campo,$id){
+global $mysqli,$DBprefix;
+    $sql=mysqli_query($mysqli,"SELECT * FROM ".$DBprefix.$tabla." WHERE {$campo}='{$id}';") or print mysqli_error($mysqli);
+    $array_campos=array();
+    if($r=mysqli_fetch_assoc($sql)){$array_campos[] = $r;}
+    //$row=array_unique($array_campos[0]);
+    return $r;
+}    
+
+//MOSTRAR TODA LA TABLA CON CONTROLES CRUD
+function query_all_tabla($tabla,$url_api,$crud){
+global $page_url,$path_jsonDB,$path_jsonWS;//echo $table;
+    $display=($crud!=0)?'':'none';
+    $data=query_data($tabla,$url_api);//print_r($data);
+    //CAMPOS
+    $i=0;
+    foreach($data as $key){$i++;
+        if($i==1){
+            foreach($key as $datos=>$value){
+                $campos.='<th>'.$datos.'</th>'."\n";
+            }  
+        }  
+    }
+    $campos.='<th style="display:'.$display.';">Acciones</th>'."\n";
+    echo '<tr>'.$campos.'</tr>'."\n";
+    //DATOS
+    foreach($data as $key => $value){
+        $row=$data[$key];
+        echo '<tr id="'.$key.'">'."\n";   
+        foreach($row as $datos=>$value){//echo '<td>'.$row[$datos].'</td>'."\n";
+            echo '<td>'.$value.'</td>'."\n";
+        }
+        echo '<td style="display:'.$display.';"><button class="btn btn-secondary btn-edit"><i class="fa fa-edit"></i></button> | <button class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>';
+        echo '</tr>'."\n";
+    }
+}
+
+//MOSTRAR TABLA CON CONFIGURACION DE CAMPOS, ORDEN-ID Y CONTROLES CRUD
+//EXAMPLE: query_tabla($index='ID',$th,$tabla,$url_api,$crud=1);
+function query_tabla($index,$th,$tabla,$url_api,$crud){
+global $page_url,$path_jsonDB,$path_jsonWS;
+    $display=($crud!=0)?'':'none';
+    $data=query_data($tabla,$url_api);//print_r($data);
+    usort($data, function($a, $b){global $index;return strnatcmp($a[$index], $b[$index]);});//Orden por ID
+    //CAMPOS
+    $i=0;$campos='<th style="display:'.$display.';">Acciones</th>'."\n";
+    if($th!=''){
+        for($j=0;$j<count($th);$j++){
+            $campos.='<th>'.$th[$j].'</th>'."\n";
+        }
+    }else{
+        foreach($data as $key){$i++;
+            if($i==1){
+                foreach($key as $datos=>$value){
+                    $campos.='<th>'.$datos.'</th>'."\n";
+                }  
+            }  
+        }   
+    }
+    echo '<tr>'.$campos.'</tr>'."\n";
+    //DATOS
+    foreach($data as $key => $value){
+        $row=$data[$key];if($index!=''){$key=$row['ID'];}
+        echo '<tr id="'.$key.'">'."\n";
+        echo '<td style="display:'.$display.';"><button class="btn btn-primary btn-edit" data-toggle="modal" data-target="#addVcard"><i class="fa fa-edit"></i></button> | <button class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>';   
+        if($th!=''){
+            for($j=0;$j<count($th);$j++){$datos=$th[$j];
+                echo '<td>'.$row[$datos].'</td>'."\n";
+            }
+        }else{
+            foreach($row as $datos=>$value){//echo '<td>'.$row[$datos].'</td>'."\n";
+                echo '<td>'.$value.'</td>'."\n";
+            }
+        }
+        echo '</tr>'."\n";
+    }
+}
+
 /*---------------------------------------------------------------------------------------------------------------------*/
 //--FUNCIONES--//////////////////////////////////////////////////////////////////////////////
 /*---------------------------------------------------------------------------------------------------------------------*/
@@ -1808,42 +1873,42 @@ global $page_url,$path_root,$path_tema,$page_name;
 }
 
 function icon(){
-	global $page_url,$path_tema,$page_name;
-		echo '<meta name="'.$page_name.'" content="Add to Home">
-		'.crear_manifest().'
-		<link  rel = "apple-touch-icon"  tallas = "57x57"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-57x57.png" > 
-		<link  rel = "apple-touch-icon"  tallas = "60x60"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-60x60.png" > 
-		<link  rel = "apple-touch-icon "  tamanos = " 72x72 "  href = "'.$page_url.'bloques/WPA/icon/apple-icon-72x72.png " > 
-		<link  rel = "apple-touch-icon "  tamanos = "76x76"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-76x76.png" > 
-		<link  rel = "apple-touch-icon "  tamanos = " 114x114 "  href = "'.$page_url.'bloques/WPA/icon/apple-icon-114x114.png "> 
-		<link  rel = "apple-touch-icon"  tallas = "120x120"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-120x120.png" > 
-		<link  rel = "apple-touch-icon"  tallas = "144x144"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-144x144.png" > 
-		<link  rel = "apple-touch-icon "  tamanos = " 152x152 "  href = "'.$page_url.'bloques/WPA/icon/apple-icon-152x152.png" > 
-		<link  rel = "apple-touch-icon "  tamanos = "180x180"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-180x180.png" > 
-		<link  rel = "icon"  type = "image/png"  tallas = "16x16"  href = "'.$page_url.'bloques/WPA/icon/favicon-16x16.png" > 
-		<link  rel = "icon"  type = "image/png"  tamanos = "32x32"  href = "'.$page_url.'bloques/WPA/icon/favicon-32x32.png" > 
-		<link  rel = "icon"  type = "image/png"  tallas = "96x96"  href = "'.$page_url.'bloques/WPA/icon/favicon-96x96.png" > 
-		<link  rel = "icon"  type = "image/png"  tamanos = "192x192"  href = "'.$page_url.'bloques/WPA/icon/android-icon-192x192.png" > 
-		<!-- link  rel = "manifest" href="/manifest.json" --> 
-		<meta  name ="msapplication-TileColor"  content = "#ffffff" > 
-		<meta  name = "msapplication-TileImage"  content = "'.$page_url.'bloques/WPA/icon/ms-icon-144x144.png" > 
-		<meta  name = "theme-color"  content = "#ffffff" >
-		<!-- iconos -->
-		<link rel="apple-touch-icon" href="'.$page_url.'bloques/WPA/icon/apple-icon-180x180.png">
-		<link rel="shortcut icon" sizes="16x16" href="'.$page_url.'bloques/WPA/icon/favicon-16x16.png">
-		<link rel="shortcut icon" sizes="196x196" href="'.$page_url.'bloques/WPA/icon/favicon-96x96.png">
-		<link rel="apple-touch-icon-precomposed" href="'.$page_url.'bloques/WPA/icon/apple-icon-152x152.png">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		';
-	}
+global $page_url,$path_tema,$page_name;
+	echo '<meta name="'.$page_name.'" content="Add to Home">
+	'.crear_manifest().'
+	<link  rel = "apple-touch-icon"  tallas = "57x57"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-57x57.png" > 
+	<link  rel = "apple-touch-icon"  tallas = "60x60"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-60x60.png" > 
+	<link  rel = "apple-touch-icon "  tamanos = " 72x72 "  href = "'.$page_url.'bloques/WPA/icon/apple-icon-72x72.png " > 
+	<link  rel = "apple-touch-icon "  tamanos = "76x76"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-76x76.png" > 
+	<link  rel = "apple-touch-icon "  tamanos = " 114x114 "  href = "'.$page_url.'bloques/WPA/icon/apple-icon-114x114.png "> 
+	<link  rel = "apple-touch-icon"  tallas = "120x120"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-120x120.png" > 
+	<link  rel = "apple-touch-icon"  tallas = "144x144"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-144x144.png" > 
+	<link  rel = "apple-touch-icon "  tamanos = " 152x152 "  href = "'.$page_url.'bloques/WPA/icon/apple-icon-152x152.png" > 
+	<link  rel = "apple-touch-icon "  tamanos = "180x180"  href = "'.$page_url.'bloques/WPA/icon/apple-icon-180x180.png" > 
+	<link  rel = "icon"  type = "image/png"  tallas = "16x16"  href = "'.$page_url.'bloques/WPA/icon/favicon-16x16.png" > 
+	<link  rel = "icon"  type = "image/png"  tamanos = "32x32"  href = "'.$page_url.'bloques/WPA/icon/favicon-32x32.png" > 
+	<link  rel = "icon"  type = "image/png"  tallas = "96x96"  href = "'.$page_url.'bloques/WPA/icon/favicon-96x96.png" > 
+	<link  rel = "icon"  type = "image/png"  tamanos = "192x192"  href = "'.$page_url.'bloques/WPA/icon/android-icon-192x192.png" > 
+	<!-- link  rel = "manifest" href="/manifest.json" --> 
+	<meta  name ="msapplication-TileColor"  content = "#ffffff" > 
+	<meta  name = "msapplication-TileImage"  content = "'.$page_url.'bloques/WPA/icon/ms-icon-144x144.png" > 
+	<meta  name = "theme-color"  content = "#ffffff" >
+	<!-- iconos -->
+	<link rel="apple-touch-icon" href="'.$page_url.'bloques/WPA/icon/apple-icon-180x180.png">
+	<link rel="shortcut icon" sizes="16x16" href="'.$page_url.'bloques/WPA/icon/favicon-16x16.png">
+	<link rel="shortcut icon" sizes="196x196" href="'.$page_url.'bloques/WPA/icon/favicon-96x96.png">
+	<link rel="apple-touch-icon-precomposed" href="'.$page_url.'bloques/WPA/icon/apple-icon-152x152.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	';
+}
 
-	function str_limit($value,$limit=100,$end){
-		if (mb_strwidth($value, 'UTF-8') <= $limit) {
-				return $value;
-		}
-		return rtrim(mb_strimwidth($value, 0, $limit, '', 'UTF-8')).$end;
+function str_limit($value,$limit=100,$end){
+	if (mb_strwidth($value, 'UTF-8') <= $limit) {
+		return $value;
 	}
+	return rtrim(mb_strimwidth($value, 0, $limit, '', 'UTF-8')).$end;
+}
 
 function cadena_replace(&$replace1,&$replace2){
 	$replace1=array(' ','.',',','(',')','/','"','á','é','í','ó','ú','&aacute;','&eacute;','&iacute;','&oacute;','&uacute;','Á','É','Í','Ó','Ú','&Aacute;','&Eacute;','&Iacute;','&Oacute;','&Uacute;','ñ','Ñ','&ntilde;','&Ntilde;','&','amp;');

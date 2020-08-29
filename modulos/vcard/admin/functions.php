@@ -171,7 +171,7 @@ foreach($data as $key){$i++;
       }  
    }  
 }
-$campos=array(1=>$campos,$campos1,$campos2,$campos3);
+//$campos=array(1=>$campos,$campos1,$campos2,$campos3);
 $cond_opc=($opc!='')?'&opc='.$opc:'';
 $cond_action=($action!='')?'&action='.$action:'';
 $edit=($action=='edit')?'true':'false';
@@ -263,11 +263,11 @@ $(document).ready(function(){
 		const url = edit === false ? \'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=add\' : \'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=edit\';		
 		console.log(postData, url);
 		$.post(url,postData,function(response){
-			console.log("Se ha actualizado el registro.");			
-			$("#aviso").html(response).fadeIn("slow");
-			$("#aviso").fadeOut(6000);
-			//$("form1").trigger(\'reset\');	
-			//listar();
+			console.log("Se ha actualizado el registro.");
+			$("#form1").trigger(\'reset\');
+			$("#addVcard").modal(\'hide\');
+			$("#aviso").html(response).fadeIn("slow").delay(3000).fadeOut("slow");
+			load(1);
 			//edit = false;
 		});
 	});
@@ -311,73 +311,74 @@ $(document).ready(function(){
 		  }
 	   })
 	});
-
-	//SUBIR COVER
-	$(document).on(\'click\',\'#Aceptar\',function(e){		
-		e.preventDefault();
-		var frmData=new FormData;
-		frmData.append("userfile",$("input[name=userfile]")[0].files[0]);
-		//console.log(\'Se cargo Imagen\');		
-		$.ajax({
-			url: \'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&action=subir_cover\',
-			type: \'POST\',
-			data: frmData,
-			processData:false,
-			contentType:false,
-			cache:false,
-			beforeSend: function(data){
-				$("#imagen").html("Subiendo Imagen");
-			},
-			success: function(data){
-				//$("#form1").trigger("reset");
-				$("#imagen").html(data);
-				console.log("Subido Correctamente");
-			}
-		});
-		//return false;
-	});
-
+ 
 	//BUSCAR
-	$("#q").keyup(function(e){
-	  if($("#q").val()){
-		let q=$("#q").val();
-		$.ajax({
-			url: \'modulos/'.$mod.'/admin/backend.php?action=buscar\',
-			type: \'POST\',
-			data: {q},
-			success: function(response){
-				let tasks=JSON.parse(response);
+	$("#q").keyup(function (e) {
+	   if ($("#q").val()) {
+		  let q = $("#q").val();
+		  $.ajax({
+			 url: \'modulos/'.$mod.'/admin/backend.php?action=buscar\',
+			 type: \'POST\',
+			 data: {q},
+			 success: function (response) {
+				let tasks = JSON.parse(response);
 				console.log(response);
-				let template=\'<div class="box-body">\';
-				let sel="";
-				tasks.forEach(task=>{
-				visible=`${task.visible}`;
-				sel=(visible==0)?\'<span style="color:#e00;"><i class="fa fa-close" title="Desactivado"></i></span>\':\'<span style="color:#0f0;"><i class="fa fa-check" title="Activo"></i></span>\';	
-				template += `
-				<div class="col-md-3 col-xs-12">
-				<div class="box box-primary">
-					<div class="box-header with-border" id="${task.ID}">
-						<h3 class="box-title">C&oacute;digo: <b>${task.profile}</b></h3>
-						<span class="controles">${sel}
-							<a href="'.$page_url.'index.php?mod='.$mod.'&ext=admin/index'.$cond_opc.'&form=1&action=edit&id=${task.ID}" title="Editar"><i class="fa fa-edit"></i></a> | <span class="btn-delete" title="Borrar"><i class="fa fa-trash"></i></span>
-						</span>
-					</div>
-					<div class="box-body">
-						<div class="ima-size">
-							<img src="'.$page_url.'modulos/'.$mod.'/assets/fotos/${task.logo}" class="ima-size img-responsive">
-						</div>
-						<div id="title"><strong>${task.nombre}</strong></div>	
-					</div><!-- /.box-body -->
-				</div>
-			</div>`
+				let template = \'<div class="box-body">\';
+				let sel = "";
+				tasks.forEach(task => {
+				   visible = `${task.visible}`;
+				   sel = (visible == 0) ? \'<span style="color:#e00;"><i class="fa fa-close" title="Desactivado"></i></span>\' : \'<span style="color:#0f0;"><i class="fa fa-check" title="Activo"></i></span>\';
+				   template += `
+            <div class="col-md-3 col-xs-12">
+               <div class="box box-primary">
+                  <div class="box-header with-border" id="${task.ID}" >
+                         <h3 class="box-title">C&oacute;digo: <b>${task.profile}</b></h3>
+                     <span class="controles">${sel}
+                        <span class="btn-edit" data-toggle="modal" data-target="#addVcard" title="Editar"><i class="fa fa-edit"></i></span> | <span class="btn-delete" title="Borrar"><i class="fa fa-trash"></i></span>
+                     </span>
+                  </div>
+                  <div class="box-body">
+                     <div class="ima-size">
+                        <img src="'.$page_url.'modulos/'.$mod.'/fotos/${task.cover}" class="ima-size img-responsive">
+                     </div>
+                     <div id="title"><strong>${task.nombre}</strong></div>	
+                  </div><!-- /.box-body -->
+               </div>
+            </div>`
 				});
-				$(".outer_div").html(template+"</div>");
-			}
-		});
-	  }	 
+				$(".outer_div").html(template + "</div>");
+			 }
+		  });
+	   }
 	});
-	
-});
+  
+	//SUBIR COVER
+	$(document).on(\'click\', \'#Aceptar\', function (e) {
+	   e.preventDefault();
+	   var frmData = new FormData;
+	   frmData.append("userfile", $("input[name=userfile]")[0].files[0]);
+	   //console.log(\'Se cargo Imagen\');		
+	   $.ajax({
+		  url: \'modulos/'.$mod.'/admin/backend.php?mod=vcard&action=subir_cover\',
+		  type: \'POST\',
+		  data: frmData,
+		  processData: false,
+		  contentType: false,
+		  cache: false,
+		  beforeSend: function (data) {
+			 $("#imagen").html("Subiendo Imagen");
+		  },
+		  success: function (data) {
+			 //$("#form1").trigger("reset");
+			 $("#imagen").html(data);
+			 $(".alert-dismissible").delay(3000).fadeOut("slow");
+			 console.log("Subido Correctamente");
+		  }
+	   });
+	   //return false;
+	});
+
+});//document
 ';
 crear_archivo('modulos/'.$mod.'/js/','ajax_'.$mod.'.js',$contenido,$path_file);
 }
