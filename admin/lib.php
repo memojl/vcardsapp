@@ -304,8 +304,7 @@ global $page_url,$path_jsonDB,$path_jsonWS;
 }
 
 function query_all_tabla($tabla,$url_api,$display){
-global $page_url,$path_jsonDB,$path_jsonWS;
-	echo $table;
+global $page_url,$path_jsonDB,$path_jsonWS;//echo $table;
 		$data=query_data($tabla,$url_api);//print_r($data);
 		//CAMPOS
 		$i=0;

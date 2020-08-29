@@ -459,9 +459,11 @@ setInterval(ver,'.$seg.'000); //cada 10000 ms se ejecuta la función ver para ob
 </script>';
 }
 
-function head_producto(){
+function head_producto($btn){
 global $mysqli,$DBprefix,$page_url,$path_tema,$mod,$ext,$opc,$URL;
 $cond_opc=($opc!='')?'&opc='.$opc:'';
+$btn_add=($btn!=1)?'<a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'&form=1&action=add" class="btn btn-default"><i class="fa fa-plus"></i> Nuevo</a>':'<button type="button" class="btn btn-default btn-add" data-toggle="modal" data-target="#addVcard"><i class="fa fa-plus"></i> Nuevo</button>';
+
 echo '
 		<div class="col-md-3 col-xs-12">
 			<div class="input-group">
@@ -476,10 +478,8 @@ echo '
 			<!--div id="loader" class="text-center"></div-->
 		</div>
 		<div class="col-md-5 col-xs-10">
-			<div class="btn-group pull-right">
-				<!--a href="#" class="btn btn-default" data-toggle="modal" data-target="#Producto"><i class="fa fa-plus"></i> Nuevo</a-->
-        <!--a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'&form=1&action=add" class="btn btn-default"><i class="fa fa-plus"></i> Nuevo</a-->
-        <button type="button" class="btn btn-default btn-add" data-toggle="modal" data-target="#addVcard"><i class="fa fa-plus"></i> Nuevo</button>
+      <div class="btn-group pull-right">
+        '.$btn_add.'
 				<!--button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Mostrar <span class="fa fa-caret-down"></span>
 				</button>
@@ -552,7 +552,7 @@ function paginate($reload, $page, $tpages, $adjacents) {
 
 function crear_ws($tabla){
 global $mysqli,$DBprefix;
- 	$query="SELECT * FROM ".$DBprefix.$tabla." WHERE visible=1 ORDER BY ID ASC;";
+ 	$query="SELECT * FROM ".$DBprefix.$tabla." ORDER BY ID ASC;";
 	crear_json($query,'bloques/webservices/rest/json/',$tabla.'.json');
 }
 ?>
