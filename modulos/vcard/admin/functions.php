@@ -80,7 +80,7 @@ global $chartset;
 function file_ima($cover){
 global $page_url,$mod;
    $file='<input type="hidden" class="form-control" id="cover" name="cover" value="'.$cover.'">
-   <img id="ima" src="'.$page_url.'modulos/'.$mod.'/assets/fotos/'.$cover.'" style="width:150px;" title="'.$cover.'">
+   <img id="ima" src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" style="width:150px;" title="'.$cover.'">
    <a href="javascript:up(1);">Cambiar Foto</a><div id="upload"></div>';
    return $file;
 }
@@ -335,7 +335,7 @@ $(document).ready(function(){
                   </div>
                   <div class="box-body">
                      <div class="ima-size">
-                        <img src="'.$page_url.'modulos/'.$mod.'/fotos/${task.cover}" class="ima-size img-responsive">
+                        <img src="'.$page_url.'modulos/'.$mod.'/files/fotos/${task.cover}" class="ima-size img-responsive">
                      </div>
                      <div id="title"><strong>${task.nombre}</strong></div>	
                   </div><!-- /.box-body -->

@@ -4,7 +4,7 @@ function load(page){
 	var parametros = {"mode":"ajax","page":page};
 	$("#loader").fadeIn('slow');
 	$.ajax({
-		url:'modulos/vcard/admin/backend.php?mod=vcard',
+		url:'modulos/vcard/admin/backend.php?mod=vcard&action=listado',
 		data: parametros,
 		beforeSend: function(objeto){
 			$("#loader").html("<img src='apps/dashboards/loader.gif'>");
@@ -179,7 +179,7 @@ visible: $("#visible").val(),
                   </div>
                   <div class="box-body">
                      <div class="ima-size">
-                        <img src="http://localhost/MisSitios/vcardsapp/modulos/vcard/fotos/${task.cover}" class="ima-size img-responsive">
+                        <img src="http://localhost/MisSitios/vcardsapp/modulos/vcard/files/fotos/${task.cover}" class="ima-size img-responsive">
                      </div>
                      <div id="title"><strong>${task.nombre}</strong></div>	
                   </div><!-- /.box-body -->

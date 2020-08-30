@@ -59,7 +59,7 @@ switch(true){
 				break;
          }
 
-if($cover==''){$cover='nodisponible1.jpg';}
+if($cover==''){$cover='nodisponible.jpg';}
 $file=file_ima($cover);
 $select_empresa=select_empresa($tabla,$url_api,$empresa);
 ?>

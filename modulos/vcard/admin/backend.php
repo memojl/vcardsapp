@@ -15,11 +15,11 @@
   	switch(true){
   		  case($action=='subir_cover'):
   //if($_POST['Aceptar']){
-    if($cover==''){$cover='nodisponible1.jpg';}
+    if($cover==''){$cover='nodisponible.jpg';}
     $file=file_ima($cover);
     
     //datos del arhivo 
-    $repositor='../fotos';
+    $repositor='../files/fotos';
     $nombre_archivo = $_FILES['userfile']['name']; 
     $tipo_archivo = $_FILES['userfile']['type']; 
     $tamano_archivo = $_FILES['userfile']['size']; 
@@ -43,7 +43,7 @@
   	  case($action=='buscar'):
   		$q=$_POST['q'];
   		if(!empty($q)){
-    			$query="SELECT ID,profile,logo,nombre,visible FROM ".$DBprefix.$tabla." WHERE nombre LIKE '%{$q}%'";
+    			$query="SELECT ID,cover,profile,nombre,puesto,empresa,email,visible FROM ".$DBprefix.$tabla." WHERE nombre LIKE '%{$q}%'";
   		}else{$query="SELECT * FROM ".$DBprefix.$tabla."";}
     		ws_query($query,1,0);
   	  break;
@@ -102,12 +102,13 @@
   		recargar(5,$URL,$target);
   	}
   	validar_aviso($save,'La Vcard se ha '.$edi.' correctamente','No se puedo guardar intentelo nuevamente',$aviso);
-  /*
-  	if($save){
-  		//$path_f='../../../vcard/vcf_files/';
-          $path_f='../vcf_files/';
-  		$nombre_archivo=$profile.'.vcf';
-  		$contenido='BEGIN:VCARD
+  	echo $aviso;
+
+if($save){
+  //$path_f='../../../vcard/files/vcf';
+  $path_f='../files/vcf/';
+  $nombre_archivo=$profile.'.vcf';
+  $contenido='BEGIN:VCARD
   VERSION:3.0
   N:'.$nombre.'
   FN:
@@ -118,10 +119,8 @@
   URL;TRABAJO:'.$web.'
   EMAIL;INTERNET:'.$email.'
   END:VCARD';
-  		crear_archivo($path_f,$nombre_archivo,$contenido,$path_file);
-  	}
-  */
-  	echo $aviso;
+  crear_archivo($path_f,$nombre_archivo,$contenido,$path_file);
+}
   
   	  break;
   	  default:
@@ -172,7 +171,7 @@
   $activo=($visible==1)?'<span class="label label-success">Activo</span>':'<span class="label label-danger">Desactivado</span>';
   				if($action=='listado' && !empty($action)){
   
-  $imagen=($cover!='')?'<td class="text-center"><img src="'.$page_url.'modulos/'.$mod.'/assets/fotos/'.$cover.'" alt="Product Image" class="img-rounded" width="60"></td>':'';
+  $imagen=($cover!='')?'<td class="text-center"><img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" alt="Product Image" class="img-rounded" width="60"></td>':'';
   $listado.='
   	<tr id="'.$id.'">
   		<td class="text-center">'.$id.'</td>		
@@ -206,7 +205,7 @@
   			</div>
   			<div class="box-body">
   				<div class="ima-size">
-  					<img src="'.$page_url.'modulos/'.$mod.'/assets/fotos/'.$cover.'" class="img-responsive ima-size">
+  					<img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" class="img-responsive ima-size">
   				</div>
   				<div id="title"><strong>'.$nombre.'</strong></div>	
   			</div><!-- /.box-body -->
