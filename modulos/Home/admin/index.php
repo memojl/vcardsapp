@@ -790,6 +790,10 @@ $tema_slider=$_POST['tema_slider'];
 $visible=$_POST['visible'];
 $url_s=str_replace('watch?v=','embed/',$url_s1);
 
+  $tit1=htmlentities($tit1, ENT_COMPAT,'ISO-8859-1', true);
+	$tit2=htmlentities($tit2, ENT_COMPAT,'ISO-8859-1', true);
+	$btn=htmlentities($btn, ENT_COMPAT,'ISO-8859-1', true);
+
 	if($tit1 == ''){
 		$error = "  *Los campos estan vacios.\\n\\r"; $c++; 
 	}
