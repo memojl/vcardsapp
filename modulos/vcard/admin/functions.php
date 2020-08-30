@@ -328,9 +328,9 @@ $(document).ready(function(){
             <div class="col-md-3 col-xs-12">
                <div class="box box-primary">
                   <div class="box-header with-border" id="${task.ID}" >
-                         <h3 class="box-title">C&oacute;digo: <b>${task.profile}</b></h3>
+                         <h3 class="box-title">Perfil: <b>${task.profile}</b></h3>
                      <span class="controles">${sel}
-                        <span class="btn-edit" data-toggle="modal" data-target="#addVcard" title="Editar"><i class="fa fa-edit"></i></span> | <span class="btn-delete" title="Borrar"><i class="fa fa-trash"></i></span>
+					 	<a href="'.$page_url.'index.php?mod='.$mod.'&ext=admin/index'.$cond_opc.'&form=1&action=edit&id=${task.ID}" title="Editar"><i class="fa fa-edit"></i></a> | <span class="btn-delete" title="Borrar" style="cursor:pointer;"><i class="fa fa-trash"></i></span>
                      </span>
                   </div>
                   <div class="box-body">

@@ -4,7 +4,7 @@ function load(page){
 	var parametros = {"mode":"ajax","page":page};
 	$("#loader").fadeIn('slow');
 	$.ajax({
-		url:'modulos/vcard/admin/backend.php?mod=vcard&action=listado',
+		url:'modulos/vcard/admin/backend.php?mod=vcard',
 		data: parametros,
 		beforeSend: function(objeto){
 			$("#loader").html("<img src='apps/dashboards/loader.gif'>");
@@ -172,9 +172,9 @@ visible: $("#visible").val(),
             <div class="col-md-3 col-xs-12">
                <div class="box box-primary">
                   <div class="box-header with-border" id="${task.ID}" >
-                         <h3 class="box-title">C&oacute;digo: <b>${task.profile}</b></h3>
+                         <h3 class="box-title">Perfil: <b>${task.profile}</b></h3>
                      <span class="controles">${sel}
-                        <span class="btn-edit" data-toggle="modal" data-target="#addVcard" title="Editar"><i class="fa fa-edit"></i></span> | <span class="btn-delete" title="Borrar"><i class="fa fa-trash"></i></span>
+					 	<a href="http://localhost/MisSitios/vcardsapp/index.php?mod=vcard&ext=admin/index&form=1&action=edit&id=${task.ID}" title="Editar"><i class="fa fa-edit"></i></a> | <span class="btn-delete" title="Borrar" style="cursor:pointer;"><i class="fa fa-trash"></i></span>
                      </span>
                   </div>
                   <div class="box-body">
