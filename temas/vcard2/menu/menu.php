@@ -34,7 +34,7 @@ global $mysqli,$DBprefix,$page_url,$mod,$ext,$opc,$path_tema,$tema_previo,$dboar
 		<ul>
 	</li>';
  }else{
-	$login_se='<li><a class="nav-link bg-link" href="'.$page_url.'usuarios/registro/"><i class="fa fa-edit"></i> Registrate</a></li><li><a class="nav-link" href="'.$page_url.'admin/"><i class="fa fa-sign-in"></i> Login</a></li>';
+	$login_se='<li><a class="nav-link bg-link" href="'.$page_url.'usuarios/registro/"><i class="fa fa-edit"></i> Registrate</a></li><li><a class="nav-link" href="'.$page_url.'login/"><i class="fa fa-sign-in"></i> Login</a></li>';
  }
 }
 
