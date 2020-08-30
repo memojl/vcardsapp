@@ -1,13 +1,13 @@
 <?php 
 if(isset($_SESSION["username"])){
 	if($_SESSION["level"]==-1 || $_SESSION["level"]==1){
-    include 'functions.php';
-    editor_tiny_mce();
-    $tabla='vcard';
-    $cond_opc=($opc!='')?'&opc='.$opc:'';
-    if($username=='admin'){
-          $vistas=($action!='' && $action=='listado')?'<i class="fa fa-list"></i> | <a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'"><i class="fa fa-th-large"></i></a>':'<a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'&action=listado"><i class="fa fa-list"></i></a> | <i class="fa fa-th-large"></i>';
-    }
+      include 'functions.php';
+      editor_tiny_mce();
+      $tabla='vcard';
+      $cond_opc=($opc!='')?'&opc='.$opc:'';
+      if($username=='admin'){
+         $vistas=($action!='' && $action=='listado')?'<i class="fa fa-list"></i> | <a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'"><i class="fa fa-th-large"></i></a>':'<a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'&action=listado"><i class="fa fa-list"></i></a> | <i class="fa fa-th-large"></i>';
+      }
 ?>
 <style>
 #sel_empresa{display: flex;}
@@ -34,8 +34,7 @@ switch(true){
 	break;
 	default:
 	switch(true){
-      case($form==1):
-         
+      case($form==1):        
          fecha_php_vcard();
 			switch(true){
 				case($action=='add'):
@@ -43,21 +42,20 @@ switch(true){
 				break;
 				case($action=='edit' && !empty($_GET['id'])):
 					$titulo1='Editar';$tit='Cambiar';$id=$_GET['id'];
-            $row=query_row($tabla,'ID',$id);
-						//$id=$row['ID'];
-						$profile=$row['profile'];
-						$cover=$row['cover'];
-						$nombre=$row['nombre'];
-            $puesto=$row['puesto'];
-						$des=$row['descripcion'];
-						$empresa=$row['empresa'];
-						$cell=$row['cell'];
-            $email=$row['email'];
-            $web=$row['web'];
-            $lk=$row['lk'];
-            $ins=$row['ins'];
-						$visible=$row['visible'];
-					//}
+               $row=query_row($tabla,'ID',$id);
+					//$id=$row['ID'];
+					$profile=$row['profile'];
+					$cover=$row['cover'];
+					$nombre=$row['nombre'];
+               $puesto=$row['puesto'];
+					$des=$row['descripcion'];
+					$empresa=$row['empresa'];
+					$cell=$row['cell'];
+               $email=$row['email'];
+               $web=$row['web'];
+               $lk=$row['lk'];
+               $ins=$row['ins'];
+					$visible=$row['visible'];
 				break;
          }
 
@@ -243,9 +241,7 @@ if(val==1){document.getElementById('sel_empresa').innerHTML='<input type="text" 
 	<div class="col-md-12 col-xs-12">
 	<?php 
     crear_ws($tabla);//crear_ws_vcard('modulos/vcard/assets/json/',$tabla);            
-    
 	?>
-
 	</div>         
 </section>
 <!--/Content-->

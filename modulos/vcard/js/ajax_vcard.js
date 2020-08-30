@@ -4,7 +4,7 @@ function load(page){
 	var parametros = {"mode":"ajax","page":page};
 	$("#loader").fadeIn('slow');
 	$.ajax({
-		url:'modulos/vcard/admin/backend.php?mod=vcard&action=listado',
+		url:'modulos/vcard/admin/backend.php?mod=vcard',
 		data: parametros,
 		beforeSend: function(objeto){
 			$("#loader").html("<img src='apps/dashboards/loader.gif'>");
@@ -15,7 +15,6 @@ function load(page){
 		}
 	});
 }
-
 
 $(document).ready(function(){
 	// Global Settings

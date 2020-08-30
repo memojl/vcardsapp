@@ -1,14 +1,14 @@
 <?php 
 if(isset($_SESSION["username"])){
-   	if($_SESSION["level"]==-1 || $_SESSION["level"]==1){
-   		include 'functions.php';
-         editor_tiny_mce();
-         fecha_php_vcard();
-         $tabla='vcard';
-         $cond_opc=($opc!='')?'&opc='.$opc:'';
-         if($username=='admin'){
-            $vistas=($action!='' && $action=='listado')?'<i class="fa fa-list"></i> | <a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'"><i class="fa fa-th-large"></i></a>':'<a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'&action=listado"><i class="fa fa-list"></i></a> | <i class="fa fa-th-large"></i>';
-         }
+   if($_SESSION["level"]==-1 || $_SESSION["level"]==1){
+   	include 'functions.php';
+      editor_tiny_mce();
+      fecha_php_vcard();
+      $tabla='vcard';
+      $cond_opc=($opc!='')?'&opc='.$opc:'';
+      if($username=='admin'){
+         $vistas=($action!='' && $action=='listado')?'<i class="fa fa-list"></i> | <a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'"><i class="fa fa-th-large"></i></a>':'<a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'&action=listado"><i class="fa fa-list"></i></a> | <i class="fa fa-th-large"></i>';
+      }
 ?>
 <script>
 function add_empresa(val){
@@ -16,7 +16,6 @@ function add_empresa(val){
 	}else{document.getElementById('sel_empresa').innerHTML='<div class="input-group"><span class="input-group-addon"><i class="fa fa-industry"></i></span><?php echo select_empresa($tabla,$url_api,$empresa);?></div><div style="padding: 5px 12px"><a href="javascript:add_empresa(1);"><i class="fa fa-plus"></i> Empresa</a></div>';}
 }
 </script>
-
 <style>
 #sel_empresa{display: flex;}
 @media only screen and (min-width: 992px){
@@ -71,8 +70,7 @@ function add_empresa(val){
          <!-- /.row -->		          		  
          <div class="col-md-12 col-xs-12">
          <?php 
-            crear_ws($tabla);//crear_ws_vcard('modulos/vcard/assets/json/',$tabla);            
-            ajax_crud_vcard($tabla,$template,1);//crear_ajax_vcard();
+            crear_ws($tabla);//crear_ws_vcard('modulos/vcard/assets/json/',$tabla);                      
 			?>
          </div>
       </section>
@@ -83,7 +81,9 @@ function add_empresa(val){
          ?>
    </div>
    <!-- /.row-->
-   <?php modal_vcard();?>
+   <?php modal_vcard();
+   ajax_crud_vcard($tabla,$template,1);//crear_ajax_vcard();
+   ?>
 </section>
 <!-- /.content -->
 <?php 		

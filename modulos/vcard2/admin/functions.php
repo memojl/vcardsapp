@@ -143,6 +143,25 @@ $edit_form='
 
 $contenido='
 // JavaScript Document
+function load(page) {
+   var parametros = {
+     "mode": "ajax",
+     "page": page
+   };
+   $("#loader").fadeIn(\'slow\');
+   $.ajax({
+     url: \'modulos/'.$mod.'/admin/backend.php?mod='.$mod.$cond_action.'\',
+     data: parametros,
+     beforeSend: function (objeto) {
+       $("#loader").html("<img src=\'apps/dashboards/loader.gif\'>");
+     },
+     success: function (data) {
+       $(".outer_div").html(data);
+       $("#loader").html("");
+     }
+   });
+}
+
 $(document).ready(function () {
 	// Global Settings
 	//console.log(\'jQuery esta funcionando\');
@@ -156,25 +175,6 @@ $(document).ready(function () {
 		$("#form1").trigger(\'reset\');
 		edit = false;
 	});
-
-	function load(page) {
-	   var parametros = {
-		  "mode": "ajax",
-		  "page": page
-	   };
-	   $("#loader").fadeIn(\'slow\');
-	   $.ajax({
-		  url: \'modulos/'.$mod.'/admin/backend.php?mod='.$mod.$cond_action.'\',
-		  data: parametros,
-		  beforeSend: function (objeto) {
-			 $("#loader").html("<img src=\'apps/dashboards/loader.gif\'>");
-		  },
-		  success: function (data) {
-			 $(".outer_div").html(data);
-			 $("#loader").html("");
-		  }
-	   });
-	}
  
 	function listado(page) {
 	   var parametros = {
@@ -229,7 +229,7 @@ $(document).ready(function () {
       const element = $(this)[0].parentElement.parentElement;const id = $(element).attr(\'id\');
       //console.log(id);
 	   Swal.fire({
-		  title: "Esta seguro de eliminar el producto ("+id+")?",
+		  title: "Esta seguro de eliminar la Tarjeta ("+id+")?",
 		  text: "Esta operacion no se puede revertir!",
 		  icon: \'warning\',
 		  showCancelButton: true,
@@ -239,12 +239,12 @@ $(document).ready(function () {
 	   }).then((result) => {
 		  if (result.value) {
 			 //let id = $(this).closest(\'tr\').attr(\'id\'); //capturamos el atributo ID de la fila  
-			 //eliminamos el producto de firebase      
+			 //eliminamos la Tarjeta de firebase      
 			 $.post(\'modulos/'.$mod.'/admin/backend.php?action=delete\', {id}, (response) => {
 				console.log(response);
 				load(1);
 			 });
-			 Swal.fire(\'Eliminado!\', \'El producto ha sido eliminado.\', \'success\')
+			 Swal.fire(\'Eliminado!\', \'La Tarjeta ha sido eliminado.\', \'success\')
 		  }
 	   })
 	});
