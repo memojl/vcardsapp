@@ -171,27 +171,26 @@ if($save){
   $activo=($visible==1)?'<span class="label label-success">Activo</span>':'<span class="label label-danger">Desactivado</span>';
   				if($action=='listado' && !empty($action)){
   
-  $imagen=($cover!='')?'<td class="text-center"><img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" alt="Product Image" class="img-rounded" width="60"></td>':'';
+  $imagen=($cover!='')?'<img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" alt="Product Image" class="img-rounded" width="40">':'';
   $listado.='
   	<tr id="'.$id.'">
-  		<td class="text-center">'.$id.'</td>		
-  		<td class="text-center">'.$profile.'</td>
+	  	<td class="text-center">
+	 		<!-- btn-group -->
+	  		<div class="btn-group">
+		  		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Acciones <span class="fa fa-caret-down"></span></button>
+		  		<ul class="dropdown-menu" id="'.$id.'">
+			  		<li><a href="'.$page_url.'index.php?mod='.$mod.'&ext=admin/index'.$cond_opc.'&form=1&action=edit&id='.$id.'"><i class="fa fa-edit"></i> Editar</a></li>
+			  		<li><a class="btn-delete" alt="Borrar" style="cursor:pointer;"><i class="fa fa-trash"></i> Borrar</a></li>
+		  		</ul>
+			</div>
+	 		<!-- /btn-group -->
+  	  	</td>
+	  	<td class="text-center">'.$id.'</td>		
+  		<td class="text-left">'.$imagen.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$profile.'</td>
   		<td class="text-center">'.$nombre.'</td>
   		<td class="text-center">'.$puesto.'</td>
   		<td class="text-center">'.$empresa.'</td>
   		<td class="text-center">'.$activo.'</td>
-  		<td>
-  			<a href="'.$page_url.'index.php?mod='.$mod.'&ext=admin/index'.$cond_opc.'&form=1&action=edit&id='.$id.'" alt="Editar"><i class="fa fa-edit"></i></a> | 
-  			<span class="btn-delete" alt="Borrar"><i class="fa fa-trash"></i></span>
-  
-  			<!--div class="btn-group pull-right">
-  				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Acciones <span class="fa fa-caret-down"></span></button>
-  				<ul class="dropdown-menu">
-  					<li><a href="'.$page_url.'index.php?mod='.$mod.'&ext=admin/index'.$cond_opc.'&form=1&action=edit&id='.$id.'"><i class="fa fa-edit"></i> Editar</a></li>
-  					<li><a href="#" taskid="'.$id.'" class="task-delete"><i class="fa fa-trash"></i> Borrar</a></li>
-  				</ul>
-  			</div><!-- /btn-group -->
-      	</td>
   	</tr>';
   					}else{
   $listado.='
@@ -221,13 +220,13 @@ if($save){
     <table class="table table-condensed table-hover table-striped ">
       <tbody>
         <tr>
+		  <th class="text-center">Acciones</th>
           <th class="text-center">ID</th>
           <th class="text-center">Id.Profile</th>
           <th class="text-center">Nombre</th>
           <th class="text-center">Puesto</th>
           <th class="text-center">Empresa</th>
           <th class="text-center">Estado</th>
-          <th>Acciones</th>
         </tr>
         <?php echo $listado;?>
       </tbody>

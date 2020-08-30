@@ -229,7 +229,7 @@ if(val==1){document.getElementById('sel_empresa').innerHTML='<input type="text" 
 		<div class="col-md-12 col-xs-12">
         <div class="box box-primary">
 				  <div class="box-header with-border">
-					 <h3 class="box-title">Listado de Productos</h3><span style="float:right;"><?php echo $vistas;?></span>
+					 <h3 class="box-title">Listado de Tarjetas Digitales</h3><span style="float:right;"><?php echo $vistas;?></span>
 				  </div><!-- /.box-header -->
 
           <div id="loader" class="text-center"><img src="<?php echo $page_url;?>apps/dashboards/loader.gif"></div>

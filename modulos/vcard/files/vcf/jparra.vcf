@@ -1,0 +1,11 @@
+BEGIN:VCARD
+  VERSION:3.0
+  N:Juan Parra
+  FN:
+  ORG:Billnex
+  TÍTULO:Manager
+  TEL;WORK;VOZ:+1(754)210-0433
+  TEL;CELULAR;VOZ:+1(754)210-0433
+  URL;TRABAJO:https://www.thebillnex.com
+  EMAIL;INTERNET:juan.parra@thebillnex.com
+  END:VCARD

@@ -3,7 +3,7 @@
 	"short_name": "VCARDS-APP",
 	"description": "VCARDS -  Tarjetas de Contacto Digital",
 	"scope": ".",
-	"start_url": "http://localhost/MisSitios/vcardsapp/",
+	"start_url": "http://192.168.0.11/MisSitios/vcardsapp/",
 	"display": "standalone",
 	"orientation": "portrait",
 	"theme_color": "#000",
