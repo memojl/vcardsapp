@@ -5,16 +5,10 @@ $(document).ready(function(){
 	// Global Settings
 	//console.log('jQuery esta funcionando');
 	let edit = true;
-	console.log(edit+'=true|edit');
 	load(1);	
  	//listar();
-	//$("#task-result").hide();
 
-	/*$(document).on("click","#listado",function(){
-		listado(1);
-	});*/
-
-	function load(page){
+	 function load(page){
 		var parametros = {"mode":"ajax","page":page};
 		$("#loader").fadeIn('slow');
 		$.ajax({
@@ -138,7 +132,7 @@ visible: $("#visible").val(),
       const element = $(this)[0].parentElement.parentElement;const id = $(element).attr('id');
       //console.log(id);
 	   Swal.fire({
-		  title: "Esta seguro de eliminar el producto ("+id+")?",
+		  title: "Esta seguro de eliminar esta Tarjeta ("+id+")?",
 		  text: "Esta operacion no se puede revertir!",
 		  icon: 'warning',
 		  showCancelButton: true,
@@ -148,12 +142,12 @@ visible: $("#visible").val(),
 	   }).then((result) => {
 		  if (result.value) {
 			 //let id = $(this).closest('tr').attr('id'); //capturamos el atributo ID de la fila  
-			 //eliminamos el producto de firebase      
+			 //eliminamos la Tarjete de firebase      
 			 $.post('modulos/vcard/admin/backend.php?action=delete', {id}, (response) => {
 				console.log(response);
 				load(1);
 			 });
-			 Swal.fire('Eliminado!', 'El producto ha sido eliminado.', 'success')
+			 Swal.fire('Eliminado!', 'La Tarjeta ha sido eliminado.', 'success')
 		  }
 	   })
 	});
@@ -217,7 +211,7 @@ visible: $("#visible").val(),
 		  success: function (data) {
 			 //$("#form1").trigger("reset");
 			 $("#imagen").html(data);
-			 $(".alert-dismissible").delay(2000).fadeOut("slow");
+			 $(".alert-dismissible").delay(1000).fadeOut("slow");
 			 console.log("Subido Correctamente");
 		  }
 	   });

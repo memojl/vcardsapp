@@ -3,20 +3,12 @@ if(isset($_SESSION["username"])){
 	if($_SESSION["level"]==-1 || $_SESSION["level"]==1){
     include 'functions.php';
     editor_tiny_mce();
-    //fecha_php_vcard();
     $tabla='vcard';
     $cond_opc=($opc!='')?'&opc='.$opc:'';
     if($username=='admin'){
-       $vistas=($action!='' && $action=='listado')?'<i class="fa fa-list"></i> | <a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'"><i class="fa fa-th-large"></i></a>':'<a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'&action=listado"><i class="fa fa-list"></i></a> | <i class="fa fa-th-large"></i>';
+          $vistas=($action!='' && $action=='listado')?'<i class="fa fa-list"></i> | <a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'"><i class="fa fa-th-large"></i></a>':'<a href="'.$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc.'&action=listado"><i class="fa fa-list"></i></a> | <i class="fa fa-th-large"></i>';
     }
 ?>
-<script>
-function add_empresa(val){
-if(val==1){document.getElementById('sel_empresa').innerHTML='<input type="text" class="form-control" id="empresa" name="empresa" value=""><div><a href="javascript:add_empresa(0);">Cancelar</a></div>';
-}else{document.getElementById('sel_empresa').innerHTML='<div class="input-group"><span class="input-group-addon"><i class="fa fa-industry"></i></span><?php echo select_empresa($tabla,$url_api,$empresa);?></div><div style="padding: 5px 12px"><a href="javascript:add_empresa(1);"><i class="fa fa-plus"></i> Empresa</a></div>';}
-}
-</script>
-
 <style>
 #sel_empresa{display: flex;}
 @media only screen and (min-width: 992px){
@@ -42,7 +34,9 @@ switch(true){
 	break;
 	default:
 	switch(true){
-		case($form==1):
+      case($form==1):
+         
+         fecha_php_vcard();
 			switch(true){
 				case($action=='add'):
 					$titulo1='Agregar';$tit='Subir';
@@ -65,13 +59,18 @@ switch(true){
 						$visible=$row['visible'];
 					//}
 				break;
-			}
+         }
 
 if($cover==''){$cover='nodisponible1.jpg';}
 $file=file_ima($cover);
-
-//if($_POST['Aceptar']){}
+$select_empresa=select_empresa($tabla,$url_api,$empresa);
 ?>
+<script>
+function add_empresa(val){
+if(val==1){document.getElementById('sel_empresa').innerHTML='<input type="text" class="form-control" id="empresa" name="empresa" value=""><div><a href="javascript:add_empresa(0);">Cancelar</a></div>';
+}else{document.getElementById('sel_empresa').innerHTML='<div class="input-group"><span class="input-group-addon"><i class="fa fa-industry"></i></span><?php echo $select_empresa;?></div><div style="padding: 5px 12px"><a href="javascript:add_empresa(1);"><i class="fa fa-plus"></i> Empresa</a></div>';}
+}
+</script>
 <div id="aviso"><?php echo $aviso;?></div>
 	<div class="col-md-12">
           <!-- general form elements -->
@@ -92,12 +91,15 @@ $file=file_ima($cover);
                            <label for="des">Descripci&oacute;n</label>
                            <textarea class="form-control" id="des" name="des"></textarea>
                         </div-->
+                        <?php //if($action=='edit'){?>
                         <div class="form-group">
                            <input type="text" class="form-control" id="ID" name="ID" value="<?php echo $id;?>" placeholder="ID">
                         </div>
+				            <?php //}else{?>                        
                         <div class="form-group">
                            <input type="text" class="form-control" id="f_create" name="f_create" value="" placeholder="Creado">
                         </div>
+                        <?php //}?>
                         <div class="form-group">
                            <input type="text" class="form-control" id="f_update" name="f_update" value="" placeholder="Actualizado">
                         </div>
@@ -107,9 +109,6 @@ $file=file_ima($cover);
                         <div class="form-group">
                            <input type="text" class="form-control" id="user" name="user" value="<?php echo $username;?>" placeholder="usuario">
                         </div>
-                        <?php if($action=='edit'){?>
-				                <?php }else{?>
-				                <?php }?>
                      </div>
                      <div class="col-md-4">
                         <div class="form-group">
@@ -161,7 +160,7 @@ $file=file_ima($cover);
                            <div id="sel_empresa">
                               <div class="input-group">
                                  <span class="input-group-addon"><i class="fa fa-industry"></i></span>
-                                 <?php echo select_empresa($tabla,$url_api,$empresa);?>
+                                 <?php echo $select_empresa;?>
                               </div>
                               <div style="padding: 5px 12px"><a href="javascript:add_empresa(1);"><i class="fa fa-plus"></i> Empresa</a></div>
                            </div>

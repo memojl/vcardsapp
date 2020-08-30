@@ -121,10 +121,10 @@ global $page_url,$path_jsonDB,$path_jsonWS;
    $empresa1='';
    $option='<option>Seleccione Empresa</option>';
 	foreach ($data as $rowm){$i++;
-		if($empresa1!=$rowm['empresa']){$sel=($rowm['empresa']==$empresa)?' selected':'';
-			$option.='<option value="'.$rowm['empresa'].'"'.$sel.'>'.$rowm['empresa'].'</option>';
-      }else{$option.='';}
-      $empresa1=$rowm['empresa'];
+		if($empresa1==$rowm['empresa']){$sel=($rowm['empresa']==$empresa)?' selected':'';
+			$option.='<option value="'.$rowm['empresa'].'"'.$sel.'>'.$empresa1.'/'.$rowm['empresa'].'</option>';
+      	}else{$option.='';}
+      	$empresa1=$rowm['empresa'];
 	}
    $select='<select class="form-control" id="empresa" name="empresa" style="float:left;">'.$option.'</select>';
    return $select;
@@ -288,7 +288,7 @@ $(document).ready(function(){
       const element = $(this)[0].parentElement.parentElement;const id = $(element).attr(\'id\');
       //console.log(id);
 	   Swal.fire({
-		  title: "Esta seguro de eliminar el producto ("+id+")?",
+		  title: "Esta seguro de eliminar esta Tarjeta ("+id+")?",
 		  text: "Esta operacion no se puede revertir!",
 		  icon: \'warning\',
 		  showCancelButton: true,
@@ -298,12 +298,12 @@ $(document).ready(function(){
 	   }).then((result) => {
 		  if (result.value) {
 			 //let id = $(this).closest(\'tr\').attr(\'id\'); //capturamos el atributo ID de la fila  
-			 //eliminamos el producto de firebase      
+			 //eliminamos la Tarjete de firebase      
 			 $.post(\'modulos/'.$mod.'/admin/backend.php?action=delete\', {id}, (response) => {
 				console.log(response);
 				load(1);
 			 });
-			 Swal.fire(\'Eliminado!\', \'El producto ha sido eliminado.\', \'success\')
+			 Swal.fire(\'Eliminado!\', \'La Tarjeta ha sido eliminado.\', \'success\')
 		  }
 	   })
 	});
@@ -367,7 +367,7 @@ $(document).ready(function(){
 		  success: function (data) {
 			 //$("#form1").trigger("reset");
 			 $("#imagen").html(data);
-			 $(".alert-dismissible").delay(2000).fadeOut("slow");
+			 $(".alert-dismissible").delay(1000).fadeOut("slow");
 			 console.log("Subido Correctamente");
 		  }
 	   });
