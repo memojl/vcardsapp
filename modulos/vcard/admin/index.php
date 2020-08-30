@@ -244,7 +244,7 @@ $file=file_ima($cover);
 	<div class="col-md-12 col-xs-12">
 	<?php 
     crear_ws($tabla);//crear_ws_vcard('modulos/vcard/assets/json/',$tabla);            
-    ajax_crud_vcard($tabla,$template,1);//crear_ajax_vcard();
+    
 	?>
 
 	</div>         
@@ -258,7 +258,9 @@ $file=file_ima($cover);
 ?>
    </div>
    <!-- /.row-->
-   <?php //modal_vcard();?>
+   <?php //modal_vcard();
+   ajax_crud_vcard($tabla,$template,1);//crear_ajax_vcard();
+   ?>
 </section>
 <!-- /.content -->
 <?php 		

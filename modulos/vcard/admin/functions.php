@@ -175,6 +175,7 @@ foreach($data as $key){$i++;
 $cond_opc=($opc!='')?'&opc='.$opc:'';
 $cond_action=($action!='')?'&action='.$action:'';
 $edit=($action=='edit')?'true':'false';
+
 $contenido='
 // JavaScript Document
 
@@ -184,13 +185,8 @@ $(document).ready(function(){
 	let edit = '.$edit.';
 	load(1);	
  	//listar();
-	//$("#task-result").hide();
 
-	/*$(document).on("click","#listado",function(){
-		listado(1);
-	});*/
-
-	function load(page){
+	 function load(page){
 		var parametros = {"mode":"ajax","page":page};
 		$("#loader").fadeIn(\'slow\');
 		$.ajax({
@@ -371,7 +367,7 @@ $(document).ready(function(){
 		  success: function (data) {
 			 //$("#form1").trigger("reset");
 			 $("#imagen").html(data);
-			 $(".alert-dismissible").delay(3000).fadeOut("slow");
+			 $(".alert-dismissible").delay(2000).fadeOut("slow");
 			 console.log("Subido Correctamente");
 		  }
 	   });

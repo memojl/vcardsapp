@@ -4,7 +4,8 @@
 $(document).ready(function(){
 	// Global Settings
 	//console.log('jQuery esta funcionando');
-	let edit = false;
+	let edit = true;
+	console.log(edit+'=true|edit');
 	load(1);	
  	//listar();
 	//$("#task-result").hide();
@@ -17,7 +18,7 @@ $(document).ready(function(){
 		var parametros = {"mode":"ajax","page":page};
 		$("#loader").fadeIn('slow');
 		$.ajax({
-			url:'modulos/vcard/admin/backend.php?mod=vcard',
+			url:'modulos/vcard/admin/backend.php?mod=vcard&action=edit',
 			data: parametros,
 			beforeSend: function(objeto){
 				$("#loader").html("<img src='apps/dashboards/loader.gif'>");
@@ -216,7 +217,7 @@ visible: $("#visible").val(),
 		  success: function (data) {
 			 //$("#form1").trigger("reset");
 			 $("#imagen").html(data);
-			 $(".alert-dismissible").delay(3000).fadeOut("slow");
+			 $(".alert-dismissible").delay(2000).fadeOut("slow");
 			 console.log("Subido Correctamente");
 		  }
 	   });
