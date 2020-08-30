@@ -126,7 +126,7 @@
   	  break;
   	  default:
   	  
-  	$modo = (isset($_REQUEST['mode'])&& $_REQUEST['mode'] !=NULL)?$_REQUEST['mode']:'';
+  	$modo = (isset($_REQUEST['mode'])&& $_REQUEST['mode']!=NULL)?$_REQUEST['mode']:'';
   	if($modo == 'ajax'){$cond_opc=($opc!='')?'&opc='.$opc:'';
   		//include ''; //incluir el archivo de paginación
   		//las variables de paginación
@@ -245,9 +245,9 @@
   }else{//$numrows
   	echo '
   	<div class="alert alert-warning alert-dismissable">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <h4>Error</h4> No hay datos para mostrar.
-            </div>';
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h4>Error</h4> No hay datos para mostrar.
+    </div>';
   }
   }
   break;

@@ -1,28 +1,29 @@
 
 // JavaScript Document
+function load(page){
+	var parametros = {"mode":"ajax","page":page};
+	$("#loader").fadeIn('slow');
+	$.ajax({
+		url:'modulos/vcard/admin/backend.php?mod=vcard&action=listado',
+		data: parametros,
+		beforeSend: function(objeto){
+			$("#loader").html("<img src='apps/dashboards/loader.gif'>");
+		},
+		success:function(data){
+			$(".outer_div").html(data);
+			$("#loader").html("");
+		}
+	});
+}
+
 
 $(document).ready(function(){
 	// Global Settings
 	//console.log('jQuery esta funcionando');
-	let edit = true;
+	let edit = false;
 	load(1);	
  	//listar();
 
-	 function load(page){
-		var parametros = {"mode":"ajax","page":page};
-		$("#loader").fadeIn('slow');
-		$.ajax({
-			url:'modulos/vcard/admin/backend.php?mod=vcard&action=edit',
-			data: parametros,
-			beforeSend: function(objeto){
-				$("#loader").html("<img src='apps/dashboards/loader.gif'>");
-			},
-			success:function(data){
-				$(".outer_div").html(data);
-				$("#loader").html("");
-			}
-		});
-	}
 
 	function listado(page){
 		var parametros = {"mode":"ajax","page":page};

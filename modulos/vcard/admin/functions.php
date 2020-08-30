@@ -122,7 +122,7 @@ global $page_url,$path_jsonDB,$path_jsonWS;
    $option='<option>Seleccione Empresa</option>';
 	foreach ($data as $rowm){$i++;
 		if($empresa1==$rowm['empresa']){$sel=($rowm['empresa']==$empresa)?' selected':'';
-			$option.='<option value="'.$rowm['empresa'].'"'.$sel.'>'.$empresa1.'/'.$rowm['empresa'].'</option>';
+			$option.='<option value="'.$rowm['empresa'].'"'.$sel.'>'.$rowm['empresa'].'</option>';
       	}else{$option.='';}
       	$empresa1=$rowm['empresa'];
 	}
@@ -178,6 +178,21 @@ $edit=($action=='edit')?'true':'false';
 
 $contenido='
 // JavaScript Document
+function load(page){
+	var parametros = {"mode":"ajax","page":page};
+	$("#loader").fadeIn(\'slow\');
+	$.ajax({
+		url:\'modulos/'.$mod.'/admin/backend.php?mod='.$mod.$cond_action.'\',
+		data: parametros,
+		beforeSend: function(objeto){
+			$("#loader").html("<img src=\'apps/dashboards/loader.gif\'>");
+		},
+		success:function(data){
+			$(".outer_div").html(data);
+			$("#loader").html("");
+		}
+	});
+}
 
 $(document).ready(function(){
 	// Global Settings
@@ -186,21 +201,6 @@ $(document).ready(function(){
 	load(1);	
  	//listar();
 
-	 function load(page){
-		var parametros = {"mode":"ajax","page":page};
-		$("#loader").fadeIn(\'slow\');
-		$.ajax({
-			url:\'modulos/'.$mod.'/admin/backend.php?mod='.$mod.$cond_action.'\',
-			data: parametros,
-			beforeSend: function(objeto){
-				$("#loader").html("<img src=\'apps/dashboards/loader.gif\'>");
-			},
-			success:function(data){
-				$(".outer_div").html(data);
-				$("#loader").html("");
-			}
-		});
-	}
 
 	function listado(page){
 		var parametros = {"mode":"ajax","page":page};
