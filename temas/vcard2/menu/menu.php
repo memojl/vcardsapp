@@ -12,7 +12,27 @@ echo ucfirst($mod).' | '.$title;
 function login(&$login_se,$username,$ID_login){
 global $mysqli,$DBprefix,$page_url,$mod,$ext,$opc,$path_tema,$tema_previo,$dboard;
  if(isset($_SESSION['username'])){
-	$login_se='<li class="dropdown dropdown-primary"><a class="dropdown-toggle nav-link" href="'.$page_url.'index.php?mod='.$dboard.'"><i class="fa fa-user"></i> - '.$username.'</a> <ul class="dropdown-menu"><li><a class="class="dropdown-item"" href="'.logout($ID_login).'" title="Salir"><i class="fa fa-power-off"></i> - Salir</a></li><ul></li>';
+	$login_se='
+	<li class="dropdown dropdown-primary"><a class="dropdown-toggle nav-link" href="#"><i class="fa fa-user"></i> - '.$username.'</a> 
+		<ul class="dropdown-menu">
+			<li>
+				<a class="class="dropdown-item"" href="'.$page_url.'index.php?mod='.$dboard.'">
+				<i class="fa fa-dashboard"></i> Mi Panel</a>
+			</li>
+			<li>
+				<a class="class="dropdown-item"" href="'.$page_url.'usuarios/perfil/">
+				<i class="fa fa-user"></i> Mi Perfil</a>
+			</li>
+			<li>
+				<a class="class="dropdown-item"" href="'.$page_url.'usuarios/config/">
+				<i class="fa fa-gear"></i> Configuraciones</a>
+			</li>
+			<li>
+				<a class="class="dropdown-item"" href="'.logout($ID_login).'">
+				<i class="fa fa-sign-out"></i> Salir</a>
+			</li>
+		<ul>
+	</li>';
  }else{
 	$login_se='<li><a class="nav-link bg-link" href="'.$page_url.'usuarios/registro/"><i class="fa fa-edit"></i> Registrate</a></li><li><a class="nav-link" href="'.$page_url.'admin/"><i class="fa fa-sign-in"></i> Login</a></li>';
  }
