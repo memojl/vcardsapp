@@ -1,5 +1,6 @@
 <?php 
 if(isset($_SESSION["username"])){
+  if($_SESSION["level"]>=-1 && $_SESSION["level"]<=5){
 include 'admin/functions.php';
 sql_opciones('AJAX',$val_ajax);
 switch(true){
@@ -474,6 +475,6 @@ switch(true){
 <?php
 	break;	
 }
-//	}else{echo '<div id="cont-user">No tiene permiso para ver esta secci&oacute;n.</div>';}
+	}else{echo '<div id="cont-user">No tiene permiso para ver esta secci&oacute;n.</div>';header("Location: ".$page_url."index.php");}
 }else{header("Location: ".$page_url."index.php");}
 ?>

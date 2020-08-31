@@ -1,6 +1,230 @@
 <?php
-if (isset($mod) && $mod != '') {
-include_once 'panel/pages/registro.html';
+if (isset($mod) && $mod!='') {
+//include_once 'panel/pages/registro.html';
+//include '../../admin/conexion.php';
+open_page_form2($formh,$formf);//open_page_form();
+echo $formh;
+//$URL=$page_url.'admin/';
+if ($_GET['id']=='codigo'){
+    if (isset($_POST['enviar'])){
+        $cod = $_POST['cod'];
+        $sql = mysqli_query($mysqli,"SELECT * FROM ".$DBprefix."signup WHERE actualizacion='{$cod}';") or print mysqli_error($mysqli);
+        $num_rows = mysqli_num_rows($sql);
+        if ($num_rows != 0) {
+            if($row = mysqli_fetch_array($sql)){$id_login = $row['ID'];}
+            $save = mysqli_query($mysqli, "UPDATE " . $DBprefix . "signup SET activo=1 WHERE ID='{$id_login}';") or print mysqli_error($mysqli);
+            session_start();session_unset();session_destroy();
+            validar_aviso($save, 'El codigo es valido, ahora puede ingresar a cuenta. <a href="' . $page_url . 'admin" style="color:#444;">Iniciar Sesi&oacute;n</a>', 'Hubo un problema, por favor intentelo nuevamente. <a href="' . $URL . '" style="color:#444;">Regresar</a>', $aviso);
+        }else{
+            validar_aviso($save, '', 'Lo sentimos el c&oacute;digo no existe, intente con uno diferente. <a href="' . $URL . '" style="color:#444;">Regresar</a>', $aviso);
+        }
+        echo '<div style=" width:600px;margin:280px auto 0 auto;">' . $aviso . '</div>';
+    }else{
+?>
+<!--
+<div class="container">
+<header>
+  <div><img id="logo-s" src="<?php echo $page_url.$path_tema;?>images/logo.min.png" alt="logo" title="logo" /></div>
+  <h2>*Ingrese Codigo de confirmaci&oacute;n.</h2>
+  <div class="support-note">
+     <span class="note-ie">Lo sentimos, solo navegadores actualizados.</span>
+  </div>
+</header>
+<section class="main">
+  <form name="form1" class="form-4" method="POST" action="<?php echo $URL;?>">
+     <p>
+        <input type="text" id="cod" name="cod" placeholder="Codigo" required> 
+     </p>
+     <p>
+        <input type="submit" name="enviar" value="Continuar">
+     </p>
+  </form>
+  <div style="text-align:center;">
+     <a href="<?php echo $page_url;?>admin/" class="alogin">Regresar</a>
+  </div>
+</section>
+</div>
+    -->
+
+<div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Ingrese C&oacute;digo de Activaci&oacute;n.</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" method="POST" action="<?php echo $URL;?>">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" id="cod" name="cod" placeholder="*Codigo" autofocus required>
+                                    </div>
+
+                                    <!-- Change this to a button or input when using this as a form -->
+                                    <input class="btn btn-lg btn-success btn-block" type="submit" name="enviar" value="Continuar">
+                                    <!--a href="index.html" class="btn btn-lg btn-success btn-block">Login</a-->
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="panel-footer text-center">
+                            <a href="<?php echo $page_url;?>">Inicio</a> | <a href="<?php echo $page_url;?>usuarios/registro/">Volver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<?php
+    }
+}else{
+    sql_opciones('form_registro', $valor);
+    if ($valor == 0) {
+        validar_aviso($save, '', 'Esta secci&oacute;n esta desactivada temporalmente. <a href="' . $page_url . 'admin/" style="color:#444;">Regresar</a>', $aviso);
+        echo '<div style=" width:600px;margin:280px auto 0 auto;">' . $aviso . '</div>';
+    }else{
+        if (isset($_POST['enviar'])) {
+            $nombre        = htmlentities($_POST['nombre']);
+            $username      = $_POST['username'];
+            $pass          = $_POST['pass'];
+            $pass1         = sha1(md5($pass));/* Encriptamos "Ciframos" el password */
+            $email         = $_POST['email'];                
+            $level         = 5;
+            $actualizacion = $username.$year.'x'.$pass;
+            $activo        = 0;
+            $alta          = $date;
+            $codi          = getRandomCode();
+            $codigo        = substr($codi, 0, 6);
+            $sec           = 'contacto';
+            $cat_list      = 'inbox';
+
+            $info      = navegador();
+            $navegador = $info['browser'];
+            $os        = $info['os'];
+
+            $sql = mysqli_query($mysqli, "SELECT * FROM " . $DBprefix . "signup WHERE username='{$username}' OR email='{$email}';") or print mysqli_error($mysqli);
+            $num_rows = mysqli_num_rows($sql);
+            if ($num_rows != 0) {
+                validar_aviso($save, '', 'Lo sentimos el usuario o email ya existe, intente con uno diferente. <a href="' . $URL . '" style="color:#444;">Regresar</a>', $aviso);
+            }else{
+                
+                $contenido = '';
+                $contenido .= '<tr><td align="right" style="background-color: #eee;">Usuario:</td><td style="background-color: #eee;">' . $username . '</td></tr>';
+                $contenido .= '<tr><td align="right" style="background-color: #fff;">Password:</td><td style="background-color: #fff;">' . $pass . '</td></tr>';
+                $contenido .= '<tr><td align="right" style="background-color: #eee;">Nombre:</td><td style="background-color: #eee;">' . $nombre . '</td></tr>';
+                $contenido .= '<tr><td align="right" style="background-color: #fff;">Correo:</td><td style="background-color: #fff;">' . $email . '</td></tr>';
+                $contenido .= '<tr><td align="right" style="background-color: #eee;">Nivel:</td><td style="background-color: #eee;">' . $level . '</td></tr>';
+                $contenido .= '<tr><td align="right" style="background-color: #fff;"><strong>C&oacute;digo de Activaci&oacute;n:</strong></td><td style="background-color: #fff;">' . $actualizacion . '</td></tr>';
+                $contenido .= '<tr><td align="right" style="background-color: #eee;">Activo:</td><td style="background-color: #eee;">' . $activo . '</td></tr>';
+                $contenido .= '<tr><td align="right" style="background-color: #fff;">Alta:</td><td style="background-color: #fff;">' . $alta . '</td></tr>';
+                $contenido .= '<tr><td align="right" style="background-color: #eee;">Codigo de Seguridad:</td><td style="background-color: #eee;">' . $codigo . '</td></tr>';
+                /*---MENSAJE DEL SISTEMA----------------------------------------------------------------------------*/
+                //envio_registro_web($sec, $cat_list, $contenido, $nombre, $email, $aviso1);
+                message_registro($email,$contenido,$para,$titulo,$msj_bien,$msj_mal,$message,$header,1);
+        
+                $save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix."contacto (ip,nombre,email,asunto,msj,cat_list,seccion,visible) VALUES ('{$ip}','{$nombre}','{$email}','{$titulo}','{$message}','{$cat_list}','{$sec}','1');") or print mysqli_error($mysqli); 
+                validar_aviso($save,$msj_bien,$msj_mal,$aviso);
+                $aviso1=$aviso;
+                mail($para,$titulo,$message,$header);
+                /*------------------------------------------------------------------------------------------------*/
+                
+                /*---MENSAJE CLIENTES----------------------------------------------------------------------------*/
+                //envio_registro_cliente($sec, $cat_list, $contenido, $nombre, $email, $username, $pass, $actualizacion, $aviso2);
+                message_registro($email,$contenido,$para,$titulo,$msj_bien,$msj_mal,$message,$header,0);
+                
+                $save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix."signup (username,password,level,email,tema,nombre,foto,cover,alta,actualizacion,codigo,intentos,activo) VALUES ('{$username}','{$pass1}','6','{$email}','default','{$nombre}','sinfoto.png','sincover.jpg','{$date}','{$actualizacion}','{$codigo}','0','0');") or print mysqli_error($mysqli); 
+                $sql=mysqli_query($mysqli,"INSERT INTO ".$DBprefix."access (user,ip,navegador,os,code,fecha) VALUES ('{$username}','{$ip}','{$navegador}','{$os}','{$codigo}','{$date}');") or print mysqli_error($mysqli);
+                validar_aviso($save,$msj_bien,$msj_mal,$aviso);
+                $aviso2=$aviso;
+                mail($para,$titulo,$message,$header);
+                /*------------------------------------------------------------------------------------------------*/
+            }
+            //$aviso = $aviso1 . $aviso2;
+            if($aviso1){
+               $aviso=$aviso2;
+            }//else{$aviso=$aviso1;}
+            echo '<div style="width:600px;margin:280px auto 0 auto;">'.$aviso .'</div>';
+        }else{
+?>
+<!--
+<div class="container">
+<header>
+  <div><img id="logo-s" src="<?php echo $page_url . $path_tema;?>images/logo.min.png" alt="logo" title="logo" /></div>
+  <h2>Registro de usuario.</h2>
+  <div class="support-note">
+     <span class="note-ie">Lo sentimos, solo navegadores actualizados.</span>
+  </div>
+</header>
+<section class="main">
+  <form name="form1" class="form-4" method="POST" action="<?php echo $URL.'?pin=1';?>">
+     <p>
+     <div class="label">*Ingrese Nombre de Usuario</div>
+     <input type="text" id="username" name="username" placeholder="Nombre de Usuario" required> 
+     </p>
+     <p>
+     <div class="label">*Ingrese Password</div>
+     <input type="password" id="pass" name="pass" placeholder="Password" required> 
+     </p>
+     <p>
+     <div class="label">*Ingrese Nombre Completo</div>
+     <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" required> 
+     </p>
+     <p>
+     <div class="label">*Ingrese Correo Electronico</div>
+     <input type="text" id="email" name="email" placeholder="Correo Electronico" required> 
+     </p>
+     <p>
+        <input type="submit" name="enviar" value="Enviar">
+     </p>
+  </form>
+  <div style="text-align:center;">
+     <a href="<?php echo $URL;?>?code=1" class="alogin">Ingresar C&oacute;digo</a> | <a href="<?php echo $page_url;?>admin/" class="alogin">Regresar</a>
+  </div>
+</section>
+</div>
+        -->
+<div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Registro de Usuarios</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" method="POST" action="<?php echo $URL.'code/';?>">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" id="username" name="username" placeholder="*Ingrese Nombre de Usuario" autofocus required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="*Ingrese Password" id="pass" name="pass" type="password" value="" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" id="nombre" name="nombre" placeholder="*Ingrese Nombre Completo" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="*Ingrese Correo Electronico" id="email" name="email" type="email" required>
+                                    </div>
+
+                                    <!-- Change this to a button or input when using this as a form -->
+                                    <input class="btn btn-lg btn-success btn-block" type="submit" name="enviar" value="Registrar">
+                                    <!--a href="index.html" class="btn btn-lg btn-success btn-block">Login</a-->
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="panel-footer text-center">
+                            <a href="<?php echo $page_url;?>">Inicio</a> | <a href="<?php echo $URL;?>codigo/">Ingrese C&oacute;digo</a><br>
+                            Ya tiene cuenta ingrese <a href="<?php echo $page_url;?>login/">aqu&iacute;.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<?php
+        } //$_POST['enviar']
+    } //$valor
+} //$_GET['code']
+
+echo $formf;//close_page();
+
 }else{
     include '../../admin/conexion.php';
     open_page_form();
@@ -14,7 +238,7 @@ include_once 'panel/pages/registro.html';
                 if($row = mysqli_fetch_array($sql)){$id_login = $row['ID'];}
                 $save = mysqli_query($mysqli, "UPDATE " . $DBprefix . "signup SET activo=1 WHERE ID='{$id_login}';") or print mysqli_error($mysqli);
                 session_start();session_unset();session_destroy();
-                validar_aviso($save, 'El codigo es valido, ahora puede ingresar a cuenta. <a href="' . $page_url . 'admin" style="color:#444;">Iniciar Sesi&oacute;n</a>', 'Hubo un problema, por favor intentelo nuevamente. <a href="' . $URL . '" style="color:#444;">Regresar</a>', $aviso);
+                validar_aviso($save, 'El codigo es valido, ahora puede ingresar a cuenta. <a href="' . $page_url . 'login/" style="color:#444;">Iniciar Sesi&oacute;n</a>', 'Hubo un problema, por favor intentelo nuevamente. <a href="' . $URL . '" style="color:#444;">Regresar</a>', $aviso);
             }else{
                 validar_aviso($save, '', 'Lo sentimos el c&oacute;digo no existe, intente con uno diferente. <a href="' . $URL . '" style="color:#444;">Regresar</a>', $aviso);
             }
@@ -61,7 +285,8 @@ include_once 'panel/pages/registro.html';
                 $actualizacion = $username.$year.'x'.$pass;
                 $activo        = 0;
                 $alta          = $date;
-                $codigo        = getRandomCode();
+                $codi          = getRandomCode();
+                $codigo        = substr($codi, 0, 6);
                 $sec           = 'contacto';
                 $cat_list      = 'inbox';
 
@@ -81,7 +306,7 @@ include_once 'panel/pages/registro.html';
                     $contenido .= '<tr><td align="right" style="background-color: #eee;">Nombre:</td><td style="background-color: #eee;">' . $nombre . '</td></tr>';
                     $contenido .= '<tr><td align="right" style="background-color: #fff;">Correo:</td><td style="background-color: #fff;">' . $email . '</td></tr>';
                     $contenido .= '<tr><td align="right" style="background-color: #eee;">Nivel:</td><td style="background-color: #eee;">' . $level . '</td></tr>';
-                    $contenido .= '<tr><td align="right" style="background-color: #fff;">C&oacute;digo de Activaci&oacute;n:</td><td style="background-color: #fff;">' . $actualizacion . '</td></tr>';
+                    $contenido .= '<tr><td align="right" style="background-color: #fff;"><strong>C&oacute;digo de Activaci&oacute;n:</strong></td><td style="background-color: #fff;">' . $actualizacion . '</td></tr>';
                     $contenido .= '<tr><td align="right" style="background-color: #eee;">Activo:</td><td style="background-color: #eee;">' . $activo . '</td></tr>';
                     $contenido .= '<tr><td align="right" style="background-color: #fff;">Alta:</td><td style="background-color: #fff;">' . $alta . '</td></tr>';
                     $contenido .= '<tr><td align="right" style="background-color: #eee;">Codigo de Seguridad:</td><td style="background-color: #eee;">' . $codigo . '</td></tr>';

@@ -1116,7 +1116,7 @@ if(isset($_SESSION["username"]) && !isset($BLOCK) && $_SESSION["activo"]==1){
 	$form_login='<div class="container">
 					<header>
 						<h1 style="color:#f00;">Su cuenta no esta activada.</h1>
-						<h2><a href="'.$page_url.'modulos/usuarios/registro.php?code=1" class="botonfib">Activar Cuenta</a> | <a href="'.$page_url.'modulos/usuarios/logout.php?id='.$_SESSION['ID'].'" class="botonfib">Salir</a></h2>
+						<h2><a href="'.$page_url.'usuarios/registro/codigo/" class="botonfib">Activar Cuenta</a> | <a href="'.$page_url.'modulos/usuarios/logout.php?id='.$_SESSION['ID'].'" class="botonfib">Salir</a></h2>
 						<div class="support-note">
 						<span class="note-ie">Lo sentimos, solo navegadores actualizados.</span>
 						</div>
@@ -1351,7 +1351,7 @@ if($sel==1){
     $de=$email;
     $titulo='Nuevo Usuario Registrado - Web '.$page_name;
     $intro='<p style="text-align:center">Nuevo Usuario Registrado - Mensaje enviado a tr&aacute;ves de la p&aacute;gina web de '.$page_name.'.</p>';
-    $msj_bien='El registro se guardo correctamente. <a href="'.$page_url.'admin" style="color:#444;">Regresar</a>';
+    $msj_bien='El registro se guardo correctamente. <a href="'.$page_url.'login/" style="color:#444;">Regresar</a>';
     $msj_mal='Hubo un problema y el registro no se guardo, intentelo nuevamente. <a href="'.$URL.'" style="color:#444;">Regresar</a>';
 }else{
     $para=$email;
@@ -1359,9 +1359,9 @@ if($sel==1){
     $titulo='Mensaje de Bienvenida - Web '.$page_name;
     $intro='<p style="text-align:center">Bienvenido - Web '.$page_name.'<br>
     Ud. a quedado registrado en nuestra p&aacute;gina web acontinuaci&oacute;n le enviamos los datos de su cuenta.<br> 
-    Para activar su cuenta haga clic <a href="'.$page_url.'modulos/usuarios/registro.php?code=1">aqu&iacute;</a> e ingrese su c&oacute;digo de activaci&oacute;n.
+    Para activar su cuenta haga clic <a href="'.$page_url.'usuarios/registro/codigo/">aqu&iacute;</a> e ingrese su c&oacute;digo de activaci&oacute;n.
     </p>';
-    $msj_bien='Ud. se ha registrado correctamente, gracias. <a href="'.$page_url.'admin/" style="color:#111;">Iniciar Sesi&oacute;n</a><br>Revise su cuenta de correo donde recibira un mensaje con el codigo de activacion de su cuenta.<br>Para activar su cuenta haga clic <a href="'.$page_url.'modulos/usuarios/registro.php?code=1" style="color:#111;">aqu&iacute;</a> e ingrese su c&oacute;digo de activaci&oacute;n.';
+    $msj_bien='<!--Ud. se ha registrado correctamente, gracias. <a href="'.$page_url.'login/" style="color:#111;">Iniciar Sesi&oacute;n</a><br-->Revise su cuenta de correo donde recibira un mensaje con el codigo de activacion de su cuenta.<br>Para activar su cuenta haga clic <a href="'.$page_url.'usuarios/registro/codigo/" style="color:#111;">aqu&iacute;</a> e ingrese su c&oacute;digo de activaci&oacute;n.';
     $msj_mal='Hubo un problema al registrarse, por favor intentelo nuevamente. <a href="'.$URL.'" style="color:#444;">Regresar</a>';
 }
 
@@ -1910,8 +1910,62 @@ function str_limit($value,$limit=100,$end){
 	return rtrim(mb_strimwidth($value, 0, $limit, '', 'UTF-8')).$end;
 }
 
+/************************************************************************************************************* */
 function cadena_replace(&$replace1,&$replace2){
 	$replace1=array(' ','.',',','(',')','/','"','á','é','í','ó','ú','&aacute;','&eacute;','&iacute;','&oacute;','&uacute;','Á','É','Í','Ó','Ú','&Aacute;','&Eacute;','&Iacute;','&Oacute;','&Uacute;','ñ','Ñ','&ntilde;','&Ntilde;','&','amp;');
 	$replace2=array('-','-','-','-','-','-','-','a','e','i','o','u','a','e','i','o','u','A','E','I','O','U','A','E','I','O','U','n','N','n','N','','');
+}
+
+function open_page_form2(&$formh,&$formf){
+global $logo,$page_name,$page_url,$path_t,$path_tema;
+global $style,$font_awesome,$bootstrap,$bootstrapjs,$javascript,$jQuery,$jQuery10,$base_target,$back;
+$formh='<!DOCTYPE html>
+<html lang="es-MX">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Login - '.$page_name.'</title>
+        <!-- LINK-ICON -->
+        <link rel="shortcut icon" type="image/x-icon" href="'.$page_url.'favicon.ico">
+        <link rel="icon" type="image/x-icon" href="'.$page_url.'favicon.ico">
+
+        <!-- Bootstrap Core CSS -->
+        <link href="'.$page_url.'modulos/usuarios/panel/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="'.$page_url.'modulos/usuarios/panel/css/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="'.$page_url.'modulos/usuarios/panel/css/startmin.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="'.$page_url.'modulos/usuarios/panel/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>';
+$formf='<!-- jQuery -->
+<script src="'.$page_url.'modulos/usuarios/panel/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="'.$page_url.'modulos/usuarios/panel/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="'.$page_url.'modulos/usuarios/panel/js/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="'.$page_url.'modulos/usuarios/panel/js/startmin.js"></script>
+
+</body>
+</html>';
 }
 ?>
