@@ -42,13 +42,13 @@
                             <h3 class="panel-title">Login</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form">
+                            <form name="login" role="form" method="POST" action="http://localhost/MisSitios/vcardsapp/admin/">
                                 <fieldset>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                        <input class="form-control" placeholder="Usuario" name="username" type="text" required autocomplete="off" autofocus>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                        <input class="form-control" placeholder="Password" name="password" type="password" required autocomplete="off">
                                     </div>
                                     <div class="checkbox">
                                         <label>
@@ -56,7 +56,8 @@
                                         </label>
                                     </div>
                                     <!-- Change this to a button or input when using this as a form -->
-                                    <a href="#" class="btn btn-lg btn-success btn-block">Ingrese</a>
+                                    <input type="submit" class="btn btn-lg btn-success btn-block" id="sesion" name="sesion" value="Ingresar">
+                                    <!--a href="#" class="btn btn-lg btn-success btn-block">Ingrese</a-->
                                 </fieldset>
                             </form>
                         </div>
