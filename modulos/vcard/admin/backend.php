@@ -204,7 +204,7 @@ if($save){
   			</div>
   			<div class="box-body">
   				<div class="ima-size">
-  					<img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" class="img-responsive ima-size">
+  					<img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" class="img-responsive ima-size img-rounded">
   				</div>
   				<div id="title"><strong>'.$nombre.'</strong></div>	
   			</div><!-- /.box-body -->
