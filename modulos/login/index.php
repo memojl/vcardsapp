@@ -1,4 +1,3 @@
-<!--?php include '../../admin/conexion.php';?-->
 <!DOCTYPE html>
 <html lang="es-MX">
     <head>
@@ -42,7 +41,7 @@
                             <h3 class="panel-title">Login</h3>
                         </div>
                         <div class="panel-body">
-                            <form name="login" role="form" method="POST" action="http://localhost/MisSitios/vcardsapp/admin/">
+                            <form name="login" role="form" method="POST" action="<?php echo $page_url;?>admin/">
                                 <fieldset>
                                     <div class="form-group">
                                         <input class="form-control" placeholder="Usuario" name="username" type="text" required autocomplete="off" autofocus>
