@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es_MX">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,10 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Startmin - Bootstrap Admin Theme</title>
+        <title>Registro - <?php echo $page_name;?></title>
+        <!-- LINK-ICON -->
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $page_url;?>favicon.ico">
+        <link rel="icon" type="image/x-icon" href="<?php echo $page_url;?>favicon.ico">
 
         <!-- Bootstrap Core CSS -->
         <link href="<?php echo $page_url;?>modulos/usuarios/panel/css/bootstrap.min.css" rel="stylesheet">
@@ -59,8 +62,9 @@
                                 </fieldset>
                             </form>
                         </div>
-                        <div>
-                            <a href="<?php echo $page_url;?>" class="">Inicio</a> | 
+                        <div class="panel-footer text-center">
+                            <a href="<?php echo $page_url;?>">Inicio</a> | <a href="#">Ingrese C&oacute;digo</a><br>
+                            Ya tiene cuenta ingrese <a href="<?php echo $page_url;?>login/">aqu&iacute;.</a>
                         </div>
                     </div>
                 </div>
