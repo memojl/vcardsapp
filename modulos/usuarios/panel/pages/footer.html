@@ -44,6 +44,11 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="<?php echo $page_url;?>modulos/usuarios/panel/js/startmin.js"></script>
+        <?php 
+        if($ext=='tarjetas'){
+            echo '<script src="'.$page_url.'modulos/usuarios/js/ajax_vcard.js"></script>';
+        }
+        ?>
 
     </body>
 </html>

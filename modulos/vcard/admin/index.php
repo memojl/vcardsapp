@@ -232,7 +232,7 @@ function add_empresa(val){
 					 <h3 class="box-title">Listado de Tarjetas Digitales</h3><span style="float:right;"><?php echo $vistas;?></span>
 				  </div><!-- /.box-header -->
 
-          <div id="loader" class="text-center"><img src="<?php echo $page_url;?>apps/dashboards/loader.gif"></div>
+              <div id="loader" class="text-center"><img src="<?php echo $page_url;?>apps/dashboards/loader.gif"></div>
 				  <div class="outer_div"></div>                
 
 			 </div><!-- /.box -->
