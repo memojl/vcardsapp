@@ -1,222 +1,63 @@
-<!DOCTYPE html>
-<html lang="es-mx">
-    <head>        
-        <title><?php echo $title;?></title>
-        <?php echo $metas;?>
-        <!-- Bootstrap Core CSS -->
-        <link href="<?php echo $page_url;?>modulos/usuarios/panel/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- MetisMenu CSS -->
-        <link href="<?php echo $page_url;?>modulos/usuarios/panel/css/metisMenu.min.css" rel="stylesheet">
-
-        <!-- DataTables CSS -->
-        <link href="<?php echo $page_url;?>modulos/usuarios/panel/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-
-        <!-- DataTables Responsive CSS -->
-        <link href="<?php echo $page_url;?>modulos/usuarios/panel/css/dataTables/dataTables.responsive.css" rel="stylesheet">
-
-
-        <!-- Timeline CSS -->
-        <link href="<?php echo $page_url;?>modulos/usuarios/panel/css/timeline.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="<?php echo $page_url;?>modulos/usuarios/panel/css/startmin.css" rel="stylesheet">
-
-        <!-- Morris Charts CSS -->
-        <link href="<?php echo $page_url;?>modulos/usuarios/panel/css/morris.css" rel="stylesheet">
-
-        <!-- Custom Fonts -->
-        <link href="<?php echo $page_url;?>modulos/usuarios/panel/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-
-        <div id="wrapper">
-
-            <!-- Navigation -->
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="<?php echo $page_url;?>"><?php echo $page_name;?></a>
-                </div>
-
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <ul class="nav navbar-right navbar-top-links">
-                    <!--
-                    <li class="dropdown navbar-inverse">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-bell "></i> <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu dropdown-alerts">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-comment "></i> New Comment
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
+<?php include 'head.html';?>  
+<!--Contenido-->            
+                            <div class="panel-body">              
+                            <!--div class="row" style="padding: 0 10px;"-->
+                                <div class="col-sm-3">
+                                    <div class="hero-widget well well-sm">
+                                        <div class="icon">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                        <div class="text">
+                                            <span class="value">1</span>
+                                            <label class="text-muted">Usuario</label>
+                                        </div>
+                                        <div class="options">
+                                            <a href="<?php echo $page_url.$mod.'/perfil/';?>" class="btn btn-primary btn-lg">Mi Perfil</a>
+                                        </div>
                                     </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-twitter "></i> 3 New Followers
-                                        <span class="pull-right text-muted small">12 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-envelope "></i> Message Sent
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-tasks "></i> New Task
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-upload "></i> Server Rebooted
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>See All Alerts</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user"></i> <?php echo $username;?> <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <?php if($adminLTE!=''){
-                                echo '<li>'.$adminLTE.'</li>';
-                            }?>
-                            <li><a href="<?php echo $page_url.$mod.'/perfil/';?>"><i class="fa fa-user"></i> Mi Perfil</a>
-                            </li>
-                            <li><a href="<?php echo $page_url.$mod.'/config/';?>"><i class="fa fa-gear"></i> Configuraciones</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="<?php echo logout($ID_login);?>"><i class="fa fa-sign-out "></i> Salir</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- /.navbar-top-links -->
-
-                <div class="navbar-default sidebar" role="navigation">
-                    <div class="sidebar-nav navbar-collapse">
-                        <ul class="nav" id="side-menu">
-                            <li>
-                                <a href="<?php echo $page_url.$mod.'/panel/';?>"><i class="fa fa-dashboard "></i> Mi Panel</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo $page_url.$mod.'/perfil/';?>"><i class="fa fa-user"></i> Mi Perfil</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo $page_url.$mod.'/tarjetas/';?>"><i class="fa fa-vcard"></i> Mis Tarjetas</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo $page_url.$mod.'/empresas/';?>"><i class="fa fa-industry"></i> Empresas</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo $page_url.$mod.'/config/';?>"><i class="fa fa-gear"></i> Configuraciones</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo logout($ID_login);?>"><i class="fa fa-sign-out"></i> Salir</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-            <div id="page-wrapper">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h1 class="page-header"><?php echo $ext;?></h1>
-                        </div>
-                        <!-- /.col-lg-12 -->
-                    </div>
-                    <!-- /.row -->
-                    <div class="col-lg-12">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <?php echo $mod.'/'.$ext;?>
-                            </div>
-                            <!-- /.panel-heading -->
-
-                            <!-- /.panel-body -->
-                        </div>
-                        <!-- /.panel -->
-                    </div>
-                    <!-- /.row -->
-                    <!--
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="panel panel-green">
-                                <div class="panel-heading">
-                                    Green Panel
                                 </div>
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                                <div class="col-sm-3">
+                                    <div class="hero-widget well well-sm">
+                                        <div class="icon">
+                                            <i class="fa fa-vcard"></i>
+                                        </div>
+                                        <div class="text">
+                                            <span class="value">-</span>
+                                            <label class="text-muted">Tarjetas</label>
+                                        </div>
+                                        <div class="options">
+                                            <a href="<?php echo $page_url.$mod.'/tarjetas/';?>" class="btn btn-primary btn-lg">Mis Tarjetas</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="panel-footer">
-                                    Panel Footer
+                                <div class="col-sm-3">
+                                    <div class="hero-widget well well-sm">
+                                        <div class="icon">
+                                            <i class="fa fa-industry"></i>
+                                        </div>
+                                        <div class="text">
+                                            <span class="value">-</span>
+                                            <label class="text-muted">Empresas</label>
+                                        </div>
+                                        <div class="options">
+                                            <a href="<?php echo $page_url.$mod.'/empresas/';?>" class="btn btn-primary btn-lg">Empresas</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="hero-widget well well-sm">
+                                        <div class="icon">
+                                            <i class="fa fa-cog"></i>
+                                        </div>
+                                        <div class="text">
+                                            <span class="value">-</span>
+                                            <label class="text-muted">Configuraciones</label>
+                                        </div>
+                                        <div class="options">
+                                            <a href="<?php echo $page_url.$mod.'/configuraciones/'?>" class="btn btn-primary btn-lg">Configuraciones</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.container-fluid -->
-            </div>
-            <!-- /#page-wrapper -->
-
-        </div>
-        <!-- /#wrapper -->
-
-        <!-- jQuery -->
-        <script src="<?php echo $page_url;?>modulos/usuarios/panel/js/jquery.min.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="<?php echo $page_url;?>modulos/usuarios/panel/js/bootstrap.min.js"></script>
-
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="<?php echo $page_url;?>modulos/usuarios/panel/js/metisMenu.min.js"></script>
-
-        <!-- Morris Charts JavaScript -->
-        <script src="<?php echo $page_url;?>modulos/usuarios/panel/js/raphael.min.js"></script>
-        <script src="<?php echo $page_url;?>modulos/usuarios/panel/js/morris.min.js"></script>
-        <!--script src="<?php echo $page_url;?>modulos/usuarios/panel/js/morris-data.js"></script-->
-
-        <!-- Custom Theme JavaScript -->
-        <script src="<?php echo $page_url;?>modulos/usuarios/panel/js/startmin.js"></script>
-
-    </body>
-</html>
+<!--/Contenido-->
+<?php include 'footer.html';?>

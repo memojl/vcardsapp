@@ -880,7 +880,7 @@ echo $bootstrap.'
 <style>	
 	@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
 	body {
-		background: #f8f8f8 url() no-repeat center top;
+		background: #eee url('.$page_url.$path_tema.'images/bg/1.jpg) no-repeat center top;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		background-size: cover;
@@ -1074,15 +1074,13 @@ if($URL==$page_url.'admin/'){$mod='Login';}else{$mod=$mod;}
 
 session_start();
 if(isset($_SESSION["username"]) && !isset($BLOCK) && $_SESSION["activo"]==1){
-	$form_login='<div class="container">
+	$form_login='
+				<div class="container">
 					<header>
-						<div></div>
+						<div><img src="'.$page_url.$path_tema.'images/'.$logo.'" width="180"></div>
 						<h1>Bienvenido '.$_SESSION['username'].'</h1>
 						<h2>Ha iniciado sesi&oacute;n correctamente. '.$BLOCK.'</h2>
 						<h2><a href="'.$page_url.'index.php?mod='.$dboard.'" class="botonfib">Continuar</a> | <a href="'.$page_url.'modulos/usuarios/logout.php?id='.$_SESSION['ID'].'" class="botonfib">Salir</a></h2>
-						<div class="support-note">
-						<span class="note-ie">Lo sentimos, solo navegadores actualizados.</span>
-						</div>
 					</header>
 				</div>';
 	$username=$_SESSION['username'];
@@ -1125,34 +1123,42 @@ if(isset($_SESSION["username"]) && !isset($BLOCK) && $_SESSION["activo"]==1){
 	if($nivel_mod==-1 || $ext=='admin/index'){header("Location: ".$page_url."admin/");}
 }else{
 	$form_login='
-	<div class="container">
-			<header>
-				<h1>Ingrese a su cuenta</h1>
-				<h2>No tiene una cuenta registrese <a href="'.$page_url.'modulos/usuarios/registro.php">aqu&iacute;</a>.</h2>
-				<div class="support-note">
-					<span class="note-ie">Lo sentimos, solo navegadores actualizados.</span>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="login-panel panel panel-default">
+				<div class="panel-heading">
+					<div>'.$aviso.'</div>
+					<h3 class="panel-title">Login</h3>
 				</div>
-			</header>
-		<section class="main">
-			<form name="login_ebook" class="form-4" method="POST" action="'.$URL.'">
-				    <h1>Login</h1>
-				    <p>
-				        <label for="login">Usuario</label>
-				        <input type="text" name="username" placeholder="Usuario" required autocomplete="off">
-				    </p>
-				    <p>
-				        <label for="password">Password</label>
-				        <input type="password" name="password" placeholder="Password" required autocomplete="off"> 
-				    </p>
-				    <p>
-				        <input type="submit" id="sesion" name="sesion" value="Entrar">
-				    </p>       
-			</form>
-			<div style="text-align:center;">
-				<a href="'.$page_url.'">Inicio</a> | <a href="'.$page_url.'modulos/usuarios/forget.php" class="alogin">Olvidaste t&uacute; contrase&ntilde;a?</a>
+				<div class="panel-body">
+					<form name="login" role="form" method="POST" action="'.$page_url.'admin/">
+						<fieldset>
+							<div class="form-group">
+								<input class="form-control" placeholder="Usuario" name="username" type="text" required autocomplete="off" autofocus>
+							</div>
+							<div class="form-group">
+								<input class="form-control" placeholder="Password" name="password" type="password" required autocomplete="off">
+							</div>
+							<div class="checkbox">
+								<label>
+									<input name="remember" type="checkbox" value="Recordarme">Recordarme
+								</label>
+							</div>
+							<!-- Change this to a button or input when using this as a form -->
+							<input type="submit" class="btn btn-lg btn-success btn-block" id="sesion" name="sesion" value="Ingresar">
+							<!--a href="#" class="btn btn-lg btn-success btn-block">Ingrese</a-->
+						</fieldset>
+					</form>
+				</div>
+				<div class="panel-footer text-center">
+					<a href="'.$page_url.'">Inicio</a> | <a href="'.$page_url.'usuarios/forget/">Recuperar Contrase&ntilde;a</a><br>
+					No tiene una cuenta registrese <a href="'.$page_url.'usuarios/registro/">aqu&iacute;.</a>
+				</div>
 			</div>
-		</section>
-	</div>		
+		</div>
+	</div>
+</div>		
 	';
 	$username=(isset($_SESSION['username']))?$_SESSION['username']:'';
 	log_visitas($username);
@@ -1247,13 +1253,10 @@ if($sal){
 			$form_login=recargar($seg=3,$URL_log,'').'
 				<div class="container">
 					<header>
-						<div></div>
+						<div><img src="'.$page_url.$path_tema.'images/'.$logo.'" width="180"></div>
 						<h1>Bienvenido '.$_SESSION['username'].'</h1>
 						<h2>Ha iniciado sesi&oacute;n correctamente.</h2>
-						<h2><a href="'.$URL_log.'" class="botonfib">Continuar</a></h2>
-						<div class="support-note">
-						<span class="note-ie">Lo sentimos, solo navegadores actualizados.</span>
-						</div>
+						<h2><a href="'.$page_url.'index.php?mod='.$dboard.'" class="botonfib">Continuar</a> | <a href="'.$page_url.'modulos/usuarios/logout.php?id='.$_SESSION['ID'].'" class="botonfib">Salir</a></h2>
 					</header>
 				</div>';
 		 }else{
@@ -1281,37 +1284,43 @@ if($sal){
 		validar_aviso($save,'Revise su correo','Error:Hubo un problema al enviar el correo',$aviso);
 		mail($para,$asunto,$message,$header);		
 		
-		$form_login='
-			<div class="container">
-				<header>
-					<h2 style="color:#ff0;">AVISO: Hemos detectado algo inusual en su inicio de sesion.</h2>
-					<h2>Para continuar ingrese su password y el c&oacute;digo de Seguridad<BR>que le enviamos a su cuenta de correo.</h2>
-					<div>'.$aviso.'</div>
-				</header>
-				<section class="main">
-					<form name="login_ebook" class="form-4" method="POST" action="'.$URL.'">
-				    	<h1>C&oacute;digo de Seguridad</h1>
-				    	<p>
-				        	<label for="code">Codigo</label>
-				        	<input type="text" name="code" placeholder="Codigo" required autocomplete="off"> 
-				    	</p>
-				    	<p>
-				    		<label for="username">Usuario</label>
-				    		<input type="text" name="username" placeholder="Usuario" required autocomplete="off" value="'.$U.'">
-				        </p>
-				        <p>
-				        	<label for="password">Password</label>
-				        	<input type="password" name="password" placeholder="Password" required autocomplete="off"> 
-				    	</p>
-				    	<p>
-				        	<input type="submit" id="sesion" name="sesion" value="Entrar">
-				    	</p>       
-					</form>
-					<div style="text-align:center;">
-						<a href="'.$page_url.'">Inicio</a> | <a href="'.$page_url.'modulos/usuarios/forget.php" class="alogin">Olvidaste t&uacute; contrase&ntilde;a?</a>
-					</div>
-				</section>
-			</div>';
+		$form_login='			
+		<div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="login-panel panel panel-default">
+						<div class="panel-heading">
+							<div>'.$aviso.'</div>
+                            <h3 class="panel-title">Login</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form name="login" role="form" method="POST" action="'.$page_url.'admin/">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Usuario" name="username" type="text" required autocomplete="off" autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Password" name="password" type="password" required autocomplete="off">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="remember" type="checkbox" value="Recordarme">Recordarme
+                                        </label>
+                                    </div>
+                                    <!-- Change this to a button or input when using this as a form -->
+                                    <input type="submit" class="btn btn-lg btn-success btn-block" id="sesion" name="sesion" value="Ingresar">
+                                    <!--a href="#" class="btn btn-lg btn-success btn-block">Ingrese</a-->
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="panel-footer text-center">
+                            <a href="'.$page_url.'">Inicio</a> | <a href="'.$page_url.'usuarios/forget/">Recuperar Contrase&ntilde;a</a><br>
+                            No tiene una cuenta registrese <a href="'.$page_url.'usuarios/registro/">aqu&iacute;.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>';
 	}
   }
  }

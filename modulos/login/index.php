@@ -28,7 +28,7 @@
                             </form>
                         </div>
                         <div class="panel-footer text-center">
-                            <a href="<?php echo $page_url;?>">Inicio</a> | <a href="#">Recuperar Contrase&ntilde;a</a><br>
+                            <a href="<?php echo $page_url;?>">Inicio</a> | <a href="<?php echo $page_url.'usuarios/forget/';?>">Recuperar Contrase&ntilde;a</a><br>
                             No tiene una cuenta registrese <a href="<?php echo $page_url;?>usuarios/registro/">aqu&iacute;.</a>
                         </div>
                     </div>
