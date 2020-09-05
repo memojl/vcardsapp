@@ -12,7 +12,10 @@ $sal=(isset($_POST['salir']))?$_POST['salir']:'';
 $log=(isset($_POST['login']))?$_POST['login']:'';
 $ses=(isset($_POST['sesion']))?$_POST['sesion']:'';
 comprobar($form_login,$log_usuarios,$sal,$ses,$log,$U,$P);
+open_page_form2($formh,$formf);
+//echo $formf;//
 open_page_form();
 include '../modulos/'.$log_usuarios;
+//echo $formf;//
 close_page();
 ?>

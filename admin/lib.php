@@ -880,7 +880,7 @@ echo $bootstrap.'
 <style>	
 	@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
 	body {
-		background: #eee url('.$page_url.$path_tema.'images/bg/1.jpg) no-repeat center top;
+		background: #f8f8f8 url() no-repeat center top;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		background-size: cover;
