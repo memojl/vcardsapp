@@ -1281,7 +1281,7 @@ if($sal){
     	$message = 'Codigo de Seguridad: '.$codigo;
 		 
 		$save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix."contacto (ip,nombre,email,para,tel,titulo,asunto,msj,cat_list,seccion,tabla,adjuntos,visto,status,ID_login,ID_user,visible) VALUES ('{$ip}','{$U}','{$para}','{$contactMail}','','','{$asunto}','{$message}','inbox','contacto','','','0','1','1','1','1');") or print mysqli_error($mysqli);
-		validar_aviso($save,'Revise su correo','Error:Hubo un problema al enviar el correo',$aviso);
+		validar_aviso($save,'Para continuar ingrese su password y el c&oacute;digo de Seguridad que le enviamos a su cuenta de correo.','Error:Hubo un problema al enviar el correo',$aviso);
 		mail($para,$asunto,$message,$header);		
 		
 		$form_login='			
@@ -1289,7 +1289,6 @@ if($sal){
             <div class="row">
 				<div class="col-md-4 col-md-offset-4">
 					<div class="alert alert-danger">AVISO: Hemos detectado algo inusual en su inicio de sesion.</div>
-					<div class="alert alert-info">Para continuar ingrese su password y el c&oacute;digo de Seguridad<BR>que le enviamos a su cuenta de correo.</div>
                     <div class="login-panel panel panel-default">
 						<div class="panel-heading">
 							<div>'.$aviso.'</div>
