@@ -1288,8 +1288,8 @@ if($sal){
 		<div class="container">
             <div class="row">
 				<div class="col-md-4 col-md-offset-4">
-					<h2 style="color:#ff0;">AVISO: Hemos detectado algo inusual en su inicio de sesion.</h2>
-					<h2>Para continuar ingrese su password y el c&oacute;digo de Seguridad<BR>que le enviamos a su cuenta de correo.</h2>
+					<div class="alert alert-danger">AVISO: Hemos detectado algo inusual en su inicio de sesion.</div>
+					<div class="alert alert-info">Para continuar ingrese su password y el c&oacute;digo de Seguridad<BR>que le enviamos a su cuenta de correo.</div>
                     <div class="login-panel panel panel-default">
 						<div class="panel-heading">
 							<div>'.$aviso.'</div>
