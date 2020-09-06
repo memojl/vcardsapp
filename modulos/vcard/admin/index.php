@@ -22,6 +22,19 @@ if(isset($_SESSION["username"])){
    -webkit-border-radius: 70px;
    border: 0px solid #000000;    
 }
+.circle-image2{
+   background-repeat: no-repeat;
+   background-position:center;
+   background-size: cover;
+   width:40px; 
+   height:40px; 
+   margin:0px auto;
+   border-radius: 20px;
+   -moz-border-radius: 20px;
+   -webkit-border-radius: 20px;
+   border: 0px solid #000000;
+   float:left;    
+}
 #sel_empresa{display: flex;}
 @media only screen and (min-width: 992px){
 .modal-lg{width: 85% !important;}

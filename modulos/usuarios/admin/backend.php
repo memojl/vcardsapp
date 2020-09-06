@@ -171,7 +171,7 @@ if($save){
   $activo=($visible==1)?'<span class="label label-success">Activo</span>':'<span class="label label-danger">Desactivado</span>';
   				if($action=='listado' && !empty($action)){
   
-  $imagen=($cover!='')?'<img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" alt="Product Image" class="img-rounded" width="40">':'';
+  $imagen=($cover!='')?'<div class="circle-image2" style="background: url('.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.');background-repeat: no-repeat; background-position:center; background-size: cover;"></div>':'';
   $listado.='
   	<tr id="'.$id.'">
 	  	<td class="text-center">
@@ -196,18 +196,21 @@ if($save){
   $listado.='
   	<div class="col-md-3 col-xs-12">
   		<div class="box box-primary">
-  			<div class="box-header with-border" id="'.$id.'">
-         		<h3 class="box-title">Perfil: <b>'.$profile.'</b></h3>
-  				<span class="controles">'.$seleccion.'
-  					<a href="'.$page_url.'index.php?mod='.$mod.'&ext=admin/index'.$cond_opc.'&form=1&action=edit&id='.$id.'" title="Editar"><i class="fa fa-edit"></i></a> | <span class="btn-delete" title="Borrar" style="cursor:pointer;"><i class="fa fa-trash"></i></span>
-  				</span>
+  			<div class="box-header with-border">
+         		<h6 class="box-title">Perfil: <b>'.$profile.'</b></h6>  				
   			</div>
   			<div class="box-body">
-  				<div class="ima-size">
-  					<img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" class="img-responsive ima-size img-rounded">
+				<div class="ima-size">
+					<div class="circle-image" style="background: url('.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.');background-repeat: no-repeat; background-position:center; background-size: cover;"></div>	
+  					<!--img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" class="img-responsive ima-size img-rounded"-->
   				</div>
-  				<div id="title"><strong>'.$nombre.'</strong></div>	
-  			</div><!-- /.box-body -->
+  				<div id="title" class="text-center"><strong>'.$nombre.'</strong></div>	
+			</div><!-- /.box-body -->
+			<div class="box-footer text-right" id="'.$id.'">
+				<span class="controles">'.$seleccion.'
+  					<a href="'.$page_url.'index.php?mod='.$mod.'&ext=admin/index'.$cond_opc.'&form=1&action=edit&id='.$id.'" title="Editar"><i class="fa fa-edit"></i></a> | <span class="btn-delete" title="Borrar" style="cursor:pointer;"><i class="fa fa-trash"></i></span>
+  				</span>
+			</div>
   		</div>
   	</div>';
   	}

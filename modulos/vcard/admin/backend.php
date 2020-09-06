@@ -171,7 +171,7 @@ if($save){
   $activo=($visible==1)?'<span class="label label-success">Activo</span>':'<span class="label label-danger">Desactivado</span>';
   				if($action=='listado' && !empty($action)){
   
-  $imagen=($cover!='')?'<img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" alt="Product Image" class="img-rounded" width="40">':'';
+  $imagen=($cover!='')?'<div class="circle-image2" style="background: url('.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.');background-repeat: no-repeat; background-position:center; background-size: cover;"></div>':'';
   $listado.='
   	<tr id="'.$id.'">
 	  	<td class="text-center">
