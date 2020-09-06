@@ -10,6 +10,18 @@ if(isset($_SESSION["username"])){
       }
 ?>
 <style>
+.circle-image{
+   background-repeat: no-repeat;
+   background-position:center;
+   background-size: cover;
+   width:140px; 
+   height:140px; 
+   margin:0px auto;
+   border-radius: 70px;
+   -moz-border-radius: 70px;
+   -webkit-border-radius: 70px;
+   border: 0px solid #000000;    
+}
 #sel_empresa{display: flex;}
 @media only screen and (min-width: 992px){
 .modal-lg{width: 85% !important;}

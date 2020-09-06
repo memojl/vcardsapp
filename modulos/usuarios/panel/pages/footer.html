@@ -46,7 +46,10 @@
         <script src="<?php echo $page_url;?>modulos/usuarios/panel/js/startmin.js"></script>
         <?php 
         if($ext=='tarjetas'){
-            echo '<script src="'.$page_url.'modulos/usuarios/js/ajax_vcard.js"></script>';
+            echo '
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.14.4/dist/sweetalert2.all.min.js"></script>
+            <script src="'.$page_url.'modulos/usuarios/js/ajax_vcard.js"></script>
+            ';
         }
         ?>
 
