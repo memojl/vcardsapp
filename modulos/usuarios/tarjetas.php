@@ -9,7 +9,7 @@ if(isset($_SESSION["username"])){
 			$user_type='Miembro';
 			$user_access='miembros/index';
 		}
-        
+        include 'admin/functions.php';
 		include_once ('panel/pages/'.$ext.'.html');
 		
 	}else{echo '<div id="cont-user">No tiene permiso para ver esta secci&oacute;n.</div>';}

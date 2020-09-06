@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 06-09-2020 a las 22:10:13
+-- Tiempo de generación: 07-09-2020 a las 01:27:28
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 7.3.12
 
@@ -1208,6 +1208,26 @@ INSERT INTO `vcard_slider` (`ID`, `ima`, `tit1`, `tit2`, `btn_nom`, `url`, `tema
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `vcard_tareas`
+--
+
+CREATE TABLE `vcard_tareas` (
+  `ID` int(11) UNSIGNED NOT NULL,
+  `nom` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `descripcion` varchar(250) CHARACTER SET latin1 NOT NULL,
+  `visible` tinyint(1) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `vcard_tareas`
+--
+
+INSERT INTO `vcard_tareas` (`ID`, `nom`, `descripcion`, `visible`) VALUES
+(1, 'Vcard', 'Nueva tarea', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `vcard_temas`
 --
 
@@ -1539,6 +1559,12 @@ ALTER TABLE `vcard_slider`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indices de la tabla `vcard_tareas`
+--
+ALTER TABLE `vcard_tareas`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indices de la tabla `vcard_temas`
 --
 ALTER TABLE `vcard_temas`
@@ -1751,6 +1777,12 @@ ALTER TABLE `vcard_signup`
 --
 ALTER TABLE `vcard_slider`
   MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `vcard_tareas`
+--
+ALTER TABLE `vcard_tareas`
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_temas`

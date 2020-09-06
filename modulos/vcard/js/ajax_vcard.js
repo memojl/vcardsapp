@@ -23,7 +23,6 @@ $(document).ready(function(){
 	load(1);	
  	//listar();
 
-
 	function listado(page){
 		var parametros = {"mode":"ajax","page":page};
 		$("#loader").fadeIn('slow');
@@ -100,7 +99,7 @@ user: $("#user").val(),
 visible: $("#visible").val(),
 
 		};
-		const url = edit === false ? 'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=add' : 'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=edit';		
+		const url = edit === false ? 'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&ext=tarjetas&action=add' : 'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&ext=tarjetas&action=edit';		
 		console.log(postData, url);
 		$.post(url,postData,function(response){
 			console.log("Se ha actualizado el registro.");

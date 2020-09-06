@@ -2,7 +2,7 @@
 //FUNCIONES ESPECIALES MOD: VCARD
 $mod='vcard';
 
-function ajax_crud_($tabla,$template,$js){
+function ajax_crud_usuarios($tabla,$template,$js){
 global $mysqli,$DBprefix,$URL,$page_url,$path_tema,$mod,$ext,$opc,$form,$action,$ctrl;
 $data=query_data($tabla,$url_api);
 $i=0;$k=0;
