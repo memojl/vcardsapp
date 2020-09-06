@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-08-2020 a las 01:01:46
+-- Tiempo de generación: 06-09-2020 a las 22:10:13
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 7.3.12
 
@@ -46,7 +46,13 @@ INSERT INTO `vcard_access` (`ID`, `user`, `ip`, `navegador`, `os`, `code`, `fech
 (2, 'usuario', '127.0.0.1', 'CHROME', 'WIN', '234567', '2019-06-06 03:35:27'),
 (4, 'demo', '127.0.0.1', 'CHROME', 'WIN', '234567', '2019-06-06 03:35:27'),
 (5, 'ventas', '127.0.0.1', 'CHROME', 'WIN', '234567', '2019-06-06 03:35:27'),
-(6, 'admin', '192.168.0.3', 'CHROME', 'ANDROID', '944950', '2020-06-19 19:43:41');
+(6, 'admin', '192.168.0.3', 'CHROME', 'ANDROID', '944950', '2020-06-19 19:43:41'),
+(7, 'user', '127.0.0.1', 'CHROME', 'WIN', 'Q5xLeN', '2020-08-31 18:58:45'),
+(8, 'usuario', '127.0.0.1', 'CHROME', 'WIN', '8FMTDd', '2020-08-31 20:34:34'),
+(9, 'usuario', '127.0.0.1', 'CHROME', 'WIN', 'NgDgqi', '2020-08-31 20:43:50'),
+(10, 'usuario', '127.0.0.1', 'CHROME', 'WIN', 'mY69u8', '2020-08-31 20:51:05'),
+(11, 'usuario', '127.0.0.1', 'CHROME', 'WIN', 'lV7kW3', '2020-08-31 20:54:12'),
+(12, 'usuario', '127.0.0.1', 'CHROME', 'WIN', 'dam9EP', '2020-08-31 20:59:01');
 
 -- --------------------------------------------------------
 
@@ -129,29 +135,6 @@ INSERT INTO `vcard_blog_coment` (`ID`, `ip`, `nombre`, `email`, `comentario`, `i
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `vcard_clientes`
---
-
-CREATE TABLE `vcard_clientes` (
-  `ID_cli` int(11) UNSIGNED NOT NULL,
-  `nombre` varchar(200) NOT NULL,
-  `empresa` varchar(200) NOT NULL,
-  `domicilio` varchar(300) NOT NULL,
-  `tel_ofi` varchar(12) NOT NULL,
-  `email` varchar(150) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `vcard_clientes`
---
-
-INSERT INTO `vcard_clientes` (`ID_cli`, `nombre`, `empresa`, `domicilio`, `tel_ofi`, `email`) VALUES
-(1, 'KAREN NAVARRO', 'KEY AGENCIA DIGITAL', 'CELAYA, GTO', '442 788 5025', 'karen.navarro@keyagenciadigital.com'),
-(2, 'RAMSES', 'FIBRECEN', 'Guanajuato No. 5-B, Col. San Francisquito', '442 305 7704', 'fibrecen@fibrecen.com.mx');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `vcard_comp`
 --
 
@@ -215,7 +198,7 @@ CREATE TABLE `vcard_config` (
 --
 
 INSERT INTO `vcard_config` (`ID`, `logo`, `page_name`, `title`, `dominio`, `path_root`, `page_url`, `keyword`, `description`, `metas`, `g_analytics`, `tel`, `phone`, `wapp`, `webMail`, `contactMail`, `mode`, `chartset`, `dboard`, `dboard2`, `direc`, `CoR`, `CoE`, `BCC`, `CoP`, `fb`, `tw`, `gp`, `lk`, `yt`, `ins`, `wv`, `licencia`, `version`) VALUES
-(1, 'logo.min.png', 'PHP ONIX', 'PHP Onix - El mejor CMS para crear y administrar tu sitio web. Gestor de contenido web.', 'http://localhost/', '/MisSitios/vcardsapp', 'http://localhost/MisSitios/vcardsapp/', 'cms,contenido,web,landingpage,p&aacute;gina web', 'PHP Onix es un CMS gestor de contenidos para tu web.', '<!--Responsive Meta-->\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">\r\n<!-- META-TAGS generadas por http://metatags.miarroba.es -->\r\n<META NAME=\"DC.Language\" SCHEME=\"RFC1766\" CONTENT=\"Spanish\">\r\n<META NAME=\"AUTHOR\" CONTENT=\"Guillermo Jimenez\">\r\n<META NAME=\"REPLY-TO\" CONTENT=\"multiportal@outlook.com\">\r\n<LINK REV=\"made\" href=\"mailto:multiportal@outlook.com\">\r\n', '<!--Google Analytics-->', '(01)4426002842', '', '4426002842', 'multiportal@outlook.com', 'multiportal@outlook.com', 'page', 'iso-8859-1', 'dashboard', 'AdminLTE', 'Centro, Santiago de Querétaro, México', 'multiportal@outlook.com', 'phponix@webcindario.com', '', 'memojl08@gmail.com', 'https://facebook.com/', 'https://twitter.com/', '', '', '', '', '', 'cms-px31q2hponix31q2x.admx31q2in458x31q2x.202x31q24.05.x31q212.01x31q2.2.6.x31q26x31q2', '01.2.8.0');
+(1, 'logo_vcard.min.png', 'VCARDS-APP', 'VCARDS -  Tarjetas de Contacto Digital', 'http://localhost/', '/MisSitios/vcardsapp', 'http://localhost/MisSitios/vcardsapp/', 'cms,contenido,web,landingpage,p&aacute;gina web', 'PHP Onix es un CMS gestor de contenidos para tu web.', '<!--Responsive Meta-->\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">\r\n<!-- META-TAGS generadas por http://metatags.miarroba.es -->\r\n<META NAME=\"DC.Language\" SCHEME=\"RFC1766\" CONTENT=\"Spanish\">\r\n<META NAME=\"AUTHOR\" CONTENT=\"Guillermo Jimenez\">\r\n<META NAME=\"REPLY-TO\" CONTENT=\"multiportal@outlook.com\">\r\n<LINK REV=\"made\" href=\"mailto:multiportal@outlook.com\">\r\n', '<!--Google Analytics-->', '(01)4426002842', '', '4426002842', 'multiportal@outlook.com', 'multiportal@outlook.com', 'page', 'iso-8859-1', 'usuarios', 'AdminLTE', 'Centro, Santiago de Querétaro, México', 'multiportal@outlook.com', 'phponix@webcindario.com', '', 'memojl08@gmail.com', 'https://facebook.com/', 'https://twitter.com/', '', '', '', '', '', 'cms-px31q2hponix31q2x.admx31q2in458x31q2x.202x31q24.05.x31q212.01x31q2.2.6.x31q26x31q2', '01.2.8.0');
 
 -- --------------------------------------------------------
 
@@ -252,7 +235,13 @@ CREATE TABLE `vcard_contacto` (
 
 INSERT INTO `vcard_contacto` (`ID`, `ip`, `nombre`, `email`, `para`, `de`, `tel`, `titulo`, `asunto`, `msj`, `fecha`, `cat_list`, `seccion`, `tabla`, `adjuntos`, `visto`, `status`, `ID_login`, `ID_user`, `visible`) VALUES
 (1, '127.0.0.1', 'Miguel Hernadez ', 'mherco@hotmail.com', '', '', '4421234567', '', 'Mensaje de Bienvenida- CENTRO DE CONTACTO', 'Hola estimado usuario, bienvenido a su plataforma \"PHPONIX CMS\" aqui se guardara un copia de respaldo de todos sus correos de contacto y registros de su página web.\r\n\r\nCualquier duda o comentario puede ponerse en contacto a través del correo a multiportal@outlook.com o en nuestra página https://phponix.webcindario.com \r\n\r\nATTE.\r\nEl equipo de PHPONIX & MULTIPORTAL ', '2019-11-24 03:19:14', 'inbox', 'contacto', '', '', 1, 0, 0, 0, 1),
-(2, '192.168.0.3', 'admin', 'multiportal@outlook.com', 'multiportal@outlook.com', '', '', '', 'PHP ONIX - Sistema de Verificacion', 'Codigo de Seguridad: 944950', '2020-06-19 17:43:14', 'inbox', 'contacto', '', '', 0, 1, 1, 1, 1);
+(2, '192.168.0.3', 'admin', 'multiportal@outlook.com', 'multiportal@outlook.com', '', '', '', 'PHP ONIX - Sistema de Verificacion', 'Codigo de Seguridad: 944950', '2020-06-19 17:43:14', 'inbox', 'contacto', '', '', 1, 1, 1, 1, 1),
+(3, '127.0.0.1', 'Usuario Vcard', 'mherco@hotmail.com', '', '', '', '', 'Nuevo Usuario Registrado - Web VCARDS-APP', '<html><body style=\"font-family:Verdana, Geneva, sans-serif; font-size: 13px;\"><table style=\"font-family:Verdana, Geneva, sans-serif; font-size:13px;\"><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"><img src=\"http://localhost/MisSitios/vcardsapp/temas/default/images/logo.min.png\"></td></tr><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"><p style=\"text-align:center\">Nuevo Usuario Registrado - Mensaje enviado a tr&aacute;ves de la p&aacute;gina web de VCARDS-APP.</p></td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Usuario:</td><td style=\"background-color: #eee;\">user</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Password:</td><td style=\"background-color: #fff;\">user2020</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Nombre:</td><td style=\"background-color: #eee;\">Usuario Vcard</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Correo:</td><td style=\"background-color: #fff;\">mherco@hotmail.com</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Nivel:</td><td style=\"background-color: #eee;\">5</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">C&oacute;digo de Activaci&oacute;n:</td><td style=\"background-color: #fff;\">user2020xuser2020</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Activo:</td><td style=\"background-color: #eee;\">0</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Alta:</td><td style=\"background-color: #fff;\">2020-08-31 18:58:45</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Codigo de Seguridad:</td><td style=\"background-color: #eee;\">Q5xLeNWmTLpMo3CHJ1SCcO8KZ8tZtCLC6qinC4jrrhTjNefXqKR</td></tr><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"></td></tr></table></body></html>', '2020-08-31 16:58:45', 'inbox', 'contacto', '', '', 1, 0, 0, 0, 1),
+(4, '127.0.0.1', 'Memo Jimenez', 'memo@gmail.com', '', '', '', '', 'Nuevo Usuario Registrado - Web VCARDS-APP', '<html><body style=\"font-family:Verdana, Geneva, sans-serif; font-size: 13px;\"><table style=\"font-family:Verdana, Geneva, sans-serif; font-size:13px;\"><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"><img src=\"http://localhost/MisSitios/vcardsapp/temas/default/images/logo.min.png\"></td></tr><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"><p style=\"text-align:center\">Nuevo Usuario Registrado - Mensaje enviado a tr&aacute;ves de la p&aacute;gina web de VCARDS-APP.</p></td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Usuario:</td><td style=\"background-color: #eee;\">usuario</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Password:</td><td style=\"background-color: #fff;\">usuario2020</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Nombre:</td><td style=\"background-color: #eee;\">Memo Jimenez</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Correo:</td><td style=\"background-color: #fff;\">memo@gmail.com</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Nivel:</td><td style=\"background-color: #eee;\">5</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\"><strong>C&oacute;digo de Activaci&oacute;n:</strong></td><td style=\"background-color: #fff;\">usuario2020xusuario2020</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Activo:</td><td style=\"background-color: #eee;\">0</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Alta:</td><td style=\"background-color: #fff;\">2020-08-31 20:34:34</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Codigo de Seguridad:</td><td style=\"background-color: #eee;\">8FMTDd</td></tr><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"></td></tr></table></body></html>', '2020-08-31 18:34:34', 'inbox', 'contacto', '', '', 1, 0, 0, 0, 1),
+(5, '127.0.0.1', 'Memo Jimenez', 'memo.jimenez@azell.co', '', '', '', '', 'Nuevo Usuario Registrado - Web VCARDS-APP', '<html><body style=\"font-family:Verdana, Geneva, sans-serif; font-size: 13px;\"><table style=\"font-family:Verdana, Geneva, sans-serif; font-size:13px;\"><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"><img src=\"http://localhost/MisSitios/vcardsapp/temas/default/images/logo.min.png\"></td></tr><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"><p style=\"text-align:center\">Nuevo Usuario Registrado - Mensaje enviado a tr&aacute;ves de la p&aacute;gina web de VCARDS-APP.</p></td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Usuario:</td><td style=\"background-color: #eee;\">usuario</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Password:</td><td style=\"background-color: #fff;\">usuario2020</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Nombre:</td><td style=\"background-color: #eee;\">Memo Jimenez</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Correo:</td><td style=\"background-color: #fff;\">memo.jimenez@azell.co</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Nivel:</td><td style=\"background-color: #eee;\">5</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\"><strong>C&oacute;digo de Activaci&oacute;n:</strong></td><td style=\"background-color: #fff;\">usuario2020xusuario2020</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Activo:</td><td style=\"background-color: #eee;\">0</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Alta:</td><td style=\"background-color: #fff;\">2020-08-31 20:43:50</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Codigo de Seguridad:</td><td style=\"background-color: #eee;\">NgDgqi</td></tr><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"></td></tr></table></body></html>', '2020-08-31 18:43:50', 'inbox', 'contacto', '', '', 1, 0, 0, 0, 1),
+(6, '127.0.0.1', 'Memo Jimenez', 'memo.jimenez@azell.co', '', '', '', '', 'Nuevo Usuario Registrado - Web VCARDS-APP', '<html><body style=\"font-family:Verdana, Geneva, sans-serif; font-size: 13px;\"><table style=\"font-family:Verdana, Geneva, sans-serif; font-size:13px;\"><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"><img src=\"http://localhost/MisSitios/vcardsapp/temas/default/images/logo.min.png\"></td></tr><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"><p style=\"text-align:center\">Nuevo Usuario Registrado - Mensaje enviado a tr&aacute;ves de la p&aacute;gina web de VCARDS-APP.</p></td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Usuario:</td><td style=\"background-color: #eee;\">usuario</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Password:</td><td style=\"background-color: #fff;\">usuario2020</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Nombre:</td><td style=\"background-color: #eee;\">Memo Jimenez</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Correo:</td><td style=\"background-color: #fff;\">memo.jimenez@azell.co</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Nivel:</td><td style=\"background-color: #eee;\">5</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\"><strong>C&oacute;digo de Activaci&oacute;n:</strong></td><td style=\"background-color: #fff;\">usuario2020xusuario2020</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Activo:</td><td style=\"background-color: #eee;\">0</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Alta:</td><td style=\"background-color: #fff;\">2020-08-31 20:51:05</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Codigo de Seguridad:</td><td style=\"background-color: #eee;\">mY69u8</td></tr><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"></td></tr></table></body></html>', '2020-08-31 18:51:05', 'inbox', 'contacto', '', '', 1, 0, 0, 0, 1),
+(7, '127.0.0.1', 'Memo Jimenez', 'memo.jimenez@azell.co', '', '', '', '', 'Nuevo Usuario Registrado - Web VCARDS-APP', '<html><body style=\"font-family:Verdana, Geneva, sans-serif; font-size: 13px;\"><table style=\"font-family:Verdana, Geneva, sans-serif; font-size:13px;\"><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"><img src=\"http://localhost/MisSitios/vcardsapp/temas/default/images/logo.min.png\"></td></tr><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"><p style=\"text-align:center\">Nuevo Usuario Registrado - Mensaje enviado a tr&aacute;ves de la p&aacute;gina web de VCARDS-APP.</p></td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Usuario:</td><td style=\"background-color: #eee;\">usuario</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Password:</td><td style=\"background-color: #fff;\">usuario2020</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Nombre:</td><td style=\"background-color: #eee;\">Memo Jimenez</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Correo:</td><td style=\"background-color: #fff;\">memo.jimenez@azell.co</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Nivel:</td><td style=\"background-color: #eee;\">5</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\"><strong>C&oacute;digo de Activaci&oacute;n:</strong></td><td style=\"background-color: #fff;\">usuario2020xusuario2020</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Activo:</td><td style=\"background-color: #eee;\">0</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Alta:</td><td style=\"background-color: #fff;\">2020-08-31 20:54:12</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Codigo de Seguridad:</td><td style=\"background-color: #eee;\">lV7kW3</td></tr><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"></td></tr></table></body></html>', '2020-08-31 18:54:12', 'inbox', 'contacto', '', '', 1, 0, 0, 0, 1),
+(8, '127.0.0.1', 'Memo Jimenez', 'memo.jimenez@azell.co', '', '', '', '', 'Nuevo Usuario Registrado - Web VCARDS-APP', '<html><body style=\"font-family:Verdana, Geneva, sans-serif; font-size: 13px;\"><table style=\"font-family:Verdana, Geneva, sans-serif; font-size:13px;\"><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"><img src=\"http://localhost/MisSitios/vcardsapp/temas/default/images/logo.min.png\"></td></tr><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"><p style=\"text-align:center\">Nuevo Usuario Registrado - Mensaje enviado a tr&aacute;ves de la p&aacute;gina web de VCARDS-APP.</p></td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Usuario:</td><td style=\"background-color: #eee;\">usuario</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Password:</td><td style=\"background-color: #fff;\">usuario2020</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Nombre:</td><td style=\"background-color: #eee;\">Memo Jimenez</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Correo:</td><td style=\"background-color: #fff;\">memo.jimenez@azell.co</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Nivel:</td><td style=\"background-color: #eee;\">5</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\"><strong>C&oacute;digo de Activaci&oacute;n:</strong></td><td style=\"background-color: #fff;\">usuario2020xusuario2020</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Activo:</td><td style=\"background-color: #eee;\">0</td></tr><tr><td align=\"right\" style=\"background-color: #fff;\">Alta:</td><td style=\"background-color: #fff;\">2020-08-31 20:59:01</td></tr><tr><td align=\"right\" style=\"background-color: #eee;\">Codigo de Seguridad:</td><td style=\"background-color: #eee;\">dam9EP</td></tr><tr><td align=\"center\" style=\"background-color: #fff;\" colspan=\"2\"></td></tr></table></body></html>', '2020-08-31 18:59:01', 'inbox', 'contacto', '', '', 1, 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -585,46 +574,6 @@ CREATE TABLE `vcard_css2` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `vcard_cursos`
---
-
-CREATE TABLE `vcard_cursos` (
-  `ID` int(9) UNSIGNED NOT NULL,
-  `cover` varchar(100) NOT NULL,
-  `titulo` varchar(100) NOT NULL,
-  `descripcion` varchar(200) NOT NULL,
-  `contenido` text NOT NULL,
-  `fechas` varchar(100) NOT NULL,
-  `lugar` varchar(200) NOT NULL,
-  `horario` varchar(100) NOT NULL,
-  `video` varchar(300) NOT NULL,
-  `tag` varchar(200) NOT NULL,
-  `autor` varchar(100) NOT NULL,
-  `fmod` varchar(21) NOT NULL,
-  `fecha` varchar(21) NOT NULL,
-  `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_cursos_coment`
---
-
-CREATE TABLE `vcard_cursos_coment` (
-  `ID` int(6) UNSIGNED NOT NULL,
-  `ip` varchar(18) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `comentario` varchar(500) NOT NULL,
-  `id_b` int(3) NOT NULL,
-  `fecha` varchar(20) NOT NULL,
-  `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `vcard_depa`
 --
 
@@ -649,75 +598,6 @@ INSERT INTO `vcard_depa` (`ID`, `nombre`, `list_depa`, `puesto`, `nivel`, `icono
 (4, 'Fotografo', 'Fotografos', 'Fotografo', 2, '', 1),
 (5, 'Agencia', 'Agencias', 'Agencia', 2, '', 1),
 (6, 'Escuela', 'Escuelas', 'Escuela', 2, '', 0);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_directorio`
---
-
-CREATE TABLE `vcard_directorio` (
-  `ID` int(6) UNSIGNED NOT NULL,
-  `cover` varchar(100) NOT NULL,
-  `nom` varchar(100) NOT NULL,
-  `url_link` varchar(300) NOT NULL,
-  `usuario` varchar(100) NOT NULL,
-  `pass` varchar(100) NOT NULL,
-  `des` varchar(250) NOT NULL,
-  `filtro` varchar(100) NOT NULL,
-  `user` varchar(100) NOT NULL,
-  `fecha` varchar(22) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_empresa`
---
-
-CREATE TABLE `vcard_empresa` (
-  `ID` int(11) UNSIGNED NOT NULL,
-  `nom` varchar(100) NOT NULL,
-  `ima` varchar(100) NOT NULL,
-  `contenido` text NOT NULL,
-  `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `vcard_empresa`
---
-
-INSERT INTO `vcard_empresa` (`ID`, `nom`, `ima`, `contenido`, `visible`) VALUES
-(1, 'VISIÓN', 'vision.jpg', '<p>Como visi&oacute;n buscamos a mediano plazo convertimos en un semillero de grandes ingenieros, expandimos a algunas otras del pa&iacute;s y EU, as&iacute; como iniciar con el desarrollo de productos espec&iacute;ficos y convertinos en OEM en ciertos procesos en los cuales el personal clave de la compa&ntilde;ia cuenta con bastante experiencia. De la misma manera estamos trabajando en consolidar nuestra relaci&oacute;n con algunas marcas adicionales las cuales complentar&iacute;a el servicio que esta el momento hemos podido ofrecer.</p>', 1),
-(2, 'MISIÓN', 'vision.jpg', '<p>2(MISI&Oacute;N)Como visi&oacute;n buscamos a mediano plazo convertimos en un semillero de grandes ingenieros, expandimos a algunas otras del pa&iacute;s y EU, as&iacute; como iniciar con el desarrollo de productos espec&iacute;ficos y convertinos en OEM en ciertos procesos en los cuales el personal clave de la compa&ntilde;ia cuenta con bastante experiencia. De la misma manera estamos trabajando en consolidar nuestra relaci&oacute;n con algunas marcas adicionales las cuales complentar&iacute;a el servicio que esta el momento hemos podido ofrecer.</p>', 1),
-(3, 'VALORES', 'vision.jpg', '<p>3(VALORES)Como visi&oacute;n buscamos a mediano plazo convertimos en un semillero de grandes ingenieros, expandimos a algunas otras del pa&iacute;s y EU, as&iacute; como iniciar con el desarrollo de productos espec&iacute;ficos y convertinos en OEM en ciertos procesos en los cuales el personal clave de la compa&ntilde;ia cuenta con bastante experiencia. De la misma manera estamos trabajando en consolidar nuestra relaci&oacute;n con algunas marcas adicionales las cuales complentar&iacute;a el servicio que esta el momento hemos podido ofrecer.</p>', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_galeria`
---
-
-CREATE TABLE `vcard_galeria` (
-  `ID` int(6) UNSIGNED NOT NULL,
-  `clave` varchar(100) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `cover` varchar(100) NOT NULL,
-  `descripcion` text NOT NULL,
-  `precio` decimal(6,2) NOT NULL,
-  `cate` varchar(50) NOT NULL,
-  `resena` varchar(500) NOT NULL,
-  `url_page` varchar(150) NOT NULL,
-  `imagen1` varchar(100) NOT NULL,
-  `imagen2` varchar(100) NOT NULL,
-  `imagen3` varchar(100) NOT NULL,
-  `imagen4` varchar(100) NOT NULL,
-  `imagen5` varchar(100) NOT NULL,
-  `visible` tinyint(1) NOT NULL,
-  `alta` varchar(21) NOT NULL,
-  `fmod` varchar(21) NOT NULL,
-  `user` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -801,7 +681,8 @@ INSERT INTO `vcard_iconos` (`ID`, `nom`, `fa_icon`, `icon`, `tipo`) VALUES
 (28, 'Check Square', 'fa-check-square', '<i class=\"fa fa-check-square\"></i>', 'awesome'),
 (29, 'Play', 'fa-caret-square-o-right', '<i class=\"fa fa-caret-square-o-right\"></i>', 'awesome'),
 (30, 'Curso', 'fa-university', '<i class=\"fa fa-university\"></i>', 'awesome'),
-(31, 'Paint-brush', 'fa-paint-brush', '<i class=\"fa fa-paint-brush\"></i>', 'awesome');
+(31, 'Paint-brush', 'fa-paint-brush', '<i class=\"fa fa-paint-brush\"></i>', 'awesome'),
+(32, 'Vcard', 'fa-vcard', '<i class=\"fa fa-vcard\"></i>', 'awesome');
 
 -- --------------------------------------------------------
 
@@ -987,11 +868,11 @@ CREATE TABLE `vcard_menu_web` (
 --
 
 INSERT INTO `vcard_menu_web` (`ID`, `menu`, `url`, `modulo`, `ext`, `ord`, `subm`, `ima_top`, `tit_sec`, `des_sec`, `visible`) VALUES
-(1, 'Inicio', 'index.php', 'Home', '', '1', '', 'gris.png', '', '', 0),
+(1, 'Inicio', 'index.php', 'Home', '', '1', '', 'gris.png', '', '', 1),
 (2, 'Nosotros', '#', 'nosotros', '', '2', '', 'gris.png', '', '', 0),
-(3, 'Portafolio', 'portafolio/', 'portafolio', '', '3', '', '', '', '', 0),
+(3, 'Portafolio', 'portafolio/', 'portafolio', '', '3', '', 'gris.png', '', '', 0),
 (4, 'Blog', 'blog/', 'blog', '', '4', '', 'gris.png', '', '', 0),
-(5, 'Contacto', 'contacto/', 'contacto', '', '5', '', '', '', '', 1);
+(5, 'Contacto', '#', 'contacto', '', '5', '', 'gris.png', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -1060,57 +941,9 @@ INSERT INTO `vcard_modulos` (`ID`, `nombre`, `modulo`, `description`, `dashboard
 (17, 'Chat', 'chat', 'Administración del modulo chat.', 0, 1, 0, 0, 1, 'false', 'fa-commenting', 'index.php?mod=chat'),
 (18, 'Directorio', 'directorio', 'Administrador del modulo de Directorio.', 0, 1, 0, 0, 0, 'false', 'fa-globe', 'index.php?mod=directorio'),
 (19, 'descargas', 'descargas', 'Administrador del modulo descargas', 0, 1, 0, 0, 0, 'false', 'fa-download', 'index.php?mod=descargas'),
-(20, 'Vcard', 'vcard', 'Administraci?n de tarjetas virtuales', 0, 1, 0, 1, 1, 'false', 'fa-folder-open', 'index.php?mod=vcard');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_noticias`
---
-
-CREATE TABLE `vcard_noticias` (
-  `ID` int(9) UNSIGNED NOT NULL,
-  `cover` varchar(100) NOT NULL,
-  `titulo` varchar(100) NOT NULL,
-  `descripcion` varchar(200) NOT NULL,
-  `contenido` text NOT NULL,
-  `tag` varchar(200) NOT NULL,
-  `autor` varchar(100) NOT NULL,
-  `fmod` varchar(21) NOT NULL,
-  `fecha` varchar(21) NOT NULL,
-  `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `vcard_noticias`
---
-
-INSERT INTO `vcard_noticias` (`ID`, `cover`, `titulo`, `descripcion`, `contenido`, `tag`, `autor`, `fmod`, `fecha`, `visible`) VALUES
-(1, 'automatizacion.jpg', 'Tendencias en Automatización para el 2019', 'Comenzamos un nuevo año que continuará dándonos importantes avances en la digitalización de la industria. 2019 apunta a que sera un año importante en muchos aspectos pero quizás, sea el avance hacia l', '<div class=\"itemFullText\">\r\n<p>Comenzamos un nuevo a&ntilde;o que continuar&aacute; d&aacute;ndonos importantes avances en la digitalizaci&oacute;n de la industria.&nbsp; 2019 apunta a que sera un a&ntilde;o importante en muchos aspectos pero quiz&aacute;s, sea&nbsp;el avance hacia la posible estandarizaci&oacute;n de las comunicaciones industriales gracias a TSN uno de los aspectos m&aacute;s importantes.</p>\r\n<p>Aqu&iacute; os mostramos 8&nbsp;tendencias pueden marcar el futuro de la automatizaci&oacute;n industrial en 2019</p>\r\n<p>&nbsp;</p>\r\n<h2>1 #&nbsp;Inteligencia Artificial (IA)</h2>\r\n<p><img src=\"/files/imagenes/noticias/2019/106084_01.jpg\" alt=\"\" /></p>\r\n<p>La Inteligencia Articial (IA)&nbsp; siempre a estado asociada a pel&iacute;culas futuristas pero parece que el futuro ya est&aacute; aqu&iacute;. Este a&ntilde;o, la feria Hannover Messe 2018 puso su acento en la IA,&nbsp;\"La <strong>inteligencia artificial</strong>&nbsp;tiene el potencial de <strong>revolucionar las industrias de producci&oacute;n</strong>&nbsp;y energ&iacute;a\", dec&iacute;a el Dr. Jochen K&ouml;ckler, presidente de la Junta de Deutsche Messe.</p>\r\n<p>Durante 2018 varias empresas del mundo de la automatizaci&oacute;n han empezado a presentar soluciones basadas en IA:</p>\r\n<p><strong>Omron</strong>&nbsp;present&oacute; lo que afirma ser el <a href=\"/noticias/item/104315-omron-inteligencia-artificial-machine-automation-controller\" rel=\"noopener noreferrer\" target=\"_blank\">primer&nbsp;controlador de m&aacute;quina equipado con un algoritmo de inteligencia artificial (IA)</a>&nbsp;de aprendizaje autom&aacute;tico (machine-learning).&nbsp;<strong>ABB e IBM</strong>&nbsp;anunciaron su <a href=\"/plus-plus/empresas/item/104268-abb-ibm-asocian-soluciones-inteligencia-artificial\" rel=\"noopener noreferrer\" target=\"_blank\">asociaci&oacute;n en soluciones de inteligencia artificial</a>. <strong>Rockwell Automation</strong> present&oacute; el <a href=\"/noticias/item/105086-rockwell-inteligencia-artificial-ia-project-sherlock\" rel=\"noopener noreferrer\" target=\"_blank\">m&oacute;dulo de Inteligencia Artificial (IA) Project Sherlock</a>&nbsp;que utiliza el aprendizaje autom&aacute;tico para crear anal&iacute;ticas poderosas desde la infraestructura de automatizaci&oacute;n. <strong>Siemens</strong> tambi&eacute;n a incorporado Inteligencia Artificial para los controladores Simatic&nbsp;con la <a href=\"/noticias/item/106008-inteligencia-artificial-automatas-simatic-siemens\" rel=\"noopener noreferrer\" target=\"_blank\">nueva S7-1500 TM NPU</a> (unidad de procesamiento neural).</p>\r\n<h2>&nbsp;</h2>\r\n<h2>2 #&nbsp;Plataformas para OEMs</h2>\r\n<p><img src=\"/files/imagenes/noticias/2019/106084_02.jpg\" alt=\"\" /></p>\r\n<p>Las plataformas de servicios Cloud &amp; Analytics para fabricantes de maquinaria (OEMs) es un sector que empieza a tomar fuerza. En infoPLC hemos abierto un nuevo canal dedicado&nbsp;a contaros las novedades referentes a los&nbsp;<a href=\"/plataformas-servicios-cloud-oem\" rel=\"noopener noreferrer\" target=\"_blank\">servicios de plataformas</a>.</p>\r\n<p>Estas plataformas permite implementar de una manera real la industria 4.0 y sus beneficios a los fabricantes de maquinaria ya que les&nbsp;ofrece la posibilidad monitorizar y analizar su flota de m&aacute;quinas instaladas sin tener que invertir en elevados costos de implementaci&oacute;n.&nbsp;</p>\r\n<p>Las plataformas permiten conectar las m&aacute;quinas a las Nube y recopilar datos de una manera muy sencilla. EL fabricante de maquinaria puede implementar mediante Dashboards interfaces que permiten la monitorizaci&oacute;n y an&aacute;lisis de los datos pudiendo ofrecer nuevos servicios a sus clientes como por ejemplo mantenimiento predictivo.&nbsp;</p>\r\n<p>Empresas del secrtor de la automatizaci&oacute;n han creado estos servicios. <strong>Schneider Electric</strong> present&oacute; recientemente <a href=\"/noticias/item/106026-machine-advisor-datos-fabricantes-maquinaria\" rel=\"noopener noreferrer\" target=\"_blank\">Machine Advisor</a>, <strong>Rockwell</strong> ofrece la soluci&oacute;n <a href=\"/noticias/item/105248-rockwell-factorytalk-analytics-rendimiento-maquina\" rel=\"noopener noreferrer\" target=\"_blank\">FactoryTalk Analytics for Machines cloud para OEMs</a>&nbsp;y<strong> KUKA </strong>ofrece <a href=\"/noticias/item/103816-plataforma-cloud-kuka-connect\" rel=\"noopener noreferrer\" target=\"_blank\">KUKA Connect</a>, una completa&nbsp;plataforma de monitorizaci&oacute;n y an&aacute;lisis para sus robots. la compra de <strong>B&amp;R</strong> por parte de <strong>ABB</strong> empieza a dar sus frutos, una de las pimeras soluciones realizadas en conjunto es <a href=\"/noticias/item/106095-asset-performance-monitor\" rel=\"noopener noreferrer\" target=\"_blank\">Asset Performance Monitor</a>.</p>\r\n<p>Pero no solo empresas del sector cl&aacute;sicas ofrecen estos servicios, nuevas empresas esta&aacute;n aprovechando el auge de la Industria 4.0 para ofrecer nuevas soluciones, por ejemplo <strong>IXON</strong> una plataforma que ofrece conexi&oacute;n remota a m&aacute;quina VPN y <a href=\"https://www.ixon.cloud/\" rel=\"noopener noreferrer\" target=\"_blank\">servicios de&nbsp;Cloud Logging y&nbsp;Cloud Notify</a>.&nbsp;<strong>MachineMetrics</strong> es una <a href=\"https://www.machinemetrics.com\" rel=\"noopener noreferrer\" target=\"_blank\">plataforma de an&aacute;lisis de fabricaci&oacute;n</a> que aumenta la productividad a trav&eacute;s de la visibilidad en tiempo real, el an&aacute;lisis profundo y las notificaciones predictivas. Seguro que nuevas empresas ajenas actualmente al sector industrial empiezan a ofrecer soluciones y plataformas enfocadas a los OEMS y clientes finales con el fin de sacar partido a los datos de sus m&aacute;quinas.</p>\r\n<h2>&nbsp;</h2>\r\n<h2>3 #&nbsp;Robotica&nbsp;sigue creciendo</h2>\r\n<p><img src=\"/files/imagenes/noticias/2019/106084_03.jpg\" alt=\"\" /></p>\r\n<p>El&nbsp;desarrollo constante de las tecnolog&iacute;as rob&oacute;ticas sin duda ha ampliado las aplicaciones potenciales para robots industriales inteligentes. De este modo, hoy en d&iacute;a, los robots impulsados por software de vanguardia y sistemas de visi&oacute;n pueden programarse para realizar una serie de tareas, que se ajustan perfectamente a la demanda de fabricaci&oacute;n flexible.</p>\r\n<p>Durante 2018 hemos visto importantes movimientos en el sector, como uno de los pioneros de la rob&oacute;tica colaborativa <a href=\"/noticias/item/105831-rethink-robotics-cierra-empresa\" rel=\"noopener noreferrer\" target=\"_blank\">Rethink Robotics fue a la quiebra</a>, Omron continua su apuesta por la rob&oacute;tica, tras la compra de Adept se ha aliado con <a href=\"/noticias/item/106033-omron-robots-colaborativos-serie-tm-cobot\" rel=\"noopener noreferrer\" target=\"_blank\">TM para ofrecer rob&oacute;tica colaborativa</a>. A nivel nacional destaca la llegada de los robots chinos <a href=\"/plus-plus/entrevistas/item/105866-estun-robotica-al-alcance-de-todos\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>ESTUN</strong> a Espa&ntilde;a</a> de la mano de Mec&aacute;nico Moderna y el anuncio de <strong>FANUC</strong> de su <a href=\"/plus-plus/empresas/item/105845-fanuc-nueva-sede-sant-cugat-barcelona\" rel=\"noopener noreferrer\" target=\"_blank\">nueva sede en&nbsp;Sant Cugat</a>.</p>\r\n<p>En 2019 seguir&aacute; creciendo las soluciones OPEN que permite controlar la mec&aacute;nica de los robots utilizando controladores independientes al robot. Ademas&nbsp;<strong>Microsoft</strong> ha anunciado un lanzamiento experimental del sistema operativo de c&oacute;digo abierto Robot (ROS) para Windows y&nbsp;<strong>Google</strong> planea lanzar una plataforma rob&oacute;tica en la nube</p>\r\n<p>Aqu&iacute; os indicamos <a href=\"/noticias/item/106085-6-tendencias-futuras-robotica-industrial\" rel=\"noopener noreferrer\" target=\"_blank\">6 tendencias futuras en la rob&oacute;tica industrial</a>.</p>\r\n<h2>&nbsp;</h2>\r\n<h2>4 #&nbsp;TSN (Time-Sensitive Networking)</h2>\r\n<p><img src=\"/files/imagenes/noticias/2019/106084_04.jpg\" alt=\"\" /></p>\r\n<p>Lo pudimos comprobar en la ultima edici&oacute;n de la feria SPS IPC Drives 2018, <strong>TSN ha sido sin duda uno de los grandes protagonistas, una red abierta unificadora</strong>. Parece que por primera vez en la historia de la automatizaci&oacute;n puede verse un horizonte de estandarizaci&oacute;n en los protocolos de comunicaci&oacute;n.</p>\r\n<p>Existe una gran cantidad de discusiones&nbsp;en las que se creen que TSN tiene el potencial de ser una &uacute;nica red determinista unificadora compartida por todas las aplicaciones en la industria .</p>\r\n<p>Como TSN es una arquitectura de red compartida totalmente administrada, todo el tr&aacute;fico de red, incluidos todos los protocolos industriales&nbsp;de la planta, deber&aacute;n cumplir con el conjunto de est&aacute;ndares TSN para lograr comunicaciones deterministas y confiables.</p>\r\n<p>Este a&ntilde;o hemos conocido la noticia de que<a href=\"/noticias/item/105966-opc-foundation-extiende-opc-ua-incluyendo-tsn-nivel-campo\" rel=\"noopener noreferrer\" target=\"_blank\"> OPC Foundation extiende OPC UA incluyendo TSN</a> hasta el nivel de campo, esta iniciativoa ha sido secundada por&nbsp;los <a href=\"/plus-plus/tecnologia/item/106018-industria-automatizacion-une-opc-ua-incluido-tsn\" rel=\"noopener noreferrer\" target=\"_blank\">principales Players de la industria de la automatizaci&oacute;n se unen a OPC UA con TSN</a>.</p>\r\n<h2>&nbsp;</h2>\r\n<h2>5 #&nbsp;Gemelo Digital</h2>\r\n<p><img src=\"/files/imagenes/noticias/2019/106084_05.jpg\" alt=\"\" /></p>\r\n<p>El concepto de \"gemelos digitales\" permite la <strong>creaci&oacute;n de una copia virtual de una m&aacute;quina o sistema</strong>. Esto se est&aacute; convirtiendo en un requisito previo en el panorama del desarrollo de productos. Adem&aacute;s, la digitalizaci&oacute;n de plantas y maquinaria garantiza una puesta en servicio eficiente, un dise&ntilde;o optimizado de la m&aacute;quina, operaciones sin problemas y un corto tiempo de cambio. Este proceso reduce la dependencia de prototipos costosos a la vez que acelera el tiempo de comercializaci&oacute;n.</p>\r\n<p>Adem&aacute;s, los gemelos digitales ahora est&aacute;n activos en los pisos de f&aacute;brica, analizando las eficiencias de producci&oacute;n e impulsando el mantenimiento predictivo. En el futuro, los fabricantes conocer&aacute;n todos los componentes instalados en sus productos. De este modo, les permite brindar una respuesta espec&iacute;fica a los problemas y optimizar los procesos.</p>\r\n<p>EMpresas del sector empiezan a ofrecer soluciones enfocadas a al \"Digital Twin\"&nbsp;<strong>Lenze</strong> usa cada vez m&aacute;s la realidad virtual y el <a href=\"/noticias/item/105864-lenze-presenta-ingenieria-gemelo-virtual\" rel=\"noopener noreferrer\" target=\"_blank\">gemelo digital</a> como una herramienta efectiva de ingenier&iacute;a y formaci&oacute;n. <a href=\"/noticias/item/105391-tia-portal-v15-1\" rel=\"noopener noreferrer\" target=\"_blank\">TIA Portal V15.1</a>&nbsp;de <strong>Siemens</strong> se centra en nuevas&nbsp;opciones de simulaci&oacute;n y puesta en marcha virtual ofreciendo un&nbsp;gemelo digital del controlador Simatic S7-1500 as&iacute; como la reciente <a href=\"/plus-plus/empresas/item/106065-siemens-aker-solutions-alianza\" rel=\"noopener noreferrer\" target=\"_blank\">alianza con Aker Solutions</a>&nbsp;que tiene el digital twin en el centro</p>\r\n<p>&nbsp;</p>\r\n<h2>6 #&nbsp;Realidad Virtual</h2>\r\n<p><img src=\"/files/imagenes/noticias/2019/106084_06.jpg\" alt=\"\" width=\"651\" height=\"360\" /></p>\r\n<p>Hoy en d&iacute;a, la realidad aumentada (AR) y la realidad virtual (VR) se utilizan en varios contextos, desde las aplicaciones del consumidor hasta la fabricaci&oacute;n. Sin embargo, es en este &uacute;ltimo que AR ofrece un inmenso valor en innumerables formas, en combinaci&oacute;n con otras tecnolog&iacute;as. De hecho, las tecnolog&iacute;as VR y AR est&aacute;n revolucionando los procesos de producci&oacute;n complejos y los desarrollos de productos.</p>\r\n<p>En el contexto de la automatizaci&oacute;n industrial y de fabricaci&oacute;n, la VR puede ayudar a los fabricantes a simular un producto o entorno digitalmente. De este modo, permiti&eacute;ndoles interactuar y sumergirse en &eacute;l. AR ayuda a los usuarios industriales a proyectar productos digitales o informaci&oacute;n en un entorno del mundo real. Esto es m&aacute;s productivo que proyectar en un entorno simulado digitalmente como en la realidad virtual.</p>\r\n<h2>&nbsp;</h2>\r\n<h2>7 #&nbsp;Ciberseguridad</h2>\r\n<p><img src=\"/files/imagenes/noticias/2019/106084_07.jpg\" alt=\"\" /></p>\r\n<p>A nuestro entender es el gran reto para el despliegue de la Industria 4.0.&nbsp;Ya existen est&aacute;ndares para la ciberseguridad industrial y en la mayor&iacute;a de las industrias, estos son voluntarios. Dicho esto, existe una tendencia mundial para la regulaci&oacute;n gubernamental. Ya hemos visto esto en las regulaciones de los sistemas de seguridad industrial. Desafortunadamente, en lugar de un esfuerzo estandarizado, existen m&uacute;ltiples iniciativas en el mundo con diferentes objetivos y, en &uacute;ltima instancia, diferentes est&aacute;ndares.</p>\r\n<p>El <a href=\"/plus-plus/tecnologia/item/105937-nuevo-estandar-isa-reducir-vulnerabilidades\" rel=\"noopener noreferrer\" target=\"_blank\">nuevo&nbsp;est&aacute;ndar ISA/IEC 62443-4-2-2018</a>&nbsp;de la serie SA/IEC 62443&nbsp;persigue blindar los procesos de adquisici&oacute;n e integraci&oacute;n de ordenadores, aplicaciones, equipos de red y dispositivos de control que constituyen un sistema de control.</p>\r\n<p>Las soluciones avanzadas de ciberseguridad industrial disponibles en la actualidad tienen un enfoque h&iacute;brido muy efectivo. Adem&aacute;s, esto incluye tanto la detecci&oacute;n de anomal&iacute;as basada en el comportamiento que ayuda a identificar posibles amenazas cibern&eacute;ticas que utilizan enfoques de ciberseguridad convencionales, como el an&aacute;lisis basado en reglas que permite a los fabricantes aprovechar una inspecci&oacute;n profunda para descubrir ciberataques de malware en la red.</p>\r\n<p>Pero como hemos visto en numerosas ocasiones \"los malos siempre van por delante\" y la industria deber de estar preparada e invertir en Ciberseguridad. Las empresas industriales este a&ntilde;o han seguido dando muestras de tomarse en serio la Ciberseguridad,&nbsp;<strong>Moxa y Trend Micro</strong> crean una joint venture,&nbsp; <a href=\"/plus-plus/empresas/item/105972-moxa-y-trend-micro-crean-una-joint-venture\" rel=\"noopener noreferrer\" target=\"_blank\">TXOne Networks</a> se centrar&aacute; en la construcci&oacute;n de pasarelas de seguridad.&nbsp;<strong>ForeScout y Belden</strong> se unen para <a href=\"/plus-plus/empresas/item/105951-forescout-belden-alianza-entornos-industriales\" rel=\"noopener noreferrer\" target=\"_blank\">proteger los entornos industriales</a>.&nbsp;<strong>Honeywell</strong> present&oacute; nuevos servicios de Ciberseguridad Industrial.</p>\r\n<p>Puedes estar al d&iacute;a de todas las noticias sobre <a href=\"/ciberseguridad-industrial\" rel=\"noopener noreferrer\" target=\"_blank\">Ciberseguridad Industrial en nuestro portal</a></p>\r\n<h2>&nbsp;</h2>\r\n<h2>8 #&nbsp;Open Source Code</h2>\r\n<p><img src=\"/files/imagenes/noticias/2019/106084_08.jpg\" alt=\"\" /></p>\r\n<p>Los ecosistemas abiertos permiten la interoperabilidad de m&uacute;ltiples proveedores en todos los niveles de la arquitectura del sistema, al tiempo que simplifican la integraci&oacute;n. Algunos ejemplos de <strong>Open Source en la Automatizaci&oacute;n Industrial</strong>.<br /><br />OPC UA es una plataforma de c&oacute;digo abierto, una arquitectura independiente orientada a servicios. <strong>OPC UA</strong> integra toda la funcionalidad de las especificaciones de OPC Classic y un n&uacute;mero creciente de otros modelos de datos de c&oacute;digo abierto, como MTConnect y FDT, en un marco extensible.</p>\r\n<p>El software de c&oacute;digo abierto <strong>Node-RED</strong> es un entorno de programaci&oacute;n para crear y ejecutar aplicaciones visualmente, esta tecnolog&iacute;a est&aacute; siendo utilizada por una cantidad de proveedores. Estamos viendo como mucho IoT Box o IoT Gateway lo est&aacute;n utilizando&nbsp;para subir datos de m&aacute;quinas a la nube.</p>\r\n<p>Algunos proveedores incluyen nombres como, por ejemplo, Opto 22, Hilscher, Harting, NEXCOM, Siemens,&nbsp;veremos como&nbsp;<strong>Node-RED cada vez est&aacute; m&aacute;s integrado en la automatizaci&oacute;n industrial.</strong></p>\r\n</div>', 'automatizacion, tendencias', 'admin', '2019-08-22 20:57:28', '2017-01-18 14:05:23', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_noticias_coment`
---
-
-CREATE TABLE `vcard_noticias_coment` (
-  `ID` int(6) UNSIGNED NOT NULL,
-  `ip` varchar(18) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `comentario` varchar(500) NOT NULL,
-  `id_b` int(3) NOT NULL,
-  `fecha` varchar(20) NOT NULL,
-  `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `vcard_noticias_coment`
---
-
-INSERT INTO `vcard_noticias_coment` (`ID`, `ip`, `nombre`, `email`, `comentario`, `id_b`, `fecha`, `visible`) VALUES
-(1, '127.0.0.1', 'Guillermo Jim&eacute;nez L&oacute;pez', 'mherco@hotmail.com', 'Mensaje de prueba para noticias', 1, '2018-12-21 22:14:55', 1);
+(20, 'Vcard', 'vcard', 'Administraci&oacute;n de tarjetas virtuales', 0, 1, 0, 1, 1, 'false', 'fa-vcard', 'index.php?mod=vcard'),
+(21, 'Vcard2', 'vcard2', 'Administraci?n  de Tarjetas Digitales', 0, 1, 0, 1, 1, 'false', 'fa-vcard', 'index.php?mod=vcard2'),
+(22, 'Login', 'login', '', 0, 0, 0, 0, 1, 'false', 'fa-users', 'index.php?mod=login');
 
 -- --------------------------------------------------------
 
@@ -1155,7 +988,7 @@ CREATE TABLE `vcard_opciones` (
 
 INSERT INTO `vcard_opciones` (`ID`, `nom`, `descripcion`, `valor`) VALUES
 (1, 'google_analytics', '', '1'),
-(2, 'form_registro', '', '0'),
+(2, 'form_registro', '', '1'),
 (3, 'geo_loc_visitas', '', '0'),
 (4, 'slide_active', '', '1'),
 (5, 'API_facebook', '', '0'),
@@ -1208,6 +1041,7 @@ CREATE TABLE `vcard_pages` (
   `titulo` varchar(100) NOT NULL,
   `contenido` text NOT NULL,
   `modulo` varchar(50) NOT NULL,
+  `tema` varchar(50) NOT NULL,
   `ext` varchar(50) NOT NULL,
   `url` varchar(250) NOT NULL,
   `fmod` varchar(20) NOT NULL,
@@ -1220,8 +1054,9 @@ CREATE TABLE `vcard_pages` (
 -- Volcado de datos para la tabla `vcard_pages`
 --
 
-INSERT INTO `vcard_pages` (`ID`, `titulo`, `contenido`, `modulo`, `ext`, `url`, `fmod`, `alta`, `visible`, `activo`) VALUES
-(1, 'Nosotros 1', '<p style=\"text-align: center;\"><span style=\"font-size: 16px;\"><strong><br /></strong></span></p>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 16px;\"><strong>Nosotros</strong></span></p>', 'nosotros', '', '', '', '', 0, 1);
+INSERT INTO `vcard_pages` (`ID`, `titulo`, `contenido`, `modulo`, `tema`, `ext`, `url`, `fmod`, `alta`, `visible`, `activo`) VALUES
+(1, 'Nosotros 1', '<p style=\"text-align: center;\"><span style=\"font-size: 16px;\"><strong><br /></strong></span></p>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 16px;\"><strong>Nosotros</strong></span></p>', 'nosotros', '', '', '', '', '', 0, 1),
+(2, 'Sin contenido', '', 'Home', 'vcard2', '', '', '', '', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1261,304 +1096,6 @@ INSERT INTO `vcard_portafolio` (`ID`, `clave`, `nombre`, `cover`, `foto`, `descr
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `vcard_productos`
---
-
-CREATE TABLE `vcard_productos` (
-  `ID` int(9) UNSIGNED NOT NULL,
-  `codigo` varchar(100) NOT NULL,
-  `clave` varchar(100) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `titulo` varchar(150) NOT NULL,
-  `cover` varchar(100) NOT NULL,
-  `foto` varchar(100) NOT NULL,
-  `descripcion` text NOT NULL,
-  `marca` varchar(150) NOT NULL,
-  `modelo` varchar(100) NOT NULL,
-  `tipo` varchar(100) NOT NULL,
-  `precio` decimal(9,2) NOT NULL,
-  `moneda` varchar(10) NOT NULL,
-  `unidad` varchar(10) NOT NULL,
-  `peso` varchar(50) NOT NULL,
-  `color` varchar(50) NOT NULL,
-  `medidas` varchar(100) NOT NULL,
-  `stock` int(6) NOT NULL,
-  `serie` varchar(100) NOT NULL,
-  `lote` varchar(100) NOT NULL,
-  `ID_cate` int(6) NOT NULL,
-  `ID_sub_cate` int(6) NOT NULL,
-  `ID_sub_cate2` int(6) NOT NULL,
-  `ID_marca` int(6) NOT NULL,
-  `url_name` varchar(150) NOT NULL,
-  `imagen1` varchar(100) NOT NULL,
-  `imagen2` varchar(100) NOT NULL,
-  `imagen3` varchar(100) NOT NULL,
-  `imagen4` varchar(100) NOT NULL,
-  `imagen5` varchar(100) NOT NULL,
-  `cate` varchar(50) NOT NULL,
-  `resena` text NOT NULL,
-  `nuevo` tinyint(1) NOT NULL,
-  `promo` tinyint(1) NOT NULL,
-  `descuento` varchar(100) NOT NULL,
-  `clasificacion` varchar(200) NOT NULL,
-  `tags` varchar(200) NOT NULL,
-  `land` tinyint(1) NOT NULL,
-  `file` varchar(100) NOT NULL,
-  `pdf1` varchar(100) NOT NULL,
-  `pdf2` varchar(100) NOT NULL,
-  `pdf3` varchar(100) NOT NULL,
-  `pdf4` varchar(100) NOT NULL,
-  `pdf5` varchar(100) NOT NULL,
-  `alta` varchar(21) NOT NULL,
-  `fmod` varchar(21) NOT NULL,
-  `user` varchar(50) NOT NULL,
-  `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `vcard_productos`
---
-
-INSERT INTO `vcard_productos` (`ID`, `codigo`, `clave`, `nombre`, `titulo`, `cover`, `foto`, `descripcion`, `marca`, `modelo`, `tipo`, `precio`, `moneda`, `unidad`, `peso`, `color`, `medidas`, `stock`, `serie`, `lote`, `ID_cate`, `ID_sub_cate`, `ID_sub_cate2`, `ID_marca`, `url_name`, `imagen1`, `imagen2`, `imagen3`, `imagen4`, `imagen5`, `cate`, `resena`, `nuevo`, `promo`, `descuento`, `clasificacion`, `tags`, `land`, `file`, `pdf1`, `pdf2`, `pdf3`, `pdf4`, `pdf5`, `alta`, `fmod`, `user`, `visible`) VALUES
-(1, '01010127', '01010127', 'Máquina embisagradora', '', 'nodisponible.jpg', '', 'Descripción Corta Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '', '', '', '125215.50', 'MNX', 'PZ', '', '', '', 0, '', '', 1, 1, 0, 0, '', 'nodisponible.jpg', 'nodisponible.jpg', '', '', '', '1', '<p><span>Incluye broquero con 3 brocas de 35mm y 10mm de diametro por 57mm de largo. Alimentaci&oacute;n el&eacute;ctrica de 230V. Funcionamiento autom&aacute;tico para panel m&aacute;ximo de 30mm. Descarga la ficha t&eacute;cnica para conocer m&aacute;s de esta maquina.</span></p>', 0, 0, '', '', '', 0, '', '', '', '', '', '', '2019-01-14 11:49:53', '', 'admin', 1),
-(2, '01010128', '01010128', 'Máquina embisagradora con broca', '', 'nodisponible.jpg', '', 'Descripci&oacute;n Corta. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '', '', '', '19033.00', 'MXN', 'PZ', '', '', '', 0, '', '', 1, 1, 0, 0, '', 'nodisponible.jpg', 'nodisponible.jpg', 'nodisponible.jpg', 'nodisponible.jpg', '', '1', '<p>Haz crecer tu empresa con herramientas de calidad, funcionales y de manejo f&aacute;cil. Descubre todo lo que tenemos para ti</p>\r\n<p><br /><span>CARACTER&Iacute;STICAS</span></p>\r\n<table border=\"0\">\r\n<tbody>\r\n<tr>\r\n<td>C&oacute;digo</td>\r\n<td>01010128</td>\r\n</tr>\r\n<tr>\r\n<td>UM</td>\r\n<td>pz</td>\r\n</tr>\r\n<tr>\r\n<td>Material</td>\r\n<td>Acero</td>\r\n</tr>\r\n<tr>\r\n<td>Acabados</td>\r\n<td>Azul con naranja</td>\r\n</tr>\r\n<tr>\r\n<td>Medida</td>\r\n<td>&nbsp;</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>&nbsp;</p>\r\n<p class=\"sbit_caract100\">Alimentaci&oacute;n el&eacute;ctrica de 127V. Ideal para bisagras FGV, SALICE y ECO, Regleta con ajuste (K) 2mm a 12mm, profundidad m&aacute;xima de perforaci&oacute;n 60mm. Descarga la ficha t&eacute;cnica para conocer m&aacute;s de esta maquina.</p>', 0, 0, '', '', '', 0, '', '', '', '', '', '', '2019-01-16 07:54:05', '', 'admin', 1),
-(3, '01020025', '01020025', 'Punta phillips no.2', '', 'nodisponible.jpg', '', 'Descripci&oacute;n Corta. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '', '', '', '10.50', 'MXN', 'PZ', '', '', '', 0, '', '', 1, 2, 0, 0, '', 'nodisponible.jpg', '', '', '', '', '1', '<p>Optimiza tus ensambles con las puntas que tenemos para ti</p>\r\n<p><br /><span>CARACTER&Iacute;STICAS</span></p>\r\n<table border=\"0\">\r\n<tbody>\r\n<tr>\r\n<td>C&oacute;digo</td>\r\n<td>01020025</td>\r\n</tr>\r\n<tr>\r\n<td>UM</td>\r\n<td>PZA</td>\r\n</tr>\r\n<tr>\r\n<td>Material</td>\r\n<td>Acero</td>\r\n</tr>\r\n<tr>\r\n<td>Acabados</td>\r\n<td>Satinado</td>\r\n</tr>\r\n<tr>\r\n<td>Medida</td>\r\n<td>51mm</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p class=\"sbit_caract100\">Punta de cruz que permite utilizarlo en la mayoria de torniller&iacute;a.</p>', 0, 0, '', '', '', 0, '', '', '', '', '', '', '2019-01-16 12:55:21', '', 'admin', 1),
-(4, '08030264', '08030264', 'Manija de baño', '', 'pro1.1.png', '', 'Descripción Corta', 'Elco', 'Modelo rectángular-liso satinado', '', '30.00', 'MXN', 'PZ', '', '', '', 0, '', '', 10, 36, 0, 9, '', 'Manijas.png', 'Manijas.png', '', '', '', '10', '<p>Rese&ntilde;a</p>', 1, 0, '', '', '', 0, '', '', '', '', '', '', '2019-02-08 09:02:06', '2019-03-04 12:05:28', 'admin', 1),
-(5, '08030273', '08030273', 'Manija de entrada modelo bola llave/mariposa Inox', '', 'pro1.2.png', '', 'Descripcion', '', '', '', '0.00', 'MXN', 'PZ', '', '', '', 0, '', '', 10, 32, 0, 0, '', 'pro1.2.png', '', '', '', '', '10', '', 1, 0, '', '', '', 0, '', '', '', '', '', '', '2019-02-08 09:11:21', '', 'admin', 1),
-(6, '08050037', '08050037', 'Tope magnético para puerta', '', 'pro1.3.png', '', 'Descripcion', '', '', '', '0.00', 'MXN', 'PZ', '', '', '', 0, '', '', 10, 33, 0, 0, '', 'pro1.3.png', '', '', '', '', '10', '', 1, 0, '', '', '', 0, '', '', '', '', '', '', '2019-02-08 09:13:35', '', 'admin', 1),
-(7, '08080001', '08080001', 'Corredizo colgante inos 304 p/puerta de madera L=200mm Rodamiento sencillo', '', 'pro1.4.png', '', 'Descripcion', '', '', '', '0.00', 'MXN', 'PZ', '', '', '', 0, '', '', 3, 14, 0, 0, '', 'pro1.4.png', '', '', '', '', '3', '', 1, 0, '', '', '', 0, '', '', '', '', '', '', '2019-02-08 09:16:17', '', 'admin', 1),
-(8, '08080003', '08080003', 'Corredizo colgante inox 304 p/puerta de cristal L=200mm Rodamiento sencillo', '', 'pro1.5.png', '', 'Descripcion', '', '', '', '0.00', 'MXN', 'PZ', '', '', '', 0, '', '', 3, 12, 0, 0, '', 'pro1.5.png', '', '', '', '', '3', '', 1, 0, '', '', '', 0, '', '', '', '', '', '', '2019-02-08 09:18:53', '', 'admin', 1),
-(9, '12130050', '12130050', 'Dispensador doble para baño', '', 'pro2.1.png', '', 'Descripcion', '', '', '', '1.00', 'MXN', 'PZ', '', '', '', 0, '', '', 12, 44, 0, 0, '', 'pro2.1.png', '', '', '', '', '12', '', 0, 1, '', '', '', 0, '', '', '', '', '', '', '2019-02-08 12:17:14', '', 'admin', 1),
-(10, '12130058', '12130058', 'Dispensador de jabón para baño', '', 'pro2.2.png', '', 'Descripcion', '', '', '', '0.00', 'MXN', 'PZ', '', '', '', 0, '', '', 12, 44, 0, 0, '', 'pro2.2.png', '', '', '', '', '12', '', 0, 1, '', '', '', 0, '', '', '', '', '', '', '2019-02-08 12:31:20', '', 'admin', 1),
-(11, '12130040', '12130040', 'Toallero doble 616mm Latón Cromado', '', 'pro2.3.png', '', 'Descripcion', '', '', '', '0.00', 'MXN', 'PZ', '', '', '', 0, '', '', 12, 44, 0, 0, '', 'pro2.3.png', '', '', '', '', '12', '', 0, 1, '', '', '', 0, '', '', '', '', '', '', '2019-02-08 12:33:08', '', 'admin', 1),
-(12, '12130043', '12130043', 'Cepillero base rect. c/vaso de cristal latón cromado', '', 'pro2.4.png', '', 'Descripcion', '', '', '', '0.00', 'MXN', 'PZ', '', '', '', 0, '', '', 12, 44, 0, 0, '', 'pro2.4.png', '', '', '', '', '12', '', 0, 1, '', '', '', 0, '', '', '', '', '', '', '2019-02-08 12:34:48', '', 'admin', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_productos_cate`
---
-
-CREATE TABLE `vcard_productos_cate` (
-  `ID_cate` int(6) UNSIGNED NOT NULL,
-  `categoria` varchar(100) NOT NULL,
-  `ord` varchar(2) NOT NULL,
-  `cover` varchar(150) NOT NULL,
-  `descripcion` text NOT NULL,
-  `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `vcard_productos_cate`
---
-
-INSERT INTO `vcard_productos_cate` (`ID_cate`, `categoria`, `ord`, `cover`, `descripcion`, `visible`) VALUES
-(1, 'Maquinaria y herramientas', '01', 'nodisponible.jpg', '', 1),
-(2, 'Accesorios para gabinete', '02', 'nodisponible.jpg', '', 1),
-(3, 'Correderas', '03', 'nodisponible.jpg', '', 1),
-(4, 'Jaladeras y botones', '04', 'nodisponible.jpg', '', 1),
-(5, 'Tornillos y conectores', '05', 'nodisponible.jpg', '', 1),
-(6, 'Bisagras', '06', 'nodisponible.jpg', '', 1),
-(7, 'Tableros y puertas', '07', 'nodisponible.jpg', '', 1),
-(8, 'Arquitectura', '08', 'nodisponible.jpg', '', 1),
-(9, 'Iluminación', '09', 'nodisponible.jpg', '', 1),
-(10, 'Chapas y cerraduras', '10', 'nodisponible.jpg', '', 1),
-(11, 'Accesorios para closet', '11', 'nodisponible.jpg', '', 1),
-(12, 'Accesorios de cocina y baño', '12', 'nodisponible.jpg', '', 1),
-(13, 'Buzones', '13', '', '', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_productos_coti`
---
-
-CREATE TABLE `vcard_productos_coti` (
-  `ID_coti` int(11) UNSIGNED NOT NULL,
-  `ID_reg` int(11) NOT NULL,
-  `ID_cli` int(11) NOT NULL,
-  `observaciones` text NOT NULL,
-  `Total` decimal(11,2) NOT NULL,
-  `fecha` varchar(20) NOT NULL,
-  `fmod` varchar(20) NOT NULL,
-  `user` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_productos_coti_r`
---
-
-CREATE TABLE `vcard_productos_coti_r` (
-  `ID_reg` int(11) UNSIGNED NOT NULL,
-  `articulo` varchar(300) NOT NULL,
-  `cant` int(6) NOT NULL,
-  `precio` decimal(11,2) NOT NULL,
-  `tot` decimal(11,2) NOT NULL,
-  `ID_coti` int(11) NOT NULL,
-  `ID_cli` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_productos_files`
---
-
-CREATE TABLE `vcard_productos_files` (
-  `ID_pfile` int(9) UNSIGNED NOT NULL,
-  `nom` varchar(100) NOT NULL,
-  `tipo` varchar(100) NOT NULL,
-  `ID_p` int(9) NOT NULL,
-  `ID_f` int(9) NOT NULL,
-  `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_productos_marcas`
---
-
-CREATE TABLE `vcard_productos_marcas` (
-  `ID_marca` int(6) UNSIGNED NOT NULL,
-  `logo` varchar(100) NOT NULL,
-  `nombre` varchar(150) NOT NULL,
-  `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `vcard_productos_marcas`
---
-
-INSERT INTO `vcard_productos_marcas` (`ID_marca`, `logo`, `nombre`, `visible`) VALUES
-(1, 'nodisponible.jpg', 'Grass', 1),
-(2, 'nodisponible.jpg', 'Salice', 1),
-(3, 'nodisponible.jpg', 'Italiana Ferramenta', 1),
-(4, 'nodisponible.jpg', 'Harn', 1),
-(5, 'nodisponible.jpg', 'Vauth Sagel', 1),
-(6, 'nodisponible.jpg', 'Rincomatic', 1),
-(7, 'nodisponible.jpg', 'Vibo', 1),
-(8, 'nodisponible.jpg', 'Flex & Lux', 1),
-(9, 'elco.png', 'Elco', 1),
-(10, 'nodisponible.jpg', 'Volpato', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_productos_sub_cate`
---
-
-CREATE TABLE `vcard_productos_sub_cate` (
-  `ID_sub_cate` int(6) UNSIGNED NOT NULL,
-  `subcategoria` varchar(100) NOT NULL,
-  `ord` varchar(2) NOT NULL,
-  `ID_cate` int(6) NOT NULL,
-  `cover` varchar(150) NOT NULL,
-  `descripcion` text NOT NULL,
-  `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `vcard_productos_sub_cate`
---
-
-INSERT INTO `vcard_productos_sub_cate` (`ID_sub_cate`, `subcategoria`, `ord`, `ID_cate`, `cover`, `descripcion`, `visible`) VALUES
-(1, 'Maquinaria', '01', 1, 'nodisponible.jpg', '', 1),
-(2, 'Herramientas', '02', 1, 'nodisponible.jpg', '', 1),
-(3, 'Cerraduras', '01', 2, 'nodisponible.jpg', '', 1),
-(4, 'Resbalones', '02', 2, 'nodisponible.jpg', '', 1),
-(5, 'Niveladores y colgadores', '03', 2, 'nodisponible.jpg', '', 1),
-(6, 'Topes', '04', 2, 'nodisponible.jpg', '', 1),
-(7, 'Forzadores', '05', 2, 'nodisponible.jpg', '', 1),
-(8, 'Rodajas', '06', 2, 'nodisponible.jpg', '', 1),
-(9, 'Sistemas para puertas corredizas', '07', 2, 'nodisponible.jpg', '', 1),
-(10, 'Levadizos', '08', 2, 'nodisponible.jpg', '', 1),
-(11, 'Especiales', '01', 3, 'nodisponible.jpg', '', 1),
-(12, 'Cerrajes', '02', 3, 'nodisponible.jpg', '', 1),
-(13, 'Futura y unica', '03', 3, 'nodisponible.jpg', '', 1),
-(14, 'Impaz', '04', 3, 'nodisponible.jpg', '', 1),
-(15, 'KV', '05', 3, 'nodisponible.jpg', '', 1),
-(16, 'Ten', '06', 3, 'nodisponible.jpg', '', 1),
-(17, 'Triomax', '07', 3, 'nodisponible.jpg', '', 1),
-(18, 'Tradicional', '01', 4, 'nodisponible.jpg', '', 1),
-(19, 'Diseño', '02', 4, 'nodisponible.jpg', '', 1),
-(20, 'Rústica', '03', 4, 'nodisponible.jpg', '', 1),
-(21, 'Clásica', '04', 4, 'nodisponible.jpg', '', 1),
-(22, 'Especiales', '05', 4, 'nodisponible.jpg', '', 1),
-(23, 'Bidimensionales', '01', 6, 'nodisponible.jpg', '', 1),
-(24, 'Libro', '02', 6, 'nodisponible.jpg', '', 1),
-(25, 'Americana', '03', 6, 'nodisponible.jpg', '', 1),
-(26, 'Bibeles', '04', 6, 'nodisponible.jpg', '', 1),
-(27, 'Especiales', '05', 6, 'nodisponible.jpg', '', 1),
-(28, 'Pasadores', '01', 8, 'nodisponible.jpg', '', 1),
-(29, 'Ganchos', '02', 8, 'nodisponible.jpg', '', 1),
-(30, 'Topes', '03', 8, 'nodisponible.jpg', '', 1),
-(31, 'Hogar', '04', 8, 'nodisponible.jpg', '', 1),
-(32, 'Baldwin reserve', '01', 10, 'nodisponible.jpg', '', 1),
-(33, 'Assa abloy', '02', 10, 'nodisponible.jpg', '', 1),
-(34, 'Candados', '03', 10, 'nodisponible.jpg', '', 1),
-(35, 'Cerrajes', '04', 10, 'nodisponible.jpg', '', 1),
-(36, 'Kwikset', '05', 10, 'nodisponible.jpg', '', 1),
-(37, 'Accesorios', '01', 11, 'nodisponible.jpg', '', 1),
-(38, 'Elite', '02', 11, 'nodisponible.jpg', '', 1),
-(39, 'Extraibles', '01', 12, 'nodisponible.jpg', '', 1),
-(40, 'Colgantes', '02', 12, 'nodisponible.jpg', '', 1),
-(41, 'Patas', '03', 12, 'nodisponible.jpg', '', 1),
-(42, 'Ménsulas', '04', 12, 'nodisponible.jpg', '', 1),
-(43, 'Perfil jaladera', '05', 12, 'nodisponible.jpg', '', 1),
-(44, 'Accesorios para baño', '06', 12, 'nodisponible.jpg', '', 1),
-(45, 'Botes', '07', 12, 'nodisponible.jpg', '', 1),
-(46, 'Vauth-sagel', '08', 12, 'nodisponible.jpg', '', 1),
-(47, 'Sistema lasy', '09', 12, 'nodisponible.jpg', '', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_productos_sub_cate2`
---
-
-CREATE TABLE `vcard_productos_sub_cate2` (
-  `ID_sub_cate2` int(6) UNSIGNED NOT NULL,
-  `subcategoria2` varchar(100) NOT NULL,
-  `ord` int(2) NOT NULL,
-  `ID_cate` int(6) NOT NULL,
-  `ID_sub_cate` int(6) NOT NULL,
-  `cover` varchar(150) NOT NULL,
-  `descripcion` varchar(300) NOT NULL,
-  `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_promociones`
---
-
-CREATE TABLE `vcard_promociones` (
-  `ID` int(6) UNSIGNED NOT NULL,
-  `nom` varchar(100) NOT NULL,
-  `cate` varchar(100) NOT NULL,
-  `alta` varchar(25) NOT NULL,
-  `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `vcard_promociones`
---
-
-INSERT INTO `vcard_promociones` (`ID`, `nom`, `cate`, `alta`, `visible`) VALUES
-(1, 'p1.png', 'Promociones Bimestrales', '', 1),
-(2, 'p2.png', 'Promociones Bimestrales', '', 1),
-(3, 'p3.png', 'Nuevos Productos', '', 1),
-(4, 'p4.png', 'Nuevos Productos', '', 1),
-(5, 'p5.png', 'Nuevos Productos', '', 1),
-(6, 'p6.png', 'Nuevos Productos', '', 1);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `vcard_registros`
 --
 
@@ -1583,32 +1120,6 @@ CREATE TABLE `vcard_registros` (
   `ID_login` int(11) NOT NULL,
   `ID_user` int(11) NOT NULL,
   `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_servicios`
---
-
-CREATE TABLE `vcard_servicios` (
-  `ID` int(6) UNSIGNED NOT NULL,
-  `clave` varchar(100) NOT NULL,
-  `titulo` varchar(100) NOT NULL,
-  `cover` varchar(100) NOT NULL,
-  `descripcion` text NOT NULL,
-  `precio` decimal(6,2) NOT NULL,
-  `cate` varchar(50) NOT NULL,
-  `url_page` varchar(150) NOT NULL,
-  `imagen1` varchar(100) NOT NULL,
-  `imagen2` varchar(100) NOT NULL,
-  `imagen3` varchar(100) NOT NULL,
-  `imagen4` varchar(100) NOT NULL,
-  `imagen5` varchar(100) NOT NULL,
-  `visible` tinyint(1) NOT NULL,
-  `alta` varchar(21) NOT NULL,
-  `fmod` varchar(21) NOT NULL,
-  `user` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -1664,10 +1175,9 @@ CREATE TABLE `vcard_signup` (
 --
 
 INSERT INTO `vcard_signup` (`ID`, `username`, `password`, `email`, `level`, `lastlogin`, `tema`, `nombre`, `apaterno`, `amaterno`, `foto`, `cover`, `tel`, `ext`, `fnac`, `fb`, `tw`, `puesto`, `ndepa`, `depa`, `empresa`, `adress`, `direccion`, `mpio`, `edo`, `pais`, `genero`, `exp`, `likes`, `filtro`, `zona`, `alta`, `actualizacion`, `page`, `nivel_oper`, `rol`, `codigo`, `intentos`, `activo`) VALUES
-(1, 'admin', 'c64f923f7f476f0b78716079452e7bdec4b2c016', 'multiportal@outlook.com', '-1', '2020-08-08 17:22:26', 'default', 'Guillermo', 'Jimenez', 'Lopez', 'sinfoto.png', '', '4421944950', 1, '0000-00-00', '', '', 'Programador', 0, '', 'Multiportal', '', '', '', '', '', 'M', '', 0, '', '', '', 'admin2019xadmin79', '', 0, 0, '944950', '0', 1),
-(2, 'demo', '71cc541bd1ccb6670de3f8d40f425ffb7315fe7f', 'demo@gmail.com', '-1', '0000-00-00 00:00:00', 'default', 'Demo', 'Apaterno', 'Amaterno', 'sinfoto.png', 'sincover.jpg', '4421234567', 0, '0000-00-00', '', '', 'Director', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'demo2019xdemo2017', '', 0, 0, '234567', '0', 1),
-(3, 'usuario', '3c6e6ac5382f4e804e824c0d785b275252ddacb0', 'multiportal@outlook.com', '1', '0000-00-00 00:00:00', 'default', 'Usuario', 'Apaterno', 'Amaterno', 'sinfoto.png', '', '4421234567', 0, '0000-00-00', '', '', 'Usuario', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'usuario2019xuser79x', '', 0, 0, '234567', '0', 1),
-(4, 'ventas', '1d415500d481e0c1c238189c22ea057da663c1e7', 'ventas@gmail.com', '2', '0000-00-00 00:00:00', 'default', 'Ventas', 'Apaterno', 'Amaterno', 'sinfoto.png', 'sincover.jpg', '4421234567', 0, '0000-00-00', '', '', 'Gerente', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'ventas2019xventas', '', 0, 0, '234567', '0', 1);
+(1, 'admin', 'c64f923f7f476f0b78716079452e7bdec4b2c016', 'multiportal@outlook.com', '-1', '2020-09-06 15:09:18', 'default', 'Guillermo', 'Jimenez', 'Lopez', 'sinfoto.png', '', '4421944950', 1, '0000-00-00', '', '', 'Programador', 0, '', 'Multiportal', '', '', '', '', '', 'M', '', 0, '', '', '', 'admin2019xadmin79', '', 0, 0, '944950', '0', 1),
+(2, 'demo', '71cc541bd1ccb6670de3f8d40f425ffb7315fe7f', 'demo@gmail.com', '-1', '2020-08-23 20:19:10', 'default', 'Demo', 'Apaterno', 'Amaterno', 'sinfoto.png', 'sincover.jpg', '4421234567', 0, '0000-00-00', '', '', 'Director', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'demo2019xdemo2017', '', 0, 0, '234567', '0', 1),
+(10, 'usuario', 'c76ec709eb8ee62ba3181287dd95ae6f6deb856e', 'memo.jimenez@azell.co', '6', '2020-08-31 14:17:08', 'default', 'Memo Jimenez', '', '', 'sinfoto.png', 'sincover.jpg', '', 0, '0000-00-00', '', '', '', 0, '', '', '', '', '', '', '', '', '', 0, '', '', '2020-08-31 20:59:01', 'usuario2020xusuario2020', '', 0, 0, 'dam9EP', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -1691,27 +1201,9 @@ CREATE TABLE `vcard_slider` (
 --
 
 INSERT INTO `vcard_slider` (`ID`, `ima`, `tit1`, `tit2`, `btn_nom`, `url`, `tema_slider`, `visible`) VALUES
-(1, 'home.jpg', 'Slider1', '', 'Boton', '', 'default', 0);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vcard_tareas`
---
-
-CREATE TABLE `vcard_tareas` (
-  `ID` int(11) UNSIGNED NOT NULL,
-  `nom` varchar(100) NOT NULL,
-  `descripcion` varchar(250) NOT NULL,
-  `visible` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `vcard_tareas`
---
-
-INSERT INTO `vcard_tareas` (`ID`, `nom`, `descripcion`, `visible`) VALUES
-(1, 'Vcard', 'Nueva tarea', 0);
+(1, 'home.jpg', 'Slider1', '', 'Boton', '', 'default', 0),
+(2, 'slide-1.jpg', 'La soluci&oacute;n', 'para llegar a m&aacute;s clientes', 'Registrate', 'https://vcardsapp.herokuapp.com/usuarios/registro/', 'vcard2', 1),
+(3, 'slide-2.jpg', 'Mantente en', 'contacto con tus clientes', 'Registrate', 'https://vcardsapp.herokuapp.com/usuarios/registro/', 'vcard2', 1);
 
 -- --------------------------------------------------------
 
@@ -1733,7 +1225,8 @@ CREATE TABLE `vcard_temas` (
 
 INSERT INTO `vcard_temas` (`ID`, `tema`, `subtema`, `selec`, `nivel`) VALUES
 (1, 'default', '', 0, '0'),
-(5, 'vcard', '', 1, '0');
+(5, 'vcard', '', 0, '0'),
+(6, 'vcard2', '', 1, '0');
 
 -- --------------------------------------------------------
 
@@ -1768,6 +1261,7 @@ INSERT INTO `vcard_testimonios` (`ID`, `cover`, `pro`, `comentario`, `visible`) 
 
 CREATE TABLE `vcard_vcard` (
   `ID` int(11) UNSIGNED NOT NULL,
+  `cover` varchar(100) NOT NULL,
   `profile` varchar(100) NOT NULL,
   `logo` varchar(100) NOT NULL,
   `nombre` varchar(150) NOT NULL,
@@ -1783,11 +1277,10 @@ CREATE TABLE `vcard_vcard` (
   `tw` varchar(150) NOT NULL,
   `lk` varchar(150) NOT NULL,
   `ins` varchar(150) NOT NULL,
-  `bg_color` varchar(50) NOT NULL,
-  `font_fam` varchar(50) NOT NULL,
-  `date_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `f_create` varchar(20) NOT NULL,
+  `f_update` varchar(20) NOT NULL,
   `vcard` tinyint(1) NOT NULL,
-  `activo` tinyint(1) NOT NULL,
+  `user` varchar(50) NOT NULL,
   `visible` tinyint(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -1795,12 +1288,44 @@ CREATE TABLE `vcard_vcard` (
 -- Volcado de datos para la tabla `vcard_vcard`
 --
 
-INSERT INTO `vcard_vcard` (`ID`, `profile`, `logo`, `nombre`, `descripcion`, `puesto`, `empresa`, `tel`, `tel_ofi`, `cell`, `email`, `web`, `fb`, `tw`, `lk`, `ins`, `bg_color`, `font_fam`, `date_created`, `vcard`, `activo`, `visible`) VALUES
-(1, 'rforesta', 'foto.png', 'Rodrigo Foresta', '', 'Manager', 'Billnex', '', '', '+54 9 3534 19 6770', 'rodrigo.foresta@thebillnex.com', 'https://www.thebillnex.com', 'https://facebook.com/', 'https://twitter.com/', '#', 'https://www.instagram.com/billnex', '', '', '2020-02-19 21:37:48', 1, 1, 1),
-(2, 'jparra', 'foto.png', 'Juan Parra', '', 'Manager', 'Billnex', '', '', '+1(754)210-0433', 'juan.parra@thebillnex.com', 'https://www.thebillnex.com', 'https://facebook.com/', 'https://twitter.com/', '#', 'https://www.instagram.com/billnex', '', '', '2020-03-10 16:45:04', 1, 1, 1),
-(3, 'dmiranda', 'foto_capital.png', 'Daniel Miranda Mejia', '', 'Manager', 'Capital', '', '', '442 104 6067', 'dmiranda@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '', '', '2020-03-02 22:20:58', 0, 0, 1),
-(4, 'pbetancourt', 'foto_capital.png', 'Ponciano Betancourt', '', 'Manager', 'Capital', '', '', '442 347 0504', 'pbetancourt@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '', '', '2020-02-19 21:39:04', 0, 0, 1),
-(5, 'asuzan', 'foto_capital.png', 'Arturo Suz&aacute;n', '', 'Manager', 'Capital', '', '', '446 102 2535', 'a.suzan@capaitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '', '', '2020-02-19 21:39:26', 0, 0, 1);
+INSERT INTO `vcard_vcard` (`ID`, `cover`, `profile`, `logo`, `nombre`, `descripcion`, `puesto`, `empresa`, `tel`, `tel_ofi`, `cell`, `email`, `web`, `fb`, `tw`, `lk`, `ins`, `f_create`, `f_update`, `vcard`, `user`, `visible`) VALUES
+(1, 'foto.png', 'rforesta', '', 'Rodrigo Foresta', '', 'Manager', 'Billnex', '', '', '+54 9 3534 19 6770', 'rodrigo.foresta@thebillnex.com', 'https://www.thebillnex.com', '', '', '#', 'https://www.instagram.com/billnex', '19/08/2020 10:38', '2020-08-30 12:13:28', 1, 'admin', 1),
+(2, 'foto.png', 'jparra', '', 'Juan Parra', '', 'Manager', 'Billnex', '', '', '+1(754)210-0433', 'juan.parra@thebillnex.com', 'https://www.thebillnex.com', '', '', '#', 'https://www.instagram.com/billnex', '22/08/2020 17:04', '2020-08-30 12:13:42', 1, 'admin', 1),
+(3, 'foto_capital.png', 'dmiranda', '', 'Daniel Miranda Mejia', '', 'Manager', 'Capital', '', '', '442 104 6067', 'dmiranda@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '22/08/2020 21:28', '2020-08-30 12:14:02', 1, 'admin', 1),
+(4, 'foto_capital.png', 'pbetancourt', '', 'Ponciano Betancourt', '', 'Manager', 'Capital', '', '', '442 347 0504', 'pbetancourt@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '22/08/2020 21:39', '2020-08-30 13:17:20', 1, 'admin', 1),
+(5, 'foto_capital.png', 'memojl', '', 'Guillermo Jimenez Lopez', '', 'Programador', 'Multiportal', '', '', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', '', '', 'https://www.linkedin.com/', 'https://www.instagram.com/', '2020-08-30 11:05:44', '2020-08-30 13:17:34', 1, 'admin', 1),
+(6, 'foto_capital.png', 'asusan', '', 'Arturo Suz&aacute;n', '', 'Manager', 'Billnex', '', '', '442 104 6067', 'sb-comprador@gmail.com', 'https://www.thebillnex.com', '', '', '', '', '2020-08-30 11:06:48', '2020-08-30 11:56:00', 1, 'admin', 0),
+(7, 'foto.png', 'memo1', '', 'Memo Jimenez', '', 'Manager', 'Multiportal', '', '4421234567', '4426002842', 'sb-comprador@gmail.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', 'https://www.linkedin.com/company/13990038/admin/', 'https://www.instagram.com/', '2020-08-30 11:10:48', '2020-08-30 11:10:48', 1, 'admin', 1),
+(8, 'n.jpg', 'memojl', '', 'Guillermo Jimenez Lopez', '', 'Manager', 'Multiportal', '', '', '4426002842', 'memo.jimenez@azell.co', 'https://www.capitalsft.com', '', '', '', '', '2020-08-30 11:57:50', '2020-08-30 21:34:12', 1, 'admin', 1),
+(9, 'giganteh.jpg', 'memojl', '', 'Guillermo Jimenez Lopez', '', 'Programador', 'Multiportal', '', '', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', '', '', 'https://www.linkedin.com/', 'https://www.instagram.com/', '2020-08-30 12:12:47', '2020-08-30 21:40:23', 1, 'admin', 1),
+(10, 'nodisponible.jpg', 'rforesta', '', 'Rodrigo Foresta', '', 'Manager', 'Billnex', '', '', '', 'sb-comprador@gmail.com', 'https://www.thebillnex.com', '', '', '', '', '2020-08-30 13:15:29', '2020-08-30 13:15:29', 1, 'admin', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `vcard_vcard_empresas`
+--
+
+CREATE TABLE `vcard_vcard_empresas` (
+  `ID` int(10) UNSIGNED NOT NULL,
+  `cover` varchar(100) NOT NULL,
+  `empresa` varchar(100) NOT NULL,
+  `web` varchar(150) NOT NULL,
+  `tel` varchar(25) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `ID_user` int(10) NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `f_create` varchar(25) NOT NULL,
+  `f_update` varchar(25) NOT NULL,
+  `visible` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `vcard_vcard_empresas`
+--
+
+INSERT INTO `vcard_vcard_empresas` (`ID`, `cover`, `empresa`, `web`, `tel`, `email`, `ID_user`, `user`, `f_create`, `f_update`, `visible`) VALUES
+(1, 'multiportal.jpg', 'Multiportal', 'http://multiportal.com.mx', '442602842', 'multiportal@outlook.com', 1, 'admin', '2020-09-05', '2020-09-05', 1);
 
 -- --------------------------------------------------------
 
@@ -1812,7 +1337,7 @@ CREATE TABLE `vcard_visitas` (
   `ID` int(9) UNSIGNED NOT NULL,
   `IPv4` bigint(11) NOT NULL,
   `ip` varchar(20) NOT NULL,
-  `info_nave` varchar(100) NOT NULL,
+  `info_nave` varchar(300) NOT NULL,
   `navegador` varchar(50) NOT NULL,
   `version` varchar(100) NOT NULL,
   `os` varchar(50) NOT NULL,
@@ -1858,12 +1383,6 @@ ALTER TABLE `vcard_blog_coment`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `vcard_clientes`
---
-ALTER TABLE `vcard_clientes`
-  ADD PRIMARY KEY (`ID_cli`);
-
---
 -- Indices de la tabla `vcard_comp`
 --
 ALTER TABLE `vcard_comp`
@@ -1906,39 +1425,9 @@ ALTER TABLE `vcard_css2`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `vcard_cursos`
---
-ALTER TABLE `vcard_cursos`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indices de la tabla `vcard_cursos_coment`
---
-ALTER TABLE `vcard_cursos_coment`
-  ADD PRIMARY KEY (`ID`);
-
---
 -- Indices de la tabla `vcard_depa`
 --
 ALTER TABLE `vcard_depa`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indices de la tabla `vcard_directorio`
---
-ALTER TABLE `vcard_directorio`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indices de la tabla `vcard_empresa`
---
-ALTER TABLE `vcard_empresa`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indices de la tabla `vcard_galeria`
---
-ALTER TABLE `vcard_galeria`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -2008,18 +1497,6 @@ ALTER TABLE `vcard_modulos`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `vcard_noticias`
---
-ALTER TABLE `vcard_noticias`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indices de la tabla `vcard_noticias_coment`
---
-ALTER TABLE `vcard_noticias_coment`
-  ADD PRIMARY KEY (`ID`);
-
---
 -- Indices de la tabla `vcard_notificacion`
 --
 ALTER TABLE `vcard_notificacion`
@@ -2044,69 +1521,9 @@ ALTER TABLE `vcard_portafolio`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `vcard_productos`
---
-ALTER TABLE `vcard_productos`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indices de la tabla `vcard_productos_cate`
---
-ALTER TABLE `vcard_productos_cate`
-  ADD PRIMARY KEY (`ID_cate`);
-
---
--- Indices de la tabla `vcard_productos_coti`
---
-ALTER TABLE `vcard_productos_coti`
-  ADD PRIMARY KEY (`ID_coti`);
-
---
--- Indices de la tabla `vcard_productos_coti_r`
---
-ALTER TABLE `vcard_productos_coti_r`
-  ADD PRIMARY KEY (`ID_reg`);
-
---
--- Indices de la tabla `vcard_productos_files`
---
-ALTER TABLE `vcard_productos_files`
-  ADD PRIMARY KEY (`ID_pfile`);
-
---
--- Indices de la tabla `vcard_productos_marcas`
---
-ALTER TABLE `vcard_productos_marcas`
-  ADD PRIMARY KEY (`ID_marca`);
-
---
--- Indices de la tabla `vcard_productos_sub_cate`
---
-ALTER TABLE `vcard_productos_sub_cate`
-  ADD PRIMARY KEY (`ID_sub_cate`);
-
---
--- Indices de la tabla `vcard_productos_sub_cate2`
---
-ALTER TABLE `vcard_productos_sub_cate2`
-  ADD PRIMARY KEY (`ID_sub_cate2`);
-
---
--- Indices de la tabla `vcard_promociones`
---
-ALTER TABLE `vcard_promociones`
-  ADD PRIMARY KEY (`ID`);
-
---
 -- Indices de la tabla `vcard_registros`
 --
 ALTER TABLE `vcard_registros`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indices de la tabla `vcard_servicios`
---
-ALTER TABLE `vcard_servicios`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -2119,12 +1536,6 @@ ALTER TABLE `vcard_signup`
 -- Indices de la tabla `vcard_slider`
 --
 ALTER TABLE `vcard_slider`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indices de la tabla `vcard_tareas`
---
-ALTER TABLE `vcard_tareas`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -2146,6 +1557,12 @@ ALTER TABLE `vcard_vcard`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indices de la tabla `vcard_vcard_empresas`
+--
+ALTER TABLE `vcard_vcard_empresas`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indices de la tabla `vcard_visitas`
 --
 ALTER TABLE `vcard_visitas`
@@ -2159,7 +1576,7 @@ ALTER TABLE `vcard_visitas`
 -- AUTO_INCREMENT de la tabla `vcard_access`
 --
 ALTER TABLE `vcard_access`
-  MODIFY `ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_api_version`
@@ -2180,12 +1597,6 @@ ALTER TABLE `vcard_blog_coment`
   MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `vcard_clientes`
---
-ALTER TABLE `vcard_clientes`
-  MODIFY `ID_cli` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT de la tabla `vcard_comp`
 --
 ALTER TABLE `vcard_comp`
@@ -2201,7 +1612,7 @@ ALTER TABLE `vcard_config`
 -- AUTO_INCREMENT de la tabla `vcard_contacto`
 --
 ALTER TABLE `vcard_contacto`
-  MODIFY `ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_contacto_forms`
@@ -2228,40 +1639,10 @@ ALTER TABLE `vcard_css2`
   MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `vcard_cursos`
---
-ALTER TABLE `vcard_cursos`
-  MODIFY `ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `vcard_cursos_coment`
---
-ALTER TABLE `vcard_cursos_coment`
-  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `vcard_depa`
 --
 ALTER TABLE `vcard_depa`
   MODIFY `ID` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de la tabla `vcard_directorio`
---
-ALTER TABLE `vcard_directorio`
-  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `vcard_empresa`
---
-ALTER TABLE `vcard_empresa`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de la tabla `vcard_galeria`
---
-ALTER TABLE `vcard_galeria`
-  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_histo_backupdb`
@@ -2279,7 +1660,7 @@ ALTER TABLE `vcard_home_config`
 -- AUTO_INCREMENT de la tabla `vcard_iconos`
 --
 ALTER TABLE `vcard_iconos`
-  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_ipbann`
@@ -2327,19 +1708,7 @@ ALTER TABLE `vcard_mode_page`
 -- AUTO_INCREMENT de la tabla `vcard_modulos`
 --
 ALTER TABLE `vcard_modulos`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
---
--- AUTO_INCREMENT de la tabla `vcard_noticias`
---
-ALTER TABLE `vcard_noticias`
-  MODIFY `ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de la tabla `vcard_noticias_coment`
---
-ALTER TABLE `vcard_noticias_coment`
-  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_notificacion`
@@ -2357,7 +1726,7 @@ ALTER TABLE `vcard_opciones`
 -- AUTO_INCREMENT de la tabla `vcard_pages`
 --
 ALTER TABLE `vcard_pages`
-  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_portafolio`
@@ -2366,94 +1735,28 @@ ALTER TABLE `vcard_portafolio`
   MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `vcard_productos`
---
-ALTER TABLE `vcard_productos`
-  MODIFY `ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT de la tabla `vcard_productos_cate`
---
-ALTER TABLE `vcard_productos_cate`
-  MODIFY `ID_cate` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT de la tabla `vcard_productos_coti`
---
-ALTER TABLE `vcard_productos_coti`
-  MODIFY `ID_coti` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `vcard_productos_coti_r`
---
-ALTER TABLE `vcard_productos_coti_r`
-  MODIFY `ID_reg` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `vcard_productos_files`
---
-ALTER TABLE `vcard_productos_files`
-  MODIFY `ID_pfile` int(9) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `vcard_productos_marcas`
---
-ALTER TABLE `vcard_productos_marcas`
-  MODIFY `ID_marca` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT de la tabla `vcard_productos_sub_cate`
---
-ALTER TABLE `vcard_productos_sub_cate`
-  MODIFY `ID_sub_cate` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
-
---
--- AUTO_INCREMENT de la tabla `vcard_productos_sub_cate2`
---
-ALTER TABLE `vcard_productos_sub_cate2`
-  MODIFY `ID_sub_cate2` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `vcard_promociones`
---
-ALTER TABLE `vcard_promociones`
-  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT de la tabla `vcard_registros`
 --
 ALTER TABLE `vcard_registros`
   MODIFY `ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `vcard_servicios`
---
-ALTER TABLE `vcard_servicios`
-  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `vcard_signup`
 --
 ALTER TABLE `vcard_signup`
-  MODIFY `ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_slider`
 --
 ALTER TABLE `vcard_slider`
-  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de la tabla `vcard_tareas`
---
-ALTER TABLE `vcard_tareas`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_temas`
 --
 ALTER TABLE `vcard_temas`
-  MODIFY `ID` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_testimonios`
@@ -2465,7 +1768,13 @@ ALTER TABLE `vcard_testimonios`
 -- AUTO_INCREMENT de la tabla `vcard_vcard`
 --
 ALTER TABLE `vcard_vcard`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `vcard_vcard_empresas`
+--
+ALTER TABLE `vcard_vcard_empresas`
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_visitas`
