@@ -1295,7 +1295,10 @@ if($sal){
                         </div>
                         <div class="panel-body">
                             <form name="login" role="form" method="POST" action="'.$page_url.'admin/">
-                                <fieldset>
+								<fieldset>
+									<div class="form-group">
+                                        <input class="form-control" placeholder="Codigo" name="code" type="text" required autocomplete="off">
+                                    </div>
                                     <div class="form-group">
                                         <input class="form-control" placeholder="Usuario" name="username" type="text" required autocomplete="off" autofocus>
                                     </div>
