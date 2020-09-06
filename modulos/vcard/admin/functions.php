@@ -182,7 +182,7 @@ function load(page){
 	var parametros = {"mode":"ajax","page":page};
 	$("#loader").fadeIn(\'slow\');
 	$.ajax({
-		url:\'modulos/'.$mod.'/admin/backend.php?mod='.$mod.$cond_action.'\',
+		url:\''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.$cond_action.'\',
 		data: parametros,
 		beforeSend: function(objeto){
 			$("#loader").html("<img src=\'apps/dashboards/loader.gif\'>");
@@ -206,10 +206,10 @@ $(document).ready(function(){
 		var parametros = {"mode":"ajax","page":page};
 		$("#loader").fadeIn(\'slow\');
 		$.ajax({
-			url:\'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&action=listado\',
+			url:\''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&action=listado\',
 			data: parametros,
 			beforeSend: function(objeto){
-				$("#loader").html("<img src=\'modulos/'.$mod.'/img/loader.gif\'>");
+				$("#loader").html("<img src=\''.$page_url.'modulos/'.$mod.'/img/loader.gif\'>");
 			},
 			success:function(data){
 				$(".outer_div").html(data);
@@ -222,7 +222,7 @@ $(document).ready(function(){
 	/*
 	function listar(){
 		$.ajax({
-			url: \'modulos/'.$mod.'/admin/backend.php?action=list\',
+			url: \''.$page_url.'modulos/'.$mod.'/admin/backend.php?action=list\',
 			type: \'POST\',
 			//dataType : \'json\',
 			success: function(response){
@@ -256,7 +256,7 @@ $(document).ready(function(){
 		const postData={
 			'.$campos.'
 		};
-		const url = edit === false ? \'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=add\' : \'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=edit\';		
+		const url = edit === false ? \''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=add\' : \''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=edit\';		
 		console.log(postData, url);
 		$.post(url,postData,function(response){
 			console.log("Se ha actualizado el registro.");
@@ -273,7 +273,7 @@ $(document).ready(function(){
 	$(document).on(\'click\',\'.task-item\',function(){	
 		const element = $(this)[0].parentElement.parentElement;
       	const id = $(element).attr(\'taskId\');
-      	$.post(\'modulos/'.$mod.'/admin/backend.php?action=edit_form\', {id}, (response) => {
+      	$.post(\''.$page_url.'modulos/'.$mod.'/admin/backend.php?action=edit_form\', {id}, (response) => {
 			console.log(response);
 			const task=JSON.parse(response);
       		$("#nom").val(task.nom);
@@ -299,7 +299,7 @@ $(document).ready(function(){
 		  if (result.value) {
 			 //let id = $(this).closest(\'tr\').attr(\'id\'); //capturamos el atributo ID de la fila  
 			 //eliminamos la Tarjete de firebase      
-			 $.post(\'modulos/'.$mod.'/admin/backend.php?action=delete\', {id}, (response) => {
+			 $.post(\''.$page_url.'modulos/'.$mod.'/admin/backend.php?action=delete\', {id}, (response) => {
 				console.log(response);
 				load(1);
 			 });
@@ -313,7 +313,7 @@ $(document).ready(function(){
 	   if ($("#q").val()) {
 		  let q = $("#q").val();
 		  $.ajax({
-			 url: \'modulos/'.$mod.'/admin/backend.php?action=buscar\',
+			 url: \''.$page_url.'modulos/'.$mod.'/admin/backend.php?action=buscar\',
 			 type: \'POST\',
 			 data: {q},
 			 success: function (response) {
@@ -355,7 +355,7 @@ $(document).ready(function(){
 	   frmData.append("userfile", $("input[name=userfile]")[0].files[0]);
 	   //console.log(\'Se cargo Imagen\');		
 	   $.ajax({
-		  url: \'modulos/'.$mod.'/admin/backend.php?mod=vcard&action=subir_cover\',
+		  url: \''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod=vcard&action=subir_cover\',
 		  type: \'POST\',
 		  data: frmData,
 		  processData: false,

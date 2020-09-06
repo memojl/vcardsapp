@@ -197,14 +197,11 @@ if($save){
   	<div class="col-md-3 col-xs-12">
   		<div class="box box-primary">
   			<div class="box-header with-border" id="'.$id.'">
-         		<h6 class="box-title">Perfil: <b>'.$profile.'</b></h6>
-  				
+         		<h6 class="box-title">Perfil: <b>'.$profile.'</b></h6>  				
   			</div>
-  			<div class="box-body">
+  			<div class="box-body" id="'.$id.'">
 				<div class="ima-size">
-					<div class="circle-image" style="background: url('.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.');background-repeat: no-repeat;
-					background-position:center;
-					background-size: cover;"></div>	
+					<div class="circle-image" style="background: url('.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.');background-repeat: no-repeat; background-position:center; background-size: cover;"></div>	
   					<!--img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" class="img-responsive ima-size img-rounded"-->
   				</div>
   				<div id="title"><strong>'.$nombre.'</strong></div>	
