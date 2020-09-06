@@ -196,17 +196,17 @@ if($save){
   $listado.='
   	<div class="col-md-3 col-xs-12">
   		<div class="box box-primary">
-  			<div class="box-header with-border" id="'.$id.'">
+  			<div class="box-header with-border">
          		<h6 class="box-title">Perfil: <b>'.$profile.'</b></h6>  				
   			</div>
-  			<div class="box-body" id="'.$id.'">
+  			<div class="box-body">
 				<div class="ima-size">
 					<div class="circle-image" style="background: url('.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.');background-repeat: no-repeat; background-position:center; background-size: cover;"></div>	
   					<!--img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" class="img-responsive ima-size img-rounded"-->
   				</div>
-  				<div id="title"><strong>'.$nombre.'</strong></div>	
+  				<div id="title" class="text-center"><strong>'.$nombre.'</strong></div>	
 			</div><!-- /.box-body -->
-			<div class="box-footer">
+			<div class="box-footer text-right" id="'.$id.'">
 				<span class="controles">'.$seleccion.'
   					<a href="'.$page_url.'index.php?mod='.$mod.'&ext=admin/index'.$cond_opc.'&form=1&action=edit&id='.$id.'" title="Editar"><i class="fa fa-edit"></i></a> | <span class="btn-delete" title="Borrar" style="cursor:pointer;"><i class="fa fa-trash"></i></span>
   				</span>

@@ -7,7 +7,7 @@ function load(page){
 		url:'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard',
 		data: parametros,
 		beforeSend: function(objeto){
-			$("#loader").html("<img src='apps/dashboards/loader.gif'>");
+			$("#loader").html("<img src='http://localhost/MisSitios/vcardsapp/apps/dashboards/loader.gif'>");
 		},
 		success:function(data){
 			$(".outer_div").html(data);
@@ -31,7 +31,7 @@ $(document).ready(function(){
 			url:'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&action=listado',
 			data: parametros,
 			beforeSend: function(objeto){
-				$("#loader").html("<img src='http://localhost/MisSitios/vcardsapp/modulos/vcard/img/loader.gif'>");
+				$("#loader").html("<img src='http://localhost/MisSitios/vcardsapp/apps/dashboards/loader.gif'>");
 			},
 			success:function(data){
 				$(".outer_div").html(data);

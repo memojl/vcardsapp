@@ -185,7 +185,7 @@ function load(page){
 		url:\''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.$cond_action.'\',
 		data: parametros,
 		beforeSend: function(objeto){
-			$("#loader").html("<img src=\'apps/dashboards/loader.gif\'>");
+			$("#loader").html("<img src=\''.$page_url.'apps/dashboards/loader.gif\'>");
 		},
 		success:function(data){
 			$(".outer_div").html(data);
@@ -209,7 +209,7 @@ $(document).ready(function(){
 			url:\''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&action=listado\',
 			data: parametros,
 			beforeSend: function(objeto){
-				$("#loader").html("<img src=\''.$page_url.'modulos/'.$mod.'/img/loader.gif\'>");
+				$("#loader").html("<img src=\''.$page_url.'apps/dashboards/loader.gif\'>");
 			},
 			success:function(data){
 				$(".outer_div").html(data);
