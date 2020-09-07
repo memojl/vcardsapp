@@ -171,10 +171,26 @@ foreach($data as $key){$i++;
       }  
    }  
 }
-//$campos=array(1=>$campos,$campos1,$campos2,$campos3);
+$campos=array(1=>$campos,$campos1,$campos2,$campos3);
 $cond_opc=($opc!='')?'&opc='.$opc:'';
-$cond_action=($action!='')?'&action='.$action:'';
 $edit=($action=='edit')?'true':'false';
+$cond_action=($action!='')?'&action='.$action:'';
+if($js==1){
+$edit_form='$.post(\''.$page_url.'modulos/'.$mod.'/admin/backend.php?action=form_id\', {id}, (response) => {
+      let tasks=JSON.parse(response);
+      let task=tasks[0];
+      //console.log(response);console.log(task);
+      '.$campos[4].'
+      const cover = task.cover;
+      $("#ima").attr(\'src\', \''.$page_url.'modulos/'.$mod.'/fotos/\' + cover);      		
+   });';
+}else{
+$edit_form='   
+      '.$campos[2].'
+   
+      '.$campos[3].'
+      $("#ima").attr(\'src\', \''.$page_url.'modulos/'.$mod.'/fotos/\' + cover);';
+}
 
 $contenido='
 // JavaScript Document
@@ -201,6 +217,13 @@ $(document).ready(function(){
 	load(1);	
  	//listar();
 
+	 //BOTONES
+	 /*Boton Agregar*/
+	 $(\'.btn-add\').click(function () {
+		 $("#ima").attr(\'src\', \''.$page_url.'modulos/'.$mod.'/fotos/nodisponible1.jpg\');
+		 $("#form1").trigger(\'reset\');
+		 edit = false;
+	 });
 
 	function listado(page){
 		var parametros = {"mode":"ajax","page":page};
@@ -254,7 +277,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		tinyMCE.triggerSave();
 		const postData={
-			'.$campos.'
+			'.$campos[1].'
 		};
 		const url = edit === false ? \''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=add\' : \''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=edit\';		
 		console.log(postData, url);
@@ -269,19 +292,14 @@ $(document).ready(function(){
 	});
 
 	//editar_form
-	/*
-	$(document).on(\'click\',\'.task-item\',function(){	
-		const element = $(this)[0].parentElement.parentElement;
-      	const id = $(element).attr(\'taskId\');
-      	$.post(\''.$page_url.'modulos/'.$mod.'/admin/backend.php?action=edit_form\', {id}, (response) => {
-			console.log(response);
-			const task=JSON.parse(response);
-      		$("#nom").val(task.nom);
-      		$("#des").val(task.descripcion);
-      		$("#taskId").val(task.ID);
-      		edit = true;
-        });		
-	});*/
+	$(document).on(\'click\',\'.btn-edit\',function(){	
+		const element = $(this)[0].parentElement.parentElement;const id = $(element).attr(\'id\');
+		//let tr = $(this).parents("tr");const Id = tr.attr("id");console.log(Id);
+		//const id = $(this).closest(\'tr\').attr(\'id\'); //capturamos el atributo ID de la fila
+		console.log(id);
+      '.$edit_form.'
+	   edit = true;
+	});
 
 	//BORRAR
 	$(document).on(\'click\', \'.btn-delete\', function () {

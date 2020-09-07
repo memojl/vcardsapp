@@ -4,7 +4,7 @@ function load(page){
 	var parametros = {"mode":"ajax","page":page};
 	$("#loader").fadeIn('slow');
 	$.ajax({
-		url:'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard',
+		url:'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&action=edit',
 		data: parametros,
 		beforeSend: function(objeto){
 			$("#loader").html("<img src='http://localhost/MisSitios/vcardsapp/apps/dashboards/loader.gif'>");
@@ -19,9 +19,17 @@ function load(page){
 $(document).ready(function(){
 	// Global Settings
 	//console.log('jQuery esta funcionando');
-	let edit = false;
+	let edit = true;
 	load(1);	
  	//listar();
+
+	 //BOTONES
+	 /*Boton Agregar*/
+	 $('.btn-add').click(function () {
+		 $("#ima").attr('src', 'http://localhost/MisSitios/vcardsapp/modulos/vcard/fotos/nodisponible1.jpg');
+		 $("#form1").trigger('reset');
+		 edit = false;
+	 });
 
 	function listado(page){
 		var parametros = {"mode":"ajax","page":page};
@@ -99,7 +107,7 @@ user: $("#user").val(),
 visible: $("#visible").val(),
 
 		};
-		const url = edit === false ? 'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&ext=tarjetas&action=add' : 'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&ext=tarjetas&action=edit';		
+		const url = edit === false ? 'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=add' : 'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=edit';		
 		console.log(postData, url);
 		$.post(url,postData,function(response){
 			console.log("Se ha actualizado el registro.");
@@ -112,19 +120,38 @@ visible: $("#visible").val(),
 	});
 
 	//editar_form
-	/*
-	$(document).on('click','.task-item',function(){	
-		const element = $(this)[0].parentElement.parentElement;
-      	const id = $(element).attr('taskId');
-      	$.post('http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?action=edit_form', {id}, (response) => {
-			console.log(response);
-			const task=JSON.parse(response);
-      		$("#nom").val(task.nom);
-      		$("#des").val(task.descripcion);
-      		$("#taskId").val(task.ID);
-      		edit = true;
-        });		
-	});*/
+	$(document).on('click','.btn-edit',function(){	
+		const element = $(this)[0].parentElement.parentElement;const id = $(element).attr('id');
+		//let tr = $(this).parents("tr");const Id = tr.attr("id");console.log(Id);
+		//const id = $(this).closest('tr').attr('id'); //capturamos el atributo ID de la fila
+		console.log(id);
+      $.post('http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?action=form_id', {id}, (response) => {
+      let tasks=JSON.parse(response);
+      let task=tasks[0];
+      //console.log(response);console.log(task);
+      $('#ID').val(task.ID);
+$('#cover').val(task.cover);
+$('#profile').val(task.profile);
+$('#nombre').val(task.nombre);
+$('#puesto').val(task.puesto);
+$('#empresa').val(task.empresa);
+$('#tel_ofi').val(task.tel_ofi);
+$('#cell').val(task.cell);
+$('#email').val(task.email);
+$('#web').val(task.web);
+$('#fb').val(task.fb);
+$('#tw').val(task.tw);
+$('#lk').val(task.lk);
+$('#ins').val(task.ins);
+$('#f_create').val(task.f_create);
+$('#f_update').val(task.f_update);
+$('#visible').val(task.visible);
+
+      const cover = task.cover;
+      $("#ima").attr('src', 'http://localhost/MisSitios/vcardsapp/modulos/vcard/fotos/' + cover);      		
+   });
+	   edit = true;
+	});
 
 	//BORRAR
 	$(document).on('click', '.btn-delete', function () {

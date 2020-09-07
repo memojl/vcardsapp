@@ -122,38 +122,36 @@ foreach($data as $key){$i++;
    }  
 }
 $campos=array(1=>$campos,$campos1,$campos2,$campos3);
-
+//$cond_opc=($opc!='')?'&opc='.$opc:'';
+//$edit=($action=='edit')?'true':'false';
 $cond_action=($action!='')?'&action='.$action:'';
 if($js==1){
-$edit_form='$.post(\'modulos/'.$mod.'/admin/backend.php?action=form_id\', {id}, (response) => {
+$edit_form='$.post(\''.$page_url.'modulos/'.$mod.'/admin/backend.php?action=form_id\', {id}, (response) => {
       let tasks=JSON.parse(response);
       let task=tasks[0];
       //console.log(response);console.log(task);
       '.$campos[4].'
       const cover = task.cover;
-      $("#ima").attr(\'src\', \'./modulos/'.$mod.'/fotos/\' + cover);      		
+      $("#ima").attr(\'src\', \''.$page_url.'modulos/'.$mod.'/fotos/\' + cover);      		
    });';
 }else{
 $edit_form='   
       '.$campos[2].'
    
       '.$campos[3].'
-      $("#ima").attr(\'src\', \'./modulos/'.$mod.'/fotos/\' + cover);';
+      $("#ima").attr(\'src\', \''.$page_url.'modulos/'.$mod.'/fotos/\' + cover);';
 }
 
 $contenido='
 // JavaScript Document
 function load(page) {
-   var parametros = {
-     "mode": "ajax",
-     "page": page
-   };
+   var parametros = {"mode":"ajax","page":page};
    $("#loader").fadeIn(\'slow\');
    $.ajax({
-     url: \'modulos/'.$mod.'/admin/backend.php?mod='.$mod.$cond_action.'\',
+     url: \''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.$cond_action.'\',
      data: parametros,
      beforeSend: function (objeto) {
-       $("#loader").html("<img src=\'apps/dashboards/loader.gif\'>");
+       $("#loader").html("<img src=\''.$page_url.'apps/dashboards/loader.gif\'>");
      },
      success: function (data) {
        $(".outer_div").html(data);
@@ -171,22 +169,19 @@ $(document).ready(function () {
 	//BOTONES
 	/*Boton Agregar*/
 	$(\'.btn-add\').click(function () {
-		$("#ima").attr(\'src\', \'./modulos/'.$mod.'/fotos/nodisponible1.jpg\');
+		$("#ima").attr(\'src\', \''.$page_url.'modulos/'.$mod.'/fotos/nodisponible1.jpg\');
 		$("#form1").trigger(\'reset\');
 		edit = false;
 	});
  
 	function listado(page) {
-	   var parametros = {
-		  "mode": "ajax",
-		  "page": page
-	   };
+	   var parametros = {"mode":"ajax","page":page};
 	   $("#loader").fadeIn(\'slow\');
 	   $.ajax({
-		  url: \'modulos/'.$mod.'/admin/backend.php?mod=vcard&action=listado\',
+		  url: \''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod=vcard&action=listado\',
 		  data: parametros,
 		  beforeSend: function (objeto) {
-			 $("#loader").html("<img src=\'apps/dashboards/loader.gif\'>");
+			 $("#loader").html("<img src=\''.$page_url.'apps/dashboards/loader.gif\'>");
 		  },
 		  success: function (data) {
 			 $(".outer_div").html(data);
@@ -202,7 +197,7 @@ $(document).ready(function () {
 	   const postData = {
          '.$campos[1].'
 	   };
-	   const url = edit === false ? \'modulos/'.$mod.'/admin/backend.php?mod=vcard&ext=admin/index&action=add\' : \'modulos/'.$mod.'/admin/backend.php?mod=vcard&ext=admin/index&action=edit\';
+	   const url = edit === false ? \''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod=vcard&ext=admin/index&action=add\' : \''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod=vcard&ext=admin/index&action=edit\';
 	   console.log(postData, url);
 	   $.post(url, postData, function (response) {
 		  console.log("Se ha actualizado el registro.");
@@ -240,7 +235,7 @@ $(document).ready(function () {
 		  if (result.value) {
 			 //let id = $(this).closest(\'tr\').attr(\'id\'); //capturamos el atributo ID de la fila  
 			 //eliminamos la Tarjeta de firebase      
-			 $.post(\'modulos/'.$mod.'/admin/backend.php?action=delete\', {id}, (response) => {
+			 $.post(\''.$page_url.'modulos/'.$mod.'/admin/backend.php?action=delete\', {id}, (response) => {
 				console.log(response);
 				load(1);
 			 });
@@ -254,7 +249,7 @@ $(document).ready(function () {
 	   if ($("#q").val()) {
 		  let q = $("#q").val();
 		  $.ajax({
-			 url: \'modulos/'.$mod.'/admin/backend.php?action=buscar\',
+			 url: \''.$page_url.'modulos/'.$mod.'/admin/backend.php?action=buscar\',
 			 type: \'POST\',
 			 data: {q},
 			 success: function (response) {
@@ -296,7 +291,7 @@ $(document).ready(function () {
 	   frmData.append("userfile", $("input[name=userfile]")[0].files[0]);
 	   //console.log(\'Se cargo Imagen\');		
 	   $.ajax({
-		  url: \'modulos/'.$mod.'/admin/backend.php?mod=vcard&action=subir_cover\',
+		  url: \''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod=vcard&action=subir_cover\',
 		  type: \'POST\',
 		  data: frmData,
 		  processData: false,

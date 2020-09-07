@@ -1,8 +1,5 @@
-
 <?php 
 include 'head.html';
-$tabla='vcard';
-$cond_opc=($opc!='')?'&opc='.$opc:'';
 ?>  
 <!--Contenido--> 
                             <div class="panel-body">
@@ -39,7 +36,5 @@ $cond_opc=($opc!='')?'&opc='.$opc:'';
                             </div>
                             <!-- /.panel-body -->
 <!--/Contenido-->
-<?php 
-ajax_crud_usuarios($tabla,$template,1);
-?>
+
 <?php include 'footer.html';?>
