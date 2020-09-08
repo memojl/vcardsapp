@@ -87,6 +87,9 @@ $seleccion1=($visible=='1')?'selected':'';
 							   <textarea class="form-control" id="des" name="des"></textarea>
 							</div-->
 							<div class="form-group">
+								<input type="text" class="form-control" id="mod1" name="mod1" value="usuarios" placeholder="mod">
+						 	</div>
+							<div class="form-group">
 							   <input type="text" class="form-control" id="ID" name="ID" value="" placeholder="ID">
 							</div>
 							<div class="form-group">

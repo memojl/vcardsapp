@@ -107,10 +107,11 @@ ID_user: $("#ID_user").val(),
 user: $("#user").val(),
 visible: $("#visible").val(),
 
+			mod1: $("#mod1").val()
 		};
 		const url = edit === false ? 'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=add' : 'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&ext=admin/index&action=edit';		
 		console.log(postData, url);
-		$.post(url,postData,function(response){
+		$.post(url,postData,function(response){//console.log(response);
 			console.log("Se ha actualizado el registro.");
 			$("#form1").trigger('reset');
 			$("#addVcard").modal('hide');

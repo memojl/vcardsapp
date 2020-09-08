@@ -167,7 +167,8 @@ echo '
   		$f_update = (isset($_POST['f_update']))?$_POST['f_update']:'';
   		$vcard    = (isset($_POST['vcard']))?$_POST['vcard']:'';
   		$user     = (isset($_POST['user']))?$_POST['user']:'';
-  		$visible  = (isset($_POST['visible']))?$_POST['visible']:'';
+		$visible  = (isset($_POST['visible']))?$_POST['visible']:'';
+		$mod1  	  = (isset($_POST['mod1']))?$_POST['mod1']:'';  
   	
   $c=0;
   html_iso_servicios($nombre);
@@ -190,11 +191,16 @@ echo '
   		}else{$edi='agregado';
   			$save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix.$tabla." (cover,profile,logo,nombre,descripcion,puesto,empresa,tel,tel_ofi,cell,email,web,fb,tw,lk,ins,f_create,f_update,vcard,user,visible) VALUES ('{$cover}','{$profile}','{$logo}','{$nombre}','{$des}','{$puesto}','{$empresa}','{$tel}','{$tel_ofi}','{$cell}','{$email}','{$web}','{$fb}','{$tw}','{$lk}','{$ins}','{$f_create}','{$f_update}','{$vcard}','{$user}','{$visible}')") or print mysqli_error($mysqli);
   		}	
-  		$URL=$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc;	
-  		recargar(5,$URL,$target);
+		
+		if($mod1=='usuarios'){$seg=1;
+			$URL=$page_url.'usuarios/tarjetas/';	
+		}else{$seg=5;
+			$URL=$page_url.'index.php?mod='.$mod.'&ext='.$ext.$cond_opc;
+		}		  	
+  		recargar($seg,$URL,$target);
   	}
   	validar_aviso($save,'La Vcard se ha '.$edi.' correctamente','No se puedo guardar intentelo nuevamente',$aviso);
-  	echo $aviso;
+  	echo $aviso.'<br>'.$mod1;
 
 if($save){
   //$path_f='../../../vcard/files/vcf';

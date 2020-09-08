@@ -317,10 +317,11 @@ $(document).ready(function(){
 		tinyMCE.triggerSave();
 		const postData={
 			'.$campos[1].'
+			mod1: $("#mod1").val()
 		};
 		const url = edit === false ? \''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=add\' : \''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&ext='.$ext.'&action=edit\';		
 		console.log(postData, url);
-		$.post(url,postData,function(response){
+		$.post(url,postData,function(response){//console.log(response);
 			console.log("Se ha actualizado el registro.");
 			$("#form1").trigger(\'reset\');
 			$("#addVcard").modal(\'hide\');

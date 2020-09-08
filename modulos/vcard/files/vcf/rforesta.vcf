@@ -4,8 +4,8 @@ BEGIN:VCARD
   FN:
   ORG:Billnex
   TÍTULO:Manager
-  TEL;WORK;VOZ:+54 9 3534 19 6770
-  TEL;CELULAR;VOZ:+54 9 3534 19 6770
+  TEL;WORK;VOZ:
+  TEL;CELULAR;VOZ:
   URL;TRABAJO:https://www.thebillnex.com
-  EMAIL;INTERNET:rodrigo.foresta@thebillnex.com
+  EMAIL;INTERNET:sb-comprador@gmail.com
   END:VCARD
