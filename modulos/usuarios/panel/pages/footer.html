@@ -48,6 +48,25 @@
         if($ext=='tarjetas'){
             echo '
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.14.4/dist/sweetalert2.all.min.js"></script>
+            <script>
+            function listado(page,user){
+	            var parametros = {"mode":"ajax","page":page,"user":user};
+	            $("#loader").fadeIn(\'slow\');
+            	$.ajax({
+		            url:\''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&action=vcardapp\',
+		            data: parametros,
+		            beforeSend: function(objeto){
+			            $("#loader").html("<img src=\''.$page_url.'apps/dashboards/loader.gif\'>");
+		            },
+		            success:function(data){
+			            $(".outer").html(data);
+			            $("#loader").html("");
+		            }
+	            });
+            }
+
+              listado(1,\''.$username.'\');
+            </script>
             <script src="'.$page_url.'modulos/vcard/js/ajax_vcard.js"></script>
             ';
         }

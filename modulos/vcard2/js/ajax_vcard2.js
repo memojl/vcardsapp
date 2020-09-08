@@ -1,16 +1,13 @@
 
 // JavaScript Document
 function load(page) {
-   var parametros = {
-     "mode": "ajax",
-     "page": page
-   };
+   var parametros = {"mode":"ajax","page":page};
    $("#loader").fadeIn('slow');
    $.ajax({
-     url: 'modulos/vcard2/admin/backend.php?mod=vcard2',
+     url: 'http://localhost/MisSitios/vcardsapp/modulos/vcard2/admin/backend.php?mod=vcard2',
      data: parametros,
      beforeSend: function (objeto) {
-       $("#loader").html("<img src='apps/dashboards/loader.gif'>");
+       $("#loader").html("<img src='http://localhost/MisSitios/vcardsapp/apps/dashboards/loader.gif'>");
      },
      success: function (data) {
        $(".outer_div").html(data);
@@ -28,22 +25,19 @@ $(document).ready(function () {
 	//BOTONES
 	/*Boton Agregar*/
 	$('.btn-add').click(function () {
-		$("#ima").attr('src', './modulos/vcard2/fotos/nodisponible1.jpg');
+		$("#ima").attr('src', 'http://localhost/MisSitios/vcardsapp/modulos/vcard2/fotos/nodisponible1.jpg');
 		$("#form1").trigger('reset');
 		edit = false;
 	});
  
 	function listado(page) {
-	   var parametros = {
-		  "mode": "ajax",
-		  "page": page
-	   };
+	   var parametros = {"mode":"ajax","page":page};
 	   $("#loader").fadeIn('slow');
 	   $.ajax({
-		  url: 'modulos/vcard2/admin/backend.php?mod=vcard&action=listado',
+		  url: 'http://localhost/MisSitios/vcardsapp/modulos/vcard2/admin/backend.php?mod=vcard&action=listado',
 		  data: parametros,
 		  beforeSend: function (objeto) {
-			 $("#loader").html("<img src='apps/dashboards/loader.gif'>");
+			 $("#loader").html("<img src='http://localhost/MisSitios/vcardsapp/apps/dashboards/loader.gif'>");
 		  },
 		  success: function (data) {
 			 $(".outer_div").html(data);
@@ -77,11 +71,12 @@ ins: $("#ins").val(),
 f_create: $("#f_create").val(),
 f_update: $("#f_update").val(),
 vcard: $("#vcard").val(),
+ID_user: $("#ID_user").val(),
 user: $("#user").val(),
 visible: $("#visible").val(),
 
 	   };
-	   const url = edit === false ? 'modulos/vcard2/admin/backend.php?mod=vcard&ext=admin/index&action=add' : 'modulos/vcard2/admin/backend.php?mod=vcard&ext=admin/index&action=edit';
+	   const url = edit === false ? 'http://localhost/MisSitios/vcardsapp/modulos/vcard2/admin/backend.php?mod=vcard&ext=admin/index&action=add' : 'http://localhost/MisSitios/vcardsapp/modulos/vcard2/admin/backend.php?mod=vcard&ext=admin/index&action=edit';
 	   console.log(postData, url);
 	   $.post(url, postData, function (response) {
 		  console.log("Se ha actualizado el registro.");
@@ -99,7 +94,7 @@ visible: $("#visible").val(),
 		//let tr = $(this).parents("tr");const Id = tr.attr("id");console.log(Id);
 		//const id = $(this).closest('tr').attr('id'); //capturamos el atributo ID de la fila
 		console.log(id);
-      $.post('modulos/vcard2/admin/backend.php?action=form_id', {id}, (response) => {
+      $.post('http://localhost/MisSitios/vcardsapp/modulos/vcard2/admin/backend.php?action=form_id', {id}, (response) => {
       let tasks=JSON.parse(response);
       let task=tasks[0];
       //console.log(response);console.log(task);
@@ -119,10 +114,11 @@ $('#lk').val(task.lk);
 $('#ins').val(task.ins);
 $('#f_create').val(task.f_create);
 $('#f_update').val(task.f_update);
+$('#ID_user').val(task.ID_user);
 $('#visible').val(task.visible);
 
       const cover = task.cover;
-      $("#ima").attr('src', './modulos/vcard2/fotos/' + cover);      		
+      $("#ima").attr('src', 'http://localhost/MisSitios/vcardsapp/modulos/vcard2/fotos/' + cover);      		
    });
 	   edit = true;
 	});
@@ -143,7 +139,7 @@ $('#visible').val(task.visible);
 		  if (result.value) {
 			 //let id = $(this).closest('tr').attr('id'); //capturamos el atributo ID de la fila  
 			 //eliminamos la Tarjeta de firebase      
-			 $.post('modulos/vcard2/admin/backend.php?action=delete', {id}, (response) => {
+			 $.post('http://localhost/MisSitios/vcardsapp/modulos/vcard2/admin/backend.php?action=delete', {id}, (response) => {
 				console.log(response);
 				load(1);
 			 });
@@ -157,7 +153,7 @@ $('#visible').val(task.visible);
 	   if ($("#q").val()) {
 		  let q = $("#q").val();
 		  $.ajax({
-			 url: 'modulos/vcard2/admin/backend.php?action=buscar',
+			 url: 'http://localhost/MisSitios/vcardsapp/modulos/vcard2/admin/backend.php?action=buscar',
 			 type: 'POST',
 			 data: {q},
 			 success: function (response) {
@@ -199,7 +195,7 @@ $('#visible').val(task.visible);
 	   frmData.append("userfile", $("input[name=userfile]")[0].files[0]);
 	   //console.log('Se cargo Imagen');		
 	   $.ajax({
-		  url: 'modulos/vcard2/admin/backend.php?mod=vcard&action=subir_cover',
+		  url: 'http://localhost/MisSitios/vcardsapp/modulos/vcard2/admin/backend.php?mod=vcard&action=subir_cover',
 		  type: 'POST',
 		  data: frmData,
 		  processData: false,

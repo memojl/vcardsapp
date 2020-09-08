@@ -77,6 +77,45 @@ global $chartset;
  }
 }
 
+function query_all_tabla_vcard($index,$th,$tabla,$url_api,$crud){
+	global $page_url,$path_jsonDB,$path_jsonWS;
+	   $display=($crud!=0)?'':'none';
+	   $data=query_data($tabla,$url_api);//print_r($data);
+	   usort($data, function($a, $b){global $index;return strnatcmp($a[$index], $b[$index]);});//Orden por ID
+		//CAMPOS
+	   $i=0;$campos='<th style="display:'.$display.';">Acciones</th>'."\n";
+		  if($th!=''){
+			 for($j=0;$j<count($th);$j++){
+				$campos.='<th>'.$th[$j].'</th>'."\n";
+			 }
+		  }else{
+			 foreach($data as $key){$i++;
+				if($i==1){
+				   foreach($key as $datos=>$value){
+					  $campos.='<th>'.$datos.'</th>'."\n";
+				   }  
+				}  
+			 }   
+		  }
+		echo '<tr>'.$campos.'</tr>'."\n";
+	   //DATOS
+		foreach($data as $key => $value){
+		  $row=$data[$key];if($index!=''){$key=$row['ID'];}
+		  echo '<tr id="'.$key.'">'."\n";
+		  echo '<td style="display:'.$display.';"><button class="btn btn-primary btn-edit" data-toggle="modal" data-target="#addVcard"><i class="fa fa-edit"></i></button> | <button class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>';   
+		  if($th!=''){
+			 for($j=0;$j<count($th);$j++){$datos=$th[$j];
+				echo '<td>'.$row[$datos].'</td>'."\n";
+			 }
+		  }else{
+			 foreach($row as $datos=>$value){//echo '<td>'.$row[$datos].'</td>'."\n";
+				echo '<td>'.$value.'</td>'."\n";
+				}
+		  }
+		  echo '</tr>'."\n";
+	   }
+	}
+
 function file_ima($cover){
 global $page_url,$mod;
    $file='<input type="hidden" class="form-control" id="cover" name="cover" value="'.$cover.'">
@@ -210,12 +249,28 @@ function load(page){
 	});
 }
 
+function listado(page,user){
+	var parametros = {"mode":"ajax","page":page,"user":user};
+	$("#loader").fadeIn(\'slow\');
+	$.ajax({
+		url:\''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&action=vcardapp\',
+		data: parametros,
+		beforeSend: function(objeto){
+			$("#loader").html("<img src=\''.$page_url.'apps/dashboards/loader.gif\'>");
+		},
+		success:function(data){
+			$(".outer").html(data);
+			$("#loader").html("");
+		}
+	});
+}
+
 $(document).ready(function(){
 	// Global Settings
 	//console.log(\'jQuery esta funcionando\');
 	let edit = '.$edit.';
 	load(1);	
- 	//listar();
+ 	//listado(1,\'usuario\');
 
 	 //BOTONES
 	 /*Boton Agregar*/
@@ -224,22 +279,6 @@ $(document).ready(function(){
 		 $("#form1").trigger(\'reset\');
 		 edit = false;
 	 });
-
-	function listado(page){
-		var parametros = {"mode":"ajax","page":page};
-		$("#loader").fadeIn(\'slow\');
-		$.ajax({
-			url:\''.$page_url.'modulos/'.$mod.'/admin/backend.php?mod='.$mod.'&action=listado\',
-			data: parametros,
-			beforeSend: function(objeto){
-				$("#loader").html("<img src=\''.$page_url.'apps/dashboards/loader.gif\'>");
-			},
-			success:function(data){
-				$(".outer_div").html(data);
-				$("#loader").html("");
-			}
-		});
-	}
 
 	//LISTAR
 	/*

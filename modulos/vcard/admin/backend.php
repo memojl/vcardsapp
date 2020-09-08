@@ -39,11 +39,97 @@
         }
       }
     echo $file;    
-  	  break;  
+	  break;
+	  case($action=='vcardapp'):
+
+		$modo = (isset($_REQUEST['mode'])&& $_REQUEST['mode']!=NULL)?$_REQUEST['mode']:'';
+		$user = (isset($_REQUEST['user'])&& $_REQUEST['user']!=NULL)?$_REQUEST['user']:'';
+		$condi=($user!='')?" WHERE user='{$user}'":'';
+		if($modo == 'ajax'){$cond_opc=($opc!='')?'&opc='.$opc:'';
+			//include ''; //incluir el archivo de paginación
+			//las variables de paginación
+			$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
+			$per_page = 8; //la cantidad de registros que desea mostrar		
+			$adjacents  = 1; //brecha entre páginas después de varios adyacentes
+			$offset = ($page - 1) * $per_page;
+			//Cuenta el número total de filas de la tabla*/
+			//$count_query=mysqli_query($mysqli,"SELECT count(*) AS numrows FROM tcer_productos ");
+			//if($row= mysqli_fetch_array($count_query)){$numrows = $row['numrows'];}
+			$sql=mysqli_query($mysqli,"SELECT * FROM ".$DBprefix.$tabla.$condi."") or print mysqli_error($mysqli);
+			$numrows=mysqli_num_rows($sql);
+			$total_pages = ceil($numrows/$per_page);
+			$reload = 'index.php';$rep1=array('_','cion');$rep2=array(' ','ci&oacute;n');
+			//consulta principal para recuperar los datos
+			$sql=mysqli_query($mysqli,"SELECT * FROM ".$DBprefix.$tabla.$condi." ORDER BY ID LIMIT {$offset},{$per_page};") or print mysqli_error($mysqli);		
+			if($numrows>0){$j=0;
+				while($row=mysqli_fetch_array($sql)){$j++;
+				  $id       = $row['ID'];
+				  $cover    = $row['cover'];
+				  $logo     = $row['logo'];
+				  $profile  = $row['profile'];
+				  $nombre   = $row['nombre'];
+				  $des      = $row['descripcion'];
+				  $puesto   = $row['puesto'];
+				  $empresa  = $row['empresa'];
+				  $tel      = $row['tel'];
+				  $tel_ofi  = $row['tel_ofi'];
+				  $cell     = $row['cell'];
+				  $email    = $row['email'];
+				  $web      = $row['web'];
+				  $fb       = $row['fb'];
+				  $tw       = $row['tw'];
+				  $lk       = $row['lk'];
+				  $ins      = $row['ins'];
+				  $f_create = $row['f_create'];
+				  $f_update = $row['f_update'];
+				  $vcard    = $row['vcard'];
+				  $user     = $row['user'];
+				  $visible  = $row['visible'];
+
+				  $seleccion=($visible==0)?'<span style="color:#e00;"><i class="fa fa-close" title="Desactivado"></i></span>':'<span style="color:#0f0;"><i class="fa fa-check" title="Activo"></i></span>';				  
+echo '<div class="box-body">
+	<div class="col-md-3 col-xs-12">
+  		<div class="box box-primary">
+  			<div class="box-header with-border">
+         		<h6 class="box-title">Perfil: <b>'.$profile.'</b></h6>  				
+  			</div>
+  			<div class="box-body">
+				<div class="ima-size">
+					<div class="circle-image" style="background: url('.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.');background-repeat: no-repeat; background-position:center; background-size: cover;"></div>	
+  					<!--img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" class="img-responsive ima-size img-rounded"-->
+  				</div>
+  				<div id="title" class="text-center"><strong>'.$nombre.'</strong></div>	
+			</div><!-- /.box-body -->
+			<div class="box-footer text-right" id="'.$id.'">
+				<span class="controles">'.$seleccion.'
+  					<span class="bt-edit" data-toggle="modal" data-target="#addVcard" title="Editar"><i class="fa fa-edit"></i></span> | <span class="btn-delete" title="Borrar" style="cursor:pointer;"><i class="fa fa-trash"></i></span>
+  				</span>
+			</div>
+  		</div>
+  	</div>
+</div>';
+
+				}//WHILE
+?>
+  <div class="box-footer clearfix">				
+	Mostrando <?php echo $ini=$id-($j-1);?> al <?php echo $id;?> de <?php echo $numrows;?> registros<?php echo paginate($reload, $page, $total_pages, $adjacents);?>					
+  </div>
+  <?php 			
+	}else{//$numrows
+		echo '
+		<div class="alert alert-warning alert-dismissable">
+		  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		  <h4>Error</h4> No hay datos para mostrar.
+	  </div>';
+	}
+	}
+
+
+	  break;
   	  case($action=='buscar'):
   		$q=$_POST['q'];
   		if(!empty($q)){
-    			$query="SELECT ID,cover,profile,nombre,puesto,empresa,email,visible FROM ".$DBprefix.$tabla." WHERE nombre LIKE '%{$q}%'";
+   			$query="SELECT ID,cover,profile,nombre,puesto,empresa,email,visible FROM ".$DBprefix.$tabla." WHERE nombre LIKE '%{$q}%'";
   		}else{$query="SELECT * FROM ".$DBprefix.$tabla."";}
     		ws_query($query,1,0);
   	  break;

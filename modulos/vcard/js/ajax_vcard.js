@@ -4,7 +4,7 @@ function load(page){
 	var parametros = {"mode":"ajax","page":page};
 	$("#loader").fadeIn('slow');
 	$.ajax({
-		url:'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&action=edit',
+		url:'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard',
 		data: parametros,
 		beforeSend: function(objeto){
 			$("#loader").html("<img src='http://localhost/MisSitios/vcardsapp/apps/dashboards/loader.gif'>");
@@ -16,12 +16,28 @@ function load(page){
 	});
 }
 
+function listado(page,user){
+	var parametros = {"mode":"ajax","page":page,"user":user};
+	$("#loader").fadeIn('slow');
+	$.ajax({
+		url:'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&action=vcardapp',
+		data: parametros,
+		beforeSend: function(objeto){
+			$("#loader").html("<img src='http://localhost/MisSitios/vcardsapp/apps/dashboards/loader.gif'>");
+		},
+		success:function(data){
+			$(".outer").html(data);
+			$("#loader").html("");
+		}
+	});
+}
+
 $(document).ready(function(){
 	// Global Settings
 	//console.log('jQuery esta funcionando');
-	let edit = true;
+	let edit = false;
 	load(1);	
- 	//listar();
+ 	//listado(1,'usuario');
 
 	 //BOTONES
 	 /*Boton Agregar*/
@@ -30,22 +46,6 @@ $(document).ready(function(){
 		 $("#form1").trigger('reset');
 		 edit = false;
 	 });
-
-	function listado(page){
-		var parametros = {"mode":"ajax","page":page};
-		$("#loader").fadeIn('slow');
-		$.ajax({
-			url:'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&action=listado',
-			data: parametros,
-			beforeSend: function(objeto){
-				$("#loader").html("<img src='http://localhost/MisSitios/vcardsapp/apps/dashboards/loader.gif'>");
-			},
-			success:function(data){
-				$(".outer_div").html(data);
-				$("#loader").html("");
-			}
-		});
-	}
 
 	//LISTAR
 	/*
@@ -103,6 +103,7 @@ ins: $("#ins").val(),
 f_create: $("#f_create").val(),
 f_update: $("#f_update").val(),
 vcard: $("#vcard").val(),
+ID_user: $("#ID_user").val(),
 user: $("#user").val(),
 visible: $("#visible").val(),
 
@@ -145,6 +146,7 @@ $('#lk').val(task.lk);
 $('#ins').val(task.ins);
 $('#f_create').val(task.f_create);
 $('#f_update').val(task.f_update);
+$('#ID_user').val(task.ID_user);
 $('#visible').val(task.visible);
 
       const cover = task.cover;

@@ -9,6 +9,7 @@ include 'head.html';
                                             <div class="col-sm-6">
                                                 <div class="dataTables_length" id="dataTables-example_length">
                                                     <!--label>Show <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label-->
+                                                    <button type="button" class="btn btn-default btn-add" data-toggle="modal" data-target="#addVcard"><i class="fa fa-plus"></i> Nuevo</button>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
@@ -20,7 +21,7 @@ include 'head.html';
                                             <tbody>
                                                 <!--?php query_all_tabla('vcard','https://vcardsapp.herokuapp.com/bloques/ws/t/vcard','');?-->
                                                 <div id="loader" class="text-center"><img src="<?php echo $page_url;?>apps/dashboards/loader.gif"></div>
-				                                <div class="outer_div"></div>
+				                                <div class="outer"></div>
                                             </tbody>
                                         </table>
                                     </div>
@@ -36,5 +37,5 @@ include 'head.html';
                             </div>
                             <!-- /.panel-body -->
 <!--/Contenido-->
-
+<?php modal_vcard();?>
 <?php include 'footer.html';?>
