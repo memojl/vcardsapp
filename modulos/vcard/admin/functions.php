@@ -326,6 +326,7 @@ $(document).ready(function(){
 			$("#addVcard").modal(\'hide\');
 			$("#aviso").html(response).fadeIn("slow").delay(3000).fadeOut("slow");
 			load(1);
+			
 			//edit = false;
 		});
 	});

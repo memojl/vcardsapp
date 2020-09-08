@@ -66,6 +66,12 @@
             }
 
               listado(1,\''.$username.'\');
+ 
+              const buttonAceptar = document.querySelector("#Aceptar1");
+              const recargarCards = () => {console.log("Boton Aceptar");}
+              buttonAceptar.addEventListener("click", recargarCards);
+
+
             </script>
             <script src="'.$page_url.'modulos/vcard/js/ajax_vcard.js"></script>
             ';
