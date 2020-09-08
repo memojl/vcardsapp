@@ -4,7 +4,7 @@ function file_ima($cover){
 global $page_url,$mod;
 $mod='vcard';
    $file='<input type="hidden" class="form-control" id="cover" name="cover" value="'.$cover.'">
-   <img id="ima" src="'.$page_url.'modulos/'.$mod.'/fotos/'.$cover.'" style="width:150px;" title="'.$cover.'">
+   <img id="ima" src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" style="width:150px;" title="'.$cover.'">
    <a href="javascript:up(1);">Cambiar Foto</a><div id="upload"></div>';
    return $file;
 }
@@ -24,10 +24,40 @@ global $page_url,$path_jsonDB,$path_jsonWS;
    return $select;
 }
 
+function fecha_php_vcard(){
+	global $fecha;
+	echo '
+	<script language="JavaScript">
+	//Configuracion de la funcion: [hora.js].
+	function fecha(){
+	var dt = new Date();
+	var d  = dt.getDate();
+	var day = (d < 10) ? \'0\' + d : d;
+	var m = dt.getMonth() + 1;
+	var month = (m < 10) ? \'0\' + m : m;
+	var yy = dt.getYear();
+	var year = (yy < 1000) ? yy + 1900 : yy;
+	var fecha = year+"-"+month+"-"+day;
+	
+	var hora = dt.getHours();
+	var minuto = dt.getMinutes();
+	var segundo = dt.getSeconds();
+	var valtime = ((hora<10)? "0" : "")+hora;
+	valtime += ((minuto<10)? ":0" : ":")+minuto;
+	valtime += ((segundo<10)? ":0" : ":")+segundo;
+	tiempo = setTimeout(\'fecha()\',1000);
+	//document.getElementById("fecha").innerHTML = "'.$fecha.' " + valtime;
+	document.getElementById("f_create").value = fecha +" "+ valtime;
+	document.getElementById("f_update").value = fecha +" "+ valtime;
+	}
+	window.onload = fecha;
+	</script>';
+	}
+
 function modal_vcard(){
 	global $username,$mod;
 	
-	if($cover==''){$cover='nodisponible1.jpg';}
+	if($cover==''){$cover='nodisponible.jpg';}
 	$file=file_ima($cover);
 	$seleccion0=($visible=='0')?'selected':'';
 	$seleccion1=($visible=='1')?'selected':'';

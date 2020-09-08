@@ -87,7 +87,7 @@
 				  $visible  = $row['visible'];
 
 				  $seleccion=($visible==0)?'<span style="color:#e00;"><i class="fa fa-close" title="Desactivado"></i></span>':'<span style="color:#0f0;"><i class="fa fa-check" title="Activo"></i></span>';				  
-echo '<div class="box-body">
+echo '
 	<div class="col-md-3 col-xs-12">
   		<div class="box box-primary">
   			<div class="box-header with-border">
@@ -102,12 +102,12 @@ echo '<div class="box-body">
 			</div><!-- /.box-body -->
 			<div class="box-footer text-right" id="'.$id.'">
 				<span class="controles">'.$seleccion.'
-  					<span class="bt-edit" data-toggle="modal" data-target="#addVcard" title="Editar"><i class="fa fa-edit"></i></span> | <span class="btn-delete" title="Borrar" style="cursor:pointer;"><i class="fa fa-trash"></i></span>
+  					<span class="btn-edit" data-toggle="modal" data-target="#addVcard" title="Editar"><i class="fa fa-edit"></i></span> | <span class="btn-delete" title="Borrar" style="cursor:pointer;"><i class="fa fa-trash"></i></span>
   				</span>
 			</div>
   		</div>
   	</div>
-</div>';
+';
 
 				}//WHILE
 ?>
@@ -133,7 +133,13 @@ echo '<div class="box-body">
   		}else{$query="SELECT * FROM ".$DBprefix.$tabla."";}
     		ws_query($query,1,0);
   	  break;
-  	  case($action=='delete'):
+	  case($action=='form_id'):
+    	if(isset($_POST['id'])){ $id=$_POST['id'];
+      		$query="SELECT * FROM ".$DBprefix.$tabla." WHERE ID='{$id}';";
+      		ws_query($query,1,0);
+      }
+  	  break;	
+	  case($action=='delete'):
   		if(isset($_POST['id'])){ $id=$_POST['id'];
   			$sql=mysqli_query($mysqli,"DELETE FROM ".$DBprefix.$tabla." WHERE ID='{$id}';") or print mysqli_error($mysqli);
   			echo 'El registro '.$id.' ha sido eliminado';

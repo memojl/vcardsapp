@@ -42,7 +42,7 @@ $(document).ready(function(){
 	 //BOTONES
 	 /*Boton Agregar*/
 	 $('.btn-add').click(function () {
-		 $("#ima").attr('src', 'http://localhost/MisSitios/vcardsapp/modulos/vcard/fotos/nodisponible1.jpg');
+		 $("#ima").attr('src', 'http://localhost/MisSitios/vcardsapp/modulos/vcard/files/fotos/nodisponible.jpg');
 		 $("#form1").trigger('reset');
 		 edit = false;
 	 });
@@ -150,7 +150,7 @@ $('#ID_user').val(task.ID_user);
 $('#visible').val(task.visible);
 
       const cover = task.cover;
-      $("#ima").attr('src', 'http://localhost/MisSitios/vcardsapp/modulos/vcard/fotos/' + cover);      		
+      $("#ima").attr('src', 'http://localhost/MisSitios/vcardsapp/modulos/vcard/files/fotos/' + cover);      		
    });
 	   edit = true;
 	});

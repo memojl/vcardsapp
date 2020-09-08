@@ -221,14 +221,14 @@ $edit_form='$.post(\''.$page_url.'modulos/'.$mod.'/admin/backend.php?action=form
       //console.log(response);console.log(task);
       '.$campos[4].'
       const cover = task.cover;
-      $("#ima").attr(\'src\', \''.$page_url.'modulos/'.$mod.'/fotos/\' + cover);      		
+      $("#ima").attr(\'src\', \''.$page_url.'modulos/'.$mod.'/files/fotos/\' + cover);      		
    });';
 }else{
 $edit_form='   
       '.$campos[2].'
    
       '.$campos[3].'
-      $("#ima").attr(\'src\', \''.$page_url.'modulos/'.$mod.'/fotos/\' + cover);';
+      $("#ima").attr(\'src\', \''.$page_url.'modulos/'.$mod.'/files/fotos/\' + cover);';
 }
 
 $contenido='
@@ -275,7 +275,7 @@ $(document).ready(function(){
 	 //BOTONES
 	 /*Boton Agregar*/
 	 $(\'.btn-add\').click(function () {
-		 $("#ima").attr(\'src\', \''.$page_url.'modulos/'.$mod.'/fotos/nodisponible1.jpg\');
+		 $("#ima").attr(\'src\', \''.$page_url.'modulos/'.$mod.'/files/fotos/nodisponible.jpg\');
 		 $("#form1").trigger(\'reset\');
 		 edit = false;
 	 });
