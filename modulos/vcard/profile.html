@@ -58,11 +58,9 @@
 
                     <div class="img ng-hide" ng-show="loadDemo &amp;&amp; view.avatar" ng-click="!loadDemo ?  &#39;&#39; : callAction($event,&#39;headerButton-avatar&#39;)" ng-style="{&#39;background&#39;:view.avatar?&#39;url(&#39;+view.avatar+&#39;)&#39;:&#39;none&#39;}" style="background: url(&quot;//qrcgcustomers.s3-eu-west-1.amazonaws.com/account5493273/3556709_1.png?0.0635479782185353&quot;);"></div>
                     <div class="img" ng-show="!loadDemo &amp;&amp; view.avatar" ng-style="{&#39;background&#39;:view.avatar?&#39;url(&#39;+view.avatar+&#39;)&#39;:&#39;none&#39;}" style="background: url(&quot;//qrcgcustomers.s3-eu-west-1.amazonaws.com/account5493273/3556709_1.png?0.0635479782185353&quot;);"></div>
-                    <h2 class="name dynamicTextColor ng-binding" ng-show="view.firstname || view.lastname">Guillermo
-                        Jim&eacute;nez L&oacute;pez</h2>
-
-                    <h2 class="name dynamicTextColor ng-binding ng-hide" ng-hide="view.firstname || view.lastname">Multiportal</h2>
-                    <h6 class="title dynamicTextColor ng-binding">Desarrollador Web</h6>
+                    <h2 class="name dynamicTextColor ng-binding" ng-show="view.firstname || view.lastname"><?php echo $nombre;?></h2>
+                    <h2 class="name dynamicTextColor ng-binding ng-hide" ng-hide="view.firstname || view.lastname"><?php echo $empresa;?></h2>
+                    <h6 class="title dynamicTextColor ng-binding"><?php echo $puesto;?></h6>
                 </div>
                 <div class="vcard-functions" ng-show="view.numbers_mobile ||  view.numbers_phone ||  view.email || ((view.city ||view.street|| view.zip|| view.country) &amp;&amp; view.show_directions)">
                     <div class="vcard-functions-wrapper">
@@ -76,12 +74,12 @@
     <small class="dynamicTextColor">Email</small>
 </a>
 
-<a href="tel:4426002842" ng-show="!loadDemo &amp;&amp; (view.numbers_mobile || view.numbers_phone)">
+<a href="tel:<?php echo $cell;?>" ng-show="!loadDemo &amp;&amp; (view.numbers_mobile || view.numbers_phone)">
     <i class="icon-phone dynamicTextColor"></i>
     <small class="dynamicTextColor">Call</small>
 </a>
 
-<a href="mailto:multiportal@outlook.com?subject=From%20my%20vCard&amp;body=" target="_newEmail" ng-show="!loadDemo &amp;&amp; (view.email)" class="last-element">
+<a href="mailto:<?php echo $email;?>?subject=From%20my%20vCard&amp;body=" target="_newEmail" ng-show="!loadDemo &amp;&amp; (view.email)" class="last-element">
     <i class="icon-send dynamicTextColor"></i>
     <small class="dynamicTextColor">Email</small>
 </a>
@@ -123,7 +121,7 @@
     <div class="vcard-separator" ng-show="view.bio"></div>
     <div class="vcard-row" ng-show="view.numbers_mobile">
         <i class="icon icon-phone"></i>
-        <h4><a href="tel:4426002842" class="ng-binding">4426002842</a></h4>
+        <h4><a href="tel:<?php echo $cell;?>" class="ng-binding"><?php echo $cell;?></a></h4>
         <small>Mobile</small>
     </div>
     <div class="vcard-row pt0 ng-hide" ng-show="view.numbers_phone">
@@ -139,14 +137,14 @@
     <div class="vcard-separator" ng-show="view.numbers_mobile || view.numbers_phone"></div>
     <div class="vcard-row" ng-show="view.email">
         <i class="icon icon-mail"></i>
-        <h4><a href="mailto:multiportal@outlook.com" target="_newLink" class="ng-binding">multiportal@outlook.com</a></h4>
+        <h4><a href="mailto:<?php echo $email;?>" target="_newLink" class="ng-binding"><?php echo $email;?></a></h4>
         <small>Email</small>
     </div>
     <div class="vcard-separator" ng-show="view.street || view.zip || view.city || view.country || view.company "></div>
     <div class="vcard-row" ng-show="view.company">
         <i class="icon icon-work"></i>
-        <h4 class="ng-binding">Multiportal</h4>
-        <small ng-show="view.job" class="ng-binding">Desarrollador Web</small>
+        <h4 class="ng-binding"><?php echo $empresa;?></h4>
+        <small ng-show="view.job" class="ng-binding"><?php echo $puesto;?></small>
     </div>
     <div class="vcard-separator ng-hide" ng-show="view.venue || view.city || view.state || view.zip || view.street || view.country"></div>
     <div class="vcard-row ng-hide" ng-show="view.venue || view.city || view.state || view.zip || view.street || view.country">
@@ -167,7 +165,7 @@
 
     <div class="vcard-row" ng-show="view.website">
         <i class="icon icon-earth"></i>
-        <h4><a href="http://www.multiportal.com.mx/" target="_newLink" class="ng-binding">www.multiportal.com.mx</a></h4>
+        <h4><a href="<?php echo $web;?>" target="_newLink" class="ng-binding"><?php echo $web;?></a></h4>
         <small>Website</small>
     </div>
     <div class="vcard-separator" ng-show="view.bio || view.numbers_mobile || view.numbers_phone || view.email || view.street || view.zip || view.city || view.country || view.company "></div>
@@ -783,7 +781,7 @@
         $scope.loadDemo = parent && typeof parent.ImHere === "function";
 
         //Get the json data form the file
-        json_data = {"show_directions":true,"form":[{"section_design":{"fold":false}},{"section_information":{"fold":false}},{"section_social":{"fold":false}},{"section_welcome_screen":[]},{"section_advance_options":{"fold":false}}],"color1":"#000000","color2":"#00ff00","avatar_extra":{"zoom":100,"background":"#ffffff"},"showAutocomplete":true,"address":[],"code":{"channels":[{"input_prefix_label":"URL","link":"www.facebook.com\/multiportal","label":"","name":"Facebook"}],"welcome_extra":{"zoom":50,"background":"#ffffff"}},"welcome_screen":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account5493273\/3556708_1.png?0.39897709494591793","firstname":"Guillermo","lastname":"Jim\u00e9nez L\u00f3pez","numbers_mobile":"4426002842","email":"multiportal@outlook.com","company":"Multiportal","job":"Desarrollador Web","website":"www.multiportal.com.mx","showPreview":1,"avatar":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account5493273\/3556709_1.png?0.0635479782185353","sharing":true,"bio":"Desarrollo de Paginas Web y Marketing Digital"};
+        json_data = {"show_directions":true,"form":[{"section_design":{"fold":false}},{"section_information":{"fold":false}},{"section_social":{"fold":false}},{"section_welcome_screen":[]},{"section_advance_options":{"fold":false}}],"color1":"#000000","color2":"#00ff00","avatar_extra":{"zoom":100,"background":"#ffffff"},"showAutocomplete":true,"address":[],"code":{"channels":[{"input_prefix_label":"URL","link":"www.facebook.com\/multiportal","label":"","name":"Facebook"}],"welcome_extra":{"zoom":50,"background":"#ffffff"}},"welcome_screen":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account5493273\/3556708_1.png?0.39897709494591793","firstname":"Guillermo","lastname":"Jim\u00e9nez L\u00f3pez","numbers_mobile":"<?php echo $cell;?>","email":"<?php echo $email;?>","company":"<?php echo $empresa;?>","job":"<?php echo $puesto;?>","website":"<?php echo $web;?>","showPreview":1,"avatar":"<?php echo $page_url.'modulos/vcard/files/fotos/'.$cover;?>","sharing":true,"bio":"<?php echo $des;?>"};
 
 //        //Upgrade old vcards created before 13.04 with show_directions parameter
 //        if (angular.isUndefined(json_data.show_directions))
