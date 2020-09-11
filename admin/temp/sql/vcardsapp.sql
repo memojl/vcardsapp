@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 07-09-2020 a las 17:51:46
+-- Tiempo de generación: 12-09-2020 a las 00:58:35
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 7.3.12
 
@@ -1175,9 +1175,9 @@ CREATE TABLE `vcard_signup` (
 --
 
 INSERT INTO `vcard_signup` (`ID`, `username`, `password`, `email`, `level`, `lastlogin`, `tema`, `nombre`, `apaterno`, `amaterno`, `foto`, `cover`, `tel`, `ext`, `fnac`, `fb`, `tw`, `puesto`, `ndepa`, `depa`, `empresa`, `adress`, `direccion`, `mpio`, `edo`, `pais`, `genero`, `exp`, `likes`, `filtro`, `zona`, `alta`, `actualizacion`, `page`, `nivel_oper`, `rol`, `codigo`, `intentos`, `activo`) VALUES
-(1, 'admin', 'c64f923f7f476f0b78716079452e7bdec4b2c016', 'multiportal@outlook.com', '-1', '2020-09-07 10:47:33', 'default', 'Guillermo', 'Jimenez', 'Lopez', 'sinfoto.png', '', '4421944950', 1, '0000-00-00', '', '', 'Programador', 0, '', 'Multiportal', '', '', '', '', '', 'M', '', 0, '', '', '', 'admin2019xadmin79', '', 0, 0, '944950', '0', 1),
+(1, 'admin', 'c64f923f7f476f0b78716079452e7bdec4b2c016', 'multiportal@outlook.com', '-1', '2020-09-11 14:48:33', 'default', 'Guillermo', 'Jimenez', 'Lopez', 'sinfoto.png', '', '4421944950', 1, '0000-00-00', '', '', 'Programador', 0, '', 'Multiportal', '', '', '', '', '', 'M', '', 0, '', '', '', 'admin2019xadmin79', '', 0, 0, '944950', '0', 1),
 (2, 'demo', '71cc541bd1ccb6670de3f8d40f425ffb7315fe7f', 'demo@gmail.com', '-1', '2020-08-23 20:19:10', 'default', 'Demo', 'Apaterno', 'Amaterno', 'sinfoto.png', 'sincover.jpg', '4421234567', 0, '0000-00-00', '', '', 'Director', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'demo2019xdemo2017', '', 0, 0, '234567', '0', 1),
-(10, 'usuario', 'c76ec709eb8ee62ba3181287dd95ae6f6deb856e', 'memo.jimenez@azell.co', '6', '2020-08-31 14:17:08', 'default', 'Memo Jimenez', '', '', 'sinfoto.png', 'sincover.jpg', '', 0, '0000-00-00', '', '', '', 0, '', '', '', '', '', '', '', '', '', 0, '', '', '2020-08-31 20:59:01', 'usuario2020xusuario2020', '', 0, 0, 'dam9EP', '0', 1);
+(10, 'usuario', 'c76ec709eb8ee62ba3181287dd95ae6f6deb856e', 'memo.jimenez@azell.co', '6', '2020-09-07 19:03:33', 'default', 'Memo Jimenez', '', '', 'sinfoto.png', 'sincover.jpg', '', 0, '0000-00-00', '', '', '', 0, '', '', '', '', '', '', '', '', '', 0, '', '', '2020-08-31 20:59:01', 'usuario2020xusuario2020', '', 0, 0, 'dam9EP', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -1310,15 +1310,16 @@ CREATE TABLE `vcard_vcard` (
 --
 
 INSERT INTO `vcard_vcard` (`ID`, `cover`, `profile`, `logo`, `nombre`, `descripcion`, `puesto`, `empresa`, `tel`, `tel_ofi`, `cell`, `email`, `web`, `fb`, `tw`, `lk`, `ins`, `f_create`, `f_update`, `vcard`, `ID_user`, `user`, `visible`) VALUES
-(1, 'foto.png', 'rforesta', '', 'Rodrigo Foresta', '', 'Manager', 'Billnex', '', '', '+54 9 3534 19 6770', 'rodrigo.foresta@thebillnex.com', 'https://www.thebillnex.com', '', '', '#', 'https://www.instagram.com/billnex', '19/08/2020 10:38', '2020-08-30 12:13:28', 1, 1, 'admin', 1),
-(2, 'foto.png', 'jparra', '', 'Juan Parra', '', 'Manager', 'Billnex', '', '', '+1(754)210-0433', 'juan.parra@thebillnex.com', 'https://www.thebillnex.com', '', '', '#', 'https://www.instagram.com/billnex', '22/08/2020 17:04', '2020-08-30 12:13:42', 1, 1, 'admin', 1),
+(1, 'foto.png', 'rforesta', '', 'Rodrigo Foresta', '', 'Manager', 'Billnex', '', '', '+54 9 3534 19 6770', 'rodrigo.foresta@thebillnex.com', 'https://www.thebillnex.com', '', '', '#', 'https://www.instagram.com/billnex', '19/08/2020 10:38', '2020-09-07 19:13:12', 1, 1, 'admin', 1),
+(2, 'foto.png', 'jparra', '', 'Juan Parra', '', 'Manager', 'Billnex', '', '', '+1(754)210-0433', 'juan.parra@thebillnex.com', 'https://www.thebillnex.com', '', '', '#', 'https://www.instagram.com/billnex', '22/08/2020 17:04', '2020-09-08 09:38:25', 1, 1, 'admin', 0),
 (3, 'foto_capital.png', 'dmiranda', '', 'Daniel Miranda Mejia', '', 'Manager', 'Capital', '', '', '442 104 6067', 'dmiranda@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '22/08/2020 21:28', '2020-08-30 12:14:02', 1, 1, 'admin', 1),
-(4, 'foto_capital.png', 'pbetancourt', '', 'Ponciano Betancourt', '', 'Manager', 'Capital', '', '', '442 347 0504', 'pbetancourt@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '22/08/2020 21:39', '2020-08-30 13:17:20', 1, 1, 'admin', 1),
+(4, 'foto_capital.png', 'pbetancourt', '', 'Ponciano Betancourt', '', 'Manager', 'Capital', '', '', '442 347 0504', 'pbetancourt@capitalsft.com', 'https://www.capitalsft.com', '', '', 'https://www.linkedin.com/company/13990038/admin/', '', '22/08/2020 21:39', '2020-08-30 13:17:20', 1, 1, 'usuario', 1),
 (6, 'foto_capital.png', 'asusan', '', 'Arturo Suz&aacute;n', '', 'Manager', 'Billnex', '', '', '442 104 6067', 'sb-comprador@gmail.com', 'https://www.thebillnex.com', '', '', '', '', '2020-08-30 11:06:48', '2020-08-30 11:56:00', 1, 0, 'admin', 0),
-(7, 'foto.png', 'memo1', '', 'Memo Jimenez', '', 'Manager', 'Multiportal', '', '4421234567', '4426002842', 'sb-comprador@gmail.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', 'https://www.linkedin.com/company/13990038/admin/', 'https://www.instagram.com/', '2020-08-30 11:10:48', '2020-08-30 11:10:48', 1, 0, 'admin', 1),
-(8, 'n.jpg', 'memojl', '', 'Guillermo Jimenez Lopez', '', 'Manager', 'Multiportal', '', '', '4426002842', 'memo.jimenez@azell.co', 'https://www.capitalsft.com', '', '', '', '', '2020-08-30 11:57:50', '2020-08-30 21:34:12', 1, 0, 'admin', 1),
-(9, 'giganteh.jpg', 'memojl', '', 'Guillermo Jimenez Lopez', '', 'Programador', 'Multiportal', '', '', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', '', '', 'https://www.linkedin.com/', 'https://www.instagram.com/', '2020-08-30 12:12:47', '2020-08-30 21:40:23', 1, 0, 'admin', 1),
-(10, 'nodisponible.jpg', 'rforesta', '', 'Rodrigo Foresta', '', 'Manager', 'Billnex', '', '', '', 'sb-comprador@gmail.com', 'https://www.thebillnex.com', '', '', '', '', '2020-08-30 13:15:29', '2020-08-30 13:15:29', 1, 0, 'admin', 1);
+(7, 'foto.png', 'memo1', '', 'Memo Jimenez', '', 'Manager', 'Multiportal', '', '4421234567', '4426002842', 'sb-comprador@gmail.com', 'http://multiportal.com.mx', 'https://facebook.com/', '', 'https://www.linkedin.com/company/13990038/admin/', 'https://www.instagram.com/', '2020-08-30 11:10:48', '2020-08-30 11:10:48', 1, 0, 'usuario', 1),
+(8, 'n.jpg', 'memojl', '', 'Guillermo Jimenez Lopez', '', 'Manager', 'Multiportal', '', '', '4426002842', 'memo.jimenez@azell.co', 'https://www.capitalsft.com', '', '', '', '', '2020-08-30 11:57:50', '2020-09-08 08:57:22', 1, 0, 'admin', 1),
+(9, 'giganteh.jpg', 'memojl', '', 'Guillermo Jimenez Lopez', '', 'Programador', 'Multiportal', '', '', '4426002842', 'multiportal@outlook.com', 'http://multiportal.com.mx', '', '', 'https://www.linkedin.com/', 'https://www.instagram.com/', '2020-08-30 12:12:47', '2020-08-30 21:40:23', 1, 0, 'usuario', 1),
+(10, 'giganteh.jpg', 'rforesta', '', 'Rodrigo Foresta', '', 'Manager', 'Billnex', '', '', '', 'sb-comprador@gmail.com', 'https://www.thebillnex.com', '', '', '', '', '2020-08-30 13:15:29', '2020-09-08 09:41:13', 1, 0, 'admin', 0),
+(11, 'foto.png', 'memo1', '', 'Guillermo Jimenez Lopez', '', 'Programador', 'Seleccione Empresa', '', '', '4426002842', 'mherco@hotmail.com', 'http://multiportal.com.mx', '', '', '', '', '2020-09-08 09:13:00', '2020-09-08 09:38:01', 1, 0, 'admin', 1);
 
 -- --------------------------------------------------------
 
@@ -1800,7 +1801,7 @@ ALTER TABLE `vcard_testimonios`
 -- AUTO_INCREMENT de la tabla `vcard_vcard`
 --
 ALTER TABLE `vcard_vcard`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `vcard_vcard_empresas`
