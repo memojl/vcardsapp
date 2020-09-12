@@ -1,12 +1,12 @@
 <?php
 $perfil=$idp;
-echo $bootstrap;
 if($perfil!='' && $perfil!=NULL){
     $row=query_row($tabla='vcard',$campo='profile',$idp);
     $ID=$row['ID'];
     $cover=$row['cover'];
     $profile=$row['profile'];
     $nombre=$row['nombre'];
+    $des=$row['descripcion'];
     $puesto=$row['puesto'];
     $empresa=$row['empresa'];
     $tel=$row['tel'];
@@ -21,5 +21,6 @@ if($perfil!='' && $perfil!=NULL){
     $visible=$row['visible'];
     include 'profile.html';
 }else{
+    echo $bootstrap;
     echo '<div class="alert alert-danger"><b>Error 404:</b> Perfil No encontrado</div>';
 }

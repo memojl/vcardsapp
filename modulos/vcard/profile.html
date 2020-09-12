@@ -61,7 +61,7 @@
                      <div class="vcard-functions-wrapper">
                         <a class="header-button ng-hide" ng-show="loadDemo &amp;&amp; (view.numbers_mobile || view.numbers_phone)" ng-click="!loadDemo ?  &#39;&#39; : callAction($event,&#39;headerButton-call&#39;)" ng-style="{&#39;transition&#39;: loadDemo ? &#39;none&#39; : &#39;all 0.15s ease&#39;}" style="transition: all 0.15s ease 0s;">
                         <i class="icon-phone dynamicTextColor"></i>
-                        <small class="dynamicTextColor">Call</small>
+                        <small class="dynamicTextColor">Llamar</small>
                         </a>
                         <a class="header-button ng-hide" ng-show="loadDemo &amp;&amp; (view.email)" ng-click="!loadDemo ?  &#39;&#39; : callAction($event,&#39;headerButton-email&#39;)" ng-style="{&#39;transition&#39;: loadDemo ? &#39;none&#39; : &#39;all 0.15s ease&#39;}" style="transition: all 0.15s ease 0s;">
                         <i class="icon-send dynamicTextColor"></i>
@@ -69,7 +69,7 @@
                         </a>
                         <a href="tel:<?php echo $cell;?>" ng-show="!loadDemo &amp;&amp; (view.numbers_mobile || view.numbers_phone)">
                         <i class="icon-phone dynamicTextColor"></i>
-                        <small class="dynamicTextColor">Call</small>
+                        <small class="dynamicTextColor">Llamar</small>
                         </a>
                         <a href="mailto:<?php echo $email;?>?subject=From%20my%20vCard&amp;body=" target="_newEmail" ng-show="!loadDemo &amp;&amp; (view.email)" class="last-element">
                         <i class="icon-send dynamicTextColor"></i>
@@ -108,12 +108,12 @@
                      <div class="vcard-row" ng-show="view.numbers_mobile">
                         <i class="icon icon-phone"></i>
                         <h4><a href="tel:<?php echo $cell;?>" class="ng-binding"><?php echo $cell;?></a></h4>
-                        <small>Mobile</small>
+                        <small>Movil</small>
                      </div>
                      <div class="vcard-row pt0 ng-hide" ng-show="view.numbers_phone">
                         <i ng-show="view.numbers_phone &amp;&amp; !view.numbers_mobile" class="icon icon-phone ng-hide"></i>
-                        <h4><a href="tel:" class="ng-binding"></a></h4>
-                        <small>Telephone</small>
+                        <h4><a href="tel:<?php echo $tel;?>" class="ng-binding"><?php echo $tel;?></a></h4>
+                        <small>Teléfono</small>
                      </div>
                      <div class="vcard-row pt0 ng-hide" ng-show="view.numbers_fax">
                         <h4 class="ng-binding"></h4>
@@ -129,7 +129,7 @@
                      <div class="vcard-row" ng-show="view.company">
                         <i class="icon icon-work"></i>
                         <h4 class="ng-binding"><?php echo $empresa;?></h4>
-                        <small ng-show="view.job" class="ng-binding"><?php echo $puesto;?></small>
+                        <small ng-show="view.job" class="ng-binding">Empresa</small>
                      </div>
                      <div class="vcard-separator ng-hide" ng-show="view.venue || view.city || view.state || view.zip || view.street || view.country"></div>
                      <div class="vcard-row ng-hide" ng-show="view.venue || view.city || view.state || view.zip || view.street || view.country">
@@ -151,7 +151,7 @@
                      <div class="vcard-row" ng-show="view.website">
                         <i class="icon icon-earth"></i>
                         <h4><a href="<?php echo $web;?>" target="_newLink" class="ng-binding"><?php echo $web;?></a></h4>
-                        <small>Website</small>
+                        <small>Sitio Web</small>
                      </div>
                      <div class="vcard-separator" ng-show="view.bio || view.numbers_mobile || view.numbers_phone || view.email || view.street || view.zip || view.city || view.country || view.company "></div>
                      <div id="socialmedialinksContainer">
@@ -196,8 +196,7 @@
                                        <li ng-click="loadDemo ? callAction($event, &#39;addContactAction&#39;) : &#39;&#39;" class="addContactAction">
                                           <i class="iconFab icon-fab-share-savecontact"></i>
                                           <!-- ngIf: !loadDemo --><!--a ng-if="!loadDemo" href="http://qrco.de/handlePost/bbB8gH/?download=true" rel="external" class="ng-scope"-->
-                                          <a href="guillermo.vcf" download >
-                                          Save to My Phone                        </a><!-- end ngIf: !loadDemo -->
+                                          <a href="<?php echo ''.$profile;?>.vcf" download >Guardar Numero</a><!-- end ngIf: !loadDemo -->
                                           <!-- ngIf: loadDemo -->
                                        </li>
                                     </ul>
