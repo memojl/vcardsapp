@@ -136,7 +136,7 @@ echo '
 	  case($action=='form_id'):
     	if(isset($_POST['id'])){ $id=$_POST['id'];
       		$query="SELECT * FROM ".$DBprefix.$tabla." WHERE ID='{$id}';";
-      		ws_query($query,1,0);
+      		ws_query_vcard($query,1,0);
       }
   	  break;	
 	  case($action=='delete'):
@@ -145,7 +145,8 @@ echo '
   			echo 'El registro '.$id.' ha sido eliminado';
   		}	  
   	  break;
-  	  case($action=='edit' || $action=='add'):
+		case($action=='edit' || $action=='add'):
+		cadena_replace($replace1,$replace2);
   		$id       = (isset($_POST['ID']))?$_POST['ID']:'';
   		$cover    = (isset($_POST['cover']))?$_POST['cover']:'';
   		$logo     = (isset($_POST['logo']))?$_POST['logo']:'';
@@ -200,7 +201,7 @@ echo '
 		}		  	
   		recargar($seg,$URL,$target);
   	}
-  	validar_aviso($save,'La Vcard se ha '.$edi.' correctamente','('.$edi.')-No se guardo corretamente intentelo nuevamente',$aviso);
+  	validar_aviso($save,'La Vcard se ha '.$edi.' correctamente','No se guardo corretamente intentelo nuevamente',$aviso);
   	echo $aviso.'<br>'.$mod1;
 
 if($save){
@@ -238,11 +239,11 @@ if($save){
   		$sql=mysqli_query($mysqli,"SELECT * FROM ".$DBprefix.$tabla."") or print mysqli_error($mysqli);
   		$numrows=mysqli_num_rows($sql);
   		$total_pages = ceil($numrows/$per_page);
-  		$reload = 'index.php';$rep1=array('_','cion');$rep2=array(' ','ci&oacute;n');
+  		$reload = 'index.php';
   		//consulta principal para recuperar los datos
   		$sql=mysqli_query($mysqli,"SELECT * FROM ".$DBprefix.$tabla." ORDER BY ID LIMIT {$offset},{$per_page};") or print mysqli_error($mysqli);		
   		if($numrows>0){$j=0;
-  			while($row=mysqli_fetch_array($sql)){$j++;
+			  while($row=mysqli_fetch_array($sql)){$j++;
 				$id       = $row['ID'];
 				$cover    = $row['cover'];
 				$logo     = $row['logo'];

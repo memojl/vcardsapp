@@ -77,6 +77,23 @@ global $chartset;
  }
 }
 
+function ws_query_vcard($query,$ajax,$d){
+global $DBprefix;
+$replace1=array('&aacute;','&eacute;','&iacute;','&oacute;','&uacute;','&Aacute;','&Eacute;','&Iacute;','&Oacute;','&Uacute;','&ntilde;','&Ntilde;');
+$replace2=array('á','é','í','ó','ú','Á','É','Í','Ó','Ú','ñ','Ñ');
+	if($ajax==1){mysqli_set_charset(conexion(), 'utf8');}
+	$sql=mysqli_query(conexion(),$query) or print mysqli_error(conexion());
+	$json = array();
+	while($row = mysqli_fetch_assoc($sql)){$json[]=str_replace($replace1,$replace2,$row);}
+	if($ajax==1){
+		$data=($d!=1)?json_encode($json):json_encode($json[0]);
+	}else{
+		$data=json_encode($json, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+		header('Content-Type: application/json');
+	}
+	echo $data;
+}
+
 function query_all_tabla_vcard($index,$th,$tabla,$url_api,$crud){
 	global $page_url,$path_jsonDB,$path_jsonWS;
 	   $display=($crud!=0)?'':'none';

@@ -1,0 +1,11 @@
+BEGIN:VCARD
+  VERSION:3.0
+  N:Juan Parra
+  FN:
+  ORG:Capital
+  TÍTULO:Manager
+  TEL;WORK;VOZ:446 102 2535
+  TEL;CELULAR;VOZ:446 102 2535
+  URL;TRABAJO:https://www.capitalsft.com
+  EMAIL;INTERNET:sb-comprador@gmail.com
+  END:VCARD

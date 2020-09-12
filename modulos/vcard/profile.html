@@ -5,7 +5,7 @@
       <?php echo $meta_chartset;?>
       <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
       <link rel="stylesheet" type="text/css" href="<?php echo $page_url;?>modulos/vcard/card/css/template_normal.min.css">
-      <title>Tarjeta de Contato</title>
+      <title><?php echo $profile;?> - Tarjeta de Contacto Digital</title>
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="noindex, nofollow">
@@ -196,7 +196,7 @@
                                        <li ng-click="loadDemo ? callAction($event, &#39;addContactAction&#39;) : &#39;&#39;" class="addContactAction">
                                           <i class="iconFab icon-fab-share-savecontact"></i>
                                           <!-- ngIf: !loadDemo --><!--a ng-if="!loadDemo" href="http://qrco.de/handlePost/bbB8gH/?download=true" rel="external" class="ng-scope"-->
-                                          <a href="<?php echo ''.$profile;?>.vcf" download >Guardar Numero</a><!-- end ngIf: !loadDemo -->
+                                          <a href="<?php echo 'files/vcf/'.$profile;?>.vcf" download >Guardar Numero</a><!-- end ngIf: !loadDemo -->
                                           <!-- ngIf: loadDemo -->
                                        </li>
                                     </ul>
@@ -767,7 +767,7 @@
                  $scope.loadDemo = parent && typeof parent.ImHere === "function";
          
                  //Get the json data form the file
-                 json_data = {"show_directions":true,"form":[{"section_design":{"fold":false}},{"section_information":{"fold":false}},{"section_social":{"fold":false}},{"section_welcome_screen":[]},{"section_advance_options":{"fold":false}}],"color1":"#000000","color2":"#00ff00","avatar_extra":{"zoom":100,"background":"#ffffff"},"showAutocomplete":true,"address":[],"code":{"channels":[{"input_prefix_label":"URL","link":"www.facebook.com\/multiportal","label":"","name":"Facebook"}],"welcome_extra":{"zoom":50,"background":"#ffffff"}},"welcome_screen":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account5493273\/3556708_1.png?0.39897709494591793","firstname":"Guillermo","lastname":"Jim\u00e9nez L\u00f3pez","numbers_mobile":"<?php echo $cell;?>","email":"<?php echo $email;?>","company":"<?php echo $empresa;?>","job":"<?php echo $puesto;?>","website":"<?php echo $web;?>","showPreview":1,"avatar":"<?php echo $page_url.'modulos/vcard/files/fotos/'.$cover;?>","sharing":true,"bio":"<?php echo $des;?>"};
+                 json_data = {"show_directions":true,"form":[{"section_design":{"fold":false}},{"section_information":{"fold":false}},{"section_social":{"fold":false}},{"section_welcome_screen":[]},{"section_advance_options":{"fold":false}}],"color1":"#000000","color2":"#00ff00","avatar_extra":{"zoom":100,"background":"#ffffff"},"showAutocomplete":true,"address":[],"code":{"channels":[{"input_prefix_label":"URL","link":"<?php echo $fb;?>","label":"","name":"Facebook"}],"welcome_extra":{"zoom":50,"background":"#ffffff"}},"welcome_screen":"<?php echo $page_url.'modulos/vcard/files/fotos/'.$cover;?>","firstname":"Guillermo","lastname":"Jim\u00e9nez L\u00f3pez","numbers_mobile":"<?php echo $cell;?>","email":"<?php echo $email;?>","company":"<?php echo $empresa;?>","job":"<?php echo $puesto;?>","website":"<?php echo $web;?>","showPreview":1,"avatar":"<?php echo $page_url.'modulos/vcard/files/fotos/'.$cover;?>","sharing":true,"bio":"<?php echo $des;?>"};
          
          //        //Upgrade old vcards created before 13.04 with show_directions parameter
          //        if (angular.isUndefined(json_data.show_directions))
