@@ -69,18 +69,28 @@ switch(true){
 					$titulo1='Editar';$tit='Cambiar';$id=$_GET['id'];
                $row=query_row($tabla,'ID',$id);
 					//$id=$row['ID'];
-					$profile=$row['profile'];
-					$cover=$row['cover'];
-					$nombre=$row['nombre'];
-               $puesto=$row['puesto'];
-					$des=$row['descripcion'];
-					$empresa=$row['empresa'];
-					$cell=$row['cell'];
-               $email=$row['email'];
-               $web=$row['web'];
-               $lk=$row['lk'];
-               $ins=$row['ins'];
-					$visible=$row['visible'];
+               $cover    = $row['cover'];
+               $logo     = $row['logo'];
+               $profile  = $row['profile'];
+               $nombre   = $row['nombre'];
+               $des      = $row['descripcion'];
+               $puesto   = $row['puesto'];
+               $empresa  = $row['empresa'];
+               $tel      = $row['tel'];
+               $tel_ofi  = $row['tel_ofi'];
+               $cell     = $row['cell'];
+               $email    = $row['email'];
+               $web      = $row['web'];
+               $fb       = $row['fb'];
+               $tw       = $row['tw'];
+               $lk       = $row['lk'];
+               $ins      = $row['ins'];
+               $f_create = $row['f_create'];
+               $f_update = $row['f_update'];
+               $vcard    = $row['vcard'];
+               $ID_user  = $row['ID_user'];
+               $user     = $row['user'];
+               $visible  = $row['visible'];
 				break;
          }
 
@@ -116,7 +126,7 @@ function add_empresa(val){
                         </div-->
                         <div class="form-group">
                            <label for="descripcion">Descripci&oacute;n</label>
-                           <input type="text" class="form-control" id="descripcion" name="descripcion" value="" placeholder="Descripcion">
+                           <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?php echo $des;?>" placeholder="Descripcion">
                         </div>
                         <?php //if($action=='edit'){?>
                         <div class="form-group">
@@ -277,10 +287,6 @@ function add_empresa(val){
 	</div>         
 </section>
 <!--/Content-->
-<?php //modal_vcard();
-   ajax_crud_vcard($tabla,$template,1);//crear_ajax_vcard();
-?>
-
 <?php
 		break;		
 	}
@@ -289,7 +295,10 @@ function add_empresa(val){
 ?>
    </div>
    <!-- /.row-->
- </section>
+   <?php //modal_vcard();
+   ajax_crud_vcard($tabla='vcard',$template,1);//crear_ajax_vcard();
+   ?>
+</section>
 <!-- /.content -->
 <?php 		
 	}else{echo '<div id="cont-user">No tiene permiso para ver esta secci&oacute;n.</div>';}

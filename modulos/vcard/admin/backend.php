@@ -263,6 +263,7 @@ if($save){
 				$f_create = $row['f_create'];
 				$f_update = $row['f_update'];
 				$vcard    = $row['vcard'];
+				$ID_user  = $row['ID_user'];
 				$user     = $row['user'];
 				$visible  = $row['visible'];
   //$cover=($cover!='')?$cover:'nodisponible.jpg';
