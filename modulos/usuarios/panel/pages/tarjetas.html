@@ -2,7 +2,15 @@
 include 'head.html';
 fecha_php_vcard();
 editor_tiny_mce();
-?>  
+
+$select_empresa=select_empresa($tabla='vcard_empresas',$url_api,$empresa);
+?>
+<script>
+function add_empresa(val){
+   if(val==1){document.getElementById('sel_empresa').innerHTML='<input type="text" class="form-control" id="empresa" name="empresa" value=""><div><a href="javascript:add_empresa(0);">Cancelar</a></div>';
+   }else{document.getElementById('sel_empresa').innerHTML='<div class="input-group"><span class="input-group-addon"><i class="fa fa-industry"></i></span><?php echo $select_empresa;?></div><div style="padding: 5px 12px"><a href="javascript:add_empresa(1);" title="Agregar Empresa" alt=""><i class="fa fa-plus"></i></a></div>';}
+}
+</script>
 <!--Contenido-->
 <script src="<?php echo $page_url;?>assets/js/main.js" type="text/javascript" language="javascript"></script>
 <div id="aviso"><?php echo $aviso;?></div> 

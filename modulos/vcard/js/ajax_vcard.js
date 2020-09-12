@@ -136,6 +136,7 @@ visible: $("#visible").val(),
 $('#cover').val(task.cover);
 $('#profile').val(task.profile);
 $('#nombre').val(task.nombre);
+$('#descripcion').val(task.descripcion);
 $('#puesto').val(task.puesto);
 $('#empresa').val(task.empresa);
 $('#tel_ofi').val(task.tel_ofi);
@@ -148,7 +149,6 @@ $('#lk').val(task.lk);
 $('#ins').val(task.ins);
 $('#f_create').val(task.f_create);
 $('#f_update').val(task.f_update);
-$('#ID_user').val(task.ID_user);
 $('#visible').val(task.visible);
 
       const cover = task.cover;

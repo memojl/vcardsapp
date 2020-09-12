@@ -86,7 +86,7 @@ switch(true){
 
 if($cover==''){$cover='nodisponible.jpg';}
 $file=file_ima($cover);
-$select_empresa=select_empresa($tabla,$url_api,$empresa);
+$select_empresa=select_empresa($tabla='vcard_empresas',$url_api,$empresa);
 ?>
 <script>
 function add_empresa(val){
@@ -112,25 +112,32 @@ function add_empresa(val){
                         </div>
                         <!--div class="form-group">
                            <label for="des">Descripci&oacute;n</label>
-                           <textarea class="form-control" id="des" name="des"></textarea>
+                           <textarea class="form-control" id="descripcion" name="descripcion"></textarea>
                         </div-->
+                        <div class="form-group">
+                           <label for="descripcion">Descripci&oacute;n</label>
+                           <input type="text" class="form-control" id="descripcion" name="descripcion" value="" placeholder="Descripcion">
+                        </div>
                         <?php //if($action=='edit'){?>
                         <div class="form-group">
-                           <input type="text" class="form-control" id="ID" name="ID" value="<?php echo $id;?>" placeholder="ID">
+                           <input type="hidden" class="form-control" id="ID" name="ID" value="<?php echo $id;?>" placeholder="ID">
                         </div>
 				            <?php //}else{?>                        
                         <div class="form-group">
-                           <input type="text" class="form-control" id="f_create" name="f_create" value="" placeholder="Creado">
+                           <input type="hidden" class="form-control" id="ID_user" name="ID_user" value="<?php echo $ID_login;?>" placeholder="ID User">
+                        </div>
+                        <div class="form-group">
+                           <input type="hidden" class="form-control" id="f_create" name="f_create" value="" placeholder="Creado">
                         </div>
                         <?php //}?>
                         <div class="form-group">
-                           <input type="text" class="form-control" id="f_update" name="f_update" value="" placeholder="Actualizado">
+                           <input type="hidden" class="form-control" id="f_update" name="f_update" value="" placeholder="Actualizado">
                         </div>
                         <div class="form-group">
-                           <input type="text" class="form-control" id="vcard" name="vcard" value="1" placeholder="vcard">
+                           <input type="hidden" class="form-control" id="vcard" name="vcard" value="1" placeholder="vcard">
                         </div>
                         <div class="form-group">
-                           <input type="text" class="form-control" id="user" name="user" value="<?php echo $username;?>" placeholder="usuario">
+                           <input type="hidden" class="form-control" id="user" name="user" value="<?php echo $username;?>" placeholder="usuario">
                         </div>
                      </div>
                      <div class="col-md-4">
@@ -270,6 +277,10 @@ function add_empresa(val){
 	</div>         
 </section>
 <!--/Content-->
+<?php //modal_vcard();
+   ajax_crud_vcard($tabla,$template,1);//crear_ajax_vcard();
+?>
+
 <?php
 		break;		
 	}
@@ -278,10 +289,7 @@ function add_empresa(val){
 ?>
    </div>
    <!-- /.row-->
-   <?php //modal_vcard();
-   ajax_crud_vcard($tabla,$template,1);//crear_ajax_vcard();
-   ?>
-</section>
+ </section>
 <!-- /.content -->
 <?php 		
 	}else{echo '<div id="cont-user">No tiene permiso para ver esta secci&oacute;n.</div>';}

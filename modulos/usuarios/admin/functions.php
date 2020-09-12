@@ -12,13 +12,10 @@ $mod='vcard';
 function select_empresa($tabla,$url_api,$empresa){
 global $page_url,$path_jsonDB,$path_jsonWS;
    $data=query_data($tabla,$url_api);//print_r($data);
-   $empresa1='';
    $option='<option>Seleccione Empresa</option>';
 	foreach ($data as $rowm){$i++;
-		if($empresa1==$rowm['empresa']){$sel=($rowm['empresa']==$empresa)?' selected':'';
-			$option.='<option value="'.$rowm['empresa'].'"'.$sel.'>'.$rowm['empresa'].'</option>';
-      	}else{$option.='';}
-      	$empresa1=$rowm['empresa'];
+		$sel=($rowm['empresa']==$empresa)?' selected':'';
+		$option.='<option value="'.$rowm['empresa'].'"'.$sel.'>'.$rowm['empresa'].'</option>';
 	}
    $select='<select class="form-control" id="empresa" name="empresa" style="float:left;">'.$option.'</select>';
    return $select;
@@ -87,22 +84,29 @@ $seleccion1=($visible=='1')?'selected':'';
 							   <textarea class="form-control" id="des" name="des"></textarea>
 							</div-->
 							<div class="form-group">
-								<input type="text" class="form-control" id="mod1" name="mod1" value="usuarios" placeholder="mod">
+                           		<label for="descripcion">Descripci&oacute;n</label>
+                           		<input type="text" class="form-control" id="descripcion" name="descripcion" value="" placeholder="Descripcion">
+                        	</div>
+							<div class="form-group">
+								<input type="hidden" class="form-control" id="mod1" name="mod1" value="usuarios" placeholder="mod">
 						 	</div>
 							<div class="form-group">
-							   <input type="text" class="form-control" id="ID" name="ID" value="" placeholder="ID">
+							   <input type="hidden" class="form-control" id="ID" name="ID" value="" placeholder="ID">
 							</div>
 							<div class="form-group">
-							   <input type="text" class="form-control" id="f_create" name="f_create" value="" placeholder="Creado">
+                           		<input type="hidden" class="form-control" id="ID_user" name="ID_user" value="'.$_SESSION["ID"].'" placeholder="">
+                        	</div>
+							<div class="form-group">
+							   <input type="hidden" class="form-control" id="f_create" name="f_create" value="" placeholder="Creado">
 							</div>
 							<div class="form-group">
-							   <input type="text" class="form-control" id="f_update" name="f_update" value="" placeholder="Actualizado">
+							   <input type="hidden" class="form-control" id="f_update" name="f_update" value="" placeholder="Actualizado">
 							</div>
 							<div class="form-group">
-							   <input type="text" class="form-control" id="vcard" name="vcard" value="1" placeholder="vcard">
+							   <input type="hidden" class="form-control" id="vcard" name="vcard" value="1" placeholder="vcard">
 							</div>
 							<div class="form-group">
-							   <input type="text" class="form-control" id="user" name="user" value="'.$_SESSION["username"].'" placeholder="usuario">
+							   <input type="hidden" class="form-control" id="user" name="user" value="'.$_SESSION["username"].'" placeholder="usuario">
 							</div>
 						 </div>
 						 <div class="col-md-4">
@@ -155,9 +159,9 @@ $seleccion1=($visible=='1')?'selected':'';
 							   <div id="sel_empresa">
 								  <div class="input-group">
 									 <span class="input-group-addon"><i class="fa fa-industry"></i></span>
-									 '.select_empresa($tabla='vcard',$url_api,$empresa).'
+									 '.select_empresa($tabla='vcard_empresas',$url_api,$empresa).'
 								  </div>
-								  <div style="padding: 5px 12px"><a href="javascript:add_empresa(1);"><i class="fa fa-plus"></i> Empresa</a></div>
+								  <div style="padding: 5px 12px"><a href="javascript:add_empresa(1);" title="Agregar Empresa"><i class="fa fa-plus"></i></a></div>
 							   </div>
 							</div>
 							<div class="form-group">

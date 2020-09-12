@@ -157,13 +157,10 @@ window.onload = fecha;
 function select_empresa($tabla,$url_api,$empresa){
 global $page_url,$path_jsonDB,$path_jsonWS;
    $data=query_data($tabla,$url_api);//print_r($data);
-   $empresa1='';
    $option='<option>Seleccione Empresa</option>';
 	foreach ($data as $rowm){$i++;
-		if($empresa1==$rowm['empresa']){$sel=($rowm['empresa']==$empresa)?' selected':'';
-			$option.='<option value="'.$rowm['empresa'].'"'.$sel.'>'.$rowm['empresa'].'</option>';
-      	}else{$option.='';}
-      	$empresa1=$rowm['empresa'];
+		$sel=($rowm['empresa']==$empresa)?' selected':'';
+		$option.='<option value="'.$rowm['empresa'].'"'.$sel.'>'.$rowm['empresa'].'</option>';
 	}
    $select='<select class="form-control" id="empresa" name="empresa" style="float:left;">'.$option.'</select>';
    return $select;
@@ -193,7 +190,7 @@ function ajax_crud_vcard($tabla,$template,$js){
 global $mysqli,$DBprefix,$URL,$page_url,$path_tema,$mod,$ext,$opc,$form,$action,$ctrl;
 $data=query_data($tabla,$url_api);
 $i=0;$k=0;
-$noc=array('logo','descripcion','tel','vcard','user');
+$noc=array('logo','tel','vcard','ID_user','user');
 foreach($data as $key){$i++;
    if($i==1){
       foreach($key as $datos=>$value){$k++;//$cam.='<div>'.$datos.'</div>'."\n";

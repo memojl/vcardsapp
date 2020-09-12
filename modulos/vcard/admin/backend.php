@@ -151,7 +151,7 @@ echo '
   		$logo     = (isset($_POST['logo']))?$_POST['logo']:'';
   		$profile  = (isset($_POST['profile']))?$_POST['profile']:'';
   		$nombre   = (isset($_POST['nombre']))?$_POST['nombre']:'';
-  		$des      = (isset($_POST['des']))?$_POST['des']:'';
+  		$des      = (isset($_POST['descripcion']))?$_POST['descripcion']:'';
   		$puesto   = (isset($_POST['puesto']))?$_POST['puesto']:'';
   		$empresa  = (isset($_POST['empresa']))?$_POST['empresa']:'';
   		$tel      = (isset($_POST['tel']))?$_POST['tel']:'';
@@ -165,7 +165,8 @@ echo '
   		$ins      = (isset($_POST['ins']))?$_POST['ins']:'';
   		$f_create = (isset($_POST['f_create']))?$_POST['f_create']:'';
   		$f_update = (isset($_POST['f_update']))?$_POST['f_update']:'';
-  		$vcard    = (isset($_POST['vcard']))?$_POST['vcard']:'';
+		$vcard    = (isset($_POST['vcard']))?$_POST['vcard']:'';
+		$ID_user  = (isset($_POST['ID_user']))?$_POST['ID_user']:'';
   		$user     = (isset($_POST['user']))?$_POST['user']:'';
 		$visible  = (isset($_POST['visible']))?$_POST['visible']:'';
 		$mod1  	  = (isset($_POST['mod1']))?$_POST['mod1']:'';  
@@ -187,9 +188,9 @@ echo '
   			';
   	}else{
   		if($action=='edit'){$edi='editado';
-  			$save=mysqli_query($mysqli,"UPDATE ".$DBprefix.$tabla." SET cover='{$cover}', profile='{$profile}', logo='{$logo}', nombre='{$nombre}', descripcion='{$des}', puesto='{$puesto}', empresa='{$empresa}', tel='{$tel}', tel_ofi='{$tel_ofi}', cell='{$cell}', email='{$email}', web='{$web}', fb='{$fb}', tw='{$tw}', lk='{$lk}', ins='{$ins}', f_update='{$f_update}', vcard='{$vcard}', user='{$user}', visible='{$visible}' WHERE ID='{$id}';") or print mysqli_error($mysqli);
+  			$save=mysqli_query($mysqli,"UPDATE ".$DBprefix.$tabla." SET cover='{$cover}', profile='{$profile}', logo='{$logo}', nombre='{$nombre}', descripcion='{$des}', puesto='{$puesto}', empresa='{$empresa}', tel='{$tel}', tel_ofi='{$tel_ofi}', cell='{$cell}', email='{$email}', web='{$web}', fb='{$fb}', tw='{$tw}', lk='{$lk}', ins='{$ins}', f_update='{$f_update}', vcard='{$vcard}', ID_user='{$ID_user}', user='{$user}', visible='{$visible}' WHERE ID='{$id}';") or print mysqli_error($mysqli);
   		}else{$edi='agregado';
-  			$save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix.$tabla." (cover,profile,logo,nombre,descripcion,puesto,empresa,tel,tel_ofi,cell,email,web,fb,tw,lk,ins,f_create,f_update,vcard,user,visible) VALUES ('{$cover}','{$profile}','{$logo}','{$nombre}','{$des}','{$puesto}','{$empresa}','{$tel}','{$tel_ofi}','{$cell}','{$email}','{$web}','{$fb}','{$tw}','{$lk}','{$ins}','{$f_create}','{$f_update}','{$vcard}','{$user}','{$visible}')") or print mysqli_error($mysqli);
+  			$save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix.$tabla." (cover,profile,logo,nombre,descripcion,puesto,empresa,tel,tel_ofi,cell,email,web,fb,tw,lk,ins,f_create,f_update,vcard,ID_user,user,visible) VALUES ('{$cover}','{$profile}','{$logo}','{$nombre}','{$des}','{$puesto}','{$empresa}','{$tel}','{$tel_ofi}','{$cell}','{$email}','{$web}','{$fb}','{$tw}','{$lk}','{$ins}','{$f_create}','{$f_update}','{$vcard}','{$ID_user}','{$user}','{$visible}')") or print mysqli_error($mysqli);
   		}	
 		
 		if($mod1=='usuarios'){$seg=1;
@@ -199,7 +200,7 @@ echo '
 		}		  	
   		recargar($seg,$URL,$target);
   	}
-  	validar_aviso($save,'La Vcard se ha '.$edi.' correctamente','No se puedo guardar intentelo nuevamente',$aviso);
+  	validar_aviso($save,'La Vcard se ha '.$edi.' correctamente','('.$edi.')-No se guardo corretamente intentelo nuevamente',$aviso);
   	echo $aviso.'<br>'.$mod1;
 
 if($save){
