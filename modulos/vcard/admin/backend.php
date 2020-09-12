@@ -95,8 +95,9 @@ echo '
   			</div>
   			<div class="box-body">
 				<div class="ima-size">
+				  <a target="_blank" href="'.$page_url.'vcard/profile/'.$profile.'">
 					<div class="circle-image" style="background: url('.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.');background-repeat: no-repeat; background-position:center; background-size: cover;"></div>	
-  					<!--img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" class="img-responsive ima-size img-rounded"-->
+				  </a>
   				</div>
   				<div id="title" class="text-center"><strong>'.$nombre.'</strong></div>	
 			</div><!-- /.box-body -->
@@ -287,7 +288,7 @@ if($save){
 	 		<!-- /btn-group -->
   	  	</td>
 	  	<td class="text-center">'.$id.'</td>		
-  		<td class="text-left">'.$imagen.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$profile.'</td>
+  		<td class="text-left"><a target="_blank" href="'.$page_url.'vcard/profile/'.$profile.'">'.$imagen.'</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$profile.'</td>
   		<td class="text-center">'.$nombre.'</td>
   		<td class="text-center">'.$puesto.'</td>
   		<td class="text-center">'.$empresa.'</td>
@@ -302,9 +303,11 @@ if($save){
   			</div>
   			<div class="box-body">
 				<div class="ima-size">
+				  <a target="_blank" href="'.$page_url.'vcard/profile/'.$profile.'">
 					<div class="circle-image" style="background: url('.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.');background-repeat: no-repeat; background-position:center; background-size: cover;"></div>	
   					<!--img src="'.$page_url.'modulos/'.$mod.'/files/fotos/'.$cover.'" class="img-responsive ima-size img-rounded"-->
-  				</div>
+				  </a>  
+				</div>
   				<div id="title" class="text-center"><strong>'.$nombre.'</strong></div>	
 			</div><!-- /.box-body -->
 			<div class="box-footer text-right" id="'.$id.'">
