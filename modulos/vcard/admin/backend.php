@@ -112,7 +112,7 @@ echo '
 				}//WHILE
 ?>
   <div class="box-footer clearfix">				
-	Mostrando <?php echo $ini=$id-($j-1);?> al <?php echo $id;?> de <?php echo $numrows;?> registros<?php echo paginate($reload, $page, $total_pages, $adjacents);?>					
+	Mostrando <?php echo $ini=$id-($j-1);?> al <?php echo $id;?> de <?php echo $numrows;?> registros<?php echo paginate1($reload, $page, $total_pages, $adjacents,$user);?>					
   </div>
   <?php 			
 	}else{//$numrows

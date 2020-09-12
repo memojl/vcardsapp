@@ -4,7 +4,7 @@ function load(page){
 	var parametros = {"mode":"ajax","page":page};
 	$("#loader").fadeIn('slow');
 	$.ajax({
-		url:'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard',
+		url:'http://localhost/MisSitios/vcardsapp/modulos/vcard/admin/backend.php?mod=vcard&action=listado',
 		data: parametros,
 		beforeSend: function(objeto){
 			$("#loader").html("<img src='http://localhost/MisSitios/vcardsapp/apps/dashboards/loader.gif'>");

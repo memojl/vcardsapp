@@ -289,6 +289,7 @@ echo $formf;//close_page();
                 $codigo        = substr($codi, 0, 6);
                 $sec           = 'contacto';
                 $cat_list      = 'inbox';
+                $ID_plan       = 4;
 
                 $info      = navegador();
                 $navegador = $info['browser'];
@@ -324,7 +325,7 @@ echo $formf;//close_page();
                     //envio_registro_cliente($sec, $cat_list, $contenido, $nombre, $email, $username, $pass, $actualizacion, $aviso2);
                     message_registro($email,$contenido,$para,$titulo,$msj_bien,$msj_mal,$message,$header,0);
                     
-                    $save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix."signup (username,password,level,email,tema,nombre,foto,cover,alta,actualizacion,codigo,intentos,activo) VALUES ('{$username}','{$pass1}','5','{$email}','default','{$nombre}','sinfoto.png','sincover.jpg','{$date}','{$actualizacion}','{$codigo}','0','0');") or print mysqli_error($mysqli); 
+                    $save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix."signup (username,password,level,email,tema,nombre,foto,cover,alta,actualizacion,codigo,ID_plan,intentos,activo) VALUES ('{$username}','{$pass1}','5','{$email}','default','{$nombre}','sinfoto.png','sincover.jpg','{$date}','{$actualizacion}','{$codigo}','{$ID_plan}','0','0');") or print mysqli_error($mysqli); 
                     $sql=mysqli_query($mysqli,"INSERT INTO ".$DBprefix."access (user,ip,navegador,os,code,fecha) VALUES ('{$username}','{$ip}','{$navegador}','{$os}','{$codigo}','{$date}');") or print mysqli_error($mysqli);
                     validar_aviso($save,$msj_bien,$msj_mal,$aviso);
                     $aviso2=$aviso;
