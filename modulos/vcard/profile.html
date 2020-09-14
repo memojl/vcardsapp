@@ -12,7 +12,7 @@
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="shortcut icon" href="<?php echo $page_url;?>favicon.ico" type="image/x-icon">
       <!--Facebook meta-->
-      <meta property="og:url" content="http://multiportal.com.mx/vcard/">
+      <meta property="og:url" content="<?php echo $page_url.'vcard/profile/'.$profle.'/';?>">
       <meta property="og:title" content="Guillermo Jim&eacute;nez L&oacute;pez">
       <meta property="og:description" content="Desarrollo de Paginas Web y Marketing Digital">
       <meta property="og:image" content="http://qrcgcustomers.s3-eu-west-1.amazonaws.com/account5493273/3556709_1.png?0.0635479782185353">
@@ -20,7 +20,7 @@
       <meta property="og:image:height" content="200">
       <!-- Twitter Card data -->
       <meta name="twitter:card" content="summary">
-      <meta name="twitter:url" content="http://multiportal.com.mx/vcard/">
+      <meta name="twitter:url" content="<?php echo $page_url.'vcard/profile/'.$profle.'/';?>">
       <meta name="twitter:title" content="Guillermo Jim&eacute;nez L&oacute;pez">
       <meta name="twitter:description" content="Desarrollo de Paginas Web y Marketing Digital">
       <meta name="twitter:image" content="http://qrcgcustomers.s3-eu-west-1.amazonaws.com/account5493273/3556709_1.png?0.0635479782185353">
@@ -237,7 +237,7 @@
                                  <div class="fab-body">
                                     <div class="iconFab icon-fab-close"></div>
                                     <div class="fab-header" ng-style="{&#39;color&#39;: isColorLight(view.color2) ? &#39;black&#39; : view.color2}" style="color: rgb(0, 255, 0);">Share</div>
-                                    <ul class="ssk-block ssk-md" data-url="http://multiportal.com.mx/vcard/" data-text="">
+                                    <ul class="ssk-block ssk-md" data-url="<?php echo $page_url.'vcard/profile/'.$profle.'/';?>" data-text="">
                                        <li>
                                           <i class="iconFab icon-fab-share-facebook"></i>
                                           <a href="https://qrco.de/bbB8gH" class="ssk ssk-text ssk-facebook">Facebook</a>
@@ -252,15 +252,15 @@
                                        </li>
                                        <li>
                                           <i class="iconFab icon-fab-share-whatsapp"></i>
-                                          <a href="whatsapp://send?text=http://multiportal.com.mx/vcard/" class="ssk ssk-whatsapp">Whatsapp</a>
+                                          <a href="whatsapp://send?text=<?php echo $page_url.'vcard/profile/'.$profle.'/';?>" class="ssk ssk-whatsapp">Whatsapp</a>
                                        </li>
                                        <li>
                                           <i class="iconFab icon-fab-share-email"></i>
-                                          <a href="mailto:?body=http://multiportal.com.mx/vcard/" target="_blank">Email</a>
+                                          <a href="mailto:?body=<?php echo $page_url.'vcard/profile/'.$profle.'/';?>" target="_blank">Email</a>
                                        </li>
                                        <li>
                                           <i class="iconFab icon-fab-share-message"></i>
-                                          <input id="shortUrl" value="http://multiportal.com.mx/vcard/" readonly>
+                                          <input id="shortUrl" value="<?php echo $page_url.'vcard/profile/'.$profle.'/';?>" readonly>
                                           <button id="copyButton">Copy</button>
                                           <div class="ifCopySucceed ng-hide" ng-show="ifCopySucceed">
                                              Text copied to the clipboard.                        
