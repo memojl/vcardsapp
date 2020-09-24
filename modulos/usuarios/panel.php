@@ -4,7 +4,7 @@ if(isset($_SESSION["username"])){
 		if($_SESSION["level"]==-1){
 			$user_type='Administrador';
         	$user_access='admin/index';
-        	$adminLTE='<a href="'.$page_url.'index.php?mod=dashboard">AdminLTE</a>';
+        	$adminLTE='<a target="_blank" href="'.$page_url.'index.php?mod=dashboard">AdminLTE</a>';
 		}else{
 			$user_type='Miembro';
 			$user_access='miembros/index';
