@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 12-09-2020 a las 21:16:47
+-- Tiempo de generación: 15-10-2020 a las 17:52:21
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 7.3.12
 
@@ -1176,7 +1176,7 @@ CREATE TABLE `vcard_signup` (
 --
 
 INSERT INTO `vcard_signup` (`ID`, `username`, `password`, `email`, `level`, `lastlogin`, `tema`, `nombre`, `apaterno`, `amaterno`, `foto`, `cover`, `tel`, `ext`, `fnac`, `fb`, `tw`, `puesto`, `ndepa`, `depa`, `empresa`, `adress`, `direccion`, `mpio`, `edo`, `pais`, `genero`, `exp`, `likes`, `filtro`, `zona`, `alta`, `actualizacion`, `page`, `nivel_oper`, `rol`, `ID_plan`, `codigo`, `intentos`, `activo`) VALUES
-(1, 'admin', 'c64f923f7f476f0b78716079452e7bdec4b2c016', 'multiportal@outlook.com', '-1', '2020-09-11 23:33:18', 'default', 'Guillermo', 'Jimenez', 'Lopez', 'sinfoto.png', '', '4421944950', 1, '0000-00-00', '', '', 'Programador', 0, '', 'Multiportal', '', '', '', '', '', 'M', '', 0, '0', '', '', 'admin2019xadmin79', '', 0, 0, 0, '944950', '0', 1),
+(1, 'admin', 'c64f923f7f476f0b78716079452e7bdec4b2c016', 'multiportal@outlook.com', '-1', '2020-09-12 22:08:10', 'default', 'Guillermo', 'Jimenez', 'Lopez', 'sinfoto.png', '', '4421944950', 1, '0000-00-00', '', '', 'Programador', 0, '', 'Multiportal', '', '', '', '', '', 'M', '', 0, '0', '', '', 'admin2019xadmin79', '', 0, 0, 0, '944950', '0', 1),
 (2, 'demo', '71cc541bd1ccb6670de3f8d40f425ffb7315fe7f', 'demo@gmail.com', '-1', '2020-08-23 20:19:10', 'default', 'Demo', 'Apaterno', 'Amaterno', 'sinfoto.png', 'sincover.jpg', '4421234567', 0, '0000-00-00', '', '', 'Director', 0, '', 'PHPONIX', '', '', '', '', '', 'M', '', 0, '0', '', '', 'demo2019xdemo2017', '', 0, 0, 0, '234567', '0', 1),
 (10, 'usuario', 'c76ec709eb8ee62ba3181287dd95ae6f6deb856e', 'memo.jimenez@azell.co', '6', '2020-09-07 19:03:33', 'default', 'Memo Jimenez', '', '', 'sinfoto.png', 'sincover.jpg', '', 0, '0000-00-00', '', '', '', 0, '', '', '', '', '', '', '', '', '', 0, '0', '', '2020-08-31 20:59:01', 'usuario2020xusuario2020', '', 0, 0, 4, 'dam9EP', '0', 1);
 

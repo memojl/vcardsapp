@@ -134,11 +134,11 @@ global $chartset;
         if($_SERVER['HTTP_HOST']!='localhost'){
           $success = @mail($para, $title, $message, $headers);
         }else{
-          $success=mysqli_query($mysqli,"INSERT INTO ".$DBprefix."contacto (ip,nombre,email,para,tel,titulo,asunto,msj,cat_list,seccion,tabla,adjuntos,visto,status,ID_login,ID_user,visible) VALUES ('{$ip}','{$nombre}','{$email}','{$CoE1}','{$tel}','{$title}','{$subject}','{$message}','{$cat_list}','{$sec}','','','0','1','1','1','1');") or print mysqli_error($mysqli);
+          $success=mysqli_query($mysqli,"INSERT INTO ".$DBprefix."contacto (ip,nombre,email,para,de,tel,titulo,asunto,msj,fecha,cat_list,seccion,tabla,adjuntos,visto,status,ID_login,ID_user,visible) VALUES ('{$ip}','{$nombre}','{$email}','{$CoE1}','{$de}','{$tel}','{$title}','{$subject}','{$message}','{$date}','{$cat_list}','{$sec}','','','0','1','1','1','1');") or print mysqli_error($mysqli);
         }
         if($success) {
-          if($_SERVER['HTTP_HOST']!='localhost'){          
-            $save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix."contacto (ip,nombre,email,para,tel,titulo,asunto,msj,cat_list,seccion,tabla,adjuntos,visto,status,ID_login,ID_user,visible) VALUES ('{$ip}','{$nombre}','{$email}','{$CoE1}','{$tel}','{$title}','{$subject}','{$message}','{$cat_list}','{$sec}','','','0','1','1','1','1');") or print mysqli_error($mysqli);
+          if($_SERVER['HTTP_HOST']!='localhost'){
+            $save=mysqli_query($mysqli,"INSERT INTO ".$DBprefix."contacto (ip,nombre,email,para,de,tel,titulo,asunto,msj,fecha,cat_list,seccion,tabla,adjuntos,visto,status,ID_login,ID_user,visible) VALUES ('{$ip}','{$nombre}','{$email}','{$CoE1}','{$de}','{$tel}','{$title}','{$subject}','{$message}','{$date}','{$cat_list}','{$sec}','','','0','1','1','1','1');") or print mysqli_error($mysqli);
           }	        # Establece un código de respuesta 200 (correcto).
           http_response_code(200);
           echo "Gracias! Tu mensaje ha sido enviado a ".$para;			
