@@ -1,7 +1,7 @@
 const imagePreview = document.getElementById('img-cover');
 const imageUploader = document.getElementById('cover');
 const upBar = document.getElementById('bar');
-const proyecto = 'cloudphp';
+const proyecto = 'vcardsapp';
 const host = window.location.host;
 const urlServer =  host!='localhost' ? 'https://cloudvcard.000webhostapp.com':'http://localhost/MisSitios/'+proyecto;
 const CLOUD_URL= urlServer + '/upload/files/includes/backend.php?proyecto='+proyecto;

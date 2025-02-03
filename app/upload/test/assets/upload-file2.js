@@ -14,7 +14,7 @@ const path_url = pathname;
 const URL = window.location.href;
 //console.log('URL='+URL);
 /** CONFIG **/
-const proyecto = 'cloudphp'; //PROYECTO
+const proyecto = 'vcardsapp'; //PROYECTO
 const activeApi = false;//Activar API
 const activeLocal = true;//Local
 const save = 0;// [0 => 'Guardar en Servidor',1 => 'Guardar en base de datos', 2 => 'Guardar en servidor y en base de datos.']; 
