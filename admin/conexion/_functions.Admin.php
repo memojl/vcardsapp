@@ -1,2 +1,0 @@
-<?php
-//Funciones Admin Dashboard

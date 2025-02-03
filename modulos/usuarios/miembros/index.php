@@ -1,1 +1,0 @@
-<?php include 'modulos/usuarios/admin/index.php';?>

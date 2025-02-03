@@ -2,3 +2,15 @@ _notes/
 _temp/
 _docs/
 _templates/
+_template
+_docs
+node_modules
+
+# Proyect JS
+#public
+#src
+#web
+
+#Miscelaneos
+#package-lock.json
+#*.bat
