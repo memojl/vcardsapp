@@ -1,0 +1,155 @@
+ <div class="page-header">
+   <div class="container-fluid">
+     <h2 class="h5 no-margin-bottom">Empresas</h2>
+   </div>
+ </div>
+ <div class="container-fluid">
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="./">Home</a></li>
+    <li class="breadcrumb-item active"><b>Empresas</b></li>
+  </ul>
+</div>
+ <section class="">
+   <ul class="list-group posts">
+   </ul>          
+ </section>
+ <section id="vcontent" class="no-padding-bottom">
+ </section>
+ <!-- Modal -->
+<div class="modal fade" id="empresaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+    <form id="form2">
+       <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-text="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">Registrar Empresa</h4>
+       </div>
+       <div class="modal-body">
+          <div class="row">
+             <!--div class="col-md-12"-->
+             <!-- form start -->
+             <div class="box-body">
+                <div class="row">
+                   <div class="col-lg-6 col-md-6 col-xs-6">
+                      <div class="form-group">   
+                        <label for="cover">Logo</label>
+                        <div id="imagen">
+                            <input type="hidden" class="form-control" id="cover" name="cover" value="sinlogo.jpg">
+                            <img id="ima" src="./bloques/files/images/photos/sinlogo.jpg" style="width:150px;border-radius:0%;-moz-border-radius:0%;-webkit-border-radius:0%;" title="sinfoto.png">
+                            <div id="upload"><a href="javascript:up(1);">Cambiar Logo</a></div>
+                        </div>
+                      </div>                     
+
+                      <div class="form-group">   
+                        <label for="coverbg">Fondo</label>
+                        <div id="imagen2">
+                            <input type="hidden" class="form-control" id="coverbg" name="coverbg" value="sinbg.jpg">
+                            <img id="ima2" src="./bloques/files/images/photos/sinbg.jpg" style="width:150px;" title="sinfoto.png">
+                            <div id="upload2"><a href="javascript:up2(1);">Cambiar Fondo</a></div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                         <input type="hidden" class="form-control" id="cardId" name="cardId" value="" placeholder="cardId">
+                      </div>
+                      <div class="form-group">
+                         <input type="hidden" class="form-control" id="ID" name="ID" value="" placeholder="ID">
+                      </div>
+                      <div class="form-group">
+                         <input type="hidden" class="form-control" id="uid" name="uid" value="uid" placeholder="">
+                      </div>
+                      <div class="form-group">
+                         <input type="hidden" class="form-control" id="f_create" name="f_create" value="" placeholder="Creado">
+                      </div>
+                      <div class="form-group">
+                         <input type="hidden" class="form-control" id="f_update" name="f_update" value="" placeholder="Actualizado">
+                      </div>
+                      <!--div class="form-group">
+                         <input type="hidden" class="form-control" id="user" name="user" value="username" placeholder="usuario">
+                      </div-->
+                   </div>
+                   <div class="col-lg-6 col-md-6 col-xs-6">
+                      <div class="form-group">
+                         <label for="profile">Nombre de la Empresa</label>
+                         <div class="input-group">
+                            <div class="input-group-prepend">
+                               <span class="input-group-text">
+                                  <i class="fa fa-industry"></i>
+                               </span>
+                            </div>
+                            <input type="text" class="form-control" id="empresa" name="empresa" value="">
+                         </div>
+                      </div>
+<!--
+                      <div class="form-group">
+                        <label>Color picker:</label>
+                        <input type="text" class="form-control my-colorpicker1 colorpicker-element">
+                      </div>
+                      <div class="form-group">
+                        <label>Color picker with addon:</label>        
+                        <div class="input-group my-colorpicker2 colorpicker-element">
+                          <input type="text" class="form-control">        
+                          <div class="input-group-addon">
+                            <i></i>
+                          </div>
+                        </div>
+                      </div>
+-->
+                      <div class="form-group">
+                         <label for="bg_color">Color Identidad</label>                         
+                         <div class="input-group">
+                            <div class="input-group-prepend">
+                               <span class="input-group-text">
+                                  <i class="fa fa-paint-brush"></i>
+                               </span>
+                            </div>
+                            <select class="form-control" id="bg_color" name="bg_color">
+                              <option value="#000000">Negro</option>
+                              <option value="#444444">Gris Oscuro</option>
+                              <option value="#888888">Gris</option>
+                              <option value="#ff0000">Rojo</option>
+                              <option value="#0000ff">Azul</option>
+                              <option value="#00ff00">Verde</option>
+                              <option value="#eedd00">Amarillo</option>
+                              <option value="#f8971d">Naranja</option>
+                              <option value="#ff00cc">Rosa</option>
+                           </select>
+                         </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Visible</label>
+                        <div class="input-group">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                 <i class="fa fa-eye-slash"></i>
+                              </span>
+                           </div>
+                           <select class="form-control" id="visible" name="visible">
+                              <option value="1">Si</option>
+                              <option value="0">No</option>                              
+                           </select>
+                           <div>
+                           </div>
+                        </div>
+                     </div>
+                   </div>
+                   <!-- /.box-body -->
+                   <div class="box-footer">
+                   </div>
+                   <!--/div--><!-- /.col-->            
+                </div>
+             </div>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary guardar" id="Aceptar1">Guardar</button>
+             </div>
+          </div>
+       </div>   
+    </form>
+    </div>
+  </div>
+ </div>
+ <!-- /Modal -->
+ <!--div class="btn-mas"-->
+ <a href="#" class="btnAdd" data-toggle="modal" data-target="#empresaModal" title="Agregar"><i class="fa fa-plus-circle"></i></a>
+ <!--/div-->

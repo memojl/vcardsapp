@@ -1,0 +1,93 @@
+ <div class="page-header">
+   <div class="container-fluid">
+     <h2 class="h5 no-margin-bottom">Perfil</h2>
+   </div>
+ </div>
+ <div class="container-fluid">
+   <ul class="breadcrumb">
+     <li class="breadcrumb-item"><a href="./">Home</a></li>
+     <li class="breadcrumb-item active"><b>Perfil</b></li>
+   </ul>
+ </div>
+ <section class="">
+   <ul class="list-group posts">
+   </ul>
+ </section>
+ <section class="no-padding-bottom">
+   <div class="row">
+     <div id="myProfile" class="col-lg-8">
+     </div>
+   </div>
+ </section>
+
+ <!-- Modal-->
+ <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" class="modal fade text-left"
+   style="display: none;" aria-hidden="true">
+   <div role="document" class="modal-dialog">
+     <div class="modal-content">
+       <form id="form3">
+         <div class="modal-header">
+           <strong id="exampleModalLabel" class="modal-title">Modificar Perfil</strong>
+           <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+               aria-hidden="true">×</span></button>
+         </div>
+         <div class="modal-body">
+           <div class="form-group">
+             <label for="cover">Imagen</label>
+             <div id="imagen">
+               <input type="hidden" class="form-control" id="cover" name="cover"
+                 value="bloques/files/images/photos/sinfoto.png">
+               <img id="ima" src="bloques/files/images/photos/sinfoto.png" style="width:150px;" title="sinfoto.png">
+               <div id="upload"><a href="javascript:up(1);">Cambiar Foto</a></div>
+             </div>
+           </div>
+           <div class="form-group">
+             <input type="hidden" class="form-control" id="cardId" name="cardId" value="" placeholder="cardId">
+           </div>
+           <div class="form-group">
+             <input type="hidden" id="uid" name="uid" placeholder="uid" class="form-control">
+           </div>
+           <div class="form-group">
+             <input type="hidden" id="email" name="email" placeholder="Email" class="form-control">
+           </div>
+           <div class="form-group">
+             <input type="hidden" class="form-control" id="f_create" name="f_create" value="" placeholder="Creado">
+           </div>
+           <div class="form-group">
+             <input type="hidden" class="form-control" id="f_update" name="f_update" value="" placeholder="Actualizado">
+           </div>
+
+           <div class="form-group">
+             <label>Nombre</label>
+             <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control">
+           </div>
+           <div class="form-group">
+             <label>Dirección</label>
+             <input type="text" id="direc" name="direc" placeholder="Direccion" class="form-control">
+           </div>
+           <div class="form-group">
+             <label>Telefono</label>
+             <input type="text" id="tel" name="tel" placeholder="Telefono" class="form-control">
+           </div>
+
+           <div class="form-group">
+             <label>Nivel</label>
+             <input type="text" id="level" name="level" placeholder="Level" class="form-control" value="1">
+           </div>
+           <div class="form-group">
+             <label>Tipo de Cuenta</label>
+             <input type="text" id="tipoc" name="tipoc" placeholder="Tipoc" class="form-control" value="Personal">
+           </div>
+           <div class="form-group">
+             <label>Código de activación</label>
+             <input type="text" id="codi" name="codi" placeholder="Codi" class="form-control">
+           </div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+           <button type="submit" class="btn btn-primary guardar" id="Aceptar1">Guardar</button>
+         </div>
+       </form>
+     </div>
+   </div>
+ </div>
