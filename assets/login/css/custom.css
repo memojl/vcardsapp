@@ -1,0 +1,99 @@
+/* your styles go here */
+.logo img {
+  width: 100%;
+}
+.box-body{
+  width: 100%;
+  padding: 0 1%;
+}
+.modal-header,.modal-footer{
+  display:inherit !important;
+}
+.modal-dialog{
+  width: 100% !important;
+}
+.modal-footer{
+  width: 100% !important;
+  text-align: right !important;
+}
+.btn-default{
+  background: #444;
+  color: #aaa;
+}
+.btn-default:hover{
+  background: #aaa;
+  color: #444;
+}
+.btn-add, .btnAdd{
+  position: fixed;
+  z-index: 1000;
+  right: 20px;
+  bottom: 50px;
+  background: #00cc00;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+   border: 0px solid #000000;
+   padding: 8px 12px;
+   text-decoration: none;
+}
+#imagen #ima{
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border: 0px solid #000000;
+}
+.activo{
+  background: #00cc00;
+}
+.no-activo{
+  background: #990000;
+}
+
+#id_code_google,#codi1{visibility: hidden;}
+
+.d-flex-logo{
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 950px){
+  #email_session{visibility: hidden;}
+  .public-user-block .item{
+    width: 99%;
+  }
+}
+
+
+html .scroll-to-top {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  background: #404040;
+  border-radius: 4px 4px 0 0;
+  bottom: 0;
+  color: #FFF;
+  display: block;
+  height: 9px;
+  opacity: 0;
+  padding: 10px 10px 35px;
+  position: fixed;
+  right: 10px;
+  text-align: center;
+  text-decoration: none;
+  min-width: 50px;
+  z-index: 1040;
+  font-size: 0.8em;
+}
+
+html .scroll-to-top.visible {
+  
+  opacity: 0.75;
+}
+
+@media (max-width: 991px){
+  html .scroll-to-top.hidden-mobile {
+    display: none !important;
+  }
+}
