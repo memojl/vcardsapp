@@ -6,19 +6,20 @@ var fec = new Date();
 console.log(fec);
 var year = fec.getFullYear();
 console.log(year);
-const protocol = window.location.protocol;
+const {protocol, host, origin, pathname, href, search} = loc;
+//const protocol = window.location.protocol;
 console.log('protocol=' + protocol);
-const host = window.location.host;
+//const host = window.location.host;
 console.log('host=' + host);
-const dominio = window.location.origin + '/';
+const dominio = origin + '/';//window.location.origin + '/';
 console.log('dominio=' + dominio);
-const dominio1 = window.location.origin;
+const dominio1 =  origin;//window.location.origin;
 console.log('dominio1=' + dominio1);
-const path_url = window.location.pathname;
+const path_url = pathname;//window.location.pathname;
 console.log('path_url=' + path_url);
-const URL = window.location.href;
+const URL = href;//window.location.href;
 console.log('URL=' + URL);
-const quest = window.location.search;
+const quest = search;//window.location.search;
 console.log('quest=' + quest);
 /* VARIABLES */
 console.log('/* VARIABLES */');
@@ -27,7 +28,7 @@ var ext = '';
 var id = '';
 var path_url1 = path_url.replace("/", "");
 //var path_root=(host=='localhost')?path_url1:'app/';
-var proyecto = 'vcardappjs'; //PROYECTO
+var proyecto = 'vcardsapp'; //PROYECTO
 console.log('proyecto=' + proyecto);
 var sub_path = 'app/'; //SUB_PATH
 console.log('sub_path=' + proyecto);
