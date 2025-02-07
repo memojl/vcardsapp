@@ -17,8 +17,8 @@ const dominio1 =  origin;//window.location.origin;
 console.log('dominio1=' + dominio1);
 const path_url = pathname;//window.location.pathname;
 console.log('path_url=' + path_url);
-const URL = href;//window.location.href;
-console.log('URL=' + URL);
+//const URL = href;//window.location.href;
+//console.log('URL=' + URL);
 const quest = search;//window.location.search;
 console.log('quest=' + quest);
 /* VARIABLES */
