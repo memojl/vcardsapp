@@ -1,3 +1,33 @@
+function variables() {
+  /*VARIABLES SYS*/
+  var w = window;
+  var d = document;
+  var loc = w.location;
+  var dt = new Date();
+  var day = dt.getDate();
+  day = (day < 10) ? '0' + day : day;
+  var mon = dt.getMonth() + 1;
+  mon = (mon < 10) ? '0' + mon : mon;
+  var year = dt.getFullYear();
+  var fecha = year + '-' + mon + '-' + day
+  
+
+  const v = {
+    w,
+    d,
+    loc,
+    dt,
+    day,
+    mon,
+    year,
+    fecha,
+  };
+  return v;
+}
+
+function load() {
+  const v = variables(); console.log(v);
+}
 /* VARIABLES CONSTANTES*/
 console.log('/* VARIABLES CONSTANTES*/');
 var loc = window.location;
@@ -170,15 +200,17 @@ function filename() {
 }
 
 function inicio() {
-  console.log('Corriendo funcion inicio');
-  getQueryVariable();
-  menu();
-  if(mod!='registro') {
-    modulos();
-  }
-  //form_tema();    
-  //setTimeout(() => { fecha_hora_update();fecha_hora_create(); }, 5000);
-  if(host!='localhost'){ssl();}
+  console.log('Run function inicio');
+  load();
+  //console.log('Corriendo funcion inicio');
+  //getQueryVariable();
+  //menu();
+  //if(mod!='registro') {
+    //modulos();
+  //}
+  //if(host!='localhost'){ssl();}
 }
 
-onload = inicio();
+//onload = inicio();
+
+export { inicio, load, variables };

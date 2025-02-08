@@ -1,3 +1,4 @@
+import { variables } from "./lib.js";
 /**
  <!-- The core Firebase JS SDK is always required and must be listed first -->
  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase.js"></script>
@@ -28,10 +29,12 @@ var firebaseConfig = {
 
 // Initialize Firebase
 //analytics();
-export const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getDatabase(app); //Realtime Database
-export const fs = getFirestore(app); //FireStore
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase(app); //Realtime Database
+const fs = getFirestore(app); //FireStore
+
+const v = variables(); console.log(v);
 
 //
 onAuthStateChanged(auth, async (user) => {
